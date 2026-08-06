@@ -1,7 +1,14 @@
+<script>
+  import Sun from "$lib/assets/Icons/Sun.svelte";
+    import StatisticsButton from "$lib/components/StatisticsButton.svelte";
+</script>
+
 <div class="HomePage">
-    <div class="CategoryHeader">
+    <!--This is the Slogan of the event-->
+    <div class="Slogan">
         <text>INSPIRED BY SCIENCE, GUIDED BY ETHICS</text>
     </div>
+    <!--This is the event description along with images of the sciences-->
     <div class="EventDescription">
         <div class="ChemistryAndOverview ScienceContent">
             <img src="/img/location" alt="Chemistry Content" class="ChImage"/>
@@ -37,6 +44,18 @@
             </div>
         </div>
     </div>
+    <!--These are the components that show the stats of the events (speakers, workshops...)-->
+    <div class="ContentStatistics">
+        <StatisticsButton text="X+ WORKSHOPS"/>
+        <StatisticsButton text="Y+ SPEAKERS"/>
+        <StatisticsButton text="Z+ SPEECHES"/>
+    </div>
+    <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
+    <div class="CategoryHeader">
+        <hr/>
+        <text>EVENT DETAILS</text>
+        <hr/>
+    </div>
 </div>
 
 <style>
@@ -44,7 +63,7 @@
         font-family: var(--font-family);
     }
 
-    .CategoryHeader {
+    .Slogan {
         text-align: center;
         font-size: 40px;
         font-style: normal;
@@ -54,6 +73,30 @@
         color: var(--break);
     }
 
+    .CategoryHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .CategoryHeader text {
+        color: var(--break);
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+    }
+
+    .CategoryHeader hr {
+        width: 250px;
+        background-color: var(--break);
+        border: none;
+        height: 2px;
+
+    }
+
     .ScienceContent {
         gap: 20px;
         display: flex;
@@ -61,6 +104,7 @@
     .EventDescription {
         display: flex;
         flex-direction: column;
+        margin-bottom: 200px;
     }
 
     .ChImage {
@@ -122,4 +166,12 @@
         margin-right: 35px;
     }
 
+    .ContentStatistics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 200px;
+        padding: 100px;
+        margin-bottom: 100px;
+    }
 </style>
