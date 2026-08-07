@@ -1,6 +1,6 @@
 <script>
-  import Sun from "$lib/assets/Icons/Sun.svelte";
     import StatisticsButton from "$lib/components/StatisticsButton.svelte";
+    import CountdownClock from "$lib/components/CountdownClock.svelte";
 </script>
 
 <div class="HomePage">
@@ -51,16 +51,129 @@
         <StatisticsButton text="Z+ SPEECHES"/>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
-    <div class="CategoryHeader">
-        <hr/>
-        <text>EVENT DETAILS</text>
-        <hr/>
+    <div class="EventDetails">
+        <div class="CategoryHeader">
+            <hr/>
+            <text>EVENT DETAILS</text>
+            <hr/>
+        </div>
+        <div class="Details">
+            <div class="Countdown">
+                <span class="Date">06-07 MARCH</span>
+                <CountdownClock/>
+            </div>
+        </div>
     </div>
 </div>
 
 <style>
+
+    .CategoryHeader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 160px 0;
+        gap: 60px;
+    }
+    
+    .CategoryHeader text {
+        color: var(--break);
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .CategoryHeader hr {
+        width: 250px;
+        background-color: var(--break);
+        border: none;
+        height: 2px;
+        margin: 0;
+    }
+        
+    .ChemistryAndOverview {
+        display: flex;
+        height: 590px;
+        padding-bottom: 290px;
+    }
+    
+    .ChImage {
+        width: 887px;
+        height: 590px;
+        aspect-ratio: 221/147;
+    }
+
+    .ContentStatistics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 200px;
+        padding: 100px;
+        margin-bottom: 100px;
+    }
+    
+    .Description {
+        color: var(--secondary-color);
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: normal;
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+    
+    .Date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .EventDescription {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 200px;
+    }
+        
+    .EventDetails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .EventDetails span {
+            color: var(--it);
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;    
+        }
+        
     .HomePage {
         font-family: var(--font-family);
+    }
+    
+    .ITImage {
+        width: 959px;
+        height: 539px;
+        aspect-ratio: 137/77;
+    }
+    
+    .PhImage {
+        width: 884px;
+        height: 589px;
+        aspect-ratio: 884/589;
+    }
+
+    .ScienceContent {
+        gap: 20px;
+        display: flex;
     }
 
     .Slogan {
@@ -73,64 +186,6 @@
         color: var(--break);
     }
 
-    .CategoryHeader {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px 0;
-    }
-
-    .CategoryHeader text {
-        color: var(--break);
-        font-size: 35px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-
-    }
-
-    .CategoryHeader hr {
-        width: 250px;
-        background-color: var(--break);
-        border: none;
-        height: 2px;
-
-    }
-
-    .ScienceContent {
-        gap: 20px;
-        display: flex;
-    }
-    .EventDescription {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 200px;
-    }
-
-    .ChImage {
-        width: 887px;
-        height: 590px;
-        aspect-ratio: 221/147;
-    }
-
-    .PhImage {
-        width: 884px;
-        height: 589px;
-        aspect-ratio: 884/589;
-    }
-
-    .ITImage {
-        width: 959px;
-        height: 539px;
-        aspect-ratio: 137/77;
-    }
-
-    .ChemistryAndOverview {
-        display: flex;
-        height: 590px;
-        padding-bottom: 290px;
-    }
-
     .TextContent {
         width: 950px;
         height: 590px;
@@ -141,7 +196,7 @@
         gap: 130px;
         margin-right: 25px;
     }
-
+    
     .TextHeader {
         padding: 57px;
         display: flex;
@@ -154,24 +209,5 @@
         font-weight: 600;
         line-height: normal;
         width: auto;
-    }
-
-    .Description {
-        color: var(--secondary-color);
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 200;
-        line-height: normal;
-        margin-left: 35px;
-        margin-right: 35px;
-    }
-
-    .ContentStatistics {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 200px;
-        padding: 100px;
-        margin-bottom: 100px;
     }
 </style>
