@@ -65,9 +65,18 @@
                 <span class="Date">06-07 MARCH</span>
                 <CountdownClock/>
             </div>
+            <div class="MapCard">
+                <MapLocation/>
+            </div>
+            <div class="RegistrationContent">
+                <text>LIMITED SEATS, BOOK YOURS NOW!</text>
+                <div class="RegButton">
+                    <RegisterButton textColor="var(--it)"/>
+                </div>
+            </div>
         </div>
     </div>
-    <h1>TESTING DISPLAY</h1>
+
 </div>
 
 <style>
@@ -115,6 +124,13 @@
         padding: 100px;
         margin-bottom: 100px;
     }
+
+    .Countdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     
     .Description {
         color: var(--secondary-color);
@@ -135,7 +151,9 @@
 
     .Details {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        gap: 40px;
     }
     
     .EventDescription {
@@ -172,11 +190,32 @@
         height: 539px;
         aspect-ratio: 137/77;
     }
+
+    .MapCard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scale: 0.8;
+    }
     
     .PhImage {
         width: 884px;
         height: 589px;
         aspect-ratio: 884/589;
+    }
+
+    .RegButton {
+        scale: 0.8;
+    }
+
+    .RegistrationContent {
+        color: var(--secondary-color);
+        text-align: center;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
     }
 
     .ScienceContent {

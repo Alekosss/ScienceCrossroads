@@ -1,4 +1,10 @@
-<button class="RegisterButton">
+<script>
+    let {
+        textColor = "Blue"
+    } = $props();
+</script>
+
+<button class="RegisterButton" style="color:{textColor}">
     <span>REGISTER</span>
 </button>
 

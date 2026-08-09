@@ -27,7 +27,6 @@
         gap: 20px;
         width: 800px;
         height: 400px;
-        margin: 20px;
         align-items: center;
         align-content: center;
         justify-content: center;
