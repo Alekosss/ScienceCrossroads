@@ -1,6 +1,8 @@
 <script>
     import StatisticsButton from "$lib/components/StatisticsButton.svelte";
     import CountdownClock from "$lib/components/CountdownClock.svelte";
+    import MapLocation from "$lib/components/MapLocation.svelte";
+    import GetDirectionsButton from "$lib/components/GetDirectionsButton.svelte";
 </script>
 
 <div class="HomePage">
@@ -63,6 +65,9 @@
                 <CountdownClock/>
             </div>
         </div>
+    </div>
+    <div class="MapLocationContent">
+        <MapLocation/>
     </div>
 </div>
 
@@ -128,6 +133,11 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+    }
+
+    .Details {
+        display: flex;
+        justify-content: center;
     }
     
     .EventDescription {
