@@ -2,6 +2,7 @@
     import StatisticsButton from "$lib/components/StatisticsButton.svelte";
     import CountdownClock from "$lib/components/CountdownClock.svelte";
     import MapLocation from "$lib/components/MapLocation.svelte";
+    import RegisterButton from "$lib/components/RegisterButton.svelte";
     import GetDirectionsButton from "$lib/components/GetDirectionsButton.svelte";
 </script>
 
@@ -66,13 +67,10 @@
             </div>
         </div>
     </div>
-    <div class="MapLocationContent">
-        <MapLocation/>
-    </div>
+    <h1>TESTING DISPLAY</h1>
 </div>
 
 <style>
-
     .CategoryHeader {
         display: flex;
         align-items: center;
