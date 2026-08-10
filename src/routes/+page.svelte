@@ -3,7 +3,7 @@
     import CountdownClock from "$lib/components/CountdownClock.svelte";
     import MapLocation from "$lib/components/MapLocation.svelte";
     import RegisterButton from "$lib/components/RegisterButton.svelte";
-    import GetDirectionsButton from "$lib/components/GetDirectionsButton.svelte";
+    import SocialPosts from "$lib/components/SocialPosts.svelte";
 </script>
 
 <div class="HomePage">
@@ -54,12 +54,12 @@
         <StatisticsButton text="Z+ SPEECHES"/>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
+    <div class="CategoryHeader">
+        <hr/>
+        <text>EVENT DETAILS</text>
+        <hr/>
+    </div>
     <div class="EventDetails">
-        <div class="CategoryHeader">
-            <hr/>
-            <text>EVENT DETAILS</text>
-            <hr/>
-        </div>
         <div class="Details">
             <div class="Countdown">
                 <span class="Date">06-07 MARCH</span>
@@ -75,8 +75,15 @@
                 </div>
             </div>
         </div>
+        <div class=SocialMediaPosts>
+            <SocialPosts textColor="var(--it)"/>
+        </div>
     </div>
-
+    <div class="CategoryHeader">
+        <hr/>
+        <text>ORGANIZING COMITEE</text>
+        <hr/>
+    </div>
 </div>
 
 <style>
@@ -130,6 +137,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 650px;
     }
     
     .Description {
@@ -153,7 +161,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 40px;
+        width: 650px;
     }
     
     .EventDescription {
@@ -164,7 +174,11 @@
         
     .EventDetails {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 250px;
+        overflow: hidden;
     }
 
     .EventDetails span {

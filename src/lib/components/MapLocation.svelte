@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: row;
         gap: 20px;
-        width: 800px;
+        width: 800px;        
         height: 400px;
         align-items: center;
         align-content: center;
