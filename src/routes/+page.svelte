@@ -84,9 +84,24 @@
         <text>ORGANIZING COMITEE</text>
         <hr/>
     </div>
+    <div class="OrganizingTeam">
+        <div class="OrganizigText">
+            <span>OUR ORGANIZING TEAM IS CONSITEED OF THE FOLLOWING STUDENT TEAMS</span>
+        </div>
+        <div class="BranchesCarousel">
+        <!--Carousel here...-->
+        </div>
+    </div>
 </div>
 
 <style>
+    .BranchesCarousel {
+        width: 1500px;
+        height: 550px;
+        background-color: var(--it);
+        margin: 25px 0px 150px;
+    }
+
     .CategoryHeader {
         display: flex;
         align-items: center;
@@ -212,6 +227,21 @@
         scale: 0.8;
     }
     
+    .OrganizingTeam {
+        color: var(--it);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
     .PhImage {
         width: 884px;
         height: 589px;
