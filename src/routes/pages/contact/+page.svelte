@@ -1,8 +1,16 @@
 <script>
-  import Facebook from "$lib/assets/Icons/Facebook.svelte";
-  import Instagram from "$lib/assets/Icons/Instagram.svelte";
-  import Mail from "$lib/assets/Icons/Mail.svelte";
+    import Facebook from "$lib/assets/Icons/Facebook.svelte";
+    import Instagram from "$lib/assets/Icons/Instagram.svelte";
+    import Mail from "$lib/assets/Icons/Mail.svelte";
 
+    let mail = $state('');
+    let subject = $state('');
+    let content = $state('');
+    let disabled = $derived((mail==='') || (subject==='') || (content===''));
+
+    function Test() {
+        console.log("button is enabled!");
+    }
 </script>
 <div class="ContactPage">
     <!--1st way to Contact-->
@@ -36,18 +44,18 @@
         <div class="AddressAndSubject">
             <div class="EmailAddress">
                 <span>Email Address:</span>
-                <input placeholder="Enter your email here..."/>
+                <input bind:value={mail} placeholder="Enter your email here..."/>
             </div>
             <div class="Subject">
                 <span>Subject:</span>
-                <input placeholder="Enter the mail subject here..."/>
+                <input bind:value={subject} placeholder="Enter the mail subject here..."/>
             </div>
         </div>
         <div class="Message">
             <span>Message:</span>
-            <input placeholder="Enter the message content here..."/>
+            <input bind:value={content} placeholder="Enter the message content here..."/>
         </div>
-        <button class="SendButton">
+        <button class="SendButton" disabled={disabled} onclick={Test}>
             <text>SEND</text>
         </button>
     </div>
