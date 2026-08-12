@@ -4,6 +4,7 @@
     import MapLocation from "$lib/components/MapLocation.svelte";
     import RegisterButton from "$lib/components/RegisterButton.svelte";
     import SocialPosts from "$lib/components/SocialPosts.svelte";
+    import BranchesCarousel from "$lib/components/BranchesCarousel.svelte";
 </script>
 
 <div class="HomePage">
@@ -13,8 +14,8 @@
     </div>
     <!--This is the event description along with images of the sciences-->
     <div class="EventDescription">
-        <div class="ChemistryAndOverview ScienceContent">
-            <img src="/img/location" alt="Chemistry Content" class="ChImage"/>
+        <div class="ChemistryAndOverview ScienceContent ImageLeft">
+            <img src="/Chemistry.png" alt="Chemistry Content" class="ChImage"/>
             <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHAT IS THE EVENT ABOUT?</text>
@@ -24,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="PhysicsAndParticipants ScienceContent">
+        <div class="PhysicsAndParticipants ScienceContent ImageRight">
             <div class="PhysicsText">
                 <div class="TextHeader">
                     <text>WHO WILL BE PARTICIPATING?</text>
@@ -33,10 +34,10 @@
                     <text>The conference will bring together distinguished university professors, renowned experts, and leading authorities from a range of disciplines, and will be open to a wider audience within and beyond the academic community. Through keynote lectures, panel discussions, and open dialogue, participants will exchange ideas and explore the ethical dimensions of scientific work from multiple perspectives.</text>
                 </div>
             </div>
-            <img src="/img/location" alt="Physics Content" class="PhImage"/>
+            <img src="/Physics.png" alt="Physics Content" class="PhImage"/>
         </div>
-        <div class="ITAndOutcomes ScienceContent">
-            <img src="/img/location" alt="Physics Content" class="ITImage"/>
+        <div class="ITAndOutcomes ScienceContent ImageLeft">
+            <img src="/IT.png" alt="Physics Content" class="ITImage"/>
             <div class="ITText">
                 <div class="TextHeader">
                     <text>WHAT IS TO BE GAINED FROM THE EVENT?</text>
@@ -90,8 +91,10 @@
         </div>
         <div class="BranchesCarousel">
         <!--Carousel here...-->
-        </div>
+        </div>        
     </div>
+    <h1>TESTING:</h1>
+    <BranchesCarousel/>    
 </div>
 
 <style>
@@ -219,6 +222,37 @@
         height: 539px;
         aspect-ratio: 137/77;
     }
+
+    .ImageLeft img {
+    -webkit-mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to right, black 60%, transparent 95%);
+    -webkit-mask-composite: source-in; 
+
+    mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to right, black 60%, transparent 95%);
+    mask-composite: intersect; 
+    }
+
+    .ImageRight img {
+    -webkit-mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to left, black 60%, transparent 90%);
+    -webkit-mask-composite: source-in; 
+
+    mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to left, black 60%, transparent 90%);
+    mask-composite: intersect; 
+    }
+
+
+
 
     .MapCard {
         display: flex;
