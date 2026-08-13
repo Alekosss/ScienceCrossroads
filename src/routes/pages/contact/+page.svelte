@@ -8,8 +8,28 @@
     let content = $state('');
     let disabled = $derived((mail==='') || (subject==='') || (content===''));
 
-    function Test() {
-        console.log("button is enabled!");
+    const InstagramURL = "https://www.instagram.com/sciencecrossroads/";
+    const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
+
+    let showMessage = $state(false);
+
+    function handleClick() {
+    if (disabled) {
+        showMessage = true;
+        setTimeout(() => showMessage = false, 3000);
+        return;
+    }
+    console.log('button clicked!');
+    }
+
+    function OpenInstagram() {
+        console.log("Button clicked. Opening window");
+        window.open(InstagramURL, "_blank", "noopener,noreferrer");
+    }
+    
+    function OpenFacebook() {
+        console.log("Button clicked. Opening window");
+        window.open(FacebookURL, "_blank", "noopener,noreferrer");
     }
 </script>
 <div class="ContactPage">
@@ -23,11 +43,11 @@
         <span>Feel free to contact us in our Social if you have questions!</span>
     </div>
     <div class="Social">
-        <button class="Media">
+        <button onclick={OpenInstagram} class="Media">
             <Instagram/>
             <span>Instagram</span>
         </button>
-        <button class="Media">
+        <button onclick={OpenFacebook} class="Media">
             <Facebook/>
             <span>Facebook</span>
         </button>
@@ -55,9 +75,12 @@
             <span>Message:</span>
             <input bind:value={content} placeholder="Enter the message content here..."/>
         </div>
-        <button class="SendButton" disabled={disabled} onclick={Test}>
+        <button class="SendButton" aria-disabled={disabled} onclick={handleClick}>
             <text>SEND</text>
         </button>
+        {#if showMessage}
+            <p>Please fill out the form.</p>
+        {/if}
     </div>
 </div>
 
@@ -145,6 +168,8 @@
     }
 
     .Media {
+        cursor: pointer;
+
         display: flex;
         flex-direction: row;
         gap: 5px;
