@@ -15,7 +15,7 @@
     <!--This is the event description along with images of the sciences-->
     <div class="EventDescription">
         <div class="ChemistryAndOverview ScienceContent ImageLeft">
-            <img src="/Chemistry.png" alt="Chemistry Content" class="ChImage"/>
+            <img src="/HomePage/Chemistry.png" alt="Chemistry Content" class="ChImage"/>
             <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHAT IS THE EVENT ABOUT?</text>
@@ -34,10 +34,10 @@
                     <text>The conference will bring together distinguished university professors, renowned experts, and leading authorities from a range of disciplines, and will be open to a wider audience within and beyond the academic community. Through keynote lectures, panel discussions, and open dialogue, participants will exchange ideas and explore the ethical dimensions of scientific work from multiple perspectives.</text>
                 </div>
             </div>
-            <img src="/Physics.png" alt="Physics Content" class="PhImage"/>
+            <img src="/HomePage/Physics.png" alt="Physics Content" class="PhImage"/>
         </div>
         <div class="ITAndOutcomes ScienceContent ImageLeft">
-            <img src="/IT.png" alt="Physics Content" class="ITImage"/>
+            <img src="/HomePage/IT.png" alt="Physics Content" class="ITImage"/>
             <div class="ITText">
                 <div class="TextHeader">
                     <text>WHAT IS TO BE GAINED FROM THE EVENT?</text>

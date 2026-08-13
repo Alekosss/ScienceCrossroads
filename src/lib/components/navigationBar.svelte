@@ -1,6 +1,6 @@
 <script>
     import {onMount} from 'svelte';
-    import PlainLogo from '$lib/assets/Logos/PlainLogo.png'
+    import PlainLogo from '$lib/assets/PlainLogo.png'
     import Moon from '$lib/assets/Icons/Moon.svelte'
     import Sun from '$lib/assets/Icons/Sun.svelte'
 
