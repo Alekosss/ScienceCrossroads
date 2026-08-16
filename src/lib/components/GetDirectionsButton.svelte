@@ -3,8 +3,6 @@
     const url = "https://maps.app.goo.gl/J1vp3KJMsgWzM6628";
 
     let {
-        width = "300px",
-        height = "100px",
         textColor = "Blue"
     } = $props();
 
@@ -14,12 +12,14 @@
     }
 </script>
 
-<button class="GetDirectionButton" style="width: {width}; height: {height}; color: {textColor}" onclick={OpenLink}>
+<button class="GetDirectionButton" style="color: {textColor}" onclick={OpenLink}>
     <span>GET DIRECTIONS</span>
 </button>
 
 <style>
     .GetDirectionButton {
+        width: 300px;
+        height: 100px;
         border-radius: 50px;
         background-color: var(--primary-color);
         border: none;
@@ -33,7 +33,7 @@
         text-align: center;
         font-size: 25px;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         line-height: normal;
         text-decoration: none;
         display: inline-block;
@@ -41,6 +41,6 @@
     }
 
     .GetDirectionButton:hover span {
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
 </style>

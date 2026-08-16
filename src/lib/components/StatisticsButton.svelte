@@ -1,39 +1,47 @@
 <script>
-    let {text = "Statistic Button"} = $props();
+    let {
+        text = "Statistic Button",
+        subpage = ""
+    } = $props();
+
+    function clickHandler() {
+        console.log(subpage);
+        window.location.href = '/pages/'+{subpage};
+    }
 </script>
 
-<button class="StatisticButton">
-    <span class="ButtonText">{text}</span>
-</button>
+<a href="/pages/{subpage}" class="Statistic">
+    <span class="TextContent">{text}</span>
+</a>
 
 <style>
-    .StatisticButton {
-        /*Button formatting*/
-        background-color: var(--secondary-color);
-        width: 350px;
-        height: 100px;
-        border-radius: 50px;
-
-        /*Text formatting for the button*/
-        color: var(--IT, #B66DEA);
-        font-family: var(--font-family);
-        font-size: 24px;
+   .TextContent {
+        color: var(--it);
+        font-size: 28px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-    }
+        text-decoration: none;
+   }
 
-    .StatisticButton:hover {
-        cursor: pointer;
-    }
+   .Statistic {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--secondary-color);
+        border-radius: 50px;
+        padding: 30px 40px;
 
-    .ButtonText {
+        text-decoration: none;
+   }
+
+   .Statistic span {
+        transition: transform 0.2s ease-in;
         display: inline-block;
-        transition: transform 0.2s linear;
-    }
+   }
 
-    .StatisticButton:hover .ButtonText {
-        transform: scale(1.2);
-    }
-    
+   .Statistic:hover span {
+        transform: scale(1.15);
+   }
 </style>

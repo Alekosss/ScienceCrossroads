@@ -2,7 +2,9 @@
     import StatisticsButton from "$lib/components/StatisticsButton.svelte";
     import CountdownClock from "$lib/components/CountdownClock.svelte";
     import MapLocation from "$lib/components/MapLocation.svelte";
-    import GetDirectionsButton from "$lib/components/GetDirectionsButton.svelte";
+    import RegisterButton from "$lib/components/RegisterButton.svelte";
+    import SocialPosts from "$lib/components/SocialPosts.svelte";
+    import BranchesCarousel from "$lib/components/BranchesCarousel.svelte";
 </script>
 
 <div class="HomePage">
@@ -12,8 +14,8 @@
     </div>
     <!--This is the event description along with images of the sciences-->
     <div class="EventDescription">
-        <div class="ChemistryAndOverview ScienceContent">
-            <img src="/img/location" alt="Chemistry Content" class="ChImage"/>
+        <div class="ChemistryAndOverview ScienceContent ImageLeft">
+            <img src="/HomePage/Chemistry.png" alt="Chemistry Content" class="ChImage"/>
             <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHAT IS THE EVENT ABOUT?</text>
@@ -23,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="PhysicsAndParticipants ScienceContent">
+        <div class="PhysicsAndParticipants ScienceContent ImageRight">
             <div class="PhysicsText">
                 <div class="TextHeader">
                     <text>WHO WILL BE PARTICIPATING?</text>
@@ -32,10 +34,10 @@
                     <text>The conference will bring together distinguished university professors, renowned experts, and leading authorities from a range of disciplines, and will be open to a wider audience within and beyond the academic community. Through keynote lectures, panel discussions, and open dialogue, participants will exchange ideas and explore the ethical dimensions of scientific work from multiple perspectives.</text>
                 </div>
             </div>
-            <img src="/img/location" alt="Physics Content" class="PhImage"/>
+            <img src="/HomePage/Physics.png" alt="Physics Content" class="PhImage"/>
         </div>
-        <div class="ITAndOutcomes ScienceContent">
-            <img src="/img/location" alt="Physics Content" class="ITImage"/>
+        <div class="ITAndOutcomes ScienceContent ImageLeft">
+            <img src="/HomePage/IT.png" alt="Physics Content" class="ITImage"/>
             <div class="ITText">
                 <div class="TextHeader">
                     <text>WHAT IS TO BE GAINED FROM THE EVENT?</text>
@@ -49,29 +51,56 @@
     <!--These are the components that show the stats of the events (speakers, workshops...)-->
     <div class="ContentStatistics">
         <StatisticsButton text="X+ WORKSHOPS"/>
-        <StatisticsButton text="Y+ SPEAKERS"/>
+        <StatisticsButton text="Y+ SPEAKERS" subpage="schedule"/>
         <StatisticsButton text="Z+ SPEECHES"/>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
+    <div class="CategoryHeader">
+        <hr/>
+        <text>EVENT DETAILS</text>
+        <hr/>
+    </div>
     <div class="EventDetails">
-        <div class="CategoryHeader">
-            <hr/>
-            <text>EVENT DETAILS</text>
-            <hr/>
-        </div>
         <div class="Details">
             <div class="Countdown">
                 <span class="Date">06-07 MARCH</span>
                 <CountdownClock/>
             </div>
+            <div class="MapCard">
+                <MapLocation/>
+            </div>
+            <div class="RegistrationContent">
+                <text>LIMITED SEATS, BOOK YOURS NOW!</text>
+                <div class="RegButton">
+                    <RegisterButton textColor="var(--it)"/>
+                </div>
+            </div>
+        </div>
+        <div class=SocialMediaPosts>
+            <SocialPosts textColor="var(--it)"/>
         </div>
     </div>
-    <div class="MapLocationContent">
-        <MapLocation/>
+    <div class="CategoryHeader">
+        <hr/>
+        <text>ORGANIZING COMITEE</text>
+        <hr/>
     </div>
+    <div class="OrganizingTeam">
+        <div class="OrganizigText">
+            <span>OUR ORGANIZING TEAM IS CONSITEED OF THE FOLLOWING STUDENT TEAMS</span>
+        </div>
+        <div class="BranchesCarousel">
+            <BranchesCarousel/>          
+        </div>        
+    </div>  
 </div>
 
 <style>
+    .BranchesCarousel {
+        width: 1500px;
+        height: 550px;
+        margin: 25px 0px 150px;
+    }
 
     .CategoryHeader {
         display: flex;
@@ -117,6 +146,14 @@
         padding: 100px;
         margin-bottom: 100px;
     }
+
+    .Countdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 650px;
+    }
     
     .Description {
         color: var(--secondary-color);
@@ -137,9 +174,14 @@
 
     .Details {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 40px;
+        width: 650px;
+        height: 800px;
     }
-    
+
     .EventDescription {
         display: flex;
         flex-direction: column;
@@ -148,7 +190,11 @@
         
     .EventDetails {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 250px;
+        overflow: hidden;
     }
 
     .EventDetails span {
@@ -174,11 +220,81 @@
         height: 539px;
         aspect-ratio: 137/77;
     }
+
+    .ImageLeft img {
+    -webkit-mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to right, black 60%, transparent 95%);
+    -webkit-mask-composite: source-in; 
+
+    mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to right, black 60%, transparent 95%);
+    mask-composite: intersect; 
+    }
+
+    .ImageRight img {
+    -webkit-mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to left, black 60%, transparent 90%);
+    -webkit-mask-composite: source-in; 
+
+    mask-image:
+        linear-gradient(to bottom, black 60%, transparent 100%),
+        linear-gradient(to top, black 60%, transparent 100%),
+        linear-gradient(to left, black 60%, transparent 90%);
+    mask-composite: intersect; 
+    }
+
+    .MapCard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        scale: 0.8;
+    }
     
+    .OrganizingTeam {
+        color: var(--it);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
     .PhImage {
         width: 884px;
         height: 589px;
         aspect-ratio: 884/589;
+    }
+
+    .RegButton {
+        height: 125px;
+    }
+
+    .RegistrationContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        color: var(--secondary-color);
+        text-align: center;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
     }
 
     .ScienceContent {

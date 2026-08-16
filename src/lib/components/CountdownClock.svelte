@@ -22,7 +22,7 @@
         grid-template-rows: 2fr 1fr;
         justify-content: center;
         width: 650px;
-        height: 150px;
+        height: 100px;
         background-color: var(--secondary-color);
         border-radius: 50px;
     }
@@ -36,19 +36,18 @@
 
     .Numbers {
         display: flex;
-        flex-direction: row;
+        height: 44px;
+        padding: 7.5px 10px;
         align-items: center;
         justify-content: center;
-        height: 38px;
-        gap: 55px;
+        align-self: center;
+        gap: 50px;
 
         color: var(--it);
-        font-size: 18px;
-        font-style: normal;
         font-weight: 600;
+        font-size: 20px;
+        font-style: normal;
         line-height: normal;
-        padding-top: 45px;
-        padding-bottom: 15px;
     }
 
     .Numbers span {
@@ -70,7 +69,7 @@
         flex: 1;
 
         color: var(--it);
-        font-size: 14px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
