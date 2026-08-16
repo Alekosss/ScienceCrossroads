@@ -1,6 +1,10 @@
 <script>
     import GetDirectionsButton from "$lib/components/GetDirectionsButton.svelte"
     import Location from "$lib/assets/ComponentAssets/Location.png"
+
+    let {
+        textColor = "blue"
+    } = $props();
 </script>
 
 <div class="MapLocation">
@@ -9,7 +13,7 @@
             <text>Aristotle University's Research Administration Center (KEDEA)</text>
         </div>
         <div class="Directions">
-            <GetDirectionsButton textColor="var(--it)"/>
+            <GetDirectionsButton textColor={textColor}/>
         </div>
     </div>
     <div class="MapLocationImage">

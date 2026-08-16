@@ -67,7 +67,7 @@
                 <CountdownClock color=var(--it)/>
             </div>
             <div class="MapCard">
-                <MapLocation/>
+                <MapLocation textColor="var(--it)"/>
             </div>
             <div class="RegistrationContent">
                 <text>LIMITED SEATS, BOOK YOURS NOW!</text>
