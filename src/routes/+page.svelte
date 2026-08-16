@@ -64,7 +64,7 @@
         <div class="Details">
             <div class="Countdown">
                 <span class="Date">06-07 MARCH</span>
-                <CountdownClock/>
+                <CountdownClock color=var(--it)/>
             </div>
             <div class="MapCard">
                 <MapLocation/>

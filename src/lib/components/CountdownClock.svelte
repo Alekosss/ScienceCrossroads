@@ -1,4 +1,10 @@
-<div class="CountdownClock">
+<script>
+    let {
+        color = "red"
+    } = $props();
+</script>
+
+<div class="CountdownClock" style="color: {color}">
     <div class="Numbers">
         <span>MM</span>
         <div class="Seperator"></div>
@@ -27,51 +33,40 @@
         border-radius: 50px;
     }
 
-    .Seperator {
-        height: 40px;
-        width: 1px;
-        background-color: var(--it);        
-        margin: 0px;
-    }
-
     .Numbers {
         display: flex;
-        height: 44px;
-        padding: 7.5px 10px;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        align-self: center;
-        gap: 50px;
-
-        color: var(--it);
-        font-weight: 600;
-        font-size: 20px;
-        font-style: normal;
-        line-height: normal;
     }
 
     .Numbers span {
-        flex: 1;
+        font-size: 30px;
+        width: 136px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Seperator {
+        height: 40px;
+        width: 2px;
+        margin: 0px;
+        background-color: currentColor;
     }
 
     .TimeFormat {
-        height: 16px;
         display: flex;
         flex-direction: row;
-        color: var(--it);
-        gap: 90px;
-        align-items: center;
         justify-content: center;
-        padding: 10px;
+        align-items: center;
     }
 
-    .TimeFormat span{
-        flex: 1;
-
-        color: var(--it);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    .TimeFormat span {
+        width: 137.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
