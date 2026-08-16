@@ -90,18 +90,15 @@
             <span>OUR ORGANIZING TEAM IS CONSITEED OF THE FOLLOWING STUDENT TEAMS</span>
         </div>
         <div class="BranchesCarousel">
-        <!--Carousel here...-->
+            <BranchesCarousel/>          
         </div>        
-    </div>
-    <h1>TESTING:</h1>
-    <BranchesCarousel/>    
+    </div>  
 </div>
 
 <style>
     .BranchesCarousel {
         width: 1500px;
         height: 550px;
-        background-color: var(--it);
         margin: 25px 0px 150px;
     }
 

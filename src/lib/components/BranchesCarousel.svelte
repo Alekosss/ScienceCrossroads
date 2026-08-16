@@ -111,7 +111,6 @@
         width: 1550px;
         height: 550px;
         margin: 20px;
-        border: 10px solid var(--it);    
     }
 
     .Inactive {
