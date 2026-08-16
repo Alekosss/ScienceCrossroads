@@ -1,12 +1,39 @@
 <script>
     import User from "$lib/assets/Icons/User.svelte"
     import AngledArrow from "$lib/assets/Icons/AngledArrow.svelte";
-  import Instagram from "$lib/assets/Icons/Instagram.svelte";
-  import Facebook from "$lib/assets/Icons/Facebook.svelte";
+    import Instagram from "$lib/assets/Icons/Instagram.svelte";
+    import Facebook from "$lib/assets/Icons/Facebook.svelte";
+    import LinkedIn from "$lib/assets/Icons/LinkedIn.svelte";
+    import TikTok from "$lib/assets/Icons/TikTok.svelte";
+
+    const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
+    const InstagramURL = "https://www.instagram.com/sciencecrossroads/";
+    const LinkedInURL = "https://www.linkedin.com/company/science-crossroads/";
+    const TikTokURL = "https://www.tiktok.com/@science.crossroad";
 
     let {
         textColor = "Blue"
     } = $props();
+
+    function OpenInstagram() {
+        console.log("Button clicked. Opening window");
+        window.open(InstagramURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenFacebook() {
+        console.log("Button clicked. Opening window");
+        window.open(FacebookURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenLinkedIn() {
+        console.log("Button clicked. Opening window");
+        window.open(LinkedInURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenTikTok() {
+        console.log("Button clicked. Opening window");
+        window.open(TikTokURL, "_blank", "noopener,noreferrer");
+    }
 </script>
 
 <div class="SocialPosts">
@@ -28,12 +55,20 @@
     <div class="Carousel"></div>
     <div class="SocialMedia">
         <div class="Media">
-            <button class="IG Social">
+            <button onclick={OpenInstagram} class="IG Social">
                 <Instagram/>
                 <span>sciencecrossroads</span>
             </button>
-            <button class="Facebook Social">
+            <button onclick={OpenFacebook} class="Facebook Social">
                 <Facebook/>
+                <span>Science Crossroads</span>
+            </button>
+            <button onclick={OpenLinkedIn} class="LinkedIn Social">
+                <LinkedIn/>
+                <span>Science Crossroads</span>
+            </button>
+            <button onclick={OpenTikTok} class="TikTok Social">
+                <TikTok/>
                 <span>Science Crossroads</span>
             </button>
         </div>
@@ -59,6 +94,10 @@
     .Facebook span{
         display: inline-block;
         transition: transform 0.2s ease-in;
+    }
+
+    .Facebook:hover span {
+        transform: scale(1.15);
     }
 
     .Header {
@@ -98,6 +137,15 @@
         
         margin: 20px 100px 10px;
     }
+
+    .IG span {
+        display: inline-block;
+        transition: transform 0.2s ease-in;
+    }
+
+    .IG:hover span {
+        transform: scale(1.15);
+    }
     
     .lineSeperator {
         width: 450px;
@@ -105,12 +153,22 @@
         background-color: var(--primary-color);
     }
 
+    .LinkedIn span {
+        display: inline-block;
+        transition: transform 0.2s ease-in;
+    }
+
+    .LinkedIn:hover span {
+        transform: scale(1.15);
+    }
+
     .Media {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         color: inherit;
         border-radius: 50px;
         padding: 15px;
@@ -118,14 +176,20 @@
 
     .Social {
         border-radius: 50px;
-        padding: 15px;
-        gap: 15px;
+        padding: 10px 20px;
+        gap: 20px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
 
         font-size: 18px;
+        cursor: pointer;
+    }
+
+    .Social:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
     }
 
     .SocialMedia {
@@ -161,6 +225,15 @@
     }
     
     .SocialTag:hover {
+        transform: scale(1.15);
+    }
+
+    .TikTok span {
+        display: inline-block;
+        transition: transform 0.2s ease-in;
+    }
+
+    .TikTok:hover span {
         transform: scale(1.15);
     }
 
