@@ -78,7 +78,7 @@
         align-items: center;
         justify-content: center;
         border: 2px solid var(--secondary-color);
-        background-color: var(--primary-color);
+        background-color: transparent;
         color: var(--secondary-color);
         cursor: pointer;
         width: 50px;

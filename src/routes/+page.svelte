@@ -51,7 +51,7 @@
     <!--These are the components that show the stats of the events (speakers, workshops...)-->
     <div class="ContentStatistics">
         <StatisticsButton text="X+ WORKSHOPS"/>
-        <StatisticsButton text="Y+ SPEAKERS"/>
+        <StatisticsButton text="Y+ SPEAKERS" subpage="schedule"/>
         <StatisticsButton text="Z+ SPEECHES"/>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
@@ -182,8 +182,9 @@
         align-items: center;
         gap: 40px;
         width: 650px;
+        height: 800px;
     }
-    
+
     .EventDescription {
         display: flex;
         flex-direction: column;
@@ -251,9 +252,6 @@
     mask-composite: intersect; 
     }
 
-
-
-
     .MapCard {
         display: flex;
         justify-content: center;
@@ -283,10 +281,16 @@
     }
 
     .RegButton {
-        scale: 0.8;
+        height: 125px;
     }
 
     .RegistrationContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
         color: var(--secondary-color);
         text-align: center;
         font-size: 26px;

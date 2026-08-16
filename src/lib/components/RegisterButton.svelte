@@ -4,16 +4,15 @@
     } = $props();
 </script>
 
-<button class="RegisterButton" style="color:{textColor}">
+<a href="/pages/register&faq" class="RegisterButton" style="color:{textColor}">
     <span>REGISTER</span>
-</button>
+</a>
 
 <style>
     .RegisterButton {
-        width: 300px;
-        height: 100px;
         border-radius: 50px;
-        cursor: pointer;
+        padding: 25px 35px;
+        background-color: var(--secondary-color);
     }
 
     .RegisterButton span {

@@ -1,15 +1,11 @@
 <script>
-    import Facebook from "$lib/assets/Icons/Facebook.svelte";
-    import Instagram from "$lib/assets/Icons/Instagram.svelte";
-    import Mail from "$lib/assets/Icons/Mail.svelte";
+  import Facebook from "$lib/components/Social/Facebook.svelte";
+  import Instagram from "$lib/components/Social/Instagram.svelte";
 
     let mail = $state('');
     let subject = $state('');
     let content = $state('');
     let disabled = $derived((mail==='') || (subject==='') || (content===''));
-
-    const InstagramURL = "https://www.instagram.com/sciencecrossroads/";
-    const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
 
     let showMessage = $state(false);
 
@@ -21,17 +17,8 @@
     }
     console.log('button clicked!');
     }
-
-    function OpenInstagram() {
-        console.log("Button clicked. Opening window");
-        window.open(InstagramURL, "_blank", "noopener,noreferrer");
-    }
-    
-    function OpenFacebook() {
-        console.log("Button clicked. Opening window");
-        window.open(FacebookURL, "_blank", "noopener,noreferrer");
-    }
 </script>
+
 <div class="ContactPage">
     <!--1st way to Contact-->
     <div class="CategoryHeader">
@@ -43,18 +30,12 @@
         <span>Feel free to contact us in our Social if you have questions!</span>
     </div>
     <div class="Social">
-        <button onclick={OpenInstagram} class="Media">
+        <div class="IG">
             <Instagram/>
-            <span>Instagram</span>
-        </button>
-        <button onclick={OpenFacebook} class="Media">
+        </div>
+        <div class="FB">
             <Facebook/>
-            <span>Facebook</span>
-        </button>
-        <button class="Media">
-            <Mail/>
-            <span>Mail</span>
-        </button>
+        </div>
     </div>
     <div class="Description">
         <span>or send us an email via the following form:</span>
@@ -165,30 +146,6 @@
         margin-top: 25px;
         margin-bottom: 75px;
         border-radius: 50px;
-    }
-
-    .Media {
-        cursor: pointer;
-
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-
-        border-radius: 50px;
-        width: 200px;
-        height: 80px;
-        background-color: var(--primary-color);
-        border: 2px solid var(--secondary-color);
-
-        color: var(--secondary-color);
-    }
-
-    .Media:hover {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
     }
 
     .Message {

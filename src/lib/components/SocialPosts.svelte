@@ -3,7 +3,6 @@
     import AngledArrow from "$lib/assets/Icons/AngledArrow.svelte";
   import Instagram from "$lib/assets/Icons/Instagram.svelte";
   import Facebook from "$lib/assets/Icons/Facebook.svelte";
-  import TikTok from "$lib/assets/Icons/TikTok.svelte";
 
     let {
         textColor = "Blue"
@@ -29,17 +28,16 @@
     <div class="Carousel"></div>
     <div class="SocialMedia">
         <div class="Media">
-            <Instagram/>
-            <span>Instagram</span>
+            <button class="IG Social">
+                <Instagram/>
+                <span>sciencecrossroads</span>
+            </button>
+            <button class="Facebook Social">
+                <Facebook/>
+                <span>Science Crossroads</span>
+            </button>
         </div>
-        <div class="Media">
-            <Facebook/>
-            <span>Facebook</span>
-        </div>
-        <div class="Media">
-            <TikTok/>
-            <span>TikTok</span>
-        </div>
+        
     </div>
 </div>
 
@@ -56,6 +54,11 @@
         width: 550px;
         height: 390px;
         background-color: var(--it);
+    }
+
+    .Facebook span{
+        display: inline-block;
+        transition: transform 0.2s ease-in;
     }
 
     .Header {
@@ -107,10 +110,23 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 5px;
+        gap: 20px;
         color: inherit;
+        border-radius: 50px;
+        padding: 15px;
     }
 
+    .Social {
+        border-radius: 50px;
+        padding: 15px;
+        gap: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 18px;
+    }
 
     .SocialMedia {
         display: flex;
@@ -124,7 +140,7 @@
     }
     
     .SocialPosts {
-        width: 580px;
+        width: 800px;
         height: 700px;
         border-radius: 50px;
         background-color: var(--secondary-color);

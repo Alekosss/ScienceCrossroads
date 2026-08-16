@@ -78,6 +78,7 @@
         border-radius: 50px;
 
         background-color: var(--secondary-color);
+        border: 3px solid var(--primary-color);
     }
 
     .logoAndTitle {
