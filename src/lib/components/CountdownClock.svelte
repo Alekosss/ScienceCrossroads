@@ -1,24 +1,51 @@
 <script>
+  import { onDestroy, onMount } from "svelte";
+
     let {
         color = "red"
     } = $props();
+
+    let targetDate = new Date("2027-03-06T09:00:00+02:00").getTime();
+    let currentDate = $state(Date.now());
+
+    let difference = $derived(targetDate - currentDate);
+
+    // :1000->get seconds, :60->get minutes, :60->get hours, :24->get days
+    let Days = $derived(Math.floor(difference/1000/60/60/24));
+    let Hours = $derived(Math.floor(difference/1000/60/60%24));
+    let Minutes= $derived(Math.floor(difference/1000/60%60%24));
+    let Seconds = $derived(Math.floor(difference/1000%60%60%24));
+
+      /** @type {ReturnType<typeof setInterval>} */
+    let interval;
+    
+    onMount( () => {
+        interval = setInterval( () => {
+            currentDate = Date.now();   
+        },1000);
+    });
+
+    onDestroy( () => {
+        clearInterval(interval);
+    });
+
 </script>
 
 <div class="CountdownClock" style="color: {color}">
     <div class="Numbers">
-        <span>MM</span>
+        <span>{Days}</span>
         <div class="Seperator"></div>
-        <span>DD</span>
+        <span>{Hours}</span>
         <div class="Seperator"></div>
-        <span>HH</span>
+        <span>{Minutes}</span>
         <div class="Seperator"></div>
-        <span>MM</span>
+        <span>{Seconds}</span>
     </div>
     <div class="TimeFormat">
-        <span>MONTHS</span>
         <span>DAYS</span>
         <span>HOURS</span>
         <span>MINUTES</span>
+        <span>SECONDS</span>
     </div>
 </div>
 

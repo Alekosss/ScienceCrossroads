@@ -50,9 +50,9 @@
     </div>
     <!--These are the components that show the stats of the events (speakers, workshops...)-->
     <div class="ContentStatistics">
-        <StatisticsButton text="X+ WORKSHOPS"/>
-        <StatisticsButton text="Y+ SPEAKERS" subpage="schedule"/>
-        <StatisticsButton text="Z+ SPEECHES"/>
+        <StatisticsButton text="X+ WORKSHOPS" subpage="schedule"/>
+        <StatisticsButton text="Y+ SPEAKERS" subpage="speakers"/>
+        <StatisticsButton text="Z+ SPEECHES" subpage="schedule"/>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
     <div class="CategoryHeader">
