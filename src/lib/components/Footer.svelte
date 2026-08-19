@@ -40,23 +40,33 @@
     </div>
     <div class="SocialMedia">
         <button onclick={OpenInstagram} class="Media">
-            <Instagram/>
+            <div class="SVG">
+                <Instagram/>
+            </div>
             <span>sciencecrossroads</span>
         </button>
         <button onclick={OpenFacebook} class="Media">
-            <Facebook/>
+            <div class="SVG">
+                <Facebook/>
+            </div>
             <span>Science Crossroads</span>
         </button>
         <button onclick={OpenLinkedIn} class="Media">
-            <LinkedIn/>
+            <div class="SVG">
+                <LinkedIn/>
+            </div>
             <span>Science Crossroads</span>
         </button>
         <button onclick={OpenTikTok} class="Media">
-            <TikTok/>
+            <div class="SVG">
+                <TikTok/>
+            </div>
             <span>Science Crossroads</span>
         </button>
         <button onclick={OpenGmail} class="Media">
-            <Mail/>
+            <div class="SVG">
+                <Mail/>
+            </div>
             <span>sciencecrossroads.auth@gmail.com</span>
         </button>
     </div>
@@ -100,15 +110,19 @@
         cursor: pointer;
 
         color: var(--primary-color);
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
-        font-weight: 300;
+        font-weight:300;
         line-height: normal;
     }
 
     .Media:hover {
         background-color: var(--primary-color);
         color: var(--secondary-color);
+    }
+
+    .SVG {
+        transform: scale(0.7);
     }
 
     .Media span {

@@ -1,18 +1,51 @@
-<div class="CountdownClock">
+<script>
+  import { onDestroy, onMount } from "svelte";
+
+    let {
+        color = "red"
+    } = $props();
+
+    let targetDate = new Date("2027-03-06T09:00:00+02:00").getTime();
+    let currentDate = $state(Date.now());
+
+    let difference = $derived(targetDate - currentDate);
+
+    // :1000->get seconds, :60->get minutes, :60->get hours, :24->get days
+    let Days = $derived(Math.floor(difference/1000/60/60/24));
+    let Hours = $derived(Math.floor(difference/1000/60/60%24));
+    let Minutes= $derived(Math.floor(difference/1000/60%60%24));
+    let Seconds = $derived(Math.floor(difference/1000%60%60%24));
+
+      /** @type {ReturnType<typeof setInterval>} */
+    let interval;
+    
+    onMount( () => {
+        interval = setInterval( () => {
+            currentDate = Date.now();   
+        },1000);
+    });
+
+    onDestroy( () => {
+        clearInterval(interval);
+    });
+
+</script>
+
+<div class="CountdownClock" style="color: {color}">
     <div class="Numbers">
-        <span>MM</span>
+        <span>{Days}</span>
         <div class="Seperator"></div>
-        <span>DD</span>
+        <span>{Hours}</span>
         <div class="Seperator"></div>
-        <span>HH</span>
+        <span>{Minutes}</span>
         <div class="Seperator"></div>
-        <span>MM</span>
+        <span>{Seconds}</span>
     </div>
     <div class="TimeFormat">
-        <span>MONTHS</span>
         <span>DAYS</span>
         <span>HOURS</span>
         <span>MINUTES</span>
+        <span>SECONDS</span>
     </div>
 </div>
 
@@ -27,51 +60,40 @@
         border-radius: 50px;
     }
 
-    .Seperator {
-        height: 40px;
-        width: 1px;
-        background-color: var(--it);        
-        margin: 0px;
-    }
-
     .Numbers {
         display: flex;
-        height: 44px;
-        padding: 7.5px 10px;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        align-self: center;
-        gap: 50px;
-
-        color: var(--it);
-        font-weight: 600;
-        font-size: 20px;
-        font-style: normal;
-        line-height: normal;
     }
 
     .Numbers span {
-        flex: 1;
+        font-size: 30px;
+        width: 136px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Seperator {
+        height: 40px;
+        width: 2px;
+        margin: 0px;
+        background-color: currentColor;
     }
 
     .TimeFormat {
-        height: 16px;
         display: flex;
         flex-direction: row;
-        color: var(--it);
-        gap: 90px;
-        align-items: center;
         justify-content: center;
-        padding: 10px;
+        align-items: center;
     }
 
-    .TimeFormat span{
-        flex: 1;
-
-        color: var(--it);
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    .TimeFormat span {
+        width: 137.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>

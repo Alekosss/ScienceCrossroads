@@ -5,11 +5,14 @@
     import RegisterButton from "$lib/components/RegisterButton.svelte";
     import SocialPosts from "$lib/components/SocialPosts.svelte";
     import BranchesCarousel from "$lib/components/BranchesCarousel.svelte";
+    import ScrollToButton from "$lib/components/ScrollToButton.svelte";
+
+    let SloganTarget = $state();
 </script>
 
 <div class="HomePage">
     <!--This is the Slogan of the event-->
-    <div class="Slogan">
+    <div class="Slogan" bind:this={SloganTarget}>
         <text>INSPIRED BY SCIENCE, GUIDED BY ETHICS</text>
     </div>
     <!--This is the event description along with images of the sciences-->
@@ -50,9 +53,9 @@
     </div>
     <!--These are the components that show the stats of the events (speakers, workshops...)-->
     <div class="ContentStatistics">
-        <StatisticsButton text="X+ WORKSHOPS"/>
-        <StatisticsButton text="Y+ SPEAKERS" subpage="schedule"/>
-        <StatisticsButton text="Z+ SPEECHES"/>
+        <StatisticsButton text="X+ WORKSHOPS" subpage="schedule"/>
+        <StatisticsButton text="Y+ SPEAKERS" subpage="speakers"/>
+        <StatisticsButton text="Z+ SPEECHES" subpage="schedule"/>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
     <div class="CategoryHeader">
@@ -64,10 +67,10 @@
         <div class="Details">
             <div class="Countdown">
                 <span class="Date">06-07 MARCH</span>
-                <CountdownClock/>
+                <CountdownClock color=var(--it)/>
             </div>
             <div class="MapCard">
-                <MapLocation/>
+                <MapLocation textColor="var(--it)"/>
             </div>
             <div class="RegistrationContent">
                 <text>LIMITED SEATS, BOOK YOURS NOW!</text>
@@ -94,6 +97,8 @@
         </div>        
     </div>  
 </div>
+
+<ScrollToButton ArrowDirectionUp={true} scrollTarget={SloganTarget}/>
 
 <style>
     .BranchesCarousel {

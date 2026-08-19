@@ -1,6 +1,6 @@
 <script>
     let {
-        textColor = "Blue"
+        textColor = "red"
     } = $props();
 </script>
 
@@ -27,6 +27,6 @@
     }
 
     .RegisterButton:hover span {
-        transform: scale(1.25);
+        transform: scale(1.2);
     }
 </style>
