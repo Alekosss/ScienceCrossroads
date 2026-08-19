@@ -328,7 +328,7 @@
     .Social {
         display: flex;
         flex-direction: row;
-        gap: 30px;
+        gap: 50px;
         justify-content: center;
         align-items: center;
         padding: 100px;
