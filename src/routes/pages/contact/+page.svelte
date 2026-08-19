@@ -1,22 +1,31 @@
-<script>
-  import Facebook from "$lib/components/Social/Facebook.svelte";
-  import Instagram from "$lib/components/Social/Instagram.svelte";
+<script lang="ts">
+    import Facebook from "$lib/components/Social/Facebook.svelte";
+    import Instagram from "$lib/components/Social/Instagram.svelte";
 
     let mail = $state('');
     let subject = $state('');
     let content = $state('');
-    let disabled = $derived((mail==='') || (subject==='') || (content===''));
 
-    let showMessage = $state(false);
+    let emptyField = $derived(!mail || !subject || !content);
+    let show = $state(false);
+    let showWarning = $state(false);
 
-    function handleClick() {
-    if (disabled) {
-        showMessage = true;
-        setTimeout(() => showMessage = false, 3000);
-        return;
+    let formEl: HTMLFormElement;
+
+    function isValidEmail(mail:string) {
+        console.log("Mail at check is: " + mail);
+		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.trim());
+	}
+
+    function Send() {
+        show = true;
+        console.log("Button clicked! " + show + ' ' + showWarning);
     }
-    console.log('button clicked!');
+
+    function goBack() {
+        show = false;
     }
+
 </script>
 
 <div class="ContactPage">
@@ -41,45 +50,78 @@
         <span>or send us an email via the following form:</span>
     </div>
     <!--Mailing form-->
-    <div class="MailingForm">
+    <form class="MailingForm" method="POST" bind:this={formEl}>
         <div class="AddressAndSubject">
             <div class="EmailAddress">
-                <span>Email Address:</span>
-                <input bind:value={mail} placeholder="Enter your email here..."/>
+            <label for="email">Email Address:</label>
+            <input 
+                    type="email" 
+                    id="email"
+                    autocomplete="email"
+                    required
+                    bind:value={mail} 
+                    placeholder="mail@example.com"/>
             </div>
             <div class="Subject">
-                <span>Subject:</span>
-                <input bind:value={subject} placeholder="Enter the mail subject here..."/>
+                <label for="subject">Subject:</label>
+                <input
+                id="subject"
+                bind:value={subject} 
+                placeholder="Example Subject"/>
             </div>
         </div>
         <div class="Message">
-            <span>Message:</span>
-            <input bind:value={content} placeholder="Enter the message content here..."/>
+            <label for="message">Message:</label>
+            <input 
+            id="message"
+            bind:value={content} 
+            placeholder="Example message..."/>
         </div>
-        <button class="SendButton" aria-disabled={disabled} onclick={handleClick}>
+        <button class="SendButton" type="submit" onclick={Send}>
             <text>SEND</text>
         </button>
-        {#if showMessage}
-            <p>Please fill out the form.</p>
+        {#if show}
+            <div class="overlay">
+                <div class="dialog">
+                    {#if emptyField}
+                        {#if !mail} 
+                            <span> please fill out your email address!</span>
+                        {:else if !subject}
+                            <span> please fill out the subject!</span>
+                        {:else if !content}
+                            <span> please fill out the message content!</span>
+                        {/if}
+                        <button class="goBack" onclick={goBack}>OK</button>
+                    {:else}
+                        {#if !isValidEmail(mail)}
+                            <span> Email address is wrong. Please try again.</span>
+                            <button class="goBack" onclick={goBack}>OK</button>
+                        {:else}
+                            <span>Send email?</span>
+                            <button class="goBack" onclick={goBack}>OK</button>
+                        {/if}
+                    {/if}    
+                </div>
+            </div>
         {/if}
-    </div>
+    </form>
 </div>
 
-<style>
+<style>    
     .AddressAndSubject {
         display: flex;
         flex-direction: row;
         gap: 150px;
         justify-content: center;
         padding: 50px;
-    
+        
         color: var(--primary-color);
         font-size: 26px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
-
+    
     .AddressAndSubject input {
         background-color: var(--primary-color);
         color: var(--physics);
@@ -88,21 +130,21 @@
         font-size: 20px;
         border-radius: 50px;
     }
-
+    
     .CategoryHeader {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 160px 0;
         gap: 60px;
-
+        
         color: var(--break);
         font-size: 35px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
     }
-        
+    
     .CategoryHeader hr {
         width: 250px;
         background-color: var(--break);
@@ -110,11 +152,11 @@
         height: 2px;
         margin: 0;
     }
-
+    
     .ContactPage {
         font-family: var(--font-family);
     }
-
+    
     .Description {
         color: var(--PHYSICS, #E29B60);
         font-size: 32px;
@@ -126,6 +168,24 @@
         justify-content: center;
         align-items: center;
     }
+    
+    .dialog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        gap: 50px;
+        padding: 50px 75px;
+        border-radius: 25px;
+
+        background: var(--secondary-color); 
+        color: var(--primary-color);
+    }
+
+    .dialog span {
+        font-size: 25px;
+    }
 
     .EmailAddress {
         display: flex;
@@ -134,7 +194,13 @@
         align-items: center;
         gap: 10px;
     }
-
+    
+    .goBack {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    }
 
     .MailingForm {
         align-self: center;
@@ -168,6 +234,16 @@
         border-radius: 50px;
     }
 
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .SendButton {
         justify-self: center;
         align-self: center;
@@ -187,6 +263,11 @@
 
     .SendButton:hover {
         background-color: var(--primary-color);
+    }
+
+    .SendButton:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
     }
 
     .SendButton text {
