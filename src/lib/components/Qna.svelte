@@ -1,16 +1,19 @@
 <script>
+  import ArrowDown from "$lib/assets/Icons/ArrowDown.svelte";
+import ArrowUp from "$lib/assets/Icons/ArrowUp.svelte";
     import { QuestionAnswer } from "$lib/model/QuestionAnswer.svelte";
-    import { slide } from "svelte/transition";
+    import { fade,slide } from "svelte/transition";
 
 
     let { 
         qna = new QuestionAnswer("Question 1","Answer 1",false)
     } = $props();
 
+    let ShowArrowUp = $state(false);
+
     function buttonClick() {
-        console.log("click! " + qna.showing);
         qna.showing = !qna.showing;
-        console.log("after: " + qna.showing);
+        ShowArrowUp = !ShowArrowUp;
     }
 </script>
 
@@ -18,6 +21,15 @@
     <button onclick={buttonClick} class="QuestionButton">
         <div class="Question">
             <span>{qna.question}</span>
+            {#if ShowArrowUp}
+                <div in:fade>
+                    <ArrowUp />
+                </div>
+            {:else}
+                <div in:fade>
+                    <ArrowDown />
+                </div>
+            {/if}
         </div>
             {#if qna.showing}
         <div class="answer" transition:slide={{ duration: 300 }}>
@@ -54,6 +66,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        gap: 25px;
     }
 
     .Question span {

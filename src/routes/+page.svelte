@@ -5,11 +5,14 @@
     import RegisterButton from "$lib/components/RegisterButton.svelte";
     import SocialPosts from "$lib/components/SocialPosts.svelte";
     import BranchesCarousel from "$lib/components/BranchesCarousel.svelte";
+    import ScrollToButton from "$lib/components/ScrollToButton.svelte";
+
+    let SloganTarget = $state();
 </script>
 
 <div class="HomePage">
     <!--This is the Slogan of the event-->
-    <div class="Slogan">
+    <div class="Slogan" bind:this={SloganTarget}>
         <text>INSPIRED BY SCIENCE, GUIDED BY ETHICS</text>
     </div>
     <!--This is the event description along with images of the sciences-->
@@ -94,6 +97,8 @@
         </div>        
     </div>  
 </div>
+
+<ScrollToButton ArrowDirectionUp={true} scrollTarget={SloganTarget}/>
 
 <style>
     .BranchesCarousel {
