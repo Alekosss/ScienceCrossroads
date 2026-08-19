@@ -36,7 +36,7 @@
     .GridHeader {
         margin-left: 10px;
         font-size: 35px;
-        font-weight: 450;
+        font-weight: 600;
     }
 
     .SpeakersGrid {
