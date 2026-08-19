@@ -4,6 +4,7 @@
     import TikTok from "$lib/components/Social/TikTok.svelte";
     import LinkedIn from "$lib/components/Social/LinkedIn.svelte";
   import Mail from "$lib/components/Social/Mail.svelte";
+  import { enhance } from "$app/forms";
 
     let mail = $state('');
     let subject = $state('');
@@ -87,17 +88,17 @@
         <span>or send us an email via the following form:</span>
     </div>
     <!--Mailing form-->
-    <form class="MailingForm" method="POST" bind:this={formEl}>
+    <form class="MailingForm" method="POST" use:enhance bind:this={formEl}>
         <div class="AddressAndSubject">
             <div class="EmailAddress">
-            <label for="email">Email Address:</label>
-            <input 
-                    type="email" 
-                    id="email"
-                    autocomplete="email"
-                    required
-                    bind:value={mail} 
-                    placeholder="mail@example.com"/>
+                <label for="email">Email Address:</label>
+                <input 
+                        type="email" 
+                        id="email"
+                        autocomplete="email"
+                        required
+                        bind:value={mail} 
+                        placeholder="mail@example.com"/>
             </div>
             <div class="Subject">
                 <label for="subject">Subject:</label>
@@ -110,11 +111,12 @@
         </div>
         <div class="Message">
             <label for="message">Message:</label>
-            <input 
+            <textarea 
             required
             id="message"
             bind:value={content} 
-            placeholder="Example message..."/>
+            placeholder="Example message...">
+            </textarea>
         </div>
         <button class="SendButton" type="submit" onclick={Send}>
             <text>SEND</text>
@@ -264,11 +266,12 @@
         color: var(--primary-color);
     }
 
-    .Message input {
+    .Message textarea {
         background-color: var(--primary-color);
         color: var(--physics);
         height: 250px;
         width: 95%;
+        padding: 15px;
         font-size: 20px;
         border-radius: 50px;
     }
