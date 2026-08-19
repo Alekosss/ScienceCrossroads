@@ -1,6 +1,9 @@
 <script lang="ts">
     import Facebook from "$lib/components/Social/Facebook.svelte";
     import Instagram from "$lib/components/Social/Instagram.svelte";
+    import TikTok from "$lib/components/Social/TikTok.svelte";
+    import LinkedIn from "$lib/components/Social/LinkedIn.svelte";
+  import Mail from "$lib/components/Social/Mail.svelte";
 
     let mail = $state('');
     let subject = $state('');
@@ -26,6 +29,31 @@
         show = false;
     }
 
+    const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
+    const InstagramURL = "https://www.instagram.com/sciencecrossroads/";
+    const LinkedInURL = "https://www.linkedin.com/company/science-crossroads/";
+    const TikTokURL = "https://www.tiktok.com/@science.crossroad";
+
+    function OpenInstagram() {
+        console.log("Button clicked. Opening window");
+        window.open(InstagramURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenFacebook() {
+        console.log("Button clicked. Opening window");
+        window.open(FacebookURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenLinkedIn() {
+        console.log("Button clicked. Opening window");
+        window.open(LinkedInURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenTikTok() {
+        console.log("Button clicked. Opening window");
+        window.open(TikTokURL, "_blank", "noopener,noreferrer");
+    }
+
 </script>
 
 <div class="ContactPage">
@@ -44,6 +72,15 @@
         </div>
         <div class="FB">
             <Facebook/>
+        </div>
+        <div class="TikTok">
+            <TikTok/>
+        </div>
+        <div class="LinkedIn">
+            <LinkedIn/>
+        </div>
+        <div class="Mail">
+            <Mail/>
         </div>
     </div>
     <div class="Description">
@@ -65,6 +102,7 @@
             <div class="Subject">
                 <label for="subject">Subject:</label>
                 <input
+                required
                 id="subject"
                 bind:value={subject} 
                 placeholder="Example Subject"/>
@@ -73,6 +111,7 @@
         <div class="Message">
             <label for="message">Message:</label>
             <input 
+            required
             id="message"
             bind:value={content} 
             placeholder="Example message..."/>
@@ -289,7 +328,7 @@
     .Social {
         display: flex;
         flex-direction: row;
-        gap: 200px;
+        gap: 30px;
         justify-content: center;
         align-items: center;
         padding: 100px;
