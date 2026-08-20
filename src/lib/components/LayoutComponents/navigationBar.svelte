@@ -34,37 +34,36 @@
 
 </script>
 
-    <nav class="NavigationBar">
-        <div class="logoAndTitle">
-            <div class="logo">
-                <img class="plainLogo" alt="ScienceCrossroadsPlainLogo.png" src={PlainLogo}/>
-            </div>
-        
-            <div class="Title navText">
-                SCIENCE CROSSROADS
-            </div>
+<nav class="NavigationBar">
+    <div class="logoAndTitle">
+        <div class="logo">
+            <img class="plainLogo" alt="ScienceCrossroadsPlainLogo.png" src={PlainLogo}/>
         </div>
-        <button class="ThemeButton" onclick={ChangeTheme}>
-            {#if isDark}
-                <Moon/>
-            {:else}
-                <Sun/>
-            {/if}
-        </button>
-        <div class="navLinks navText">
-            <a href="/">HOME</a>
-            <a href="/pages/register&faq">REGISTER & FAQ</a>
-            <a href="/pages/schedule">SCHEDULE</a>
-            <a href="/pages/sponsors">SPONSORS</a>
-            <a href="/pages/speakers">SPEAKERS</a>
-            <a href="/pages/contact">CONTACT</a>
-        </div>  
-    </nav>
+        <div class="Title navText">
+            <span>SCIENCE CROSSROADS</span>
+        </div>
+    </div>
+    <button class="ThemeButton" onclick={ChangeTheme}>
+        {#if isDark}
+            <Moon/>
+        {:else}
+            <Sun/>
+        {/if}
+    </button>
+    <div class="navLinks navText">
+        <a href="/">HOME</a>
+        <a href="/pages/register&faq">REGISTER & FAQ</a>
+        <a href="/pages/schedule">SCHEDULE</a>
+        <a href="/pages/sponsors">SPONSORS</a>
+        <a href="/pages/speakers">SPEAKERS</a>
+        <a href="/pages/contact">CONTACT</a>
+    </div>  
+</nav>
 
 <style>
     .NavigationBar {
-        width: 1820px;
-        height: 80px;
+        width: 90%;
+        height: 75px;
 
         position: sticky;
         top: 20px;
@@ -72,7 +71,7 @@
         align-items: center;
         display: flex;
 
-        gap: 120px;
+        gap: 5%;
         margin: 35px auto 0;
         padding-left: 10px;
         border-radius: 50px;
@@ -84,16 +83,36 @@
     .logoAndTitle {
         display: flex;
         align-items: center;
-        gap: 30px;
+        justify-content: center;
+        gap: 10%;
+        width: 30%;
     }
 
     .plainLogo {
+        display: block;
+        justify-content: center;
+        align-items: center;
         width: 60px;
         height: 60px;
     }
 
     .Title {
         color: var(--primary-color);
+    }
+
+    .Title span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(10px,2vw,15px);
+    }
+
+    .navLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
     }
 
     .navText {
@@ -108,9 +127,9 @@
 
         display: inline-block;
 
-        transition: transform 0.2s linear;
+        font-size: clamp(10px,1.25vw,18px);
 
-        padding: 25px;
+        transition: transform 0.2s linear;
     }
 
     .navText a:hover{

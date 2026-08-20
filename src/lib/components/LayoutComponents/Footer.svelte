@@ -77,7 +77,7 @@
 
 <style>
     .Bottom hr{
-        width: 1700px;
+        width: 30%;
         height: 5px;
         background-color: var(--primary-color);
         border-radius: 10px;
@@ -90,27 +90,29 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        align-self: center;
+        justify-self: center;
+
         font-family: var(--font-family);
 
         background-color: var(--secondary-color);
         border-radius: 50px;
+        width: 90%;
+        padding: 1%;
     }
 
     .Media {
         display: flex;
-        flex-direction: row;
         align-items: center;
         align-content: center;
         justify-content: center;
 
-        gap: 15px;
         border-radius: 50px;
         background-color: var(--secondary-color);
-        padding: 10px 20px;
         cursor: pointer;
 
         color: var(--primary-color);
-        font-size: 18px;
+        font-size: clamp(10px,1.25vw,16px);
         font-style: normal;
         font-weight:300;
         line-height: normal;
@@ -137,8 +139,11 @@
     .SocialMedia {
         display: flex;
         flex-direction: row;
-        gap: 60px;
-        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5%;
+        padding-top: 1%;
+        width: 100%;
     }
 
     .Top {
@@ -154,10 +159,11 @@
         font-style: normal;
         font-weight: 300;
         line-height: normal;
+        width: 100%;
     }
 
     .Top hr {
-        width: 725px;
+        width: 37.5%;
         height: 5px;
         background-color: var(--primary-color);
         border: none;

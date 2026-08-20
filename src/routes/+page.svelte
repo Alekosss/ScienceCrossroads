@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="PhysicsAndParticipants ScienceContent ImageRight">
-            <div class="PhysicsText">
+            <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHO WILL BE PARTICIPATING?</text>
                 </div>
@@ -41,7 +41,7 @@
         </div>
         <div class="ITAndOutcomes ScienceContent ImageLeft">
             <img src="/HomePage/IT.png" alt="Physics Content" class="ITImage"/>
-            <div class="ITText">
+            <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHAT IS TO BE GAINED FROM THE EVENT?</text>
                 </div>
@@ -102,9 +102,15 @@
 
 <style>
     .BranchesCarousel {
-        width: 1500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+        justify-self: center;
+
+        width: 100%;
         height: 550px;
-        margin: 25px 0px 150px;
     }
 
     .CategoryHeader {
@@ -112,6 +118,7 @@
         align-items: center;
         justify-content: center;
         padding: 160px 0;
+        width: 100%;
         gap: 60px;
     }
     
@@ -133,23 +140,23 @@
         
     .ChemistryAndOverview {
         display: flex;
-        height: 590px;
-        padding-bottom: 290px;
+        width: 100%;
     }
     
     .ChImage {
-        width: 887px;
-        height: 590px;
+        width: 50%;
+        height: 300px;
         aspect-ratio: 221/147;
     }
 
     .ContentStatistics {
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 200px;
-        padding: 100px;
-        margin-bottom: 100px;
+        width: 100%;
+        gap: 5%;
+        margin: 15% 0px 10%;
     }
 
     .Countdown {
@@ -157,17 +164,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 650px;
+        transform: scale(0.8);
+        margin-left: 10%;
+        width: 100%;
     }
     
     .Description {
         color: var(--secondary-color);
-        font-size: 28px;
+        font-size: clamp(10px,1.8vw,20px);
         font-style: normal;
         font-weight: 200;
         line-height: normal;
-        margin-left: 35px;
-        margin-right: 35px;
     }
     
     .Date {
@@ -183,14 +190,14 @@
         justify-content: center;
         align-items: center;
         gap: 40px;
-        width: 650px;
+        width: 50%;
         height: 800px;
     }
 
     .EventDescription {
         display: flex;
         flex-direction: column;
-        margin-bottom: 200px;
+        gap: 100px;
     }
         
     .EventDetails {
@@ -198,8 +205,9 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 250px;
+        gap: 20px;
         overflow: hidden;
+        width: 100%
     }
 
     .EventDetails span {
@@ -221,8 +229,8 @@
     }
     
     .ITImage {
-        width: 959px;
-        height: 539px;
+        width: 50%;
+        height: 300px;
         aspect-ratio: 137/77;
     }
 
@@ -258,7 +266,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        scale: 0.8;
+        scale: 0.75;
+        margin-left: 10%;
     }
     
     .OrganizingTeam {
@@ -274,11 +283,12 @@
         justify-content: center;
         align-items: center;
         gap: 50px;
+        width: 100%;
     }
 
     .PhImage {
-        width: 884px;
-        height: 589px;
+        width: 50%;
+        height: 300px;
         aspect-ratio: 884/589;
     }
 
@@ -308,37 +318,45 @@
     }
 
     .Slogan {
+        width: 100%;
         text-align: center;
-        font-size: 40px;
+        font-size: clamp(15px,3.5vw,35px);
         font-style: normal;
         font-weight: 300;
         line-height: normal;
-        padding: 75px;
+        padding: 75px 0px;
         color: var(--break);
     }
 
+    .SocialMediaPosts {
+        transform: scale(0.6);
+    }
+
     .TextContent {
-        width: 950px;
-        height: 590px;
+        width: 50%;
+        height: 300px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 130px;
+        gap: 20px;
         margin-right: 25px;
     }
     
     .TextHeader {
-        padding: 57px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
         color: var(--it);
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
         width: auto;
+    }
+
+    .TextHeader text {
+        font-size: clamp(15px,2vw,30px);
     }
 </style>
