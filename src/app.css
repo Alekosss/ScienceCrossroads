@@ -1,0 +1,29 @@
+:root {
+    --primary-color:  #EEEEEE;
+    --secondary-color: #070707;
+
+    --font-family: Inter;
+    --NavBarText: 24px;
+    --NavBarTextWeight: bold;
+
+    --bg: #EEEEEE;
+    --text: #070707;
+    --break: #DD5E5E;
+    --chemistry: #1BC69B;
+    --it: #B66DEA;
+    --physics: #E29B60;
+    --general: #EF8FBD;
+}
+
+html.dark {
+  --primary-color: #070707;
+  --secondary-color: #EEEEEE;
+  --text: #EEEEEE;
+}
+
+html, body {
+  margin: 0;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  transition: background-color 0.35s linear, color 0.35s linear;
+}
