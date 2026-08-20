@@ -8,9 +8,9 @@
 
     let mail = $state('');
     let subject = $state('');
-    let content = $state('');
+    let message = $state('');
 
-    let emptyField = $derived(!mail || !subject || !content);
+    let emptyField = $derived(!mail || !subject || !message);
     let show = $state(false);
     let showWarning = $state(false);
 
@@ -95,6 +95,7 @@
                 <input 
                         type="email" 
                         id="email"
+                        name="email"
                         autocomplete="email"
                         required
                         bind:value={mail} 
@@ -105,6 +106,7 @@
                 <input
                 required
                 id="subject"
+                name="subject"
                 bind:value={subject} 
                 placeholder="Example Subject"/>
             </div>
@@ -114,11 +116,12 @@
             <textarea 
             required
             id="message"
-            bind:value={content} 
+            name="message"
+            bind:value={message} 
             placeholder="Example message...">
             </textarea>
         </div>
-        <button class="SendButton" type="submit" onclick={Send}>
+        <button class="SendButton" type="button" onclick={Send}>
             <text>SEND</text>
         </button>
         {#if show}
@@ -129,7 +132,7 @@
                             <span> please fill out your email address!</span>
                         {:else if !subject}
                             <span> please fill out the subject!</span>
-                        {:else if !content}
+                        {:else if !message}
                             <span> please fill out the message content!</span>
                         {/if}
                         <button class="goBack" onclick={goBack}>OK</button>
