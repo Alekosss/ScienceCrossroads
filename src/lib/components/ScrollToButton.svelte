@@ -56,7 +56,7 @@
         top: 75%;
         transform: translateY(-60%);
         right: 24px;
-        z-index: 1000;
+        z-index: 500;
 
         display: flex;
         flex-direction: column;

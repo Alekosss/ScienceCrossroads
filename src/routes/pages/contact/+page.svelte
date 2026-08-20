@@ -3,8 +3,8 @@
     import Instagram from "$lib/components/Social/Instagram.svelte";
     import TikTok from "$lib/components/Social/TikTok.svelte";
     import LinkedIn from "$lib/components/Social/LinkedIn.svelte";
-  import Mail from "$lib/components/Social/Mail.svelte";
-  import { enhance } from "$app/forms";
+    import Mail from "$lib/components/Social/Mail.svelte";
+    import { enhance } from "$app/forms";
 
     let mail = $state('');
     let subject = $state('');

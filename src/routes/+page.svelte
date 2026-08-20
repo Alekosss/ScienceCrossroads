@@ -4,7 +4,7 @@
     import MapLocation from "$lib/components/MapLocation.svelte";
     import RegisterButton from "$lib/components/RegisterButton.svelte";
     import SocialPosts from "$lib/components/SocialPosts.svelte";
-    import BranchesCarousel from "$lib/components/BranchesCarousel.svelte";
+    import BranchesCarousel from "$lib/components/BranchCarousel/BranchesCarousel.svelte";
     import ScrollToButton from "$lib/components/ScrollToButton.svelte";
 
     let SloganTarget = $state();

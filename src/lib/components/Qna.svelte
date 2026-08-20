@@ -1,6 +1,6 @@
 <script>
-  import ArrowDown from "$lib/assets/Icons/ArrowDown.svelte";
-import ArrowUp from "$lib/assets/Icons/ArrowUp.svelte";
+    import ArrowDown from "$lib/assets/Icons/ArrowDown.svelte";
+    import ArrowUp from "$lib/assets/Icons/ArrowUp.svelte";
     import { QuestionAnswer } from "$lib/model/QuestionAnswer.svelte";
     import { fade,slide } from "svelte/transition";
 
