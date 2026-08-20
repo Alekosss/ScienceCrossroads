@@ -1,5 +1,5 @@
 <div class="date-line">
-    <button class="date-arrow"><</button>
+    <button class="date-arrow">&lt;</button>
     <span class="date">07 MARCH</span>
 
 </div>
