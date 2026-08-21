@@ -358,4 +358,14 @@
     .TextHeader text {
         font-size: clamp(15px,2vw,30px);
     }
+
+    @media (max-width: 768px) {
+        .ContentStatistics {
+            zoom: 0.4;
+        }
+
+        .BranchesCarousel {
+            zoom: 0.4;      
+        }
+    }
 </style>

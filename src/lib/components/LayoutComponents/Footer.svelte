@@ -175,4 +175,15 @@
     .Top span{
         width: 150px;
     }
+
+    @media (max-width: 768px) {
+        .Footer {
+            height: auto;
+            padding: 1rem;
+        }
+
+        .Media span {
+            display: none;
+        }
+    }
 </style>

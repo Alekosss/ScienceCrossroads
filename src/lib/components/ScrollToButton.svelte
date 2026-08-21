@@ -84,9 +84,9 @@
         border: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         .Scroll {
-            right: 12px;
+            display: none;
         }
 
         .ScrollButton {

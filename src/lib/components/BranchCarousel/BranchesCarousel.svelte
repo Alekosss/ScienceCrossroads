@@ -104,7 +104,6 @@
         display: flex;
         flex-direction: column;
         align-self: center;
-        justify-self: center;
 
         gap: 75px;
 
