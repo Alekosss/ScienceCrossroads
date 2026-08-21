@@ -113,10 +113,13 @@
         cursor: pointer;
 
         color: var(--primary-color);
-        font-size: clamp(10px,1.25vw,16px);
+        font-size: clamp(10px,1.25vw,14px);
         font-style: normal;
         font-weight:300;
         line-height: normal;
+        padding: 0 1rem;
+
+        gap: 0.2rem;
     }
 
     .Media:hover {
@@ -134,7 +137,7 @@
     }
 
     .Media:hover span {
-        transform: scale(1.15);
+        transform: scale(1.1);
     }
 
     .SocialMedia {
