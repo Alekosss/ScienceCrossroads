@@ -40,7 +40,8 @@
         </div>
     </div>
     <!--FAQ-->
-    <div class="CategoryHeader">
+
+    <div class="CategoryHeader LastHeader">
         <hr/>
         <text>FREQUENTLY ASKED QUESTIONS</text>
         <hr/>
@@ -129,5 +130,63 @@
 
     .RegisterAndFAQ {
         font-family: var(--font-family);
+    }
+
+    @media (max-width: 768px) {
+        .CategoryHeader text{
+            font-size:  clamp(3vw,3.5vw,4vw);
+            width: auto;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .CategoryHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            padding: 0;
+            margin: 25% 0;
+        }
+
+        .CategoryHeader hr {
+            width: 15%;
+        }
+
+        .Countdown {
+            width: 100%;
+            zoom: 0.7;
+        }
+
+        .FAQ {
+            width: 80%;
+            margin: auto;
+            zoom: 0.65;
+        }
+
+        .LocationAndRegister {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Location {
+            zoom: 0.5;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Registration {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: auto;
+        }
+
+        .Register {
+            zoom: 0.7;
+        }
     }
 </style>

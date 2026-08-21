@@ -180,7 +180,7 @@
     }
 
     @media (max-width: 768px) {
-        
+
         .Footer {
             height: auto;
             padding: 1rem 1rem 0rem;
@@ -199,8 +199,12 @@
         }
 
         .Top {
-            gap: 5%;
+            gap: 1%;
             margin: 0 0 2%;
+        }
+
+        .Top hr {
+            width: 22.5%;
         }
 
         .Top span{
