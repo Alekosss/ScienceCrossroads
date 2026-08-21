@@ -107,7 +107,6 @@
         align-items: center;
         align-content: center;
         align-self: center;
-        justify-self: center;
 
         width: 100%;
         height: 550px;
@@ -164,7 +163,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transform: scale(0.8);
+        zoom: 0.7;
         margin-left: 10%;
         width: 100%;
     }
@@ -189,9 +188,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 40px;
         width: 50%;
-        height: 800px;
+        gap: clamp(1rem,2.5rem,4rem);
     }
 
     .EventDescription {
@@ -207,7 +205,7 @@
         align-items: center;
         gap: 20px;
         overflow: hidden;
-        width: 100%
+        width: 100%;
     }
 
     .EventDetails span {
@@ -266,7 +264,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        scale: 0.75;
+        zoom: 0.7;
         margin-left: 10%;
     }
     
@@ -282,7 +280,7 @@
         justify-self: center;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: clamp(1rem,2.5rem,4rem);
         width: 100%;
     }
 
@@ -301,7 +299,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 10px;
 
         color: var(--secondary-color);
         text-align: center;
@@ -310,6 +308,7 @@
         font-weight: 400;
         line-height: normal;
 
+        zoom: 0.75;
     }
 
     .ScienceContent {
@@ -329,7 +328,7 @@
     }
 
     .SocialMediaPosts {
-        transform: scale(0.6);
+        zoom: 0.8;
     }
 
     .TextContent {

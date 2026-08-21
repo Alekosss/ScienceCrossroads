@@ -108,9 +108,8 @@
 
         gap: 75px;
 
-        width: 1550px;
-        height: 550px;
-        margin: 20px;
+        width: auto;
+        height: 80vh;
     }
 
     .Inactive {

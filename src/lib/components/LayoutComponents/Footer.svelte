@@ -90,15 +90,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        align-self: center;
-        justify-self: center;
 
         font-family: var(--font-family);
 
         background-color: var(--secondary-color);
         border-radius: 50px;
+
         width: 90%;
+        height: 20vh;
         padding: 1%;
+        margin: 2rem auto 0;
     }
 
     .Media {

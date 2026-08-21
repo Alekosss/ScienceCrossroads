@@ -61,58 +61,42 @@
 </nav>
 
 <style>
+    .logoAndTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        width: 25%;
+    }
+
     .NavigationBar {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
         width: 90%;
         height: 75px;
 
         position: sticky;
         top: 20px;
         z-index: 1000;
-        align-items: center;
-        display: flex;
 
         gap: 5%;
         margin: 35px auto 0;
-        padding-left: 10px;
         border-radius: 50px;
 
         background-color: var(--secondary-color);
         border: 3px solid var(--primary-color);
     }
 
-    .logoAndTitle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10%;
-        width: 30%;
-    }
-
-    .plainLogo {
-        display: block;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: 60px;
-    }
-
-    .Title {
-        color: var(--primary-color);
-    }
-
-    .Title span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: clamp(10px,2vw,15px);
-    }
-
+    
     .navLinks {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 5%;
+        gap: 4%;
+        width: 60%;
     }
 
     .navText {
@@ -127,13 +111,29 @@
 
         display: inline-block;
 
-        font-size: clamp(10px,1.25vw,18px);
+        font-size: clamp(10px,1.25vw,20px);
 
         transition: transform 0.2s linear;
     }
 
     .navText a:hover{
         transform: scale(1.2);
+    }
+
+    .plainLogo {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    .Title span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(10px,2vw,20px);
+        color: var(--primary-color);
     }
 
     .ThemeButton {
