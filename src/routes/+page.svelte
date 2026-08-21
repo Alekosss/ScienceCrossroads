@@ -118,7 +118,7 @@
         justify-content: center;
         padding: 160px 0;
         width: 100%;
-        gap: 60px;
+        gap: 0;
     }
     
     .CategoryHeader text {
@@ -139,6 +139,8 @@
         
     .ChemistryAndOverview {
         display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
     
@@ -284,6 +286,13 @@
         width: 100%;
     }
 
+    .PhysicsAndParticipants {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
     .PhImage {
         width: 50%;
         height: 300px;
@@ -333,7 +342,8 @@
 
     .TextContent {
         width: 50%;
-        height: 300px;
+        height: auto;
+        min-height: 10vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -348,7 +358,7 @@
         justify-content: center;
         align-items: center;
         color: var(--it);
-        font-size: 28px;
+        font-size: clamp(20px,24px,28px);
         font-style: normal;
         font-weight: 600;
         line-height: normal;
@@ -360,12 +370,83 @@
     }
 
     @media (max-width: 768px) {
+        .BranchesCarousel {
+            zoom: 0.35;
+        }
+
+        .CategoryHeader text{
+            font-size:  clamp(3vw,4vw,5vw);
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .CategoryHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            padding: 0;
+            margin: 25% 0;
+        }
+
+        .CategoryHeader hr {
+            width: 22.5%;
+        }
+
         .ContentStatistics {
             zoom: 0.4;
         }
 
-        .BranchesCarousel {
-            zoom: 0.4;      
+        .ChImage {
+            height: 17.5vh;
+        }
+
+        .ChemistryAndOverview {
+            height: auto;
+            min-height: 15vh;
+        }
+        
+        .Description text {
+            font-size: clamp(1.5vw,1.75vw,2vw);
+        }        
+
+        .EventDetails {
+            zoom: 0.3;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ITAndOutcomes {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ITImage {
+            height: 17.5vh;
+        }
+
+        .OrganizingTeam {
+            font-size: clamp(2vw,2.5vw,3vw);
+        }
+
+        .PhysicsAndParticipants {
+            height: auto;
+            min-height: 15vh;
+        }
+
+        .PhImage{
+            height: 17.5vh;
+        }
+
+        .TextHeader text {
+            font-size: clamp(1.5vw,2.5vw,4vw);
         }
     }
 </style>

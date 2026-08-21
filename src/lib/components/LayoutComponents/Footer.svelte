@@ -185,6 +185,10 @@
             padding: 1rem;
         }
 
+        .Media {
+            zoom: 0.75;
+        }
+
         .Media span {
             display: none;
         }

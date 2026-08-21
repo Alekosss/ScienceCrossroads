@@ -6,7 +6,7 @@
 
     /*variable that stores 0 or 1 (true/false). If true, it means that the user wants dark theme
     otherwise the user wants light theme.In any case, when the variable changes, it rerenders 
-    the colors since it is reactive*/
+    the colors since it is reactive*/    
     let isDark = $state(false);
 
     onMount(() => {
@@ -32,6 +32,11 @@
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     }
 
+    //Menu Button functionality:
+    let menuShowing = $state(false);
+    function toggleMenu() {
+        menuShowing = !menuShowing;
+    }
 </script>
 
 <nav class="NavigationBar">
@@ -39,7 +44,7 @@
         <div class="logo">
             <img class="plainLogo" alt="ScienceCrossroadsPlainLogo.png" src={PlainLogo}/>
         </div>
-        <div class="Title navText">
+        <div class="Title">
             <span>SCIENCE CROSSROADS</span>
         </div>
     </div>
@@ -58,6 +63,23 @@
         <a href="/pages/speakers">SPEAKERS</a>
         <a href="/pages/contact">CONTACT</a>
     </div>  
+    <div class="menuButton">
+        <button class="burgerButton" type="button" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
+            <hr/>
+            <hr/>
+            <hr/>
+        </button>   
+    </div>
+    {#if menuShowing}
+        <div class="MenuList">
+            <a href="/">HOME</a>
+            <a href="/pages/register&faq">REGISTER & FAQ</a>
+            <a href="/pages/schedule">SCHEDULE</a>
+            <a href="/pages/sponsors">SPONSORS</a>
+            <a href="/pages/speakers">SPEAKERS</a>
+            <a href="/pages/contact">CONTACT</a>
+        </div> 
+    {/if}
 </nav>
 
 <style>
@@ -67,6 +89,10 @@
         justify-content: center;
         gap: 10%;
         width: 25%;
+    }
+
+    .MenuList {
+        display: none;
     }
 
     .NavigationBar {
@@ -87,6 +113,7 @@
 
         background-color: var(--secondary-color);
         border: 3px solid var(--primary-color);
+        font-family: var(--font-family);
     }
 
     
@@ -101,7 +128,6 @@
 
     .navText {
         color: var(--primary-color);
-        font-family: var(--font-family);
         font-size: var(--NavBarText);
     }
 
@@ -148,5 +174,70 @@
 
     .ThemeButton:hover {
         transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .burgerButton {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            height: 90%;
+            border-radius: 15px;
+            gap: 2%;
+            background-color: var(--secondary-color);
+        }
+
+        .burgerButton hr {
+            width: 90%;
+            height: 5%;
+            color: var(--primary-color);
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 10px;
+        }
+
+        .menuButton {
+            width: 20%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .MenuList {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            position: absolute;
+            top: 100%;   /* add this */
+            right: 0;
+            padding: 2%;
+            border-radius: 5%;
+            background-color: var(--secondary-color);
+        }
+
+        .MenuList a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .navText {
+            display: none;
+        }
+
+        .NavigationBar {
+            gap: 7.5%;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .menuButton {
+            display: none;
+        }
     }
 </style>
