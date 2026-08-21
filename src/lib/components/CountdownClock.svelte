@@ -54,6 +54,7 @@
         display: grid;
         grid-template-rows: 2fr 1fr;
         justify-content: center;
+        align-items: center;
         width: 650px;
         height: 100px;
         background-color: var(--secondary-color);

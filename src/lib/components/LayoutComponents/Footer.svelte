@@ -180,6 +180,7 @@
     }
 
     @media (max-width: 768px) {
+        
         .Footer {
             height: auto;
             padding: 1rem 1rem 0rem;

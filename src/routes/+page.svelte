@@ -371,7 +371,7 @@
 
     @media (max-width: 768px) {
         .BranchesCarousel {
-            zoom: 0.35;
+            zoom: 0.3;
         }
 
         .CategoryHeader text{
@@ -398,6 +398,11 @@
             zoom: 0.4;
         }
 
+        .Countdown {
+            zoom: 0.6;
+            margin: 0;
+        }
+
         .ChImage {
             height: 17.5vh;
         }
@@ -411,12 +416,21 @@
             font-size: clamp(1.5vw,1.75vw,2vw);
         }        
 
+        .Details {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+        }
+
         .EventDetails {
-            zoom: 0.3;
+            zoom: 0.9;
             justify-content: center;
             align-items: center;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             margin: 0;
             padding: 0;
             gap: 7.5%;
@@ -433,6 +447,11 @@
             height: 17.5vh;
         }
 
+        .MapCard {
+            zoom: 0.5;
+            margin: auto;
+        }
+
         .OrganizingTeam {
             font-size: clamp(2vw,2.5vw,3vw);
         }
@@ -447,7 +466,7 @@
         }
 
         .SocialMediaPosts {
-            zoom: 0.7;
+            zoom: 0.5;
         }
 
         .TextHeader text {
