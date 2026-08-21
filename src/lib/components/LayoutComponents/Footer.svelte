@@ -182,15 +182,31 @@
     @media (max-width: 768px) {
         .Footer {
             height: auto;
-            padding: 1rem;
+            padding: 1rem 1rem 0rem;
         }
 
         .Media {
-            zoom: 0.75;
+            zoom: 0.55;
         }
 
         .Media span {
             display: none;
+        }
+
+        .SocialMedia {
+            gap: 5%;
+        }
+
+        .Top {
+            gap: 5%;
+            margin: 0 0 2%;
+        }
+
+        .Top span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(4vw,5vw,6vw);
         }
     }
 </style>

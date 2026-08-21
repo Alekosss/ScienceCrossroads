@@ -419,6 +419,7 @@
             flex-direction: row;
             margin: 0;
             padding: 0;
+            gap: 7.5%;
         }
 
         .ITAndOutcomes {
@@ -443,6 +444,10 @@
 
         .PhImage{
             height: 17.5vh;
+        }
+
+        .SocialMediaPosts {
+            zoom: 0.7;
         }
 
         .TextHeader text {
