@@ -131,4 +131,10 @@
         margin: 10px;
     }
 
+    @media (max-width: 768px) {
+        .Carousel {
+            height: auto;
+        }
+    }
+
 </style>

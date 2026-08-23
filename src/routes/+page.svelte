@@ -372,10 +372,11 @@
     @media (max-width: 768px) {
         .BranchesCarousel {
             zoom: 0.3;
+            height: auto;
         }
 
         .CategoryHeader text{
-            font-size:  clamp(3vw,4vw,5vw);
+            font-size:  clamp(6vw,7.5vw,9vw);
             width: fit-content;
             align-items: center;
             justify-content: center;
@@ -391,7 +392,7 @@
         }
 
         .CategoryHeader hr {
-            width: 22.5%;
+            display: none;
         }
 
         .ContentStatistics {
@@ -453,7 +454,14 @@
         }
 
         .OrganizingTeam {
-            font-size: clamp(2vw,2.5vw,3vw);
+            font-size: clamp(3vw,4vw,5vw);
+        }
+
+        .OrganizingTeam span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .PhysicsAndParticipants {

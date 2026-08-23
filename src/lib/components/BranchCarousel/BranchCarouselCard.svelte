@@ -104,4 +104,27 @@
         width: 50%;
         aspect-ratio: 1;
     }
+
+    @media (max-width: 768px) {
+        .branchSlogan span {
+            font-size: clamp(8vw,9vw,10vw);
+        }
+
+        .BranchNameAndDescription {
+            height: auto;
+        }
+
+        .BranchName span {
+            font-size: clamp(9vw,10vw,11vw);
+        }
+        
+        .CarouselCard {
+            width: 95%;
+            height: 80vh;
+        }
+
+        .Description span {
+            font-size: clamp(7vw,8vw,9vw);
+        }
+    }
 </style>
