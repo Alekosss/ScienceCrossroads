@@ -72,7 +72,6 @@
                 <span>Science Crossroads</span>
             </button>
         </div>
-        
     </div>
 </div>
 
@@ -243,5 +242,19 @@
 
     .UserSVG:hover {
         transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .Media {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15%;
+        }
+
+        .Social span {
+            display: none;
+        }
     }
 </style>

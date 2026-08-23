@@ -104,13 +104,11 @@
         display: flex;
         flex-direction: column;
         align-self: center;
-        justify-self: center;
 
         gap: 75px;
 
-        width: 1550px;
-        height: 550px;
-        margin: 20px;
+        width: auto;
+        height: 80vh;
     }
 
     .Inactive {
@@ -131,6 +129,12 @@
         height: 25px;
         border-radius: 50%;
         margin: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .Carousel {
+            height: auto;
+        }
     }
 
 </style>

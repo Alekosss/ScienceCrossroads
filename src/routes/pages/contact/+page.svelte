@@ -1,12 +1,16 @@
 <script lang="ts">
     import Facebook from "$lib/components/Social/Facebook.svelte";
     import Instagram from "$lib/components/Social/Instagram.svelte";
+    import TikTok from "$lib/components/Social/TikTok.svelte";
+    import LinkedIn from "$lib/components/Social/LinkedIn.svelte";
+    import Mail from "$lib/components/Social/Mail.svelte";
+    import { enhance } from "$app/forms";
 
     let mail = $state('');
     let subject = $state('');
-    let content = $state('');
+    let message = $state('');
 
-    let emptyField = $derived(!mail || !subject || !content);
+    let emptyField = $derived(!mail || !subject || !message);
     let show = $state(false);
     let showWarning = $state(false);
 
@@ -26,58 +30,98 @@
         show = false;
     }
 
+    const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
+    const InstagramURL = "https://www.instagram.com/sciencecrossroads/";
+    const LinkedInURL = "https://www.linkedin.com/company/science-crossroads/";
+    const TikTokURL = "https://www.tiktok.com/@science.crossroad";
+
+    function OpenInstagram() {
+        console.log("Button clicked. Opening window");
+        window.open(InstagramURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenFacebook() {
+        console.log("Button clicked. Opening window");
+        window.open(FacebookURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenLinkedIn() {
+        console.log("Button clicked. Opening window");
+        window.open(LinkedInURL, "_blank", "noopener,noreferrer");
+    }
+
+    function OpenTikTok() {
+        console.log("Button clicked. Opening window");
+        window.open(TikTokURL, "_blank", "noopener,noreferrer");
+    }
+
 </script>
 
 <div class="ContactPage">
     <!--1st way to Contact-->
     <div class="CategoryHeader">
         <hr/>
-        <span>CONTACT US</span>
+        <text>CONTACT US</text>
         <hr/>
     </div>
     <div class="Description">
-        <span>Feel free to contact us in our Social if you have questions!</span>
+        <text>Feel free to contact us in our Social if you have questions!</text>
     </div>
     <div class="Social">
-        <div class="IG">
+        <div class="Media IG">
             <Instagram/>
         </div>
-        <div class="FB">
+        <div class="Media FB">
             <Facebook/>
+        </div>
+        <div class="Media TikTok">
+            <TikTok/>
+        </div>
+        <div class="Media LinkedIn">
+            <LinkedIn/>
+        </div>
+        <div class="Media Mail">
+            <Mail/>
         </div>
     </div>
     <div class="Description">
-        <span>or send us an email via the following form:</span>
+        <text>or send us an email via the following form:</text>
     </div>
     <!--Mailing form-->
-    <form class="MailingForm" method="POST" bind:this={formEl}>
+    <form class="MailingForm" method="POST" use:enhance bind:this={formEl}>
         <div class="AddressAndSubject">
             <div class="EmailAddress">
-            <label for="email">Email Address:</label>
-            <input 
-                    type="email" 
-                    id="email"
-                    autocomplete="email"
-                    required
-                    bind:value={mail} 
-                    placeholder="mail@example.com"/>
+                <label for="email">Email Address:</label>
+                <input 
+                        type="email" 
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                        bind:value={mail} 
+                        placeholder="mail@example.com"/>
             </div>
             <div class="Subject">
                 <label for="subject">Subject:</label>
                 <input
+                required
                 id="subject"
+                name="subject"
                 bind:value={subject} 
                 placeholder="Example Subject"/>
             </div>
         </div>
         <div class="Message">
             <label for="message">Message:</label>
-            <input 
+            <textarea 
+            required
             id="message"
-            bind:value={content} 
-            placeholder="Example message..."/>
+            name="message"
+            bind:value={message} 
+            placeholder="Example message...">
+            </textarea>
         </div>
-        <button class="SendButton" type="submit" onclick={Send}>
+        <button class="SendButton" type="button" onclick={Send}>
             <text>SEND</text>
         </button>
         {#if show}
@@ -88,7 +132,7 @@
                             <span> please fill out your email address!</span>
                         {:else if !subject}
                             <span> please fill out the subject!</span>
-                        {:else if !content}
+                        {:else if !message}
                             <span> please fill out the message content!</span>
                         {/if}
                         <button class="goBack" onclick={goBack}>OK</button>
@@ -113,7 +157,7 @@
         flex-direction: row;
         gap: 150px;
         justify-content: center;
-        padding: 50px;
+        padding: 2rem;
         
         color: var(--primary-color);
         font-size: 26px;
@@ -203,15 +247,21 @@
     }
 
     .MailingForm {
-        align-self: center;
-        justify-self: center;
-        width: 1300px;
-        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: auto;
 
         background-color: var(--secondary-color);
-        margin-top: 25px;
-        margin-bottom: 75px;
+
+        margin: 2rem auto 5rem;
+        padding: 0.25rem;
         border-radius: 50px;
+    }
+
+    .Media {
+        zoom: 0.8;
     }
 
     .Message {
@@ -225,11 +275,12 @@
         color: var(--primary-color);
     }
 
-    .Message input {
+    .Message textarea {
         background-color: var(--primary-color);
         color: var(--physics);
         height: 250px;
-        width: 95%;
+        width: 90%;
+        padding: 2rem;
         font-size: 20px;
         border-radius: 50px;
     }
@@ -250,10 +301,10 @@
         align-items: center;
         justify-content: center;
         display: flex;
-        margin: 50px;
+        margin: 2rem auto;
 
-        width: 150px;
-        height: 75px;
+        width: 12.5%;
+        height: 70px;
         border-radius: 50px;
         background-color: var(--physics);
         border: none;
@@ -289,10 +340,11 @@
     .Social {
         display: flex;
         flex-direction: row;
-        gap: 200px;
+        gap: 2rem;
         justify-content: center;
         align-items: center;
-        padding: 100px;
+        padding: 5rem 0;
+        
     }
 
     .Subject {
@@ -301,5 +353,69 @@
         justify-content: center;
         align-items: center;
         gap: 10px;  
+    }
+
+    @media (max-width: 768px) {
+        .AddressAndSubject {
+            width: 90%;
+            flex-direction: column;
+            gap: 5vh;
+        }
+
+         .CategoryHeader text{
+            font-size:  clamp(8vw,10vw,12vw);
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .CategoryHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            padding: 0;
+            margin: 25% 0;
+        }
+
+        .CategoryHeader hr {
+            display: none;
+        }
+
+        .ContactPage {
+            overflow-x: hidden;
+        }
+
+        .Description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .Description text{
+            font-size: clamp(5vw,6vw,7vw);
+        }
+        
+        .Media {
+            zoom: 0.7;
+        }
+
+        .MailingForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .SendButton {
+            width: 40%;
+        }
+
+        .Social {
+            gap: 5vw;
+        }
     }
 </style>
