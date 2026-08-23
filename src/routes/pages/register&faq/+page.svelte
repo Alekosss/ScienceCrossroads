@@ -134,8 +134,8 @@
 
     @media (max-width: 768px) {
         .CategoryHeader text{
-            font-size:  clamp(3vw,3.5vw,4vw);
-            width: auto;
+            font-size:  clamp(6vw,7.5vw,9vw);
+            width: fit-content;
             align-items: center;
             justify-content: center;
             display: flex;
@@ -150,7 +150,7 @@
         }
 
         .CategoryHeader hr {
-            width: 15%;
+            display: none;
         }
 
         .Countdown {
@@ -162,6 +162,10 @@
             width: 80%;
             margin: auto;
             zoom: 0.65;
+        }
+
+        .LastHeader {
+            zoom: 0.7;
         }
 
         .LocationAndRegister {
