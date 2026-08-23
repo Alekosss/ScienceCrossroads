@@ -61,31 +61,31 @@
     <!--1st way to Contact-->
     <div class="CategoryHeader">
         <hr/>
-        <span>CONTACT US</span>
+        <text>CONTACT US</text>
         <hr/>
     </div>
     <div class="Description">
-        <span>Feel free to contact us in our Social if you have questions!</span>
+        <text>Feel free to contact us in our Social if you have questions!</text>
     </div>
     <div class="Social">
-        <div class="IG">
+        <div class="Media IG">
             <Instagram/>
         </div>
-        <div class="FB">
+        <div class="Media FB">
             <Facebook/>
         </div>
-        <div class="TikTok">
+        <div class="Media TikTok">
             <TikTok/>
         </div>
-        <div class="LinkedIn">
+        <div class="Media LinkedIn">
             <LinkedIn/>
         </div>
-        <div class="Mail">
+        <div class="Media Mail">
             <Mail/>
         </div>
     </div>
     <div class="Description">
-        <span>or send us an email via the following form:</span>
+        <text>or send us an email via the following form:</text>
     </div>
     <!--Mailing form-->
     <form class="MailingForm" method="POST" use:enhance bind:this={formEl}>
@@ -157,7 +157,7 @@
         flex-direction: row;
         gap: 150px;
         justify-content: center;
-        padding: 50px;
+        padding: 2rem;
         
         color: var(--primary-color);
         font-size: 26px;
@@ -247,15 +247,21 @@
     }
 
     .MailingForm {
-        align-self: center;
-        justify-self: center;
-        width: 1300px;
-        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: auto;
 
         background-color: var(--secondary-color);
-        margin-top: 25px;
-        margin-bottom: 75px;
+
+        margin: 2rem auto 5rem;
+        padding: 0.25rem;
         border-radius: 50px;
+    }
+
+    .Media {
+        zoom: 0.8;
     }
 
     .Message {
@@ -273,8 +279,8 @@
         background-color: var(--primary-color);
         color: var(--physics);
         height: 250px;
-        width: 95%;
-        padding: 15px;
+        width: 90%;
+        padding: 2rem;
         font-size: 20px;
         border-radius: 50px;
     }
@@ -295,10 +301,10 @@
         align-items: center;
         justify-content: center;
         display: flex;
-        margin: 50px;
+        margin: 2rem auto;
 
-        width: 150px;
-        height: 75px;
+        width: 12.5%;
+        height: 70px;
         border-radius: 50px;
         background-color: var(--physics);
         border: none;
@@ -334,10 +340,11 @@
     .Social {
         display: flex;
         flex-direction: row;
-        gap: 50px;
+        gap: 2rem;
         justify-content: center;
         align-items: center;
-        padding: 100px;
+        padding: 5rem 0;
+        
     }
 
     .Subject {
@@ -346,5 +353,69 @@
         justify-content: center;
         align-items: center;
         gap: 10px;  
+    }
+
+    @media (max-width: 768px) {
+        .AddressAndSubject {
+            width: 90%;
+            flex-direction: column;
+            gap: 5vh;
+        }
+
+         .CategoryHeader text{
+            font-size:  clamp(8vw,10vw,12vw);
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .CategoryHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            padding: 0;
+            margin: 25% 0;
+        }
+
+        .CategoryHeader hr {
+            display: none;
+        }
+
+        .ContactPage {
+            overflow-x: hidden;
+        }
+
+        .Description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .Description text{
+            font-size: clamp(5vw,6vw,7vw);
+        }
+        
+        .Media {
+            zoom: 0.7;
+        }
+
+        .MailingForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .SendButton {
+            width: 40%;
+        }
+
+        .Social {
+            gap: 5vw;
+        }
     }
 </style>
