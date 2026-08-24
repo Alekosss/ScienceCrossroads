@@ -1205,6 +1205,7 @@
         border-radius:25px;
         padding:15px;
         justify-content:center;
+        height:63px;
     }
 
     .green-2-0-letter{
@@ -1244,6 +1245,12 @@
     .green-1-0-time{
         font-size:15px;
         font-weight:600;
+    }
+
+    .green-0{
+        display:flex;
+        flex-direction:column;
+        gap:5px;
     }
 
     .purple-1-0{
@@ -1409,14 +1416,14 @@
         background: none;
         font-size: 20px;
         font-weight: 20px;
-        color:black;
+        color:white;
         text-decoration:none;
     }
 
     .date{
         font-size: 20px;
         font-weight: 100px;
-        color: black;
+        color: white;
         text-decoration: underline;
         text-decoration-thickness: 1,5px;
     }

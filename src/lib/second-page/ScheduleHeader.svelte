@@ -75,6 +75,7 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
+        margin-top:30px;
     }
 
     .line{
