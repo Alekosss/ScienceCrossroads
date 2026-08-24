@@ -9,8 +9,9 @@
     let mail = $state('');
     let subject = $state('');
     let message = $state('');
+    let name = $state('');
 
-    let emptyField = $derived(!mail || !subject || !message);
+    let emptyField = $derived(!mail || !subject || !message || !name);
     let show = $state(false);
     let showWarning = $state(false);
 
@@ -89,8 +90,8 @@
     </div>
     <!--Mailing form-->
     <form class="MailingForm" method="POST" use:enhance bind:this={formEl}>
-        <div class="AddressAndSubject">
-            <div class="EmailAddress">
+        <div class="AddressSubjectName">
+            <div class="EmailAddress LabelInput">
                 <label for="email">Email Address:</label>
                 <input 
                         type="email" 
@@ -101,14 +102,13 @@
                         bind:value={mail} 
                         placeholder="mail@example.com"/>
             </div>
-            <div class="Subject">
+            <div class="Subject LabelInput">
                 <label for="subject">Subject:</label>
-                <input
-                required
-                id="subject"
-                name="subject"
-                bind:value={subject} 
-                placeholder="Example Subject"/>
+                <input required id="subject"name="subject" bind:value={subject} placeholder="Example Subject"/>
+            </div>
+            <div class="Name LabelInput">
+                <label for="name">Name:</label>
+                <input required id="name" name="name" bind:value={name} autocomplete="name" placeholder="John Doe"/>
             </div>
         </div>
         <div class="Message">
@@ -134,6 +134,8 @@
                             <span> please fill out the subject!</span>
                         {:else if !message}
                             <span> please fill out the message content!</span>
+                        {:else if !name} 
+                            <span> please fill out your name!</span>    
                         {/if}
                         <button class="goBack" onclick={goBack}>OK</button>
                     {:else}
@@ -142,7 +144,11 @@
                             <button class="goBack" onclick={goBack}>OK</button>
                         {:else}
                             <span>Send email?</span>
-                            <button class="goBack" onclick={goBack}>OK</button>
+                            <button class="goBack" onclick={() => { 
+                                show = false; formEl.requestSubmit(); 
+                                }}>
+                                OK
+                            </button>
                         {/if}
                     {/if}    
                 </div>
@@ -152,7 +158,7 @@
 </div>
 
 <style>    
-    .AddressAndSubject {
+    .AddressSubjectName {
         display: flex;
         flex-direction: row;
         gap: 150px;
@@ -166,7 +172,7 @@
         line-height: normal;
     }
     
-    .AddressAndSubject input {
+    .AddressSubjectName input {
         background-color: var(--primary-color);
         color: var(--physics);
         height: 35px;
@@ -231,12 +237,12 @@
         font-size: 25px;
     }
 
-    .EmailAddress {
+    .LabelInput {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 1rem;
     }
     
     .goBack {
@@ -258,6 +264,7 @@
         margin: 2rem auto 5rem;
         padding: 0.25rem;
         border-radius: 50px;
+        zoom: 0.8;
     }
 
     .Media {
@@ -347,16 +354,8 @@
         
     }
 
-    .Subject {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;  
-    }
-
     @media (max-width: 768px) {
-        .AddressAndSubject {
+        .AddressSubjectName {
             width: 90%;
             flex-direction: column;
             gap: 5vh;

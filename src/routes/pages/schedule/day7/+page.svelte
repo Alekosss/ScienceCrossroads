@@ -6,7 +6,7 @@
 
 <div class="day-content">
     <div class="date-line">
-        <a href="/" class="date-arrow">&lt;</a>
+        <a href="/pages/schedule" class="date-arrow">&lt;</a>
         <span class="date">07 MARCH</span>
     </div>
 
@@ -902,13 +902,6 @@
 
         width:230px;
         justify-content:center;
-    }
-
-    .physics-experiment-break-letter{
-        font-size:15px;
-        font-weight:400;
-        margin:0;
-        text-align:center;
     }
 
     .physics-experiment-break-time{

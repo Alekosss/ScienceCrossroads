@@ -1,7 +1,6 @@
 <script>
   import { quadInOut } from "svelte/easing";
-  import { fly, scale, slide } from "svelte/transition";
-  import Instagram from "./Social/Instagram.svelte";
+  import { fly, slide } from "svelte/transition";
 
     let {
         textColor = "red"
@@ -11,14 +10,20 @@
 
     let flyDirection = $state(1);
 
-    let steps = $state([0,1,3,4]);
+    let steps = $state([0,1,2,3]);
     let stepIndex = $state(0);
+
     let mail = $state('');
+    let fullName = $state('');
+    let phoneNumber = $state('');
+
+    let userInfo = $derived([mail,fullName,phoneNumber]);
 
     function goBack() {
         flyDirection = -1;
-        console.log("Go back clicked, direction is: " + flyDirection);
+        console.log("Index (before changing) is: " + stepIndex);
         stepIndex--;
+        console.log("Index (after changing) is: " + stepIndex);
         if (stepIndex<0) {
             stepIndex=0;
             showOverlay = false;
@@ -32,9 +37,10 @@
 
     function nextClick() {
         flyDirection = 1;
-        console.log("Next clicked, direction is: " + flyDirection);
+        console.log("Index (before chaning) is: " + stepIndex);
         stepIndex++;
-        if (stepIndex>1) {
+        console.log("Index (after chaning) is: " + stepIndex);
+        if (stepIndex>3) {
             stepIndex=0;
         }
     }
@@ -58,20 +64,31 @@
             </div>
             <div class="RegistrationSteps">
                 {#if stepIndex === 0}
-                    <div class="MailConfirmation" out:fly={{ x: -300*flyDirection, duration:500, easing: quadInOut}} in:fly={{x: 300*flyDirection,delay:500, duration:500, easing: quadInOut }}>
-                        <label for="email" id="email">Enter your email below</label>
+                    <div class="MailConfirmation LabelInput" out:fly={{ x: -300*flyDirection, duration:350, easing: quadInOut}} in:fly={{x: 300*flyDirection,delay:350, duration:350, easing: quadInOut }}>
+                        <label for="email">Email Address</label>
                         <input required type="email" autocomplete="email" id="email" placeholder="mail@example.com" bind:value={mail} onblur={printmail}>
                     </div>
-                {:else}
-                    <div class="Info" in:fly={{x: 300*flyDirection, delay:500, duration: 500, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 500, easing: quadInOut}}>
-                        <div class="nameInfo">
-                            <label for="fullName" id="fullName">Full Name</label>
-                            <input required id="fullName" type="text" placeholder="John Doe"/>
-                        </div>  
-                        <div class=phoneInfo>
-                            <label for="phoneNumber" id="phoneNumber">Phone Number</label>
-                            <input required id="phoneNumber" type="number" placeholder="+3069012345"/>
+                {:else if stepIndex === 1}
+                    <div class="Info" in:fly={{x: 300*flyDirection, delay:350, duration: 350, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 350, easing: quadInOut}}>
+                        <div class="nameInfo LabelInput">
+                            <label for="fullName">Full Name</label>
+                            <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
                         </div>
+                    </div>
+                {:else if stepIndex === 2}
+                    <div class="phoneInfo LabelInput"  in:fly={{x: 300*flyDirection, delay:350, duration: 350, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 350, easing: quadInOut}}>
+                        <label for="phoneNumber">Phone Number</label>
+                        <input required id="phoneNumber" type="text" placeholder="+3069012345" autocomplete="tel" bind:value={phoneNumber}/>
+                    </div>
+                {:else} 
+                    <div class="Confirmation" in:fly={{x: 300*flyDirection, delay:350, duration: 350, easing: quadInOut}}>
+                        <ul>
+                            {#each userInfo as info }
+                                <li>
+                                    <span>{info}</span>
+                                </li>
+                            {/each}
+                        </ul>
                     </div>
                 {/if}
             </div>
@@ -116,6 +133,35 @@
         border-radius: 10px;
     }    
     
+    .Confirmation {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        border-radius: 1rem;    
+        overflow: hidden;
+    }
+
+    .Confirmation ul {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 2vh;
+        padding: 1.5rem;
+    }
+
+    .Confirmation li::before {
+        content: "→";
+    }
+
+    .Confirmation li {
+        font-size: clamp(1.5vw,1.7vw,1.9vw);
+    }
+
     .Header {
         display: flex;
         flex-direction: row;
@@ -139,7 +185,6 @@
         display: flex;
         flex-direction: column;
         gap: 5vh;
-        overflow-y: auto;
     }
     
     .Info input {
@@ -155,23 +200,17 @@
         font-size: clamp(18px,19px,20px);
     }
 
-    .MailConfirmation {
+    .LabelInput {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 1.5rem;
     }
 
-    .MailConfirmation label {
+    .LabelInput label {
         color: var(--primary-color);
-    }
-
-    .MailConfirmation input {
-        width: 250px;
-        height: 20px;
-        border-radius: 25px;
-        padding: 20px;
+        font-size: clamp(22px,24px,26px);
     }
 
     .nameInfo {
@@ -191,6 +230,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .overlay input {
+        width: 100%;
+        height: 2vh;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
     }
 
     .overlayContent {
@@ -269,7 +317,10 @@
 
     .RegistrationSteps {
         height: 20vh;
-        overflow-y: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .step {
