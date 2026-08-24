@@ -4,7 +4,7 @@
     import MapLocation from "$lib/components/MapLocation.svelte";
     import RegisterButton from "$lib/components/RegisterButton.svelte";
     import SocialPosts from "$lib/components/SocialPosts.svelte";
-    import BranchesCarousel from "$lib/components/BranchesCarousel.svelte";
+    import BranchesCarousel from "$lib/components/BranchCarousel/BranchesCarousel.svelte";
     import ScrollToButton from "$lib/components/ScrollToButton.svelte";
 
     let SloganTarget = $state();
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="PhysicsAndParticipants ScienceContent ImageRight">
-            <div class="PhysicsText">
+            <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHO WILL BE PARTICIPATING?</text>
                 </div>
@@ -41,7 +41,7 @@
         </div>
         <div class="ITAndOutcomes ScienceContent ImageLeft">
             <img src="/HomePage/IT.png" alt="Physics Content" class="ITImage"/>
-            <div class="ITText">
+            <div class="TextContent">
                 <div class="TextHeader">
                     <text>WHAT IS TO BE GAINED FROM THE EVENT?</text>
                 </div>
@@ -102,9 +102,14 @@
 
 <style>
     .BranchesCarousel {
-        width: 1500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+
+        width: 100%;
         height: 550px;
-        margin: 25px 0px 150px;
     }
 
     .CategoryHeader {
@@ -112,7 +117,8 @@
         align-items: center;
         justify-content: center;
         padding: 160px 0;
-        gap: 60px;
+        width: 100%;
+        gap: 0;
     }
     
     .CategoryHeader text {
@@ -133,23 +139,25 @@
         
     .ChemistryAndOverview {
         display: flex;
-        height: 590px;
-        padding-bottom: 290px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     
     .ChImage {
-        width: 887px;
-        height: 590px;
+        width: 50%;
+        height: 300px;
         aspect-ratio: 221/147;
     }
 
     .ContentStatistics {
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 200px;
-        padding: 100px;
-        margin-bottom: 100px;
+        width: 100%;
+        gap: 5%;
+        margin: 15% 0px 10%;
     }
 
     .Countdown {
@@ -157,17 +165,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 650px;
+        zoom: 0.7;
+        margin-left: 10%;
+        width: 100%;
     }
     
     .Description {
         color: var(--secondary-color);
-        font-size: 28px;
+        font-size: clamp(10px,1.8vw,20px);
         font-style: normal;
         font-weight: 200;
         line-height: normal;
-        margin-left: 35px;
-        margin-right: 35px;
     }
     
     .Date {
@@ -182,15 +190,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 40px;
-        width: 650px;
-        height: 800px;
+        width: 50%;
+        gap: clamp(1rem,2.5rem,4rem);
     }
 
     .EventDescription {
         display: flex;
         flex-direction: column;
-        margin-bottom: 200px;
+        gap: 100px;
     }
         
     .EventDetails {
@@ -198,8 +205,9 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 250px;
+        gap: 20px;
         overflow: hidden;
+        width: 100%;
     }
 
     .EventDetails span {
@@ -221,8 +229,8 @@
     }
     
     .ITImage {
-        width: 959px;
-        height: 539px;
+        width: 50%;
+        height: 300px;
         aspect-ratio: 137/77;
     }
 
@@ -258,7 +266,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        scale: 0.8;
+        zoom: 0.7;
+        margin-left: 10%;
     }
     
     .OrganizingTeam {
@@ -273,12 +282,20 @@
         justify-self: center;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: clamp(1rem,2.5rem,4rem);
+        width: 100%;
+    }
+
+    .PhysicsAndParticipants {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     .PhImage {
-        width: 884px;
-        height: 589px;
+        width: 50%;
+        height: 300px;
         aspect-ratio: 884/589;
     }
 
@@ -291,7 +308,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 10px;
 
         color: var(--secondary-color);
         text-align: center;
@@ -300,6 +317,7 @@
         font-weight: 400;
         line-height: normal;
 
+        zoom: 0.75;
     }
 
     .ScienceContent {
@@ -308,39 +326,159 @@
     }
 
     .Slogan {
+        width: 100%;
         text-align: center;
-        font-size: 40px;
+        font-size: clamp(15px,3.5vw,35px);
         font-style: normal;
         font-weight: 300;
         line-height: normal;
-        padding: 75px;
+        padding: 75px 0px;
         color: var(--break);
     }
 
+    .SocialMediaPosts {
+        zoom: 0.8;
+    }
+
     .TextContent {
-        width: 950px;
-        height: 590px;
+        width: 50%;
+        height: auto;
+        min-height: 10vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 130px;
+        gap: 20px;
         margin-right: 25px;
     }
     
     .TextHeader {
-        padding: 57px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
         color: var(--it);
-        font-size: 28px;
+        font-size: clamp(20px,24px,28px);
         font-style: normal;
         font-weight: 600;
         line-height: normal;
         width: auto;
     }
 
-    
+    .TextHeader text {
+        font-size: clamp(15px,2vw,30px);
+    }
+
+    @media (max-width: 768px) {
+        .BranchesCarousel {
+            zoom: 0.3;
+            height: auto;
+        }
+
+        .CategoryHeader text{
+            font-size:  clamp(6vw,7.5vw,9vw);
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .CategoryHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            padding: 0;
+            margin: 25% 0;
+        }
+
+        .CategoryHeader hr {
+            display: none;
+        }
+
+        .ContentStatistics {
+            zoom: 0.4;
+        }
+
+        .Countdown {
+            zoom: 0.6;
+            margin: 0;
+        }
+
+        .ChImage {
+            height: 17.5vh;
+        }
+
+        .ChemistryAndOverview {
+            height: auto;
+            min-height: 15vh;
+        }
+        
+        .Description text {
+            font-size: clamp(1.5vw,1.75vw,2vw);
+        }        
+
+        .Details {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .EventDetails {
+            zoom: 0.9;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            gap: 7.5%;
+        }
+
+        .ITAndOutcomes {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ITImage {
+            height: 17.5vh;
+        }
+
+        .MapCard {
+            zoom: 0.5;
+            margin: auto;
+        }
+
+        .OrganizingTeam {
+            font-size: clamp(3vw,4vw,5vw);
+        }
+
+        .OrganizingTeam span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .PhysicsAndParticipants {
+            height: auto;
+            min-height: 15vh;
+        }
+
+        .PhImage{
+            height: 17.5vh;
+        }
+
+        .SocialMediaPosts {
+            zoom: 0.5;
+        }
+
+        .TextHeader text {
+            font-size: clamp(1.5vw,2.5vw,4vw);
+        }
+    }
 </style>

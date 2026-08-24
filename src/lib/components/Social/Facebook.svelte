@@ -26,8 +26,9 @@
         justify-content: center;
 
         border-radius: 50px;
-        width: 300px;
+        width: auto;
         height: 80px;
+        padding: 1rem;
         background-color: var(--primary-color);
         border: 2px solid var(--secondary-color);
 
@@ -53,5 +54,11 @@
     .Media:hover span {
         transform: scale(1.3);
 
+    }
+
+    @media (max-width: 768px) {
+        .Media span {
+            display: none;
+        }
     }
 </style>

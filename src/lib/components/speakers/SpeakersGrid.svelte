@@ -29,13 +29,17 @@
     .Grid {
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        column-gap: 50px;
-        row-gap: 25px;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1.5vw;
+        row-gap: 5vh;
+        width:  auto;
+        height: auto;
+
     }
 
     .GridHeader {
-        margin-left: 10px;
-        font-size: 35px;
+        font-size: clamp(30px,32.5px,35px);
         font-weight: 600;
     }
 
@@ -48,5 +52,22 @@
         
         display: flex;
         flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+        .Grid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .GridHeader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .SpeakersGrid {
+            padding: 0px;
+        }
     }
 </style>
