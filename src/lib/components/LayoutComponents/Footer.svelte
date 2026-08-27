@@ -120,6 +120,7 @@
         padding: 0 1rem;
 
         gap: 0.2rem;
+        zoom: 0.8;
     }
 
     .Media:hover {
