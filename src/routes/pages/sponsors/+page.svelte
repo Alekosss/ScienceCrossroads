@@ -755,8 +755,8 @@
     }
 
     .bronze-square8{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -783,8 +783,8 @@
     }
 
     .bronze-square7{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -810,8 +810,8 @@
     }
 
     .bronze-square6{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -837,8 +837,8 @@
     }
 
     .bronze-square5{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -871,8 +871,8 @@
     }
 
     .bronze-square4{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -898,8 +898,8 @@
     }
 
     .bronze-square3{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -925,8 +925,8 @@
     }
 
     .bronze-square2{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -952,8 +952,8 @@
     }
 
     .bronze-square1{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -997,7 +997,7 @@
     }
 
     .silver-square11{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1024,7 +1024,7 @@
     }
 
     .silver-square10{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1051,7 +1051,7 @@
     }
 
     .silver-square9{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1085,7 +1085,7 @@
     }
 
     .silver-square8{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1112,7 +1112,7 @@
     }
 
     .silver-square7{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1139,7 +1139,7 @@
     }
 
     .silver-square6{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1166,7 +1166,7 @@
     }
 
     .silver-square5{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1200,7 +1200,7 @@
     }
 
     .silver-square4{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1227,7 +1227,7 @@
     }
 
     .silver-square3{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1254,7 +1254,7 @@
     }
 
     .silver-square2{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1281,7 +1281,7 @@
     }
 
     .silver-square1{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1326,8 +1326,8 @@
     }
 
     .gold-square8{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1353,8 +1353,8 @@
     }
 
     .gold-square7{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1380,8 +1380,8 @@
     }
 
     .gold-square6{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1407,8 +1407,8 @@
     }
 
     .gold-square5{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1441,8 +1441,8 @@
     }
 
     .gold-square4{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1468,8 +1468,8 @@
     }
 
     .gold-square3{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1495,8 +1495,8 @@
     }
 
     .gold-square2{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1522,8 +1522,8 @@
     }
 
     .gold-square1{
-        width:340px;
-        height:200px;
+        width: 240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1567,8 +1567,8 @@
     }
 
     .platinum-square4{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1601,8 +1601,8 @@
     }
 
     .platinum-square3{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1628,8 +1628,8 @@
     }
 
     .platinum-square2{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1655,8 +1655,8 @@
     }
 
     .platinum-square1{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1699,6 +1699,7 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
+        border-radius:15px;
     }
 
     .diamond-square.highlighted {
@@ -1706,8 +1707,8 @@
     }
 
     .diamond-square{
-        width:400px;
-        height:220px;
+        width:360px;
+        height:250px;
 
         background-color:#424E91;
         border-radius:15px;
@@ -1716,7 +1717,7 @@
         justify-content:center;
         align-items:center;
 
-        padding:5px;
+        padding:6px;
         margin-top:15px;
 
         transition: transform 0.3s ease;
@@ -2978,7 +2979,6 @@
 
     .sponsors-map{
         position:relative;
-        background-color:black;
         width:100%;
         height:2000px;
     }

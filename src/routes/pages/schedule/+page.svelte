@@ -26,7 +26,7 @@
 
         <span class="date">06 MARCH</span>
 
-        <a href="/day7" class="date-arrow">&gt;</a>
+        <a href="/pages/schedule/day7" class="date-arrow">&gt;</a>
     </div>
 
     <div class="where-line">
@@ -404,6 +404,7 @@
        padding:15px;
         
        margin-top:5px;
+       margin-bottom:5px;
        margin-left:20px;
        width:500px;
        height:50px;
@@ -415,6 +416,8 @@
         font-weight:400;
         margin:0;
         text-align:left;
+
+        color:black;
     }
 
     .wine-party{
@@ -477,8 +480,6 @@
         display:flex;
         flex-direction:column;
         gap:5px;
-
-        transform:translateX(30px);
     }
 
     .green-2-3{
@@ -541,14 +542,14 @@
     }
 
     .squares-3{
-        display:grid;
-        grid-template-columns:repeat(5, 230px);
-        row-gap:5px;
-        column-gap:5px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        row-gap: 5px;
+        column-gap: 5px;
 
-        margin-left:20px;
-        margin-right:20px;
-        margin-top:5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
     }
 
     .coffee-break-3-letter{
@@ -612,8 +613,6 @@
         display:flex;
         flex-direction:column;
         gap:5px;
-
-        transform:translateX(30px);
     }
 
     .purple-3-2{
@@ -846,21 +845,26 @@
     }
 
     .squares-2{
-        display:grid;
-        grid-template-columns:repeat(5, 230px);
-        row-gap:5px;
-        column-gap:5px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        row-gap: 5px;
+        column-gap: 5px;
 
-        margin-left:20px;
-        margin-right:20px;
-        margin-top:5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
     }
 
     .empty-box{
-        width:230px;
-        height:110px;
+        grid-column: 5;
+
+        width: 100%;
+        height: 110px;
+
         background-color:#DD5E5E;
         border-radius:25px;
+
+        box-sizing: border-box;
     }
 
     .physics-experiment-break{
@@ -874,7 +878,7 @@
         border-radius:25px;
         padding:15px;
 
-        width:230px;
+        grid-column: 4;
         justify-content:center;
     }
 
@@ -891,7 +895,7 @@
     }
 
     .coffee-break-2-line{
-        width: 670px;
+        grid-column: 1 / 4;
         display:flex;
         flex-direction:column;
         align-items:center;
@@ -918,14 +922,15 @@
     }
 
     .coffee-break-2{
-        display:flex;
-        flex-direction:row;
-        gap:5px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 5px;
 
-        margin-top:5px;
-        margin-left:20px;
-        margin-right:20px;
-        height:110px;
+        margin-top: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        height: 110px;
     }
 
     .green-2-1{
@@ -1147,14 +1152,14 @@
     }
 
     .squares-1{
-        display:grid;
-        grid-template-columns:repeat(5, 230px);
-        row-gap:5px;
-        column-gap:5px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        row-gap: 5px;
+        column-gap: 5px;
 
-        margin-left:20px;
-        margin-right:20px;
-        margin-top:5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
     }
 
     .coffee-break-1-line{
@@ -1344,13 +1349,13 @@
 
     .squares{
         display: grid;
-        grid-template-columns: repeat(5, 230px);
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         row-gap: 5px;
         column-gap: 5px;
 
-        margin-left:20px;
-        margin-right:20px;
-        margin-top:5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
     }
 
     .coming-line{
@@ -1401,6 +1406,8 @@
         margin-top: 60px;
         margin-left: 20px;
         margin-right: 20px;
+
+        color:black;
     }
 
     .date-line{
