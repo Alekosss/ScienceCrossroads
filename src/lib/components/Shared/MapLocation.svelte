@@ -1,5 +1,5 @@
 <script>
-    import GetDirectionsButton from "$lib/components/GetDirectionsButton.svelte"
+    import GetDirectionsButton from "$lib/components/Shared/GetDirectionsButton.svelte"
     import Location from "$lib/assets/ComponentAssets/Location.png"
 
     let {

@@ -19,30 +19,67 @@
 
     let userInfo = $derived([mail,fullName,phoneNumber]);
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     function goBack() {
         flyDirection = -1;
-        console.log("Index (before changing) is: " + stepIndex);
         stepIndex--;
-        console.log("Index (after changing) is: " + stepIndex);
         if (stepIndex<0) {
             stepIndex=0;
             showOverlay = false;
         }
-
     }
 
     function Register() {
         showOverlay = true; //open overlay
     }
 
+    let emptyMailWarning = $state(false);
+    let formatMailWarning = $state(false);
+    let numberInName = $state(false);
+
     function nextClick() {
         flyDirection = 1;
-        console.log("Index (before chaning) is: " + stepIndex);
-        stepIndex++;
-        console.log("Index (after chaning) is: " + stepIndex);
+        if (stepIndex === 0) { //email checks
+            if (!mail) {
+                emptyMailWarning = true;
+            }
+            else if (!emailRegex.test(mail)) {
+                formatMailWarning = true;
+            }
+            
+            else {/*
+                check database.
+                if exists in databate {
+                    showMessage (="Already registered with that mail!")    
+                }
+                else {}*/
+                stepIndex++;
+            }
+        }
+        else if (stepIndex === 1) {
+            if (/\d/.test(fullName)) {
+                numberInName = true;
+            }
+            else {
+                stepIndex++;
+            }
+        }
         if (stepIndex>3) {
             stepIndex=0;
         }
+    }
+
+    function CloseEmptyMailWarning() {
+        emptyMailWarning = false;
+    }
+
+    function CloseFormatMailWarning() {
+        formatMailWarning = false;
+    }
+
+    function closeNameWarning() {
+        numberInName = false;
     }
 
     function printmail() {
@@ -68,13 +105,40 @@
                         <label for="email">Email Address</label>
                         <input required type="email" autocomplete="email" id="email" placeholder="mail@example.com" bind:value={mail} onblur={printmail}>
                     </div>
-                {:else if stepIndex === 1}
-                    <div class="Info" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
-                        <div class="nameInfo LabelInput">
-                            <label for="fullName">Full Name</label>
-                            <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
+                    {#if emptyMailWarning}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Please fill out your email address.</span>
+                                <button class="WarningButton" onclick={CloseEmptyMailWarning}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
                         </div>
+                    {:else if formatMailWarning}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Email format is wrong. Please try again.</span>
+                                <button class="WarningButton" onclick={CloseFormatMailWarning}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {/if}
+                {:else if stepIndex === 1}
+                    <div class="Info LabelInput" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
+                        <label for="fullName">Full Name</label>
+                        <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
                     </div>
+                    {#if numberInName} 
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Name cannot contain number(s). Please try again.</span>
+                                <button class="WarningButton" onclick={closeNameWarning} >
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {/if}
                 {:else if stepIndex === 2}
                     <div class="phoneInfo LabelInput"  in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
                         <label for="phoneNumber">Phone Number</label>
@@ -104,7 +168,12 @@
             <div class="Bottom">
                 <hr/>
                 <button onclick={goBack} class="ProgressButton Previous">
-                    <span>BACK</span>
+                    <!--TEXT CHOICE-->
+                    {#if stepIndex}
+                        <span>BACK</span>
+                    {:else}
+                        <span>EXIT</span>
+                    {/if}
                 </button>
                 <button onclick={nextClick} class="ProgressButton Next">
                     <span>NEXT</span>
@@ -175,7 +244,7 @@
     
     .Header hr {
         height: 0px;
-        width: 15vw;
+        width: 21.45vw;
         margin: 0px;
         border: 2.5px solid var(--primary-color);
         border-radius: 10px;
@@ -210,13 +279,11 @@
 
     .LabelInput label {
         color: var(--primary-color);
-        font-size: clamp(22px,24px,26px);
+        font-size: clamp(2.5vw,3vw,3.5vw);
     }
 
-    .nameInfo {
-        display: flex;
-        flex-direction: column;
-        gap: 1vh;
+    .long {
+        width: 60px;
     }
 
     .overlay {
@@ -242,26 +309,26 @@
     }
 
     .overlayContent {
-        width: 40%;
-        height: 60vh;
+        width: 50%;
+        height: 90vh;
 
         background-color: var(--secondary-color);
 
 
         border-radius: 2rem;
         padding: 1rem 2rem;
-        gap: 7.5vh;
+        gap: 12vh;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }
 
     .phoneInfo {
         display: flex;
         flex-direction: column;
-        gap: 1vh;
     }
 
     .ProgressButton {
@@ -316,8 +383,8 @@
     }
 
     .RegistrationSteps {
-        height: 20vh;
-        width: auto;
+        height: 30vh;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -333,8 +400,48 @@
         width: 15px;
     }
 
-    .long {
-        width: 60px;
+    .Warning {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        height: auto;
+
+        z-index: 1100;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    .WarningContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 3.5rem;
+        background-color: var(--secondary-color);
+        padding: 3rem 5rem 1.5rem;
+        border-radius: 2rem;
+    }
+
+    .WarningContent span {
+        color: var(--primary-color);
+        font-size: 2vw;
+    }
+
+    .WarningButton {
+        background-color: var(--secondary-color);
+        border-radius: 2rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }
+
+    .WarningButton:hover {
+        background-color: var(--primary-color);
+    }
+
+    .WarningButton:hover span {
+        color: var(--secondary-color);
+    }
 </style>
