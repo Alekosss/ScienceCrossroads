@@ -186,6 +186,7 @@
     }
 
     .Details {
+        zoom: 0.8;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -197,7 +198,6 @@
     .EventDescription {
         display: flex;
         flex-direction: column;
-        gap: 100px;
     }
         
     .EventDetails {
@@ -337,7 +337,8 @@
     }
 
     .SocialMediaPosts {
-        zoom: 0.8;
+        zoom: 0.6;
+        width: 50%;
     }
 
     .TextContent {
@@ -434,7 +435,6 @@
             flex-direction: column;
             margin: 0;
             padding: 0;
-            gap: 7.5%;
         }
 
         .ITAndOutcomes {

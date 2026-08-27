@@ -99,7 +99,7 @@
         width: 90%;
         height: 20vh;
         padding: 1%;
-        margin: 2rem auto 0;
+        margin: 2rem auto 1rem;
     }
 
     .Media {

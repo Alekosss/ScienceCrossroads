@@ -64,7 +64,7 @@
         <a href="/pages/contact">CONTACT</a>
     </div>  
     <div class="menuButton">
-        <button class="burgerButton" type="button" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
+        <button class="burgerButton" type="button" aria-label="Toggle navigation bar menu" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
             <hr/>
             <hr/>
             <hr/>
@@ -87,7 +87,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10%;
+        gap: 0.3rem;
         width: 25%;
     }
 
@@ -107,7 +107,7 @@
         top: 20px;
         z-index: 1000;
 
-        gap: 5%;
+        gap: 2rem;
         margin: 35px auto 0;
         border-radius: 50px;
 
@@ -158,7 +158,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: clamp(10px,2vw,20px);
+        font-size: clamp(1.2vw,1.4vw,1.45vw);
         color: var(--primary-color);
     }
 

@@ -743,13 +743,6 @@
 
 
 <style>
-
-    .bronze-square8 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .bronze-square8.highlighted {
         transform: scale(1.08);
     }
@@ -770,12 +763,6 @@
         margin-bottom:30px;
 
         transition: transform 0.3s ease;
-    }
-
-    .bronze-square7 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .bronze-square7.highlighted {
@@ -799,12 +786,6 @@
         transition: transform 0.3s ease;
     }
 
-    .bronze-square6 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .bronze-square6.highlighted {
         transform: scale(1.08);
     }
@@ -824,12 +805,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .bronze-square5 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .bronze-square5.highlighted {
@@ -860,12 +835,6 @@
         margin-top:20px;
     }
 
-    .bronze-square4 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .bronze-square4.highlighted {
         transform: scale(1.08);
     }
@@ -885,12 +854,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .bronze-square3 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .bronze-square3.highlighted {
@@ -914,12 +877,6 @@
         transition: transform 0.3s ease;
     }
 
-    .bronze-square2 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .bronze-square2.highlighted {
         transform: scale(1.08);
     }
@@ -939,12 +896,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .bronze-square1 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .bronze-square1.highlighted {
@@ -986,12 +937,6 @@
         margin: 30px auto;
     }
 
-    .silver-square11 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .silver-square11.highlighted {
         transform: scale(1.08);
     }
@@ -1013,12 +958,6 @@
         transition: transform 0.3s ease;
     }
 
-    .silver-square10 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .silver-square10.highlighted {
         transform: scale(1.08);
     }
@@ -1038,12 +977,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .silver-square9 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .silver-square9.highlighted {
@@ -1074,12 +1007,6 @@
         margin-top:20px;
     }
 
-    .silver-square8 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .silver-square8.highlighted {
         transform: scale(1.08);
     }
@@ -1099,12 +1026,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .silver-square7 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .silver-square7.highlighted {
@@ -1128,12 +1049,6 @@
         transition: transform 0.3s ease;
     }
 
-    .silver-square6 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .silver-square6.highlighted {
         transform: scale(1.08);
     }
@@ -1153,12 +1068,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .silver-square5 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .silver-square5.highlighted {
@@ -1189,12 +1098,6 @@
         margin-top:20px;
     }
 
-    .silver-square4 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .silver-square4.highlighted {
         transform: scale(1.08);
     }
@@ -1214,12 +1117,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .silver-square3 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .silver-square3.highlighted {
@@ -1243,12 +1140,6 @@
         transition: transform 0.3s ease;
     }
 
-    .silver-square2 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .silver-square2.highlighted {
         transform: scale(1.08);
     }
@@ -1268,12 +1159,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .silver-square1 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .silver-square1.highlighted {
@@ -1315,12 +1200,6 @@
         margin: 30px auto;
     }
 
-    .gold-square8 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .gold-square8.highlighted {
         transform: scale(1.08);
     }
@@ -1340,12 +1219,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .gold-square7 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .gold-square7.highlighted {
@@ -1369,12 +1242,6 @@
         transition: transform 0.3s ease;
     }
 
-    .gold-square6 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .gold-square6.highlighted {
         transform: scale(1.08);
     }
@@ -1396,11 +1263,6 @@
         transition: transform 0.3s ease;
     }
 
-    .gold-square5 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 
     .gold-square5.highlighted {
         transform: scale(1.08);
@@ -1457,11 +1319,6 @@
         transition: transform 0.3s ease;
     }
 
-    .gold-square3 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 
     .gold-square3.highlighted {
         transform: scale(1.08);
@@ -1484,11 +1341,6 @@
         transition: transform 0.3s ease;
     }
 
-    .gold-square2 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
 
     .gold-square2.highlighted {
         transform: scale(1.08);
@@ -1617,12 +1469,6 @@
         transition: transform 0.3s ease;
     }
 
-    .platinum-square2 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .platinum-square2.highlighted {
         transform: scale(1.08);
     }
@@ -1642,12 +1488,6 @@
         margin-top:15px;
 
         transition: transform 0.3s ease;
-    }
-
-    .platinum-square1 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .platinum-square1.highlighted {
@@ -1693,12 +1533,6 @@
         justify-content:center;
         align-items:center;
 
-    }
-
-    .diamond-square img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .diamond-square.highlighted {

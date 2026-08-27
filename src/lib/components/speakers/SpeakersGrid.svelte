@@ -27,15 +27,16 @@
 
 <style>
     .Grid {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(3,1fr);
         align-items: center;
+        justify-items: center;
         justify-content: center;
         column-gap: 1.5vw;
         row-gap: 5vh;
         width:  auto;
         height: auto;
-
     }
 
     .GridHeader {
@@ -45,13 +46,16 @@
 
     .SpeakersGrid {
         background-color: var(--secondary-color);
-        padding: 50px 100px;
-        border-radius: 50px;
-        gap: 15px;
-        margin:50px;
+        border-radius: 3rem;
+        gap: 1rem;
+        margin: 2rem auto;
+        padding: 1rem 0;
+        width: 90%;
         
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     @media (max-width: 768px) {
