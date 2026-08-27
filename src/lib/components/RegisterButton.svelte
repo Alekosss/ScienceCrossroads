@@ -56,7 +56,7 @@
 
 {#if showOverlay}
     <div class="overlay"> 
-        <div transition:slide={{ duration: 200, easing: quadInOut }} class="overlayContent">
+        <div transition:slide={{ duration: 150, easing: quadInOut }} class="overlayContent">
             <div class="Header">
                 <hr/>
                 <span>REGISTER!</span>
@@ -64,24 +64,24 @@
             </div>
             <div class="RegistrationSteps">
                 {#if stepIndex === 0}
-                    <div class="MailConfirmation LabelInput" out:fly={{ x: -300*flyDirection, duration:350, easing: quadInOut}} in:fly={{x: 300*flyDirection,delay:350, duration:350, easing: quadInOut }}>
+                    <div class="MailConfirmation LabelInput" out:fly={{ x: -300*flyDirection, duration:150, easing: quadInOut}} in:fly={{x: 300*flyDirection,delay:150, duration:150, easing: quadInOut }}>
                         <label for="email">Email Address</label>
                         <input required type="email" autocomplete="email" id="email" placeholder="mail@example.com" bind:value={mail} onblur={printmail}>
                     </div>
                 {:else if stepIndex === 1}
-                    <div class="Info" in:fly={{x: 300*flyDirection, delay:350, duration: 350, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 350, easing: quadInOut}}>
+                    <div class="Info" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
                         <div class="nameInfo LabelInput">
                             <label for="fullName">Full Name</label>
                             <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
                         </div>
                     </div>
                 {:else if stepIndex === 2}
-                    <div class="phoneInfo LabelInput"  in:fly={{x: 300*flyDirection, delay:350, duration: 350, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 350, easing: quadInOut}}>
+                    <div class="phoneInfo LabelInput"  in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
                         <label for="phoneNumber">Phone Number</label>
                         <input required id="phoneNumber" type="text" placeholder="+3069012345" autocomplete="tel" bind:value={phoneNumber}/>
                     </div>
                 {:else} 
-                    <div class="Confirmation" in:fly={{x: 300*flyDirection, delay:350, duration: 350, easing: quadInOut}}>
+                    <div class="Confirmation" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}}>
                         <ul>
                             {#each userInfo as info }
                                 <li>
