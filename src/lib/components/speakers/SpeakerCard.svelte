@@ -11,6 +11,15 @@
 
     let Detailed = $state(false);
 
+    $effect(() => {
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = Detailed ? 'hidden' : previousOverflow;
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
+    });
+
     function Click() {
         Detailed = !Detailed;
     }
@@ -66,7 +75,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        width: 100%;
+        height: 100%;
+        gap: 1rem;
     }
 
     .cardContent{
@@ -74,12 +85,16 @@
         grid-template-columns: 33% 67%;
         justify-content: center;
         align-items: center;
-        max-height: 500px;
+        max-height: 95%;
+        height: 85%;
+        width: 100%;
+        padding: 1rem;
+        gap: 2rem;
     }
 
     .cardImage img {
-        width: 300px;
-        height: 300px;
+        width: 100%;
+        aspect-ratio: 1;
     }
 
     .cardName{
@@ -98,9 +113,11 @@
         justify-content: center;
         align-items: center;
         
-        gap: 50px;
-        padding: 50px 75px 25px;
+        padding: 1rem 2rem;        
         border-radius: 25px;
+        width: 90%;
+        height: 60%;
+        box-sizing: border-box;
 
         background: var(--secondary-color); 
         color: var(--primary-color);
@@ -108,13 +125,15 @@
 
     .Description {
         font-size: 20px;
-        max-height: 450px;
+        height: 75%;
         overflow-y: auto;
     }
 
     .ImageAndTitle {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        width: 100%;
         gap: 25px;
     }
 
@@ -181,6 +200,7 @@
         align-items: center;
         justify-content: center;
         padding: 0px 300px;
+        z-index: 1001;
     }
 
     .Position {
@@ -192,12 +212,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 1rem;
         border-radius: 12.5%;
         margin: 5px;
-        width: 275x;
-        height: 275px;
-        padding: 0px 50px;
+        width: 70%;
+        height: 100%;
+        padding: 0.25rem 5rem;
 
         background-color: var(--primary-color);
         color: var(--secondary-color);
@@ -208,5 +228,46 @@
     .SpeakerCard:hover {
         transform: scale(1.1);
         cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .cardContent {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            height: auto;
+            justify-content: flex-start;
+            align-items: stretch;
+            overflow-y: auto;
+        }
+
+        .dialog {
+            width: 90%;
+            height: 70%;
+            pointer-events: auto;
+        }
+
+        .cardImage img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .ImageAndTitle {
+            flex: 0 0 auto;
+            align-items: center;
+        }
+
+        .Description {
+            flex: 0 0 auto;
+            height: auto;
+            width: 100%;
+        }
+        
+        .overlay {
+            padding: 1rem;
+            pointer-events: auto;
+        }
     }
 </style>

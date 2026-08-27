@@ -373,11 +373,6 @@
 
 
 <style>
-
-    .hidden{
-        display:none;
-    }
-
     .day-content{
 
         animation: slideFromLeft 0.5s ease;
@@ -882,13 +877,6 @@
         justify-content:center;
     }
 
-    .physics-experiment-break-letter{
-        font-size:15px;
-        font-weight:400;
-        margin:0;
-        text-align:center;
-    }
-
     .physics-experiment-break-time{
         font-size:15px;
         font-weight:600;
@@ -1046,13 +1034,6 @@
 
     .purple-1{
         grid-column:2;
-        display:flex;
-        flex-direction:column;
-        gap:5px;
-    }
-
-    .orange-3{
-        grid-column:1;
         display:flex;
         flex-direction:column;
         gap:5px;
@@ -1433,89 +1414,6 @@
         color: white;
         text-decoration: underline;
         text-decoration-thickness: 1,5px;
-    }
-
-    .schedule-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .line{
-        width: 250px;
-        height: 2px;
-        background-color: #DD5E5E;
-    }
-
-    .schedule-title h1{
-        font-size: 30px;
-        font-weight: 500px;
-        color: #DD5E5E;
-    }
-
-    .filters{
-        display:flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 100px;
-        justify-content: center;
-
-        background-color: #D9D9D9;
-        border-radius: 25px;
-        padding: 30px 30px;
-
-        margin-top:50px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .filters-item{
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    .color-box{
-        width: 15px;
-        height: 15px;
-    }
-
-    .general-color{
-        background-color: #EF8FBD;
-    }
-
-    .physics-color{
-        background-color: #E29B60;
-    }
-
-    .computer-science-color{
-        background-color: #B66DEA;
-    }
-
-    .chemistry-color{
-        background-color: #1BC69B;
-    }
-
-    .break-color{
-        background-color: #DD5E5E;
-    }
-
-    .filter-all{
-        flex-direction:column;
-        display: flex;
-        align-items:center;
-        gap: 20px;
-    }
-
-    .show-hide{
-        background-color: black;
-        color: white;
-        border: none;
-        border-radius: 25px;
-        padding: 5px 5px;
-
     }
 
 </style>

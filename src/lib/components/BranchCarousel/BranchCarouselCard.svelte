@@ -27,6 +27,12 @@
 </div>
 
 <style>
+    .branchImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .BranchNameAndDescription {
         display: flex;
         flex-direction: column;
@@ -35,7 +41,7 @@
 
         gap: 75px;
         margin: 15px;
-        width: 350px;
+        width: 50%;
     }
 
     .BranchName {
@@ -48,6 +54,7 @@
     }
 
     .branchSlogan {
+        width: 100%;
         color: var(--it);
         font-size: 20px;
         font-style: normal;
@@ -57,30 +64,29 @@
     }
 
     .CarouselCard {
-        justify-self: center;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
 
         padding: 20px;
-        width: 750px;
-        height: 350px;
+        width: 60%;
+        height: 60vh;
+        box-sizing: border-box;
 
         background-color: var(--secondary-color);
         border-radius: 50px;
+        margin: 0 auto;
     }
 
     .Description {
         color: var(--primary-color);
-        width: 300px;
-        height: 150px;
+        width: 100%;
     }
 
     .Description span {
         display: block;
-        height: 150px;
-        width: 300px;
+        width: 100%;
     }
 
     .LogoAndSlogan {
@@ -91,13 +97,34 @@
         align-items: center;
 
         gap: 50px;
-        width: 300px;
+        width: 50%;
     }
 
     .LogoAndSlogan img {
-        width: 200px;
-        height: 200px;
+        width: 50%;
         aspect-ratio: 1;
     }
 
+    @media (max-width: 768px) {
+        .branchSlogan span {
+            font-size: clamp(8vw,9vw,10vw);
+        }
+
+        .BranchNameAndDescription {
+            height: auto;
+        }
+
+        .BranchName span {
+            font-size: clamp(9vw,10vw,11vw);
+        }
+        
+        .CarouselCard {
+            width: 95%;
+            height: 80vh;
+        }
+
+        .Description span {
+            font-size: clamp(7vw,8vw,9vw);
+        }
+    }
 </style>

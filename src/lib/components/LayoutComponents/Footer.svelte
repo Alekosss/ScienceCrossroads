@@ -77,7 +77,7 @@
 
 <style>
     .Bottom hr{
-        width: 1700px;
+        width: 30%;
         height: 5px;
         background-color: var(--primary-color);
         border-radius: 10px;
@@ -90,30 +90,36 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         font-family: var(--font-family);
 
         background-color: var(--secondary-color);
         border-radius: 50px;
+
+        width: 90%;
+        height: 20vh;
+        padding: 1%;
+        margin: 2rem auto 1rem;
     }
 
     .Media {
         display: flex;
-        flex-direction: row;
         align-items: center;
         align-content: center;
         justify-content: center;
 
-        gap: 15px;
         border-radius: 50px;
         background-color: var(--secondary-color);
-        padding: 10px 20px;
         cursor: pointer;
 
         color: var(--primary-color);
-        font-size: 18px;
+        font-size: clamp(10px,1.25vw,14px);
         font-style: normal;
         font-weight:300;
         line-height: normal;
+        padding: 0 1rem;
+
+        gap: 0.2rem;
     }
 
     .Media:hover {
@@ -131,14 +137,17 @@
     }
 
     .Media:hover span {
-        transform: scale(1.15);
+        transform: scale(1.1);
     }
 
     .SocialMedia {
         display: flex;
         flex-direction: row;
-        gap: 60px;
-        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5%;
+        padding-top: 1%;
+        width: 100%;
     }
 
     .Top {
@@ -154,10 +163,11 @@
         font-style: normal;
         font-weight: 300;
         line-height: normal;
+        width: 100%;
     }
 
     .Top hr {
-        width: 725px;
+        width: 37.5%;
         height: 5px;
         background-color: var(--primary-color);
         border: none;
@@ -167,5 +177,41 @@
 
     .Top span{
         width: 150px;
+    }
+
+    @media (max-width: 768px) {
+
+        .Footer {
+            height: auto;
+            padding: 1rem 1rem 0rem;
+        }
+
+        .Media {
+            zoom: 0.55;
+        }
+
+        .Media span {
+            display: none;
+        }
+
+        .SocialMedia {
+            gap: 5%;
+        }
+
+        .Top {
+            gap: 1%;
+            margin: 0 0 2%;
+        }
+
+        .Top hr {
+            width: 22.5%;
+        }
+
+        .Top span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(4vw,5vw,6vw);
+        }
     }
 </style>

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Footer from '$lib/components/Footer.svelte';
+  import Footer from '$lib/components/LayoutComponents/Footer.svelte';
 
-	// import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.svg';
 
-	import NavigationBar from '$lib/components/navigationBar.svelte';
+	import NavigationBar from '$lib/components//LayoutComponents/navigationBar.svelte';
 	import '../app.css'
 
 </script>

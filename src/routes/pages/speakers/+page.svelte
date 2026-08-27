@@ -27,38 +27,44 @@
     </div>
     <div class="ScrollToArea">
         <button class="ShowHide General" onclick={ShowHideGeneral} >
-            {#if show[0]}
-                HIDE
-            {:else}
-                SHOW
-            {/if}
-            GENERAL
+            <text>
+                {#if show[0]}
+                    HIDE
+                {:else}
+                    SHOW
+                {/if}
+                GENERAL
+            </text>
         </button>
         <button class="ShowHide Chemistry" onclick={ShowHideChemistry} >
-            {#if show[1]}
-                HIDE
-            {:else}
-                SHOW
-            {/if}
-            CHEMISTRY
+            <text>
+                {#if show[1]}
+                    HIDE
+                {:else}
+                    SHOW
+                {/if}
+                CHEMISTRY
+            </text>
         </button>
         <button class="ShowHide ComputerScience" onclick={ShowHideComputerScience} >
-            {#if show[2]}
-                HIDE
-            {:else}
-                SHOW
-            {/if}
-            COMPUTER SCIENCE
+            <text>
+                {#if show[2]}
+                    HIDE
+                {:else}
+                    SHOW
+                {/if}
+                COMPUTER SCIENCE
+            </text>
         </button>
         <button class="ShowHide Physics" onclick={ShowHidePhysics} >
-            <span>
+            <text>
             {#if show[3]}
                 HIDE
             {:else}
                 SHOW
             {/if}
             PHYSICS
-            </span>
+            </text>
         </button>
     </div>
     <div class="Grids">
@@ -132,11 +138,15 @@
         background-color: var(--primary-color);
     }
 
+    .Grids {
+        width: 95%;
+    }
+
     .Physics {
         color: var(--physics);
     }
 
-    .Physics span {
+    .Physics text {
         font-weight: 500;
     }
 
@@ -145,14 +155,15 @@
     }
 
     .ScrollToArea {
-        width: 1250px;
-        height: 100px;
+        width: auto;
+        height: auto;
         background-color: var(--break);
         
         display: flex;
         flex-direction: row;
-        gap: 50px;
-        margin: 0px 150px 25px;
+        gap: 4rem;
+        padding: 1rem;
+        margin: 1rem 0;
         border-radius: 50px;
         justify-content: center;
         align-items: center;
@@ -165,9 +176,12 @@
 
         border: none;
         border-radius: 50px;
-        padding: 15px 25px;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: clamp(18px,20px,22px);
+        padding: 1.1rem;
+    }
+
+    .ShowHide text {
+        font-weight: 500;
     }
 
     .SpeakersPage {
@@ -177,5 +191,36 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .CategoryHeader span{
+            font-size:  clamp(6vw,7.5vw,9vw);
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .CategoryHeader {
+            display: flex;
+            flex-direction: row;
+            gap: 5%;
+            padding: 0;
+            margin: 25% 0;
+        }
+
+        .CategoryHeader hr {
+            display: none;
+        }
+
+        .ScrollToArea {
+            width: 90%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
     }
 </style>

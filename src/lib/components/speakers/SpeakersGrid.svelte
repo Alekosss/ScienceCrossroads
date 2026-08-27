@@ -27,26 +27,51 @@
 
 <style>
     .Grid {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        column-gap: 50px;
-        row-gap: 25px;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        column-gap: 1.5vw;
+        row-gap: 5vh;
+        width:  auto;
+        height: auto;
     }
 
     .GridHeader {
-        margin-left: 10px;
-        font-size: 35px;
+        font-size: clamp(30px,32.5px,35px);
         font-weight: 600;
     }
 
     .SpeakersGrid {
         background-color: var(--secondary-color);
-        padding: 50px 100px;
-        border-radius: 50px;
-        gap: 15px;
-        margin:50px;
+        border-radius: 3rem;
+        gap: 1rem;
+        margin: 2rem auto;
+        padding: 1rem 0;
+        width: 90%;
         
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .Grid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .GridHeader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .SpeakersGrid {
+            padding: 0px;
+        }
     }
 </style>

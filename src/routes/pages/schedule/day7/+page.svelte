@@ -956,13 +956,6 @@
         justify-content:center;
     }
 
-    .physics-experiment-break-letter{
-        font-size:15px;
-        font-weight:400;
-        margin:0;
-        text-align:center;
-    }
-
     .physics-experiment-break-time{
         font-size:15px;
         font-weight:600;

@@ -56,7 +56,7 @@
         top: 75%;
         transform: translateY(-60%);
         right: 24px;
-        z-index: 1000;
+        z-index: 500;
 
         display: flex;
         flex-direction: column;
@@ -84,9 +84,9 @@
         border: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         .Scroll {
-            right: 12px;
+            display: none;
         }
 
         .ScrollButton {
