@@ -475,6 +475,10 @@
 
         .SocialMediaPosts {
             zoom: 0.5;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 100%;
         }
 
         .TextHeader text {

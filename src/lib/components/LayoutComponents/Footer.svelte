@@ -135,6 +135,7 @@
     .Media span {
         display: inline-block;
         transition: transform 0.2s linear;
+        font-weight: 600;
     }
 
     .Media:hover span {

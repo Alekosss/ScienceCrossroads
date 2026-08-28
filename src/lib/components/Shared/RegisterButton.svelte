@@ -36,7 +36,11 @@
 
     let emptyMailWarning = $state(false);
     let formatMailWarning = $state(false);
+    let emptyNameWarning = $state(false);
     let numberInName = $state(false);
+    let emptyPhoneNumber = $state(false);
+    let lettersInNumber = $state(false);
+    let formatPhoneNumber = $state(false);
 
     function nextClick() {
         flyDirection = 1;
@@ -57,9 +61,25 @@
                 stepIndex++;
             }
         }
-        else if (stepIndex === 1) {
-            if (/\d/.test(fullName)) {
+        else if (stepIndex === 1) { //Name checks
+            if (!fullName.trim()) {
+                emptyNameWarning = true;
+            }
+            else if (/\d/.test(fullName)) {
                 numberInName = true;
+            }
+            else {
+                stepIndex++;
+            }
+        }
+        else if (stepIndex === 2) {
+            if (!phoneNumber.trim()) {
+                emptyPhoneNumber = true;
+            }
+            else if (/\p{L}/u.test(phoneNumber))
+                lettersInNumber = true;
+            else if ( !(phoneNumber.trim().length===10 || phoneNumber.trim().length===13) ) {
+                formatPhoneNumber = true;
             }
             else {
                 stepIndex++;
@@ -80,6 +100,22 @@
 
     function closeNameWarning() {
         numberInName = false;
+    }
+
+    function CloseEmptyNameWarning() {
+        emptyNameWarning = false;
+    }
+
+    function closeEmptyPhoneWarning() {
+        emptyPhoneNumber = false;
+    }
+
+    function closeLettersInPhoneWarning() {
+        lettersInNumber = false;
+    }
+
+    function closeFormatPhoneNumber() {
+        formatPhoneNumber = false;
     }
 
     function printmail() {
@@ -129,7 +165,16 @@
                         <label for="fullName">Full Name</label>
                         <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
                     </div>
-                    {#if numberInName} 
+                    {#if emptyNameWarning}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Please enter your full name.</span>
+                                <button class="WarningButton" onclick={CloseEmptyNameWarning}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {:else if numberInName} 
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Name cannot contain number(s). Please try again.</span>
@@ -144,6 +189,34 @@
                         <label for="phoneNumber">Phone Number</label>
                         <input required id="phoneNumber" type="text" placeholder="+3069012345" autocomplete="tel" bind:value={phoneNumber}/>
                     </div>
+                    {#if emptyPhoneNumber}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Please enter your phone number.</span>
+                                <button class="WarningButton" onclick={closeEmptyPhoneWarning}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {:else if lettersInNumber}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Phone number cannot include letters. Please try again.</span>
+                                <button class="WarningButton" onclick={closeLettersInPhoneWarning}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {:else if formatPhoneNumber}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>Please enter a valid phone number. 10 digits (or 13 including +30)</span>
+                                <button class="WarningButton" onclick={closeFormatPhoneNumber}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {/if}
                 {:else} 
                     <div class="Confirmation" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}}>
                         <ul>
@@ -443,5 +516,19 @@
 
     .WarningButton:hover span {
         color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+        .LabelInput {
+            width: 75%;
+        }
+
+        .LabelInput label {
+            font-size: clamp(8vw,9vw,10vw);
+        }
+        
+        .RegistrationSteps {
+            width: 100%;
+        }
     }
 </style>
