@@ -77,7 +77,6 @@
         align-items: center;
         width: 100%;
         height: 100%;
-        gap: 1rem;
     }
 
     .cardContent{
@@ -116,7 +115,7 @@
         padding: 1rem 2rem;        
         border-radius: 25px;
         width: 90%;
-        height: 60%;
+        height: 75vh;
         box-sizing: border-box;
 
         background: var(--secondary-color); 
@@ -166,9 +165,9 @@
     }
     
     .OK {
-        width: 125px;
-        height: 50px;
-        border-radius: 50px;
+        width: 15%;
+        height: 10vh;
+        border-radius: 2rem;
         border: 2px solid var(--primary-color);
         cursor: pointer;
     }

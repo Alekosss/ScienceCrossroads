@@ -1,11 +1,11 @@
 <script>
-    import StatisticsButton from "$lib/components/StatisticsButton.svelte";
-    import CountdownClock from "$lib/components/CountdownClock.svelte";
-    import MapLocation from "$lib/components/MapLocation.svelte";
-    import RegisterButton from "$lib/components/RegisterButton.svelte";
-    import SocialPosts from "$lib/components/SocialPosts.svelte";
+    import StatisticsButton from "$lib/components/Home/StatisticsButton.svelte";
+    import CountdownClock from "$lib/components/Shared/CountdownClock.svelte";
+    import MapLocation from "$lib/components/Shared/MapLocation.svelte";
+    import RegisterButton from "$lib/components/Shared/RegisterButton.svelte";
+    import SocialPosts from "$lib/components/Home/SocialPosts.svelte";
     import BranchesCarousel from "$lib/components/BranchCarousel/BranchesCarousel.svelte";
-    import ScrollToButton from "$lib/components/ScrollToButton.svelte";
+    import ScrollToButton from "$lib/components/Shared/ScrollToButton.svelte";
 
     let SloganTarget = $state();
 </script>
@@ -475,6 +475,10 @@
 
         .SocialMediaPosts {
             zoom: 0.5;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 100%;
         }
 
         .TextHeader text {

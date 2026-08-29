@@ -1,8 +1,8 @@
 <script>
-    import CountdownClock from "$lib/components/CountdownClock.svelte";
-    import MapLocation from "$lib/components/MapLocation.svelte";
-    import Qna from "$lib/components/Qna.svelte";
-    import RegisterButton from "$lib/components/RegisterButton.svelte";
+    import CountdownClock from "$lib/components/Shared/CountdownClock.svelte";
+    import MapLocation from "$lib/components/Shared/MapLocation.svelte";
+    import Qna from "$lib/components/Register&FAQ/Qna.svelte";
+    import RegisterButton from "$lib/components/Shared/RegisterButton.svelte";
 
 
     let showing = $state(true);

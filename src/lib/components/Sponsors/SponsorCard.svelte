@@ -123,20 +123,9 @@
     cursor: pointer;
 }
 
-.OK span {
-    transition: transform 0.2s ease-in-out;
-    display: block;
-    font-size: 24px;
-    font-weight: 500;
-}
-
 .OK:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-}
-
-.OK:hover span {
-    transform: scale(1.3);
 }
 
 .sponsor-card {

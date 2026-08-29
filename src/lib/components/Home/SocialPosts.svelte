@@ -85,8 +85,8 @@
     }
 
     .Carousel {
-        width: 550px;
-        height: 390px;
+        width: 50vw;
+        height: 60vh;
         background-color: var(--it);
     }
 
@@ -203,8 +203,8 @@
     }
     
     .SocialPosts {
-        width: 800px;
-        height: 700px;
+        width: 80%;
+        height: 100%;
         border-radius: 50px;
         background-color: var(--secondary-color);
         align-items: center;
@@ -245,16 +245,30 @@
     }
 
     @media (max-width: 768px) {
+        .Carousel {
+            width: 80%;
+        }
+
         .Media {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 15%;
+            gap: 4rem;
+            width: 90%;
         }
 
         .Social span {
             display: none;
+        }
+
+        .SocialMedia {
+            width: 90%;
+        }
+
+        .SocialPosts {
+            width: 80%;
+            padding-bottom: 1.5rem;
         }
     }
 </style>

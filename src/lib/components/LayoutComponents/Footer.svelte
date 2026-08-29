@@ -120,6 +120,7 @@
         padding: 0 1rem;
 
         gap: 0.2rem;
+        zoom: 0.8;
     }
 
     .Media:hover {
@@ -134,6 +135,7 @@
     .Media span {
         display: inline-block;
         transition: transform 0.2s linear;
+        font-weight: 600;
     }
 
     .Media:hover span {

@@ -18,7 +18,6 @@
     let formEl: HTMLFormElement;
 
     function isValidEmail(mail:string) {
-        console.log("Mail at check is: " + mail);
 		return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail.trim());
 	}
 
