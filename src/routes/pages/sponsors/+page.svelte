@@ -1292,12 +1292,6 @@
         margin-top:20px;
     }
 
-    .gold-square4 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .gold-square4.highlighted {
         transform: scale(1.08);
     }
@@ -1363,12 +1357,6 @@
         transition: transform 0.3s ease;
     }
 
-    .gold-square1 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .gold-square1.highlighted {
         transform: scale(1.08);
     }
@@ -1408,12 +1396,6 @@
         margin: 30px auto;
     }
 
-    .platinum-square4 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
     .platinum-square4.highlighted {
         transform: scale(1.08);
     }
@@ -1440,12 +1422,6 @@
         justify-content:center;
         gap:40px;
         margin-top:20px;
-    }
-
-    .platinum-square3 img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
     }
 
     .platinum-square3.highlighted {
