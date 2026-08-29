@@ -42,6 +42,35 @@
     let lettersInNumber = $state(false);
     let formatPhoneNumber = $state(false);
 
+    let submitError = $state('');
+    let submitting = $state(false);
+
+    async function submitRegistration() {
+        submitting = true;
+        submitError = '';
+
+        const res = await fetch('/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: mail, name: fullName, phone: phoneNumber })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            // success — close overlay or show success message
+            showOverlay = false;
+            stepIndex = 0;
+            mail = ''; fullName = ''; phoneNumber = '';
+        } else if (data.error === 'already_registered') {
+            submitError = 'This email is already registered.';
+        } else {
+            submitError = 'Something went wrong. Please try again.';
+        }
+
+        submitting = false;
+    }
+
     function nextClick() {
         flyDirection = 1;
         if (stepIndex === 0) { //email checks
@@ -52,12 +81,7 @@
                 formatMailWarning = true;
             }
             
-            else {/*
-                check database.
-                if exists in databate {
-                    showMessage (="Already registered with that mail!")    
-                }
-                else {}*/
+            else {
                 stepIndex++;
             }
         }
@@ -85,8 +109,8 @@
                 stepIndex++;
             }
         }
-        if (stepIndex>3) {
-            stepIndex=0;
+        else if (stepIndex === 3) {
+            submitRegistration();
         }
     }
 
@@ -227,6 +251,16 @@
                             {/each}
                         </ul>
                     </div>
+                    {#if submitError}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>{submitError}</span>
+                                <button class="WarningButton" onclick={() => submitError = ''}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {/if}
                 {/if}
             </div>
             <div class="progressSteps">
@@ -248,8 +282,12 @@
                         <span>EXIT</span>
                     {/if}
                 </button>
-                <button onclick={nextClick} class="ProgressButton Next">
-                    <span>NEXT</span>
+                <button onclick={nextClick} class="ProgressButton Next" disabled={submitting}>
+                    {#if stepIndex === 3}
+                        <span>{submitting ? 'SUBMITTING...' : 'SUBMIT'}</span>
+                    {:else}
+                        <span>NEXT</span>
+                    {/if}
                 </button>
                 <hr/>
             </div>
@@ -525,6 +563,7 @@
 
         .LabelInput label {
             font-size: clamp(8vw,9vw,10vw);
+            text-align: center;
         }
         
         .RegistrationSteps {
