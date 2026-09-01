@@ -10,7 +10,7 @@
 
     let flyDirection = $state(1);
 
-    let steps = $state([0,1,2,3]);
+    let steps = $state([0,1,2,3,4]);
     let stepIndex = $state(0);
 
     let mail = $state('');
@@ -18,6 +18,8 @@
     let phoneNumber = $state('');
 
     let userInfo = $derived([mail,fullName,phoneNumber]);
+
+    let userCode = $state("");
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -41,6 +43,8 @@
     let emptyPhoneNumber = $state(false);
     let lettersInNumber = $state(false);
     let formatPhoneNumber = $state(false);
+    let alreadyRegistered = $state(false);
+    let wrongCodeWarning = $state(false);
 
     let submitError = $state('');
     let submitting = $state(false);
@@ -71,7 +75,7 @@
         submitting = false;
     }
 
-    function nextClick() {
+    async function nextClick() {
         flyDirection = 1;
         if (stepIndex === 0) { //email checks
             if (!mail) {
@@ -80,12 +84,53 @@
             else if (!emailRegex.test(mail)) {
                 formatMailWarning = true;
             }
-            
-            else {
-                stepIndex++;
+            else { //email field is not empty and 
+                //check if email is already registered on the registrations table
+
+                const regres = await fetch(`/api/register?email=${encodeURIComponent(mail)}`);
+                const regdata = await regres.json();
+
+                if (regdata.exists) { //if registered show warning (turn relative warning variable to true)
+                    alreadyRegistered = true;
+                } 
+                else {  //not registered at all
+
+                    //Check the confirmationCodes table for the mail;
+                    const otpres = await fetch(`/api/otp?email=${encodeURIComponent(mail)}`);
+                    const otpdata = await otpres.json();
+
+                    //if the mail doesn't exist in the db, generate code, send it and store it
+                    if (!otpdata.exists) {
+                        const otpregres = await fetch('/api/otp', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: mail})
+                        });
+
+                        const otpregdata = await otpregres.json();
+
+                        if (otpregres.ok) {
+                            console.log("generated code, sent code, stored it in confirmationCodes.");
+                        }
+                    } 
+                    //if it exists there, move to step 2 and ask for the code
+                    stepIndex++;
+                }
             }
         }
-        else if (stepIndex === 1) { //Name checks
+        else if (stepIndex === 1) {
+            const verifyres = await fetch(`/api/verifyotp?email=${encodeURIComponent(mail)}&code=${encodeURIComponent(userCode)}`);
+            const verifydata = await verifyres.json();
+            //check if verificatio code is the same
+            if (verifydata.valid) {
+                //code entered is same as generated!
+                stepIndex++;
+            }
+            else {
+                wrongCodeWarning = true;
+            }
+        }
+        else if (stepIndex === 2) { //Name checks
             if (!fullName.trim()) {
                 emptyNameWarning = true;
             }
@@ -96,7 +141,7 @@
                 stepIndex++;
             }
         }
-        else if (stepIndex === 2) {
+        else if (stepIndex === 3) {
             if (!phoneNumber.trim()) {
                 emptyPhoneNumber = true;
             }
@@ -109,37 +154,9 @@
                 stepIndex++;
             }
         }
-        else if (stepIndex === 3) {
+        else if (stepIndex === 4) {
             submitRegistration();
         }
-    }
-
-    function CloseEmptyMailWarning() {
-        emptyMailWarning = false;
-    }
-
-    function CloseFormatMailWarning() {
-        formatMailWarning = false;
-    }
-
-    function closeNameWarning() {
-        numberInName = false;
-    }
-
-    function CloseEmptyNameWarning() {
-        emptyNameWarning = false;
-    }
-
-    function closeEmptyPhoneWarning() {
-        emptyPhoneNumber = false;
-    }
-
-    function closeLettersInPhoneWarning() {
-        lettersInNumber = false;
-    }
-
-    function closeFormatPhoneNumber() {
-        formatPhoneNumber = false;
     }
 
     function printmail() {
@@ -169,7 +186,7 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Please fill out your email address.</span>
-                                <button class="WarningButton" onclick={CloseEmptyMailWarning}>
+                                <button class="WarningButton" onclick={()=>emptyMailWarning=false}>
                                     <span>OK</span>
                                 </button>
                             </div>
@@ -178,13 +195,37 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Email format is wrong. Please try again.</span>
-                                <button class="WarningButton" onclick={CloseFormatMailWarning}>
+                                <button class="WarningButton" onclick={()=>formatMailWarning=false}>
+                                    <span>OK</span>
+                                </button>
+                            </div>
+                        </div>
+                    {:else if alreadyRegistered}
+                        <div class="Warning">
+                            <div class="WarningContent">
+                                <span>This email is already registered.</span>
+                                <button class="WarningButton" onclick={() => alreadyRegistered = false}>
                                     <span>OK</span>
                                 </button>
                             </div>
                         </div>
                     {/if}
                 {:else if stepIndex === 1}
+                        <div class="code LabelInput" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
+                            <label for="confirmationCode">Confirmation Code (sent to your email!)</label>
+                            <input required id="confirmationCode" type="text" placeholder="000000" bind:value={userCode}/>
+                        </div>
+                        {#if wrongCodeWarning}
+                            <div class="Warning">
+                                <div class="WarningContent">
+                                    <span>Wrong confirmation code. Please try again.</span>
+                                    <button class="WarningButton" onclick={()=>wrongCodeWarning=false}>
+                                        <span>OK</span>
+                                    </button>
+                                </div>
+                            </div>
+                        {/if}
+                {:else if stepIndex === 2}
                     <div class="Info LabelInput" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
                         <label for="fullName">Full Name</label>
                         <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
@@ -193,7 +234,7 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Please enter your full name.</span>
-                                <button class="WarningButton" onclick={CloseEmptyNameWarning}>
+                                <button class="WarningButton" onclick={()=>emptyNameWarning=false}>
                                     <span>OK</span>
                                 </button>
                             </div>
@@ -202,13 +243,13 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Name cannot contain number(s). Please try again.</span>
-                                <button class="WarningButton" onclick={closeNameWarning} >
+                                <button class="WarningButton" onclick={()=>numberInName=false} >
                                     <span>OK</span>
                                 </button>
                             </div>
                         </div>
                     {/if}
-                {:else if stepIndex === 2}
+                {:else if stepIndex === 3}
                     <div class="phoneInfo LabelInput"  in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
                         <label for="phoneNumber">Phone Number</label>
                         <input required id="phoneNumber" type="text" placeholder="+3069012345" autocomplete="tel" bind:value={phoneNumber}/>
@@ -217,7 +258,7 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Please enter your phone number.</span>
-                                <button class="WarningButton" onclick={closeEmptyPhoneWarning}>
+                                <button class="WarningButton" onclick={()=>emptyPhoneNumber=false}>
                                     <span>OK</span>
                                 </button>
                             </div>
@@ -226,7 +267,7 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Phone number cannot include letters. Please try again.</span>
-                                <button class="WarningButton" onclick={closeLettersInPhoneWarning}>
+                                <button class="WarningButton" onclick={()=>lettersInNumber=false}>
                                     <span>OK</span>
                                 </button>
                             </div>
@@ -235,13 +276,13 @@
                         <div class="Warning">
                             <div class="WarningContent">
                                 <span>Please enter a valid phone number. 10 digits (or 13 including +30)</span>
-                                <button class="WarningButton" onclick={closeFormatPhoneNumber}>
+                                <button class="WarningButton" onclick={()=>formatPhoneNumber=false}>
                                     <span>OK</span>
                                 </button>
                             </div>
                         </div>
                     {/if}
-                {:else} 
+                {:else}  <!--stepIndex=4-->
                     <div class="Confirmation" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}}>
                         <ul>
                             {#each userInfo as info }
@@ -283,7 +324,7 @@
                     {/if}
                 </button>
                 <button onclick={nextClick} class="ProgressButton Next" disabled={submitting}>
-                    {#if stepIndex === 3}
+                    {#if stepIndex === 4}
                         <span>{submitting ? 'SUBMITTING...' : 'SUBMIT'}</span>
                     {:else}
                         <span>NEXT</span>

@@ -95,7 +95,7 @@
         <div class="BranchesCarousel">
             <BranchesCarousel/>          
         </div>        
-    </div>  
+    </div>
 </div>
 
 <ScrollToButton ArrowDirectionUp={true} scrollTarget={SloganTarget}/>
@@ -118,7 +118,7 @@
         justify-content: center;
         padding: 160px 0;
         width: 100%;
-        gap: 0;
+        gap: 3rem;
     }
     
     .CategoryHeader text {
