@@ -5,5 +5,13 @@ export const registrations = sqliteTable('registrations', {
   email: text('email').notNull().unique(),
   name: text('name').notNull(),
   phone: text('phone').notNull(),
-  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().$defaultFn(() => new Date()),
+  createdAt: text('created_at').notNull().$defaultFn(() => 
+    new Date().toLocaleString('el-GR', { timeZone: 'Europe/Athens', hour12: false })
+),});
+
+export const ConfirmationCodes = sqliteTable('ConfirmationCodes', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  email: text('email').notNull().unique(),
+  code: text('code').notNull(),
 });
+
