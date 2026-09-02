@@ -111,6 +111,8 @@
         align-items: center;
         flex-direction: row;
         gap: 8px;
+
+        color:black;
     }
 
     .color-box{
