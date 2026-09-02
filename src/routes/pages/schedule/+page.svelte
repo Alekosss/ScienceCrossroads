@@ -1416,4 +1416,193 @@
         text-decoration-thickness: 1,5px;
     }
 
+    @media (max-width:768px){
+        .squares,
+        .squares-1,
+        .squares-2,
+        .squares-3,
+        .coffee-break-2 {
+            margin-left: 5px;
+            margin-right: 5px;
+            column-gap: 3px;
+        }
+
+        .where-line,
+        .coming-line,
+        .coffee-break-1-line,
+        .coffee-break-3,
+        .wine-party {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .where-line {
+        font-size: 8px;
+        padding: 8px 2px;
+        border-radius: 15px;
+        }
+
+        .squares span,
+        .squares p,
+        .squares-1 span,
+        .squares-1 p,
+        .squares-2 span,
+        .squares-2 p,
+        .squares-3 span,
+        .squares-3 p,
+        .coffee-break-2 span,
+        .coffee-break-2 p {
+            font-size: 9px;
+            line-height: 1.2;
+        }
+
+        .squares > div,
+        .squares-1 > div,
+        .squares-2 > div,
+        .squares-3 > div {
+            min-width: 0;
+        }
+
+        .orange-1-0,
+        .purple-1-0,
+        .green-1-0,
+        .green-2-0,
+        .orange-1-1,
+        .orange-2-1,
+        .orange-3-1,
+        .purple-1-1,
+        .purple-2-1,
+        .green-1-1,
+        .green-2-1,
+        .orange-1-2,
+        .orange-2-2,
+        .pink-1-2,
+        .pink-2-2,
+        .pink-3-2,
+        .purple-1-2,
+        .purple-2-2,
+        .purple-3-2,
+        .pink-end-line,
+        .green-1-3,
+        .green-2-3,
+        .orange-1-4,
+        .greetings {
+            padding: 5px;
+            gap: 5px;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        .coffee-break-2-line,
+        .physics-experiment-break {
+            padding: 5px;
+            gap: 5px;
+            border-radius: 15px;
+        }
+
+        .empty-box {
+        border-radius: 15px;
+        }
+
+        .coming-line,
+        .coffee-break-1-line,
+        .coffee-break-3,
+        .wine-party {
+            padding: 8px;
+            gap: 5px;
+            border-radius: 15px;
+        }
+
+        .coming-line span,
+        .coming-line p,
+        .coffee-break-1-line span,
+        .coffee-break-1-line p,
+        .coffee-break-3 span,
+        .coffee-break-3 p,
+        .wine-party span,
+        .wine-party p {
+            font-size: 11px;
+        }
+
+        .explain-line {
+        width: auto;
+        height: auto;
+        margin-left: 5px;
+        margin-right: 5px;
+        }
+
+        .explain-line-letter {
+        font-size: 10px;
+        }
+
+        .orange-1-0,
+        .purple-1-0,
+        .green-1-0,
+        .green-2-0,
+        
+        .orange-1-1,
+        .orange-2-1,
+        .orange-3-1,
+        .purple-1-1,
+        .purple-2-1,
+        .green-1-1,
+        .green-2-1,
+
+        .orange-1-2,
+        .orange-2-2,
+        .pink-1-2,
+        .pink-2-2,
+        .pink-3-2,
+        .purple-1-2,
+        .purple-2-2,
+        .purple-3-2,
+
+        .green-1-3,
+        .green-2-3,
+        .orange-1-4,
+        .pink-end-line {
+            height: auto;
+            min-height: 70px;
+        }
+
+        .squares p,
+        .squares-1 p,
+        .squares-2 p,
+        .squares-3 p {
+            overflow-wrap: break-word;
+            word-break: normal;
+        }
+
+        .pink-1-2,
+        .pink-2-2,
+        .pink-3-2,
+        .purple-1-2,
+        .purple-2-2,
+        .purple-3-2 {
+            height: 90px;
+            min-height: 90px;
+            padding: 4px;
+            gap: 3px;
+        }
+
+        .pink-1-2 p,
+        .pink-2-2 p,
+        .pink-3-2 p,
+        .purple-1-2 p,
+        .purple-2-2 p,
+        .purple-3-2 p {
+            font-size: 8px;
+            line-height: 1.1;
+        }
+
+        .pink-1-2 span,
+        .pink-2-2 span,
+        .pink-3-2 span,
+        .purple-1-2 span,
+        .purple-2-2 span,
+        .purple-3-2 span {
+            font-size: 8px;
+        }
+
+    }
 </style>
