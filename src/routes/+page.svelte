@@ -401,7 +401,7 @@
         }
 
         .Countdown {
-            zoom: 0.6;
+            zoom: 0.75;
             margin: 0;
         }
 
@@ -449,7 +449,7 @@
         }
 
         .MapCard {
-            zoom: 0.5;
+            zoom: 0.65;
             margin: auto;
         }
 
@@ -471,6 +471,14 @@
 
         .PhImage{
             height: 17.5vh;
+        }
+
+        .RegistrationContent {
+            zoom: 1.1;
+        }
+
+        .RegButton {
+            zoom: 0.8;
         }
 
         .SocialMediaPosts {
