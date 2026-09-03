@@ -602,17 +602,36 @@
     }
 
     @media (max-width: 768px) {
+        .Confirmation ul {
+            zoom: 2.8;
+        }
+
         .LabelInput {
             width: 75%;
         }
 
         .LabelInput label {
-            font-size: clamp(8vw,9vw,10vw);
+            font-size: clamp(8vw,8.5vw,9vw);
             text-align: center;
+        }
+
+        .overlayContent {
+            width: 110vw;
+            height: 65vh;
+            gap: 7vh;
         }
         
         .RegistrationSteps {
             width: 100%;
+        }
+
+        .WarningContent {
+            width: 70vw;
+            height: 30vh;
+        }
+
+        .WarningContent span {
+            font-size: clamp(6vw,6.5vw,7vw);
         }
     }
 </style>
