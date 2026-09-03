@@ -748,8 +748,8 @@
     }
 
     .bronze-square8{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -770,8 +770,8 @@
     }
 
     .bronze-square7{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -791,8 +791,8 @@
     }
 
     .bronze-square6{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -812,8 +812,8 @@
     }
 
     .bronze-square5{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -840,8 +840,8 @@
     }
 
     .bronze-square4{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -861,8 +861,8 @@
     }
 
     .bronze-square3{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -882,8 +882,8 @@
     }
 
     .bronze-square2{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -903,8 +903,8 @@
     }
 
     .bronze-square1{
-        width:280px;
-        height:180px;
+        width:210px;
+        height:200px;
 
         background-color: #A64D05;
         border-radius:15px;
@@ -942,7 +942,7 @@
     }
 
     .silver-square11{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -963,7 +963,7 @@
     }
 
     .silver-square10{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -984,7 +984,7 @@
     }
 
     .silver-square9{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1012,7 +1012,7 @@
     }
 
     .silver-square8{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1033,7 +1033,7 @@
     }
 
     .silver-square7{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1054,7 +1054,7 @@
     }
 
     .silver-square6{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1075,7 +1075,7 @@
     }
 
     .silver-square5{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1103,7 +1103,7 @@
     }
 
     .silver-square4{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1124,7 +1124,7 @@
     }
 
     .silver-square3{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1145,7 +1145,7 @@
     }
 
     .silver-square2{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1166,7 +1166,7 @@
     }
 
     .silver-square1{
-        width:310px;
+        width:270px;
         height:190px;
 
         background-color: #555353;
@@ -1205,8 +1205,8 @@
     }
 
     .gold-square8{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1226,8 +1226,8 @@
     }
 
     .gold-square7{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1247,8 +1247,8 @@
     }
 
     .gold-square6{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1269,8 +1269,8 @@
     }
 
     .gold-square5{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1297,8 +1297,8 @@
     }
 
     .gold-square4{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1319,8 +1319,8 @@
     }
 
     .gold-square3{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1341,8 +1341,8 @@
     }
 
     .gold-square2{
-        width:340px;
-        height:200px;
+        width:240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1362,8 +1362,8 @@
     }
 
     .gold-square1{
-        width:340px;
-        height:200px;
+        width: 240px;
+        height:230px;
 
         background-color: #8C7808;
         border-radius:15px;
@@ -1401,8 +1401,8 @@
     }
 
     .platinum-square4{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1429,8 +1429,8 @@
     }
 
     .platinum-square3{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1450,8 +1450,8 @@
     }
 
     .platinum-square2{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1471,8 +1471,8 @@
     }
 
     .platinum-square1{
-        width:370px;
-        height:210px;
+        width:250px;
+        height:240px;
 
         background-color:#500078;
         border-radius:15px;
@@ -1511,13 +1511,20 @@
 
     }
 
+    .diamond-square img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius:15px;
+    }
+
     .diamond-square.highlighted {
         transform: scale(1.08);
     }
 
     .diamond-square{
-        width:400px;
-        height:220px;
+        width:360px;
+        height:250px;
 
         background-color:#424E91;
         border-radius:15px;
@@ -1526,7 +1533,7 @@
         justify-content:center;
         align-items:center;
 
-        padding:5px;
+        padding:6px;
         margin-top:15px;
 
         transition: transform 0.3s ease;
@@ -1552,11 +1559,11 @@
 
     .line-silver8-bronze8{
         position:absolute;
-        width:105px;
+        width:101px;
         height:1px;
         background-color:white;
 
-        left:67%;
+        left:66.3%;
         top:89%;
         transform:rotate(-42deg);
     }
@@ -1591,13 +1598,13 @@
 
     .line-silver7-bronze7{
         position:absolute;
-        width:140px;
+        width:135px;
         height:1px;
         background-color:white;
 
-        left:31%;
-        top:85.5%;
-        transform:rotate(42deg);
+        left:30%;
+        top:85.65%;
+        transform:rotate(48deg);
     }
 
     .bronze7-circle img{
@@ -1630,13 +1637,13 @@
 
     .line-silver6-bronze6{
         position:absolute;
-        width:163px;
+        width:175px;
         height:1px;
         background-color:white;
 
-        left:5%;
+        left:4.1%;
         top:72.7%;
-        transform:rotate(86deg);
+        transform:rotate(87deg);
     }
 
     .bronze6-circle img{
@@ -1669,13 +1676,13 @@
 
     .line-silver5-bronze5{
         position:absolute;
-        width:135px;
+        width:130px;
         height:1px;
         background-color:white;
 
-        left:81.8%;
-        top:12%;
-        transform:rotate(-45deg);
+        left:81.6%;
+        top:12.1%;
+        transform:rotate(-50deg);
     }
 
     .bronze5-circle img{
@@ -1708,11 +1715,11 @@
 
     .line-silver4-bronze4{
         position:absolute;
-        width:73px;
+        width:61px;
         height:1px;
         background-color:white;
 
-        left:66.2%;
+        left:66.15%;
         top:7.1%;
         transform:rotate(-30deg);
     }
@@ -1747,11 +1754,11 @@
 
     .line-silver3-bronze3{
         position:absolute;
-        width:67px;
+        width:52.5px;
         height:1px;
         background-color:white;
 
-        left:36.5%;
+        left:36.7%;
         top:7%;
         transform:rotate(-30deg);
     }
@@ -1786,7 +1793,7 @@
 
     .line-silver2-bronze2{
         position:absolute;
-        width:77px;
+        width:63px;
         height:1px;
         background-color:white;
 
@@ -1825,12 +1832,12 @@
 
     .line-silver1-bronze1{
         position:absolute;
-        width:70px;
+        width:63px;
         height:1px;
         background-color:white;
 
-        left:12.5%;
-        top:33.5%;
+        left:12.3%;
+        top:33.65%;
         transform:rotate(45deg);
     }
 
@@ -1869,7 +1876,7 @@
         background-color:white;
 
         left:77%;
-        top:80.5%;
+        top:80.6%;
         transform:rotate(-48deg);
     }
 
@@ -1903,13 +1910,13 @@
 
     .line-gold7-silver10{
         position:absolute;
-        width:89px;
+        width:95px;
         height:1px;
         background-color:white;
 
-        left:84.6%;
-        top:47.2%;
-        transform:rotate(-60deg);
+        left:84.4%;
+        top:47.3%;
+        transform:rotate(-65deg);
     }
 
     .silver10-circle img{
@@ -1942,7 +1949,7 @@
 
     .line-gold6-silver9{
         position:absolute;
-        width:165px;
+        width:140px;
         height:1px;
         background-color:white;
 
@@ -1981,12 +1988,12 @@
 
     .line-gold6-silver8{
         position:absolute;
-        width:115px;
+        width:110px;
         height:1px;
         background-color:white;
 
         left:31.5%;
-        top:75%;
+        top:75.3%;
         transform:rotate(-48deg);
     }
 
@@ -2020,13 +2027,13 @@
 
     .line-gold5-silver7{
         position:absolute;
-        width:160px;
+        width:167px;
         height:1px;
         background-color:white;
 
-        left:7.5%;
+        left:6.8%;
         top:57.7%;
-        transform:rotate(-68deg);
+        transform:rotate(-70deg);
     }
 
     .silver7-circle img{
@@ -2059,12 +2066,12 @@
 
     .line-gold4-silver6{
         position:absolute;
-        width:83px;
+        width:91px;
         height:1px;
         background-color:white;
 
         left:80.3%;
-        top:22.2%;
+        top:22.1%;
         transform:rotate(-115deg);
     }
 
@@ -2098,11 +2105,11 @@
 
     .line-gold3-silver5{
         position:absolute;
-        width:105px;
+        width:118px;
         height:1px;
         background-color:white;
 
-        left:61.3%;
+        left:61%;
         top:16.2%;
         transform:rotate(-100deg);
     }
@@ -2137,12 +2144,12 @@
 
     .line-gold3-silver4{
         position:absolute;
-        width:140px;
+        width:129px;
         height:1px;
         background-color:white;
 
-        left:55%;
-        top:28%;
+        left:54.5%;
+        top:28.1%;
         transform:rotate(-45deg);
     }
 
@@ -2176,7 +2183,7 @@
 
     .line-gold2-silver3{
         position:absolute;
-        width:65px;
+        width:55px;
         height:1px;
         background-color:white;
 
@@ -2215,12 +2222,12 @@
 
     .line-gold1-silver2{
         position:absolute;
-        width:111px;
+        width:103px;
         height:1px;
         background-color:white;
 
-        left:12%;
-        top:14.5%;
+        left:11.5%;
+        top:14.45%;
         transform:rotate(43deg);
     }
 
@@ -2254,12 +2261,12 @@
 
     .line-gold1-silver1{
         position:absolute;
-        width:140px;
+        width:130px;
         height:1px;
         background-color:white;
 
-        left:11.7%;
-        top:24.9%;
+        left:11.45%;
+        top:24.8%;
         transform:rotate(-52deg);
     }
 
@@ -2293,12 +2300,12 @@
 
     .line-platinum4-gold8{
         position:absolute;
-        width:80px;
+        width:85px;
         height:1px;
         background-color:white;
 
-        left:78.3%;
-        top:69.7%;
+        left:78.1%;
+        top:69.6%;
         transform:rotate(55deg);
     }
 
@@ -2332,12 +2339,12 @@
 
     .line-platinum4-gold7{
         position:absolute;
-        width:80px;
+        width:85px;
         height:1px;
         background-color:white;
 
         left:78.5%;
-        top:58.4%;
+        top:58.5%;
         transform:rotate(-58deg);
     }
 
@@ -2371,11 +2378,11 @@
 
     .line-platinum3-gold6{
         position:absolute;
-        width:137px;
+        width:120px;
         height:1px;
         background-color:white;
 
-        left:30%;
+        left:29.7%;
         top:65.3%;
         transform:rotate(40deg);
     }
@@ -2410,12 +2417,12 @@
 
     .line-platinum3-gold5{
         position:absolute;
-        width:125px;
+        width:113px;
         height:1px;
         background-color:white;
 
         left:17.5%;
-        top:54.8%;
+        top:54.6%;
         transform:rotate(40deg);
     }
 
@@ -2449,7 +2456,7 @@
 
     .line-platinum2-gold4{
         position:absolute;
-        width:198px;
+        width:168px;
         height:1px;
         background-color:white;
 
@@ -2488,13 +2495,13 @@
 
     .line-platinum2-gold3{
         position:absolute;
-        width:125px;
+        width:138px;
         height:1px;
         background-color:white;
 
-        left:62.8%;
-        top:30.3%;
-        transform:rotate(79deg);
+        left:62.3%;
+        top:30.2%;
+        transform:rotate(78deg);
     }
 
     .gold3-circle img{
@@ -2527,12 +2534,12 @@
 
     .line-platinum1-gold2{
         position:absolute;
-        width:175px;
+        width:180px;
         height:1px;
         background-color:white;
 
         left:34.5%;
-        top:22.8%;
+        top:23%;
         transform:rotate(-65deg);
     }
 
@@ -2566,13 +2573,13 @@
 
     .line-platinum1-gold1{
         position:absolute;
-        width:180px;
+        width:164px;
         height:1px;
         background-color:white;
 
-        left:23%;
+        left:22.5%;
         top:24.7%;
-        transform:rotate(40deg);
+        transform:rotate(43deg);
     }
 
     .gold1-circle img{
@@ -2605,13 +2612,13 @@
 
     .line-diamond-platinum4{
         position:absolute;
-        width:379px;
+        width:317px;
         height:1px;
         background-color:white;
 
         left:53%;
-        top:58.3%;
-        transform:rotate(31deg);
+        top:58%;
+        transform:rotate(35deg);
     }
 
     .platinum4-circle img{
@@ -2644,7 +2651,7 @@
 
     .line-diamond-platinum3{
         position:absolute;
-        width:267px;
+        width:220px;
         height:1px;
         background-color:white;
 
@@ -2683,7 +2690,7 @@
 
     .line-diamond-platinum2{
         position:absolute;
-        width:210px;
+        width:183px;
         height:1px;
         background-color:white;
 
@@ -2722,13 +2729,13 @@
 
     .line-diamond-platinum1{
         position:absolute;
-        width:267px;
+        width:262px;
         height:1px;
         background-color:white;
 
-        left:35%;
-        top:40.27%;
-        transform:rotate(55deg);
+        left:33%;
+        top:40.5%;
+        transform:rotate(56deg);
     }
     .platinum1-circle img{
         width:100%;
@@ -2788,9 +2795,13 @@
 
     .sponsors-map{
         position:relative;
-        background-color:black;
         width:100%;
         height:2000px;
     }
 
+    @media (max-width: 768px) {
+        .sponsors-map {
+            display: none;
+        }
+    }
 </style>
