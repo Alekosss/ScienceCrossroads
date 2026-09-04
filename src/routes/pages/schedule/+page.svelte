@@ -1535,36 +1535,6 @@
         font-size: 10px;
         }
 
-        .orange-1-0,
-        .purple-1-0,
-        .green-1-0,
-        .green-2-0,
-        
-        .orange-1-1,
-        .orange-2-1,
-        .orange-3-1,
-        .purple-1-1,
-        .purple-2-1,
-        .green-1-1,
-        .green-2-1,
-
-        .orange-1-2,
-        .orange-2-2,
-        .pink-1-2,
-        .pink-2-2,
-        .pink-3-2,
-        .purple-1-2,
-        .purple-2-2,
-        .purple-3-2,
-
-        .green-1-3,
-        .green-2-3,
-        .orange-1-4,
-        .pink-end-line {
-            height: auto;
-            min-height: 70px;
-        }
-
         .squares p,
         .squares-1 p,
         .squares-2 p,
@@ -1579,8 +1549,6 @@
         .purple-1-2,
         .purple-2-2,
         .purple-3-2 {
-            height: 90px;
-            min-height: 90px;
             padding: 4px;
             gap: 3px;
         }
@@ -1602,6 +1570,49 @@
         .purple-2-2 span,
         .purple-3-2 span {
             font-size: 8px;
+        }
+
+        .green-2-0 {
+            height: 80px;
+        }
+
+        .orange-2-2 {
+            height: 145px;
+        }
+
+        .pink-1-2,
+        .purple-1-2 {
+            height: 90px;
+        }
+
+        .pink-2-2,
+        .purple-2-2 {
+            height: 90px;
+        }
+
+        .pink-3-2,
+        .purple-3-2 {
+            height: 60px;
+        }
+
+        .orange-3-1 {
+            height: 129px;
+        }
+
+        .green-2-1 {
+            height:234px;
+        }
+
+        .pink-end-line {
+            height:250px;
+        }
+
+        .green-1-3 {
+            height:70px;
+        }
+
+        .green-2-3 {
+            height: 100px;
         }
 
     }

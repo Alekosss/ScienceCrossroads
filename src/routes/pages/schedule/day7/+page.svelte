@@ -337,7 +337,7 @@
 
             {#if !shouldHide('chemistry')}
                 <div class="green-1-4">
-                    <span class="green-1-4-time">18:15 - 18:15</span>
+                    <span class="green-1-4-time">18:15 - 19:15</span>
                     <p class="green-1-4-letter">
                     Water Reuse
                     </p>
@@ -1534,4 +1534,177 @@
         text-decoration-thickness: 1,5px;
     }
 
+    @media (max-width: 768px) {
+        .squares-1,
+        .squares-2,
+        .squares-3,
+        .squares-4,
+        .lunch-break-2 {
+            margin-left: 5px;
+            margin-right: 5px;
+            column-gap: 3px;
+        }
+
+        .where-line,
+        .coming-line,
+        .coffee-break-1,
+        .coffee-break-2,
+        .cocktail-party {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .where-line {
+            font-size: 8px;
+            padding: 8px 2px;
+            border-radius: 15px;
+        }
+
+        .squares-1 span,
+        .squares-1 p,
+        .squares-2 span,
+        .squares-2 p,
+        .squares-3 span,
+        .squares-3 p,
+        .squares-4 span,
+        .squares-4 p,
+        .lunch-break-2 span,
+        .lunch-break-2 p {
+            font-size: 9px;
+            line-height: 1.2;
+        }
+
+        .squares-1 > div,
+        .squares-2 > div,
+        .squares-3 > div,
+        .squares-4 > div {
+            min-width: 0;
+        }
+
+        .green-1-1,
+        .green-2-1,
+        .pink-1-1,
+        .pink-2-1,
+        .pink-3-1,
+        .orange-1-1,
+        .orange-2-1,
+
+        .purple-1-2,
+        .purple-2-2,
+        .purple-3-2,
+        .orange-1-2,
+        .orange-2-2,
+        .orange-3-2,
+        .green-1-2,
+
+        .purple-1-3,
+        .purple-2-3,
+        .purple-3-3,
+        .green-1-3,
+        .green-2-3,
+        .green-3-3,
+        .orange-1-3,
+        .orange-2-3,
+
+        .purple-1-4,
+        .green-1-4,
+        .green-2-4,
+        .green-pink-1-4,
+        .pink-1-4,
+        .pink-2-4 {
+            padding: 5px;
+            gap: 5px;
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+
+        .lunch-break-2-line,
+        .physics-experiment-break {
+            padding: 5px;
+            gap: 5px;
+            border-radius: 15px;
+        }
+
+        .empty-box {
+            border-radius: 15px;
+        }
+
+        .coming-line,
+        .coffee-break-1,
+        .coffee-break-2,
+        .cocktail-party {
+            padding: 8px;
+            gap: 5px;
+            border-radius: 15px;
+        }
+
+        .coming-line span,
+        .coming-line p,
+        .coffee-break-1 span,
+        .coffee-break-1 p,
+        .coffee-break-2 span,
+        .coffee-break-2 p,
+        .cocktail-party span,
+        .cocktail-party p {
+            font-size: 11px;
+        }
+
+        .explain-line {
+            width: auto;
+            height: auto;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .explain-line-letter {
+            font-size: 10px;
+        }
+
+        .pink-3-1 {
+            height: 129px;
+        }
+
+        .purple-1-2,
+        .orange-1-2 {
+            height:93px;
+        }
+
+        .purple-2-2 {
+            height: 93px;
+        }
+
+        .purple-3-2 {
+            height: 93.5px;
+        }
+
+        .orange-2-2 {
+            height: 111px;
+        }
+
+        .orange-3-2 {
+            height: 75px;
+        }
+
+        .purple-1-3 {
+            height: 70px;
+        }
+
+        .green-3-3,
+        .purple-3-3 {
+            height: 70px;
+        }
+
+        .purple-2-3 {
+            height: 100px;
+        }
+
+        .green-1-3 {
+            height: 90px;
+        }
+
+        .green-2-3 {
+            height: 80px;
+        }
+
+    }
 </style>

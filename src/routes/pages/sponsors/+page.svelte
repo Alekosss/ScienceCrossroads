@@ -1,8 +1,57 @@
 <script>
 
     import SponsorCard from '$lib/components/Sponsors/SponsorCard.svelte';
+    import { onMount } from 'svelte';
 
     let highlightedSponsor = $state(null);
+
+    const connections = [
+        { from: '.diamond-circle', to: '.platinum1-circle' },
+        { from: '.diamond-circle', to: '.platinum2-circle' },
+        { from: '.diamond-circle', to: '.platinum3-circle' },
+        { from: '.diamond-circle', to: '.platinum4-circle' },
+
+        { from: '.platinum1-circle', to: '.gold1-circle' },
+        { from: '.platinum1-circle', to: '.gold2-circle' },
+
+        { from: '.platinum2-circle', to: '.gold3-circle' },
+        { from: '.platinum2-circle', to: '.gold4-circle' },
+
+        { from: '.platinum3-circle', to: '.gold5-circle' },
+        { from: '.platinum3-circle', to: '.gold6-circle' },
+
+        { from: '.platinum4-circle', to: '.gold7-circle' },
+        { from: '.platinum4-circle', to: '.gold8-circle' },
+
+        { from: '.gold1-circle', to: '.silver1-circle' },
+        { from: '.gold1-circle', to: '.silver2-circle' },
+
+        { from: '.gold2-circle', to: '.silver3-circle' },
+
+        { from: '.gold3-circle', to: '.silver4-circle' },
+        { from: '.gold3-circle', to: '.silver5-circle' },
+
+        { from: '.gold4-circle', to: '.silver6-circle' },
+
+        { from: '.gold5-circle', to: '.silver7-circle' },
+
+        { from: '.gold6-circle', to: '.silver8-circle' },
+        { from: '.gold6-circle', to: '.silver9-circle' },
+
+        { from: '.gold7-circle', to: '.silver10-circle' },
+
+        { from: '.gold8-circle', to: '.silver11-circle' },
+
+        { from: '.silver1-circle', to: '.bronze1-circle' },
+        { from: '.silver2-circle', to: '.bronze2-circle' },
+        { from: '.silver3-circle', to: '.bronze3-circle' },
+        
+        { from: '.silver5-circle', to: '.bronze4-circle' },
+        { from: '.silver6-circle', to: '.bronze5-circle' },
+        { from: '.silver7-circle', to: '.bronze6-circle' },
+        { from: '.silver8-circle', to: '.bronze7-circle' },
+        { from: '.silver9-circle', to: '.bronze8-circle' }
+    ];
 
     let selectedSponsor = $state(null);
 
@@ -14,17 +63,95 @@
             block: 'center'
         });
 
-        highlightedSponsor = sponsor;
+        let highlightedSponsor = $state(null);
 
         setTimeout(() => {
             highlightedSponsor = null;
         }, 800);
     }
+
+    function updateLines() {
+        const container = document.querySelector('.all-circles');
+        const lines = document.querySelectorAll('.connection-line');
+
+        if (!container) return;
+
+        const containerRect = container.getBoundingClientRect();
+
+        lines.forEach((line) => {
+            const fromSelector = line.getAttribute('data-from');
+            const toSelector = line.getAttribute('data-to');
+
+            if (!fromSelector || !toSelector) return;
+
+            const fromElement = document.querySelector(fromSelector);
+            const toElement = document.querySelector(toSelector);
+
+            if (!fromElement || !toElement) return;
+
+            const fromRect = fromElement.getBoundingClientRect();
+            const toRect = toElement.getBoundingClientRect();
+
+            const x1 =
+                fromRect.left +
+                fromRect.width / 2 -
+                containerRect.left;
+
+            const y1 =
+                fromRect.top +
+                fromRect.height / 2 -
+                containerRect.top;
+
+            const x2 =
+                toRect.left +
+                toRect.width / 2 -
+                containerRect.left;
+
+            const y2 =
+                toRect.top +
+                toRect.height / 2 -
+                containerRect.top;
+
+            line.setAttribute('x1', x1);
+            line.setAttribute('y1', y1);
+            line.setAttribute('x2', x2);
+            line.setAttribute('y2', y2);
+        });
+    }
+
+    onMount(() => {
+        updateLines();
+
+        window.addEventListener('resize', updateLines);
+
+        const observer = new ResizeObserver(updateLines);
+        const container = document.querySelector('.all-circles');
+
+        if (container) {
+            observer.observe(container);
+        }
+
+        return () => {
+            window.removeEventListener('resize', updateLines);
+            observer.disconnect();
+        };
+    });
+
 </script>
 
 
 <div class="sponsors-map">
     <div class="all-circles">
+
+        <svg class="graph-lines">
+            {#each connections as connection}
+                <line
+                    class="connection-line"
+                    data-from={connection.from}
+                    data-to={connection.to}
+                />
+            {/each}
+        </svg>
 
         <button 
             class="diamond-circle"
@@ -40,7 +167,6 @@
             <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
         </button>
 
-        <div class="line-diamond-platinum1"></div>
 
         <button 
             class="platinum2-circle"
@@ -49,16 +175,12 @@
             <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
         </button>
 
-        <div class="line-diamond-platinum2"></div>
-
         <button 
             class="platinum3-circle"
             onclick={() => goToSponsor('platinum3-sponsor','platinum3')}
         >
             <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
         </button>
-
-        <div class="line-diamond-platinum3"></div>
 
         <button 
             class="platinum4-circle"
@@ -67,8 +189,6 @@
             <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
         </button>
 
-        <div class="line-diamond-platinum4"></div>
-
         <button 
             class="gold1-circle"
             onclick={() => goToSponsor('gold1-sponsor','gold1')}
@@ -76,7 +196,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-        <div class="line-platinum1-gold1"></div>
 
         <button 
             class="gold2-circle"
@@ -84,8 +203,7 @@
         >
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
-
-       <div class="line-platinum1-gold2"></div> 
+ 
 
        <button 
             class="gold3-circle"
@@ -94,7 +212,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-       <div class="line-platinum2-gold3"></div> 
 
        <button 
             class="gold4-circle"
@@ -103,7 +220,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-       <div class="line-platinum2-gold4"></div> 
 
        <button 
             class="gold5-circle"
@@ -112,7 +228,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-       <div class="line-platinum3-gold5"></div>
 
        <button 
             class="gold6-circle"
@@ -121,7 +236,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-       <div class="line-platinum3-gold6"></div>
 
        <button 
             class="gold7-circle"
@@ -130,7 +244,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-       <div class="line-platinum4-gold7"></div>
  
        <button 
             class="gold8-circle"
@@ -139,8 +252,6 @@
             <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
         </button>
 
-       <div class="line-platinum4-gold8"></div>
-
        <button 
             class="silver1-circle"
             onclick={() => goToSponsor('silver1-sponsor','silver1')}
@@ -148,7 +259,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold1-silver1"></div>
 
        <button 
             class="silver2-circle"
@@ -157,7 +267,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold1-silver2"></div>
 
        <button 
             class="silver3-circle"
@@ -166,7 +275,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold2-silver3"></div>
 
        <button 
             class="silver4-circle"
@@ -175,7 +283,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold3-silver4"></div>
 
        <button 
             class="silver5-circle"
@@ -184,7 +291,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold3-silver5"></div>
 
        <button 
             class="silver6-circle"
@@ -193,7 +299,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold4-silver6"></div>
 
        <button 
             class="silver7-circle"
@@ -202,7 +307,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold5-silver7"></div>
 
        <button 
             class="silver8-circle"
@@ -211,8 +315,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold6-silver8"></div>
-
        <button 
             class="silver9-circle"
             onclick={() => goToSponsor('silver9-sponsor','silver9')}
@@ -220,7 +322,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold6-silver9"></div>
 
        <button 
             class="silver10-circle"
@@ -229,7 +330,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold7-silver10"></div>
 
        <button 
             class="silver11-circle"
@@ -238,7 +338,6 @@
             <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
         </button>
 
-       <div class="line-gold8-silver11"></div>
 
        <button 
             class="bronze1-circle"
@@ -247,7 +346,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver1-bronze1"></div>
 
        <button 
             class="bronze2-circle"
@@ -256,7 +354,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver2-bronze2"></div>
 
        <button 
             class="bronze3-circle"
@@ -265,7 +362,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver3-bronze3"></div>
 
        <button 
             class="bronze4-circle"
@@ -274,7 +370,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver4-bronze4"></div>
 
        <button 
             class="bronze5-circle"
@@ -283,7 +378,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver5-bronze5"></div>
 
        <button 
             class="bronze6-circle"
@@ -292,7 +386,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver6-bronze6"></div>
 
        <button 
             class="bronze7-circle"
@@ -301,7 +394,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver7-bronze7"></div>
 
        <button 
             class="bronze8-circle"
@@ -310,7 +402,6 @@
             <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
         </button>
 
-       <div class="line-silver8-bronze8"></div>
     </div>
 
 </div>
@@ -1557,17 +1648,6 @@
         text-underline-offset:6px;
     }
 
-    .line-silver8-bronze8{
-        position:absolute;
-        width:101px;
-        height:1px;
-        background-color:white;
-
-        left:66.3%;
-        top:89%;
-        transform:rotate(-42deg);
-    }
-
     .bronze8-circle img{
         width:100%;
         height:100%;
@@ -1594,17 +1674,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-silver7-bronze7{
-        position:absolute;
-        width:135px;
-        height:1px;
-        background-color:white;
-
-        left:30%;
-        top:85.65%;
-        transform:rotate(48deg);
     }
 
     .bronze7-circle img{
@@ -1635,17 +1704,6 @@
         cursor: pointer;
     }
 
-    .line-silver6-bronze6{
-        position:absolute;
-        width:175px;
-        height:1px;
-        background-color:white;
-
-        left:4.1%;
-        top:72.7%;
-        transform:rotate(87deg);
-    }
-
     .bronze6-circle img{
         width:100%;
         height:100%;
@@ -1672,17 +1730,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-silver5-bronze5{
-        position:absolute;
-        width:130px;
-        height:1px;
-        background-color:white;
-
-        left:81.6%;
-        top:12.1%;
-        transform:rotate(-50deg);
     }
 
     .bronze5-circle img{
@@ -1713,17 +1760,6 @@
         cursor: pointer;
     }
 
-    .line-silver4-bronze4{
-        position:absolute;
-        width:61px;
-        height:1px;
-        background-color:white;
-
-        left:66.15%;
-        top:7.1%;
-        transform:rotate(-30deg);
-    }
-
     .bronze4-circle img{
         width:100%;
         height:100%;
@@ -1750,17 +1786,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-silver3-bronze3{
-        position:absolute;
-        width:52.5px;
-        height:1px;
-        background-color:white;
-
-        left:36.7%;
-        top:7%;
-        transform:rotate(-30deg);
     }
 
     .bronze3-circle img{
@@ -1791,17 +1816,6 @@
         cursor: pointer;
     }
 
-    .line-silver2-bronze2{
-        position:absolute;
-        width:63px;
-        height:1px;
-        background-color:white;
-
-        left:13%;
-        top:7%;
-        transform:rotate(-35deg);
-    }
-
     .bronze2-circle img{
         width:100%;
         height:100%;
@@ -1828,17 +1842,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-silver1-bronze1{
-        position:absolute;
-        width:63px;
-        height:1px;
-        background-color:white;
-
-        left:12.3%;
-        top:33.65%;
-        transform:rotate(45deg);
     }
 
     .bronze1-circle img{
@@ -1869,17 +1872,6 @@
         cursor: pointer;
     }
 
-    .line-gold8-silver11{
-        position:absolute;
-        width:105px;
-        height:1px;
-        background-color:white;
-
-        left:77%;
-        top:80.6%;
-        transform:rotate(-48deg);
-    }
-
     .silver11-circle img{
         width:100%;
         height:100%;
@@ -1906,17 +1898,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-gold7-silver10{
-        position:absolute;
-        width:95px;
-        height:1px;
-        background-color:white;
-
-        left:84.4%;
-        top:47.3%;
-        transform:rotate(-65deg);
     }
 
     .silver10-circle img{
@@ -1947,17 +1928,6 @@
         cursor: pointer;
     }
 
-    .line-gold6-silver9{
-        position:absolute;
-        width:140px;
-        height:1px;
-        background-color:white;
-
-        left:43.3%;
-        top:74%;
-        transform:rotate(35deg);
-    }
-
     .silver9-circle img{
         width:100%;
         height:100%;
@@ -1984,17 +1954,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-gold6-silver8{
-        position:absolute;
-        width:110px;
-        height:1px;
-        background-color:white;
-
-        left:31.5%;
-        top:75.3%;
-        transform:rotate(-48deg);
     }
 
     .silver8-circle img{
@@ -2025,17 +1984,6 @@
         cursor: pointer;
     }
 
-    .line-gold5-silver7{
-        position:absolute;
-        width:167px;
-        height:1px;
-        background-color:white;
-
-        left:6.8%;
-        top:57.7%;
-        transform:rotate(-70deg);
-    }
-
     .silver7-circle img{
         width:100%;
         height:100%;
@@ -2062,17 +2010,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-gold4-silver6{
-        position:absolute;
-        width:91px;
-        height:1px;
-        background-color:white;
-
-        left:80.3%;
-        top:22.1%;
-        transform:rotate(-115deg);
     }
 
     .silver6-circle img{
@@ -2103,17 +2040,6 @@
         cursor: pointer;
     }
 
-    .line-gold3-silver5{
-        position:absolute;
-        width:118px;
-        height:1px;
-        background-color:white;
-
-        left:61%;
-        top:16.2%;
-        transform:rotate(-100deg);
-    }
-
     .silver5-circle img{
         width:100%;
         height:100%;
@@ -2140,17 +2066,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-gold3-silver4{
-        position:absolute;
-        width:129px;
-        height:1px;
-        background-color:white;
-
-        left:54.5%;
-        top:28.1%;
-        transform:rotate(-45deg);
     }
 
     .silver4-circle img{
@@ -2181,17 +2096,6 @@
         cursor: pointer;
     }
 
-    .line-gold2-silver3{
-        position:absolute;
-        width:55px;
-        height:1px;
-        background-color:white;
-
-        left:36.2%;
-        top:11.7%;
-        transform:rotate(30deg);
-    }
-
     .silver3-circle img{
         width:100%;
         height:100%;
@@ -2218,17 +2122,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-gold1-silver2{
-        position:absolute;
-        width:103px;
-        height:1px;
-        background-color:white;
-
-        left:11.5%;
-        top:14.45%;
-        transform:rotate(43deg);
     }
 
     .silver2-circle img{
@@ -2259,17 +2152,6 @@
         cursor: pointer;
     }
 
-    .line-gold1-silver1{
-        position:absolute;
-        width:130px;
-        height:1px;
-        background-color:white;
-
-        left:11.45%;
-        top:24.8%;
-        transform:rotate(-52deg);
-    }
-
     .silver1-circle img{
         width:100%;
         height:100%;
@@ -2296,17 +2178,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-platinum4-gold8{
-        position:absolute;
-        width:85px;
-        height:1px;
-        background-color:white;
-
-        left:78.1%;
-        top:69.6%;
-        transform:rotate(55deg);
     }
 
     .gold8-circle img{
@@ -2337,17 +2208,6 @@
         cursor: pointer;
     }
 
-    .line-platinum4-gold7{
-        position:absolute;
-        width:85px;
-        height:1px;
-        background-color:white;
-
-        left:78.5%;
-        top:58.5%;
-        transform:rotate(-58deg);
-    }
-
     .gold7-circle img{
         width:100%;
         height:100%;
@@ -2374,17 +2234,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-platinum3-gold6{
-        position:absolute;
-        width:120px;
-        height:1px;
-        background-color:white;
-
-        left:29.7%;
-        top:65.3%;
-        transform:rotate(40deg);
     }
 
     .gold6-circle img{
@@ -2415,17 +2264,6 @@
         cursor: pointer;
     }
 
-    .line-platinum3-gold5{
-        position:absolute;
-        width:113px;
-        height:1px;
-        background-color:white;
-
-        left:17.5%;
-        top:54.6%;
-        transform:rotate(40deg);
-    }
-
     .gold5-circle img{
         width:100%;
         height:100%;
@@ -2452,17 +2290,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-platinum2-gold4{
-        position:absolute;
-        width:168px;
-        height:1px;
-        background-color:white;
-
-        left:71.5%;
-        top:32.8%;
-        transform:rotate(-33deg);
     }
 
     .gold4-circle img{
@@ -2493,17 +2320,6 @@
         cursor: pointer;
     }
 
-    .line-platinum2-gold3{
-        position:absolute;
-        width:138px;
-        height:1px;
-        background-color:white;
-
-        left:62.3%;
-        top:30.2%;
-        transform:rotate(78deg);
-    }
-
     .gold3-circle img{
         width:100%;
         height:100%;
@@ -2530,17 +2346,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-platinum1-gold2{
-        position:absolute;
-        width:180px;
-        height:1px;
-        background-color:white;
-
-        left:34.5%;
-        top:23%;
-        transform:rotate(-65deg);
     }
 
     .gold2-circle img{
@@ -2571,17 +2376,6 @@
         cursor: pointer;
     }
 
-    .line-platinum1-gold1{
-        position:absolute;
-        width:164px;
-        height:1px;
-        background-color:white;
-
-        left:22.5%;
-        top:24.7%;
-        transform:rotate(43deg);
-    }
-
     .gold1-circle img{
         width:100%;
         height:100%;
@@ -2608,17 +2402,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-diamond-platinum4{
-        position:absolute;
-        width:317px;
-        height:1px;
-        background-color:white;
-
-        left:53%;
-        top:58%;
-        transform:rotate(35deg);
     }
 
     .platinum4-circle img{
@@ -2649,17 +2432,6 @@
         cursor: pointer;
     }
 
-    .line-diamond-platinum3{
-        position:absolute;
-        width:220px;
-        height:1px;
-        background-color:white;
-
-        left:31%;
-        top:55%;
-        transform:rotate(-25deg);
-    }
-
     .platinum3-circle img{
         width:100%;
         height:100%;
@@ -2686,17 +2458,6 @@
 
         transition: transform 0.3s ease;
         cursor: pointer;
-    }
-
-    .line-diamond-platinum2{
-        position:absolute;
-        width:183px;
-        height:1px;
-        background-color:white;
-
-        left:54%;
-        top:44%;
-        transform:rotate(-35deg);
     }
 
     .platinum2-circle img{
@@ -2727,16 +2488,6 @@
         cursor: pointer;
     }
 
-    .line-diamond-platinum1{
-        position:absolute;
-        width:262px;
-        height:1px;
-        background-color:white;
-
-        left:33%;
-        top:40.5%;
-        transform:rotate(56deg);
-    }
     .platinum1-circle img{
         width:100%;
         height:100%;
@@ -2798,6 +2549,21 @@
         width:100%;
         height:2000px;
     }
+
+    .graph-lines {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    .connection-line {
+        stroke: white;
+        stroke-width: 1px;
+    }
+    
 
     @media (max-width: 768px) {
         .sponsors-map {

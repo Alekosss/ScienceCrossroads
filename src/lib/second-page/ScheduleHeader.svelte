@@ -156,4 +156,56 @@
         
         cursor:pointer;
     }
+
+    @media (max-width: 768px) {
+        .schedule-title {
+        gap: 10px;
+        margin-top: 20px;
+        }
+
+        .schedule-title h1 {
+        font-size: 22px;
+        text-align: center;
+        }
+
+        .line {
+        width: 70px;
+        }
+
+        .filters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 15px;
+
+        padding: 20px 15px;
+
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        border-radius: 20px;
+        }
+
+        .filter-all {
+        gap: 8px;
+        width: 100%;
+        }
+
+        .filters-item {
+        gap: 5px;
+        justify-content: center;
+        font-size: 13px;
+        }
+
+        .color-box {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+        }
+
+        .show-hide {
+        font-size: 12px;
+        padding: 4px 8px;
+        }
+    }
 </style>
