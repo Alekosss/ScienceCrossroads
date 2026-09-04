@@ -20,7 +20,7 @@
             <div class="color-box general-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('general')}>{activeFilter === 'general' ? 'Hide' : 'Show'}</button>
+        <button class="show-hide" onclick={() => onFilter('general')}>{activeFilter === 'general' ? 'Show all' : 'Show only'}</button>
 
     </div>
     
@@ -31,7 +31,7 @@
             <div class="color-box physics-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('physics')}>{activeFilter === 'physics' ? 'Hide' : 'Show'}</button>
+        <button class="show-hide" onclick={() => onFilter('physics')}>{activeFilter === 'physics' ? 'Show all' : 'Show only'}</button>
 
     </div>
     
@@ -42,7 +42,7 @@
             <div class="color-box computer-science-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('computer science')}>{activeFilter === 'computer science' ? 'Hide' : 'Show'}</button>
+        <button class="show-hide" onclick={() => onFilter('computer science')}>{activeFilter === 'computer science' ? 'Show all' : 'Show only'}</button>
 
     </div>
     
@@ -53,7 +53,7 @@
             <div class="color-box chemistry-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('chemistry')}>{activeFilter === 'chemistry' ? 'Hide' : 'Show'}</button>
+        <button class="show-hide" onclick={() => onFilter('chemistry')}>{activeFilter === 'chemistry' ? 'Show all' : 'Show only'}</button>
 
     </div>
     
@@ -64,7 +64,7 @@
             <div class="color-box break-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('break')}>{activeFilter === 'break' ? 'Hide' : 'Show'}</button>
+        <button class="show-hide" onclick={() => onFilter('break')}>{activeFilter === 'break' ? 'Show all' : 'Show only'}</button>
         
     </div>
 </div>
