@@ -253,14 +253,14 @@
     .ImageRight img {
     -webkit-mask-image:
         linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
-        linear-gradient(to top, var(--primary-color) 80%, transparent 100%),
-        linear-gradient(to left, var(--primary-color) 80%, transparent 95%);
+        linear-gradient(to top, var(--primary-color) 65%, transparent 100%),
+        linear-gradient(to left, var(--primary-color) 60%, transparent 100%);
     -webkit-mask-composite: source-in; 
 
     mask-image:
         linear-gradient(to bottom, var(--primary-color) 70%, transparent 100%),
-        linear-gradient(to top, var(--primary-color) 80%, transparent 100%),
-        linear-gradient(to left, var(--primary-color) 80%, transparent 95%);
+        linear-gradient(to top, var(--primary-color) 65%, transparent 100%),
+        linear-gradient(to left, var(--primary-color) 60%, transparent 100%);
     mask-composite: intersect; 
     }
 
