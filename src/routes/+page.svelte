@@ -146,8 +146,9 @@
     
     .ChImage {
         width: 50%;
-        height: 300px;
+        height: auto;
         aspect-ratio: 221/147;
+        object-fit: cover;
     }
 
     .ContentStatistics {
@@ -230,35 +231,36 @@
     
     .ITImage {
         width: 50%;
-        height: 300px;
+        height: auto;
         aspect-ratio: 137/77;
+        object-fit: cover;
     }
 
     .ImageLeft img {
     -webkit-mask-image:
-        linear-gradient(to bottom, black 60%, transparent 100%),
-        linear-gradient(to top, black 60%, transparent 100%),
-        linear-gradient(to right, black 60%, transparent 95%);
+        linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
+        linear-gradient(to top, var(--primary-color) 60%, transparent 100%),
+        linear-gradient(to right, var(--primary-color) 60%, transparent 95%);
     -webkit-mask-composite: source-in; 
 
     mask-image:
-        linear-gradient(to bottom, black 60%, transparent 100%),
-        linear-gradient(to top, black 60%, transparent 100%),
-        linear-gradient(to right, black 60%, transparent 95%);
+        linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
+        linear-gradient(to top, var(--primary-color) 60%, transparent 100%),
+        linear-gradient(to right, var(--primary-color) 60%, transparent 95%);
     mask-composite: intersect; 
     }
 
     .ImageRight img {
     -webkit-mask-image:
-        linear-gradient(to bottom, black 60%, transparent 100%),
-        linear-gradient(to top, black 60%, transparent 100%),
-        linear-gradient(to left, black 60%, transparent 90%);
+        linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
+        linear-gradient(to top, var(--primary-color) 80%, transparent 100%),
+        linear-gradient(to left, var(--primary-color) 80%, transparent 95%);
     -webkit-mask-composite: source-in; 
 
     mask-image:
-        linear-gradient(to bottom, black 60%, transparent 100%),
-        linear-gradient(to top, black 60%, transparent 100%),
-        linear-gradient(to left, black 60%, transparent 90%);
+        linear-gradient(to bottom, var(--primary-color) 70%, transparent 100%),
+        linear-gradient(to top, var(--primary-color) 80%, transparent 100%),
+        linear-gradient(to left, var(--primary-color) 80%, transparent 95%);
     mask-composite: intersect; 
     }
 
@@ -295,8 +297,9 @@
 
     .PhImage {
         width: 50%;
-        height: 300px;
+        height: auto;
         aspect-ratio: 884/589;
+        object-fit: cover;
     }
 
     .RegButton {
