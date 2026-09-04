@@ -59,8 +59,7 @@
         align-items: center;
         justify-content: center;
         padding: 160px 0;
-        gap: 60px;
-        text-decoration: underline solid var(--break);
+        gap: 3rem;
     }
 
     .CategoryHeader text {
@@ -97,6 +96,10 @@
         flex-direction: column;
     }
     
+    .LastHeader {
+        text-decoration: underline solid var(--break);
+    }
+
     .LocationAndRegister {
         display: flex;
         flex-direction: row;

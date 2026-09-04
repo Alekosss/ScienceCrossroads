@@ -205,6 +205,10 @@
     .ContactPage {
         font-family: var(--font-family);
     }
+
+    .MailingForm input {
+        padding-left: 1rem;
+    }
     
     .Description {
         color: var(--PHYSICS, #E29B60);

@@ -50,7 +50,8 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        width: max-content;
+        width: 100%;
+        text-align: center;
     }
 
     .branchSlogan {
@@ -60,7 +61,7 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        width: max-content;
+        text-align: center;
     }
 
     .CarouselCard {
@@ -87,6 +88,7 @@
     .Description span {
         display: block;
         width: 100%;
+        font-size: clamp(1.25vw,1.5vw,1.75vw);
     }
 
     .LogoAndSlogan {

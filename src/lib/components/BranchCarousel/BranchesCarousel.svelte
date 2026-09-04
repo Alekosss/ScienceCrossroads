@@ -107,7 +107,7 @@
 
         gap: 75px;
 
-        width: auto;
+        width: 100%;
         height: 80vh;
     }
 

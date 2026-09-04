@@ -4,6 +4,7 @@
 	import NavigationBar from '$lib/components//LayoutComponents/navigationBar.svelte';
 	import '../app.css'
 
+	let { children } = $props();
 </script>
 
 <svelte:head>
@@ -11,7 +12,5 @@
 </svelte:head>
 
 <NavigationBar/>
-<!--IGNORE THIS LINE AND ERROR-->
-<slot />
-<!--TILL THIS POINT-->
+{@render children()}
 <Footer/>

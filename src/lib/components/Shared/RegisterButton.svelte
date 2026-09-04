@@ -48,6 +48,7 @@
 
     let submitError = $state('');
     let submitting = $state(false);
+    let wait = $state(false);
 
     async function submitRegistration() {
         submitting = true;
@@ -86,7 +87,7 @@
             }
             else { //email field is not empty and 
                 //check if email is already registered on the registrations table
-
+                wait = true;
                 const regres = await fetch(`/api/register?email=${encodeURIComponent(mail)}`);
                 const regdata = await regres.json();
 
@@ -116,6 +117,7 @@
                     //if it exists there, move to step 2 and ask for the code
                     stepIndex++;
                 }
+                wait = false;
             }
         }
         else if (stepIndex === 1) {
@@ -212,7 +214,7 @@
                     {/if}
                 {:else if stepIndex === 1}
                         <div class="code LabelInput" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
-                            <label for="confirmationCode">Confirmation Code (sent to your email!)</label>
+                            <label for="confirmationCode">Confirmation Code <br/>(sent to your email!)</label>
                             <input required id="confirmationCode" type="text" placeholder="000000" bind:value={userCode}/>
                         </div>
                         {#if wrongCodeWarning}
@@ -326,6 +328,8 @@
                 <button onclick={nextClick} class="ProgressButton Next" disabled={submitting}>
                     {#if stepIndex === 4}
                         <span>{submitting ? 'SUBMITTING...' : 'SUBMIT'}</span>
+                    {:else if wait} 
+                        <span>{wait ? 'WAIT...' : 'NEXT'}</span>
                     {:else}
                         <span>NEXT</span>
                     {/if}
@@ -461,7 +465,7 @@
     }
 
     .overlayContent {
-        width: 50%;
+        width: 50vw;
         height: 90vh;
 
         background-color: var(--secondary-color);
@@ -475,7 +479,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
     }
 
     .phoneInfo {
@@ -598,17 +601,36 @@
     }
 
     @media (max-width: 768px) {
+        .Confirmation ul {
+            zoom: 2.8;
+        }
+
         .LabelInput {
             width: 75%;
         }
 
         .LabelInput label {
-            font-size: clamp(8vw,9vw,10vw);
+            font-size: clamp(8vw,8.5vw,9vw);
             text-align: center;
+        }
+
+        .overlayContent {
+            width: 110vw;
+            height: 65vh;
+            gap: 7vh;
         }
         
         .RegistrationSteps {
             width: 100%;
+        }
+
+        .WarningContent {
+            width: 70vw;
+            height: 30vh;
+        }
+
+        .WarningContent span {
+            font-size: clamp(6vw,6.5vw,7vw);
         }
     }
 </style>
