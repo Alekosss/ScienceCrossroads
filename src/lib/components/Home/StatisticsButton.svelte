@@ -17,11 +17,12 @@
 <style>
    .TextContent {
         color: var(--it);
-        font-size: 28px;
+        font-size: clamp(1.5vw,2vw,2.5vw);
         font-style: normal;
         font-weight: 500;
         line-height: normal;
         text-decoration: none;
+        text-align: center;
    }
 
    .Statistic {
@@ -43,5 +44,11 @@
 
    .Statistic:hover span {
         transform: scale(1.15);
+   }
+
+   @media (max-width: 768px) {
+        .TextContent {
+            font-size: clamp(5vw,5.5vw,6vw);
+        }
    }
 </style>

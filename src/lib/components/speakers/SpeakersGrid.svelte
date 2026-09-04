@@ -68,6 +68,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            margin-top: 0.5rem;
         }
 
         .SpeakersGrid {

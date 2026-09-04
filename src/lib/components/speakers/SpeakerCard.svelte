@@ -1,6 +1,6 @@
 <script>
-    import { blur, draw, fade, fly, scale, slide } from "svelte/transition";
-    import { backInOut, circInOut, circOut, cubicOut, elasticInOut, expoInOut, linear, quadIn, quadInOut, quartInOut, quintInOut } from "svelte/easing";
+    import { slide } from "svelte/transition";
+    import { quadInOut } from "svelte/easing";
 
     let {
         fullName = 'John Doe',
@@ -252,18 +252,25 @@
             height: 150px;
             object-fit: cover;
         }
-
-        .ImageAndTitle {
-            flex: 0 0 auto;
-            align-items: center;
-        }
-
+        
         .Description {
             flex: 0 0 auto;
             height: auto;
             width: 100%;
         }
         
+        .ImageAndTitle {
+            flex: 0 0 auto;
+            align-items: center;
+        }
+        
+        .OK {
+            width: auto;
+            height: auto;
+            padding: 0.4rem 1.2rem;
+            margin-top: 1rem;
+        }
+
         .overlay {
             padding: 1rem;
             pointer-events: auto;

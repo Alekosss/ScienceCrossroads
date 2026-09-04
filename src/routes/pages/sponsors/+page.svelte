@@ -1511,13 +1511,6 @@
 
     }
 
-    .diamond-square img{
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        border-radius:15px;
-    }
-
     .diamond-square.highlighted {
         transform: scale(1.08);
     }
@@ -2803,5 +2796,6 @@
         .sponsors-map {
             display: none;
         }
+        
     }
 </style>
