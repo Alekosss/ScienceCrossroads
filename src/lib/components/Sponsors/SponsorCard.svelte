@@ -153,4 +153,65 @@
     border-radius:15px;
 }
 
+    @media (max-width: 768px) {
+    .sponsor-card img {
+        width: 90%;
+        height: 90%;
+    }
+
+    .overlay {
+        padding: 15px;
+        z-index: 1000;
+    }
+
+    .sponsor-dialog {
+        width: 100%;
+        max-height: 85vh;
+        padding: 20px 15px;
+        gap: 20px;
+        border-radius: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .sponsor-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        max-height: none;
+    }
+
+    .sponsor-image img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+    }
+
+    .sponsor-text {
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sponsor-text h2 {
+        font-size: 22px;
+    }
+
+    .sponsor-text p {
+        font-size: 14px;
+        line-height: 1.4;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .OK {
+        width: 90px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+
+}
+
 </style>

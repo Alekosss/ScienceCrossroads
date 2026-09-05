@@ -2569,5 +2569,126 @@
         .sponsors-map {
             display: none;
         }
+
+        .diamond-square {
+            width: 280px;
+            height: 190px;
+            padding: 5px;
+        }
+
+       .platinum-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            justify-items: center;
+        }
+
+        .platinum-line1,
+        .platinum-line2 {
+            display: contents;
+        }
+
+        .platinum-square1,
+        .platinum-square2,
+        .platinum-square3,
+        .platinum-square4 {
+            width: 180px;
+            height: 170px;
+            padding: 3px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .gold-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .gold-line1,
+        .gold-line2 {
+            display: contents;
+        }
+
+        .gold-square1,
+        .gold-square2,
+        .gold-square3,
+        .gold-square4,
+        .gold-square5,
+        .gold-square6,
+        .gold-square7,
+        .gold-square8 {
+            width: 110px;
+            height: 105px;
+            padding: 3px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .silver-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .silver-line1,
+        .silver-line2,
+        .silver-line3 {
+            display: contents;
+        }
+
+        .silver-square1,
+        .silver-square2,
+        .silver-square3,
+        .silver-square4,
+        .silver-square5,
+        .silver-square6,
+        .silver-square7,
+        .silver-square8,
+        .silver-square9,
+        .silver-square10,
+        .silver-square11 {
+            width: 110px;
+            height: 100px;
+            padding: 3px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .bronze-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+        }
+
+        .bronze-line1,
+        .bronze-line2 {
+            display: contents;
+        }
+
+        .bronze-square1,
+        .bronze-square2,
+        .bronze-square3,
+        .bronze-square4,
+        .bronze-square5,
+        .bronze-square6,
+        .bronze-square7,
+        .bronze-square8 {
+            width: 110px;
+            height: 105px;
+            padding: 3px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        
+
+    
+
+
+
     }
 </style>
