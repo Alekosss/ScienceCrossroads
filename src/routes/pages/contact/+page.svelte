@@ -418,6 +418,7 @@
 
         .Social {
             gap: 5vw;
+            zoom: 0.9;
         }
     }
 </style>

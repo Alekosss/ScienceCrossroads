@@ -452,7 +452,7 @@
         }
 
         .MapCard {
-            zoom: 0.65;
+            zoom: 0.575;
             margin: auto;
         }
 

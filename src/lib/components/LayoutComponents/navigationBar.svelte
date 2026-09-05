@@ -72,12 +72,12 @@
     </div>
     {#if menuShowing}
         <div class="MenuList">
-            <a href="/">HOME</a>
-            <a href="/pages/register&faq">REGISTER & FAQ</a>
-            <a href="/pages/schedule">SCHEDULE</a>
-            <a href="/pages/sponsors">SPONSORS</a>
-            <a href="/pages/speakers">SPEAKERS</a>
-            <a href="/pages/contact">CONTACT</a>
+            <a onclick={() => menuShowing = !menuShowing} href="/">HOME</a>
+            <a onclick={() => menuShowing = !menuShowing} href="/pages/register&faq">REGISTER & FAQ</a>
+            <a onclick={() => menuShowing = !menuShowing} href="/pages/schedule">SCHEDULE</a>
+            <a onclick={() => menuShowing = !menuShowing} href="/pages/sponsors">SPONSORS</a>
+            <a onclick={() => menuShowing = !menuShowing} href="/pages/speakers">SPEAKERS</a>
+            <a onclick={() => menuShowing = !menuShowing} href="/pages/contact">CONTACT</a>
         </div> 
     {/if}
 </nav>
@@ -223,7 +223,7 @@
             text-decoration: none;
             color: var(--primary-color);
         }
-
+        
         .navText {
             display: none;
         }

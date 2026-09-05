@@ -159,7 +159,7 @@
 
         .Countdown {
             width: 100%;
-            zoom: 0.7;
+            zoom: 0.5;
         }
 
         .FAQ {
@@ -178,7 +178,7 @@
         }
 
         .Location {
-            zoom: 0.5;
+            zoom: 0.4;
             margin: auto;
             align-items: center;
             justify-content: center;
