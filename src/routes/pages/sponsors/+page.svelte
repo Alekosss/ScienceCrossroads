@@ -1024,7 +1024,7 @@
     .silver-bronze-divider{
         height: 1px;
         width: 80%;
-        background-color: white;
+        background-color: var(--secondary-color);
         margin: 30px auto;
     }
 
@@ -1287,7 +1287,7 @@
     .gold-silver-divider{
         height: 1px;
         width: 80%;
-        background-color: white;
+        background-color: var(--secondary-color);
         margin: 30px auto;
     }
 
@@ -1483,7 +1483,7 @@
     .platinum-gold-divider{
         height: 1px;
         width: 80%;
-        background-color: white;
+        background-color: var(--secondary-color);
         margin: 30px auto;
     }
 
@@ -1591,7 +1591,7 @@
     .diamond-platinum-divider{
         height: 1px;
         width: 80%;
-        background-color: white;
+        background-color: var(--secondary-color);
         margin: 30px auto;
     }
 
@@ -2560,7 +2560,7 @@
     }
 
     .connection-line {
-        stroke: white;
+        stroke: var(--secondary-color);
         stroke-width: 1px;
     }
     

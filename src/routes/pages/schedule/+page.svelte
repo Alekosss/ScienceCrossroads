@@ -1404,14 +1404,14 @@
         background: none;
         font-size: 20px;
         font-weight: 20px;
-        color:white;
+        color: var(--secondary-color);
         text-decoration:none;
     }
 
     .date{
         font-size: 20px;
         font-weight: 100px;
-        color: white;
+        color: var(--secondary-color);
         text-decoration: underline;
         text-decoration-thickness: 1,5px;
     }
