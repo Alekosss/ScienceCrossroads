@@ -2796,6 +2796,5 @@
         .sponsors-map {
             display: none;
         }
-        
     }
 </style>
