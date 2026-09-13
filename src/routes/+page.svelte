@@ -6,11 +6,15 @@
     import SocialPosts from "$lib/components/Home/SocialPosts.svelte";
     import BranchesCarousel from "$lib/components/BranchCarousel/BranchesCarousel.svelte";
     import ScrollToButton from "$lib/components/Shared/ScrollToButton.svelte";
+	import AdminButton from "$lib/components/Home/AdminButton.svelte";
 
     let SloganTarget = $state();
 </script>
 
 <div class="HomePage">
+    <div class="Admin">
+        <AdminButton/>
+    </div>
     <!--This is the Slogan of the event-->
     <div class="Slogan" bind:this={SloganTarget}>
         <text>INSPIRED BY SCIENCE, GUIDED BY ETHICS</text>
@@ -101,6 +105,17 @@
 <ScrollToButton ArrowDirectionUp={true} scrollTarget={SloganTarget}/>
 
 <style>
+    .Admin {
+        left: 0;
+        margin-top: 4rem;
+        transform: translateX(-11%);
+        transition: transform 0.275s ease-in-out;
+    }
+
+    .Admin:hover {
+        transform: translateX(0%);
+    }
+
     .BranchesCarousel {
         display: flex;
         justify-content: center;
