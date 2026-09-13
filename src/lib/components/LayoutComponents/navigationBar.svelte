@@ -233,6 +233,10 @@
             justify-content: center;
             align-items: center;
         }
+
+        .Title span {
+            font-size: clamp(2.75vw,2.875vw,3vw);
+        }
     }
 
     @media (min-width: 768px) {
