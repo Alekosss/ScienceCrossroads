@@ -44,7 +44,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 40%;
+        height: 25%;
         width: 100%;
     }
 
@@ -53,10 +53,9 @@
         justify-content: center;
         align-items: center;
         grid-template-columns: repeat(2, max-content);
-        row-gap: 3rem;
         column-gap: 5rem;
         width: 100%;
-        height: 60%;
+        height: 75%;
     }
 
     .CenterAndBottom {
