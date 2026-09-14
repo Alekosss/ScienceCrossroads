@@ -106,10 +106,10 @@
 
 <style>
     .Admin {
-        left: 0;
         margin-top: 4rem;
-        transform: translateX(-11%);
+        transform: translateX(-57.5%);
         transition: transform 0.275s ease-in-out;
+        width: fit-content;
     }
 
     .Admin:hover {

@@ -1,4 +1,4 @@
-<a href="/pages/admin/login" class=AdminButton>
+<a href="/pages/dashboard" class=AdminButton>
     <span>ARE YOU AN ADMIN?</span>
 </a>
 
@@ -14,6 +14,7 @@
         font-weight: 500;
         cursor: pointer;
         text-decoration: none;
+
     }
 
     .AdminButton:hover {
