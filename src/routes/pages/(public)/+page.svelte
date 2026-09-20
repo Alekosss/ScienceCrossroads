@@ -12,9 +12,6 @@
 </script>
 
 <div class="HomePage">
-    <div class="Admin">
-        <AdminButton/>
-    </div>
     <!--This is the Slogan of the event-->
     <div class="Slogan" bind:this={SloganTarget}>
         <text>INSPIRED BY SCIENCE, GUIDED BY ETHICS</text>
@@ -105,17 +102,6 @@
 <ScrollToButton ArrowDirectionUp={true} scrollTarget={SloganTarget}/>
 
 <style>
-    .Admin {
-        margin-top: 4rem;
-        transform: translateX(-57.5%);
-        transition: transform 0.275s ease-in-out;
-        width: fit-content;
-    }
-
-    .Admin:hover {
-        transform: translateX(0%);
-    }
-
     .BranchesCarousel {
         display: flex;
         justify-content: center;

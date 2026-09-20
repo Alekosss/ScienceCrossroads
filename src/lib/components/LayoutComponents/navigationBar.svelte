@@ -1,13 +1,22 @@
 <script>
 	import { page } from '$app/state';
-    import PlainLogo from '$lib/assets/PlainLogo.png'
+	import PlainLogo from '$lib/assets/PlainLogo.png';
+	import path from 'node:path';
 	import ThemeButton from './ThemeButton.svelte';
 
-    //Menu Button functionality:
-    let menuShowing = $state(false);
-    function toggleMenu() {
-        menuShowing = !menuShowing;
-    }
+	const a = [
+		{ page: 'HOME', href: '/pages' },
+		{ page: 'REGISTER & FAQ', href: '/pages/register&faq' },
+		{ page: 'SCHEDULE', href: '/pages/schedule' },
+		{ page: 'SPONSORS', href: '/pages/sponsors' },
+		{ page: 'SPEAKERS', href: '/pages/speakers' },
+		{ page: 'CONTACT', href: '/pages/contact' }
+	];
+
+	let menuShowing = $state(false);
+	function toggleMenu() {
+		menuShowing = !menuShowing;
+	}
 </script>
 
 <nav class="NavigationBar">
@@ -23,13 +32,13 @@
         <ThemeButton/>
     </div>
     <div class="navLinks navText">
-        <a class:selected = {page.url.pathname === '/pages'} href="/pages/">HOME</a>
-        <a class:selected = {page.url.pathname === '/pages/register&faq'} href="/pages/register&faq">REGISTER & FAQ</a>
-        <a class:selected = {page.url.pathname === '/pages/schedule'} href="/pages/schedule">SCHEDULE</a>
-        <a class:selected = {page.url.pathname === '/pages/sponsors'} href="/pages/sponsors">SPONSORS</a>
-        <a class:selected = {page.url.pathname === '/pages/speakers'} href="/pages/speakers">SPEAKERS</a>
-        <a class:selected = {page.url.pathname === '/pages/contact'} href="/pages/contact">CONTACT</a>
-    </div>  
+        <a class:selected={page.url.pathname===a[0].href} href={a[0].href}>{a[0].page}</a>
+        <a class:selected={page.url.pathname===a[1].href} href={a[1].href}>{a[1].page}</a>
+        <a class:selected={page.url.pathname===a[2].href} href={a[2].href}>{a[2].page}</a>
+        <a class:selected={page.url.pathname===a[3].href} href={a[3].href}>{a[3].page}</a>
+        <a class:selected={page.url.pathname===a[4].href} href={a[4].href}>{a[4].page}</a>
+        <a class:selected={page.url.pathname===a[5].href} href={a[5].href}>{a[5].page}</a>
+    </div>
     <div class="menuButton">
         <button class="burgerButton" type="button" aria-label="Toggle navigation bar menu" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
             <hr/>
@@ -108,13 +117,13 @@
         transition: transform 0.2s linear;
     }
 
-    .navText a:hover{
+    .navText a:hover {
         transform: scale(1.2);
     }
 
-    
     .navText a.selected {
         text-decoration: underline;
+        text-underline-offset: 0.25rem;
     }
 
     .plainLogo {
