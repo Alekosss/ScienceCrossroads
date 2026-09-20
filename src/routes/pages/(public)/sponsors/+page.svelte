@@ -139,701 +139,706 @@
 
 </script>
 
-
-<div class="sponsors-map">
-    <div class="all-circles">
-
-        <svg class="graph-lines">
-            {#each connections as connection}
-                <line
-                    class="connection-line"
-                    data-from={connection.from}
-                    data-to={connection.to}
-                />
-            {/each}
-        </svg>
-
-        <button 
-            class="diamond-circle"
-            onclick={() => goToSponsor('diamond-sponsor','diamond')}
-        >
-            <img src="/sponsors-images/diamond1.png" alt="Diamond sponsor" />
-        </button>
-
-        <button 
-            class="platinum1-circle"
-            onclick={() => goToSponsor('platinum1-sponsor','platinum1')}
-        >
-            <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
-        </button>
-
-
-        <button 
-            class="platinum2-circle"
-            onclick={() => goToSponsor('platinum2-sponsor','platinum2')}
-        >
-            <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
-        </button>
-
-        <button 
-            class="platinum3-circle"
-            onclick={() => goToSponsor('platinum3-sponsor','platinum3')}
-        >
-            <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
-        </button>
-
-        <button 
-            class="platinum4-circle"
-            onclick={() => goToSponsor('platinum4-sponsor','platinum4')}
-        >
-            <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
-        </button>
-
-        <button 
-            class="gold1-circle"
-            onclick={() => goToSponsor('gold1-sponsor','gold1')}
-        >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
-
-        <button 
-            class="gold2-circle"
-            onclick={() => goToSponsor('gold2-sponsor','gold2')}
-        >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
- 
-
-       <button 
-            class="gold3-circle"
-            onclick={() => goToSponsor('gold3-sponsor','gold3')}
-       >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
-
-       <button 
-            class="gold4-circle"
-            onclick={() => goToSponsor('gold4-sponsor','gold4')}
-       >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
-
-       <button 
-            class="gold5-circle"
-            onclick={() => goToSponsor('gold5-sponsor','gold5')}
-       >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
-
-       <button 
-            class="gold6-circle"
-            onclick={() => goToSponsor('gold6-sponsor','gold6')}
-       >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
-
-       <button 
-            class="gold7-circle"
-            onclick={() => goToSponsor('gold7-sponsor','gold7')}
-       >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
- 
-       <button 
-            class="gold8-circle"
-            onclick={() => goToSponsor('gold8-sponsor','gold8')}
-       >
-            <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
-        </button>
-
-       <button 
-            class="silver1-circle"
-            onclick={() => goToSponsor('silver1-sponsor','silver1')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver2-circle"
-            onclick={() => goToSponsor('silver2-sponsor','silver2')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver3-circle"
-            onclick={() => goToSponsor('silver3-sponsor','silver3')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver4-circle"
-            onclick={() => goToSponsor('silver4-sponsor','silver4')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver5-circle"
-            onclick={() => goToSponsor('silver5-sponsor','silver5')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver6-circle"
-            onclick={() => goToSponsor('silver6-sponsor','silver6')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver7-circle"
-            onclick={() => goToSponsor('silver7-sponsor','silver7')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver8-circle"
-            onclick={() => goToSponsor('silver8-sponsor','silver8')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-       <button 
-            class="silver9-circle"
-            onclick={() => goToSponsor('silver9-sponsor','silver9')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver10-circle"
-            onclick={() => goToSponsor('silver10-sponsor','silver10')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="silver11-circle"
-            onclick={() => goToSponsor('silver11-sponsor','silver11')}
-       >
-            <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze1-circle"
-            onclick={() => goToSponsor('bronze1-sponsor','bronze1')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze2-circle"
-            onclick={() => goToSponsor('bronze2-sponsor','bronze2')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze3-circle"
-            onclick={() => goToSponsor('bronze3-sponsor','bronze3')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze4-circle"
-            onclick={() => goToSponsor('bronze4-sponsor','bronze4')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze5-circle"
-            onclick={() => goToSponsor('bronze5-sponsor','bronze5')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze6-circle"
-            onclick={() => goToSponsor('bronze6-sponsor','bronze6')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze7-circle"
-            onclick={() => goToSponsor('bronze7-sponsor','bronze7')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-
-       <button 
-            class="bronze8-circle"
-            onclick={() => goToSponsor('bronze8-sponsor','bronze8')}
-       >
-            <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
-        </button>
-
-    </div>
-
-</div>
-
-<div class="sponsors-title">
-    <h1>SPONSORS</h1>
-</div>
-
-<div class="diamond-info">
-    <div class="diamond-line">
-        <div
-            class="diamond-square" 
-            id="diamond-sponsor"
-            class:highlighted={highlightedSponsor === 'diamond'}
-        >
-            <SponsorCard
-                sponsorName="Diamond Sponsor"
-                imageURL="/sponsors-images/diamond1.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-    </div>  
-</div>
-
-<div class="diamond-platinum-divider"></div>
-
-<div class="platinum-info">
-    <div class="platinum-line1">
-        <div 
-            class="platinum-square1"
-            id="platinum1-sponsor"
-            class:highlighted={highlightedSponsor === 'platinum1'}
-        >
-            <SponsorCard
-                sponsorName="Platinum Sponsor 1"
-                imageURL="/sponsors-images/platinum1.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="platinum-square2"
-            id="platinum2-sponsor"
-            class:highlighted={highlightedSponsor === 'platinum2'}
-        >
-           <SponsorCard
-                sponsorName="Platinum Sponsor 2"
-                imageURL="/sponsors-images/platinum1.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="platinum-square3"
-            id="platinum3-sponsor"
-            class:highlighted={highlightedSponsor === 'platinum3'}
-        >
-           <SponsorCard
-                sponsorName="Platinum Sponsor 3"
-                imageURL="/sponsors-images/platinum1.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-    </div> 
+<div class="SponsorsPage">
+    <div class="sponsors-map">
+        <div class="all-circles">
     
-    <div class="platinum-line2">
-        <div 
-            class="platinum-square4"
-            id="platinum4-sponsor"
-            class:highlighted={highlightedSponsor === 'platinum4'}
-        >
-           <SponsorCard
-                sponsorName="Platinum Sponsor 4"
-                imageURL="/sponsors-images/platinum1.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+            <svg class="graph-lines">
+                {#each connections as connection}
+                    <line
+                        class="connection-line"
+                        data-from={connection.from}
+                        data-to={connection.to}
+                    />
+                {/each}
+            </svg>
+    
+            <button 
+                class="diamond-circle"
+                onclick={() => goToSponsor('diamond-sponsor','diamond')}
+            >
+                <img src="/sponsors-images/diamond1.png" alt="Diamond sponsor" />
+            </button>
+    
+            <button 
+                class="platinum1-circle"
+                onclick={() => goToSponsor('platinum1-sponsor','platinum1')}
+            >
+                <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
+            </button>
+    
+    
+            <button 
+                class="platinum2-circle"
+                onclick={() => goToSponsor('platinum2-sponsor','platinum2')}
+            >
+                <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
+            </button>
+    
+            <button 
+                class="platinum3-circle"
+                onclick={() => goToSponsor('platinum3-sponsor','platinum3')}
+            >
+                <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
+            </button>
+    
+            <button 
+                class="platinum4-circle"
+                onclick={() => goToSponsor('platinum4-sponsor','platinum4')}
+            >
+                <img src="/sponsors-images/platinum1.png" alt="Platinum sponsor" />
+            </button>
+    
+            <button 
+                class="gold1-circle"
+                onclick={() => goToSponsor('gold1-sponsor','gold1')}
+            >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+    
+            <button 
+                class="gold2-circle"
+                onclick={() => goToSponsor('gold2-sponsor','gold2')}
+            >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+     
+    
+           <button 
+                class="gold3-circle"
+                onclick={() => goToSponsor('gold3-sponsor','gold3')}
+           >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+    
+           <button 
+                class="gold4-circle"
+                onclick={() => goToSponsor('gold4-sponsor','gold4')}
+           >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+    
+           <button 
+                class="gold5-circle"
+                onclick={() => goToSponsor('gold5-sponsor','gold5')}
+           >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+    
+           <button 
+                class="gold6-circle"
+                onclick={() => goToSponsor('gold6-sponsor','gold6')}
+           >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+    
+           <button 
+                class="gold7-circle"
+                onclick={() => goToSponsor('gold7-sponsor','gold7')}
+           >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+     
+           <button 
+                class="gold8-circle"
+                onclick={() => goToSponsor('gold8-sponsor','gold8')}
+           >
+                <img src="/sponsors-images/gold.png" alt="Gold sponsor" />
+            </button>
+    
+           <button 
+                class="silver1-circle"
+                onclick={() => goToSponsor('silver1-sponsor','silver1')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver2-circle"
+                onclick={() => goToSponsor('silver2-sponsor','silver2')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver3-circle"
+                onclick={() => goToSponsor('silver3-sponsor','silver3')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver4-circle"
+                onclick={() => goToSponsor('silver4-sponsor','silver4')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver5-circle"
+                onclick={() => goToSponsor('silver5-sponsor','silver5')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver6-circle"
+                onclick={() => goToSponsor('silver6-sponsor','silver6')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver7-circle"
+                onclick={() => goToSponsor('silver7-sponsor','silver7')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver8-circle"
+                onclick={() => goToSponsor('silver8-sponsor','silver8')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+           <button 
+                class="silver9-circle"
+                onclick={() => goToSponsor('silver9-sponsor','silver9')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver10-circle"
+                onclick={() => goToSponsor('silver10-sponsor','silver10')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="silver11-circle"
+                onclick={() => goToSponsor('silver11-sponsor','silver11')}
+           >
+                <img src="/sponsors-images/silver.png" alt="Silver sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze1-circle"
+                onclick={() => goToSponsor('bronze1-sponsor','bronze1')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze2-circle"
+                onclick={() => goToSponsor('bronze2-sponsor','bronze2')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze3-circle"
+                onclick={() => goToSponsor('bronze3-sponsor','bronze3')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze4-circle"
+                onclick={() => goToSponsor('bronze4-sponsor','bronze4')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze5-circle"
+                onclick={() => goToSponsor('bronze5-sponsor','bronze5')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze6-circle"
+                onclick={() => goToSponsor('bronze6-sponsor','bronze6')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze7-circle"
+                onclick={() => goToSponsor('bronze7-sponsor','bronze7')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+    
+           <button 
+                class="bronze8-circle"
+                onclick={() => goToSponsor('bronze8-sponsor','bronze8')}
+           >
+                <img src="/sponsors-images/bronze.png" alt="Bronze sponsor" />
+            </button>
+    
+        </div>
+    
+    </div>
+    
+    <div class="sponsors-title">
+        <h1>SPONSORS</h1>
+    </div>
+    
+    <div class="diamond-info">
+        <div class="diamond-line">
+            <div
+                class="diamond-square" 
+                id="diamond-sponsor"
+                class:highlighted={highlightedSponsor === 'diamond'}
+            >
+                <SponsorCard
+                    sponsorName="Diamond Sponsor"
+                    imageURL="/sponsors-images/diamond1.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+        </div>  
+    </div>
+    
+    <div class="diamond-platinum-divider"></div>
+    
+    <div class="platinum-info">
+        <div class="platinum-line1">
+            <div 
+                class="platinum-square1"
+                id="platinum1-sponsor"
+                class:highlighted={highlightedSponsor === 'platinum1'}
+            >
+                <SponsorCard
+                    sponsorName="Platinum Sponsor 1"
+                    imageURL="/sponsors-images/platinum1.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="platinum-square2"
+                id="platinum2-sponsor"
+                class:highlighted={highlightedSponsor === 'platinum2'}
+            >
+               <SponsorCard
+                    sponsorName="Platinum Sponsor 2"
+                    imageURL="/sponsors-images/platinum1.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="platinum-square3"
+                id="platinum3-sponsor"
+                class:highlighted={highlightedSponsor === 'platinum3'}
+            >
+               <SponsorCard
+                    sponsorName="Platinum Sponsor 3"
+                    imageURL="/sponsors-images/platinum1.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+        </div> 
+        
+        <div class="platinum-line2">
+            <div 
+                class="platinum-square4"
+                id="platinum4-sponsor"
+                class:highlighted={highlightedSponsor === 'platinum4'}
+            >
+               <SponsorCard
+                    sponsorName="Platinum Sponsor 4"
+                    imageURL="/sponsors-images/platinum1.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
     </div>
-</div>
-
-<div class="platinum-gold-divider"></div>
-
-<div class="gold-info">
-    <div class="gold-line1">
-        <div 
-            class="gold-square1"
-            id="gold1-sponsor"
-            class:highlighted={highlightedSponsor === 'gold1'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 1"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+    <div class="platinum-gold-divider"></div>
+    
+    <div class="gold-info">
+        <div class="gold-line1">
+            <div 
+                class="gold-square1"
+                id="gold1-sponsor"
+                class:highlighted={highlightedSponsor === 'gold1'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 1"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="gold-square2"
+                id="gold2-sponsor"
+                class:highlighted={highlightedSponsor === 'gold2'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 2"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="gold-square3"
+                id="gold3-sponsor"
+                class:highlighted={highlightedSponsor === 'gold3'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 3"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="gold-square4"
+                id="gold4-sponsor"
+                class:highlighted={highlightedSponsor === 'gold4'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 4"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
-
-        <div 
-            class="gold-square2"
-            id="gold2-sponsor"
-            class:highlighted={highlightedSponsor === 'gold2'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 2"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="gold-square3"
-            id="gold3-sponsor"
-            class:highlighted={highlightedSponsor === 'gold3'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 3"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="gold-square4"
-            id="gold4-sponsor"
-            class:highlighted={highlightedSponsor === 'gold4'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 4"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-    </div>
-
-    <div class="gold-line2">
-        <div 
-            class="gold-square5"
-            id="gold5-sponsor"
-            class:highlighted={highlightedSponsor === 'gold5'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 5"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="gold-square6"
-            id="gold6-sponsor"
-            class:highlighted={highlightedSponsor === 'gold6'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 6"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="gold-square7"
-            id="gold7-sponsor"
-            class:highlighted={highlightedSponsor === 'gold7'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 7"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="gold-square8"
-            id="gold8-sponsor"
-            class:highlighted={highlightedSponsor === 'gold8'}
-        >
-            <SponsorCard
-                sponsorName="Gold Sponsor 8"
-                imageURL="/sponsors-images/gold.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-    </div>
-</div>
-
-<div class="gold-silver-divider"></div>
-
-<div class="silver-info">
-    <div class="silver-line1">
-        <div 
-            class="silver-square1"
-            id="silver1-sponsor"
-            class:highlighted={highlightedSponsor === 'silver1'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 1"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="silver-square2"
-            id="silver2-sponsor"
-            class:highlighted={highlightedSponsor === 'silver2'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 2"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="silver-square3"
-            id="silver3-sponsor"
-            class:highlighted={highlightedSponsor === 'silver3'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 3"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="silver-square4"
-            id="silver4-sponsor"
-            class:highlighted={highlightedSponsor === 'silver4'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 4"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+        <div class="gold-line2">
+            <div 
+                class="gold-square5"
+                id="gold5-sponsor"
+                class:highlighted={highlightedSponsor === 'gold5'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 5"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="gold-square6"
+                id="gold6-sponsor"
+                class:highlighted={highlightedSponsor === 'gold6'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 6"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="gold-square7"
+                id="gold7-sponsor"
+                class:highlighted={highlightedSponsor === 'gold7'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 7"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="gold-square8"
+                id="gold8-sponsor"
+                class:highlighted={highlightedSponsor === 'gold8'}
+            >
+                <SponsorCard
+                    sponsorName="Gold Sponsor 8"
+                    imageURL="/sponsors-images/gold.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
     </div>
-
-    <div class="silver-line2">
-        <div 
-            class="silver-square5"
-            id="silver5-sponsor"
-            class:highlighted={highlightedSponsor === 'silver5'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 5"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+    <div class="gold-silver-divider"></div>
+    
+    <div class="silver-info">
+        <div class="silver-line1">
+            <div 
+                class="silver-square1"
+                id="silver1-sponsor"
+                class:highlighted={highlightedSponsor === 'silver1'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 1"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square2"
+                id="silver2-sponsor"
+                class:highlighted={highlightedSponsor === 'silver2'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 2"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square3"
+                id="silver3-sponsor"
+                class:highlighted={highlightedSponsor === 'silver3'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 3"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square4"
+                id="silver4-sponsor"
+                class:highlighted={highlightedSponsor === 'silver4'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 4"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
-
-        <div 
-            class="silver-square6"
-            id="silver6-sponsor"
-            class:highlighted={highlightedSponsor === 'silver6'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 6"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+        <div class="silver-line2">
+            <div 
+                class="silver-square5"
+                id="silver5-sponsor"
+                class:highlighted={highlightedSponsor === 'silver5'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 5"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square6"
+                id="silver6-sponsor"
+                class:highlighted={highlightedSponsor === 'silver6'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 6"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square7"
+                id="silver7-sponsor"
+                class:highlighted={highlightedSponsor === 'silver7'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 7"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square8"
+                id="silver8-sponsor"
+                class:highlighted={highlightedSponsor === 'silver8'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 8"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
-
-        <div 
-            class="silver-square7"
-            id="silver7-sponsor"
-            class:highlighted={highlightedSponsor === 'silver7'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 7"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="silver-square8"
-            id="silver8-sponsor"
-            class:highlighted={highlightedSponsor === 'silver8'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 8"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+        <div class="silver-line3">
+            <div 
+                class="silver-square9"
+                id="silver9-sponsor"
+                class:highlighted={highlightedSponsor === 'silver9'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 9"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square10"
+                id="silver10-sponsor"
+                class:highlighted={highlightedSponsor === 'silver10'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 10"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="silver-square11"
+                id="silver11-sponsor"
+                class:highlighted={highlightedSponsor === 'silver11'}
+            >
+                <SponsorCard
+                    sponsorName="Silver Sponsor 11"
+                    imageURL="/sponsors-images/silver.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
     </div>
-
-    <div class="silver-line3">
-        <div 
-            class="silver-square9"
-            id="silver9-sponsor"
-            class:highlighted={highlightedSponsor === 'silver9'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 9"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+    <div class="silver-bronze-divider"></div>
+    
+    <div class="bronze-info">
+        <div class="bronze-line1">
+            <div 
+                class="bronze-square1"
+                id="bronze1-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze1'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 1"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="bronze-square2"
+                id="bronze2-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze2'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 2"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="bronze-square3"
+                id="bronze3-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze3'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 3"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="bronze-square4"
+                id="bronze4-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze4'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 4"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
-
-        <div 
-            class="silver-square10"
-            id="silver10-sponsor"
-            class:highlighted={highlightedSponsor === 'silver10'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 10"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="silver-square11"
-            id="silver11-sponsor"
-            class:highlighted={highlightedSponsor === 'silver11'}
-        >
-            <SponsorCard
-                sponsorName="Silver Sponsor 11"
-                imageURL="/sponsors-images/silver.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-    </div>
-</div>
-
-<div class="silver-bronze-divider"></div>
-
-<div class="bronze-info">
-    <div class="bronze-line1">
-        <div 
-            class="bronze-square1"
-            id="bronze1-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze1'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 1"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="bronze-square2"
-            id="bronze2-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze2'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 2"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="bronze-square3"
-            id="bronze3-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze3'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 3"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="bronze-square4"
-            id="bronze4-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze4'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 4"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-    </div>
-
-    <div class="bronze-line2">
-        <div 
-            class="bronze-square5"
-            id="bronze5-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze5'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 5"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="bronze-square6"
-            id="bronze6-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze6'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 6"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="bronze-square7"
-            id="bronze7-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze7'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 7"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
-        </div>
-
-        <div 
-            class="bronze-square8"
-            id="bronze8-sponsor"
-            class:highlighted={highlightedSponsor === 'bronze8'}
-        >
-            <SponsorCard
-                sponsorName="Bronze Sponsor 8"
-                imageURL="/sponsors-images/bronze.png"
-                description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
-            />
+    
+        <div class="bronze-line2">
+            <div 
+                class="bronze-square5"
+                id="bronze5-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze5'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 5"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="bronze-square6"
+                id="bronze6-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze6'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 6"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="bronze-square7"
+                id="bronze7-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze7'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 7"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
+    
+            <div 
+                class="bronze-square8"
+                id="bronze8-sponsor"
+                class:highlighted={highlightedSponsor === 'bronze8'}
+            >
+                <SponsorCard
+                    sponsorName="Bronze Sponsor 8"
+                    imageURL="/sponsors-images/bronze.png"
+                    description="Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας."
+                />
+            </div>
         </div>
     </div>
 </div>
 
 
 <style>
+    .SponsorsPage {
+        font-family: var(--font-family);
+    }
+
     .bronze-square8.highlighted {
         transform: scale(1.08);
     }
@@ -2550,6 +2555,18 @@
         height: 100%;
         pointer-events: none;
         overflow: visible;
+    }
+
+    .all-circles button img {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        object-fit: contain;
+    }
+
+    .all-circles button {
+        background-color: #ffffff;
     }
 
     .connection-line {
