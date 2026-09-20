@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/state';
     import PlainLogo from '$lib/assets/PlainLogo.png'
 	import ThemeButton from './ThemeButton.svelte';
 
@@ -22,12 +23,12 @@
         <ThemeButton/>
     </div>
     <div class="navLinks navText">
-        <a href="/pages/">HOME</a>
-        <a href="/pages/register&faq">REGISTER & FAQ</a>
-        <a href="/pages/schedule">SCHEDULE</a>
-        <a href="/pages/sponsors">SPONSORS</a>
-        <a href="/pages/speakers">SPEAKERS</a>
-        <a href="/pages/contact">CONTACT</a>
+        <a class:selected = {page.url.pathname === '/pages'} href="/pages/">HOME</a>
+        <a class:selected = {page.url.pathname === '/pages/register&faq'} href="/pages/register&faq">REGISTER & FAQ</a>
+        <a class:selected = {page.url.pathname === '/pages/schedule'} href="/pages/schedule">SCHEDULE</a>
+        <a class:selected = {page.url.pathname === '/pages/sponsors'} href="/pages/sponsors">SPONSORS</a>
+        <a class:selected = {page.url.pathname === '/pages/speakers'} href="/pages/speakers">SPEAKERS</a>
+        <a class:selected = {page.url.pathname === '/pages/contact'} href="/pages/contact">CONTACT</a>
     </div>  
     <div class="menuButton">
         <button class="burgerButton" type="button" aria-label="Toggle navigation bar menu" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
@@ -109,6 +110,11 @@
 
     .navText a:hover{
         transform: scale(1.2);
+    }
+
+    
+    .navText a.selected {
+        text-decoration: underline;
     }
 
     .plainLogo {
