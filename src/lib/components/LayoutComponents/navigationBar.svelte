@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/state';
 	import PlainLogo from '$lib/assets/PlainLogo.png';
 	import ThemeButton from './ThemeButton.svelte';
+    import { t } from '$lib/i18n.svelte';
 
-	const a = [
-		{ page: 'HOME', href: '/pages' },
-		{ page: 'REGISTER & FAQ', href: '/pages/register&faq' },
-		{ page: 'SCHEDULE', href: '/pages/schedule' },
-		{ page: 'SPONSORS', href: '/pages/sponsors' },
-		{ page: 'SPEAKERS', href: '/pages/speakers' },
-		{ page: 'CONTACT', href: '/pages/contact' }
-	];
+    const a = $derived([
+		{ page: t('nav_home'), href: '/pages' },
+		{ page: t('nav_register'), href: '/pages/register&faq' },
+		{ page: t('nav_schedule'), href: '/pages/schedule' },
+		{ page: t('nav_sponsors'), href: '/pages/sponsors' },
+		{ page: t('nav_speakers'), href: '/pages/speakers' },
+		{ page: t('nav_contact'), href: '/pages/contact' }
+    ]);
 
 	let menuShowing = $state(false);
 	function toggleMenu() {
@@ -47,12 +48,9 @@
     </div>
     {#if menuShowing}
         <div class="MenuList">
-            <a onclick={() => menuShowing = !menuShowing} href="/">HOME</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/register&faq">REGISTER & FAQ</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/schedule">SCHEDULE</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/sponsors">SPONSORS</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/speakers">SPEAKERS</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/contact">CONTACT</a>
+            {#each a as navItem}
+                <a onclick={() => menuShowing = !menuShowing} href={navItem.href}>{navItem.page}</a>
+            {/each}
         </div> 
     {/if}
 </nav>
@@ -103,6 +101,7 @@
     .navText {
         color: var(--primary-color);
         font-size: var(--NavBarText);
+        text-align: center;
     }
 
     .navText a {
