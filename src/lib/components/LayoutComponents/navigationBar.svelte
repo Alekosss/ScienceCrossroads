@@ -32,12 +32,12 @@
         <ThemeButton/>
     </div>
     <div class="navLinks navText">
-        <a class:selected={page.url.pathname===a[0].href} href={a[0].href}>{a[0].page}</a>
-        <a class:selected={page.url.pathname===a[1].href} href={a[1].href}>{a[1].page}</a>
+        <a class="home" class:homeSelected={page.url.pathname===a[0].href} href={a[0].href}>{a[0].page}</a>
+        <a class="register" class:registerSelected={page.url.pathname===a[1].href} href={a[1].href}>{a[1].page}</a>
         <a class:selected={page.url.pathname===a[2].href} href={a[2].href}>{a[2].page}</a>
         <a class:selected={page.url.pathname===a[3].href} href={a[3].href}>{a[3].page}</a>
         <a class:selected={page.url.pathname===a[4].href} href={a[4].href}>{a[4].page}</a>
-        <a class:selected={page.url.pathname===a[5].href} href={a[5].href}>{a[5].page}</a>
+        <a class="contact" class:contactSelected={page.url.pathname===a[5].href} href={a[5].href}>{a[5].page}</a>
     </div>
     <div class="menuButton">
         <button class="burgerButton" type="button" aria-label="Toggle navigation bar menu" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
@@ -124,6 +124,27 @@
     .navText a.selected {
         text-decoration: underline;
         text-underline-offset: 0.25rem;
+    }
+
+    .navText a.homeSelected,
+    .navText a.registerSelected,
+    .navText a.contactSelected {
+        text-decoration: underline;
+    }
+
+    .navText a.homeSelected,
+    .navText a.home:hover {
+        color: var(--it);
+    }
+
+    .navText a.registerSelected,
+    .navText a.register:hover {
+        color: var(--chemistry);
+    }
+
+    .navText a.contactSelected,
+    .navText a.contact:hover {
+        color: var(--physics);
     }
 
     .plainLogo {

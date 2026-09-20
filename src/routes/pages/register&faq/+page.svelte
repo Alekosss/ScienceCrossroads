@@ -68,6 +68,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        text-align: center;
     }
 
     .CategoryHeader hr {
@@ -83,6 +84,7 @@
         justify-content: center;
         align-items: center;
         margin: 25px;
+        zoom: 0.75;
     }
 
     .FAQ {
@@ -109,12 +111,17 @@
         margin: 50px;
     }
 
+    .Location {
+        zoom: 0.7;
+    }
+
     .Register {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 25px;
+        zoom: 0.8;
     }
 
     .Register span {
@@ -134,6 +141,8 @@
 
     .RegisterAndFAQ {
         font-family: var(--font-family);
+        width: 90%;
+        justify-self: center;
     }
 
     @media (max-width: 768px) {

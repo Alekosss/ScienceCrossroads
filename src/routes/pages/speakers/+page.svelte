@@ -139,7 +139,7 @@
     }
 
     .Grids {
-        width: 95%;
+        width: 100%;
     }
 
     .Physics {
@@ -186,6 +186,8 @@
 
     .SpeakersPage {
         font-family: var(--font-family);
+        width: 90%;
+        justify-self: center;
 
         display: flex;
         flex-direction: column;

@@ -28,6 +28,7 @@
 <style>
     .Grid {
         width: 100%;
+        height: auto;
         display: grid;
         grid-template-columns: repeat(3,1fr);
         align-items: center;
@@ -35,8 +36,6 @@
         justify-content: center;
         column-gap: 1.5vw;
         row-gap: 5vh;
-        width:  auto;
-        height: auto;
     }
 
     .GridHeader {
@@ -48,9 +47,9 @@
         background-color: var(--secondary-color);
         border-radius: 3rem;
         gap: 1rem;
-        margin: 2rem auto;
+        margin: 2rem 0;
         padding: 1rem 0;
-        width: 90%;
+        width: 100%;
         
         display: flex;
         flex-direction: column;

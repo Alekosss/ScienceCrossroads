@@ -97,7 +97,8 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 200px;
+        gap: 15rem;
+        zoom: 0.6;
     }
 
     .Carousel {
@@ -105,7 +106,7 @@
         flex-direction: column;
         align-self: center;
 
-        gap: 75px;
+        gap: 3rem;
 
         width: 100%;
         height: 80vh;
@@ -120,8 +121,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 50px;
-        margin-bottom: 2.5px;
+        margin-bottom: 0.1rem;
+        gap: 5rem;
     }
     
     .roundIndex {

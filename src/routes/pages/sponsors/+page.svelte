@@ -837,6 +837,8 @@
 <style>
     .SponsorsPage {
         font-family: var(--font-family);
+        width: 90%;
+        justify-self: center;
     }
 
     .bronze-square8.highlighted {

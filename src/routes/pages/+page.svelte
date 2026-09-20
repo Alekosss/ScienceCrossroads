@@ -6,7 +6,6 @@
     import SocialPosts from "$lib/components/Home/SocialPosts.svelte";
     import BranchesCarousel from "$lib/components/BranchCarousel/BranchesCarousel.svelte";
     import ScrollToButton from "$lib/components/Shared/ScrollToButton.svelte";
-	import AdminButton from "$lib/components/Home/AdminButton.svelte";
 
     let SloganTarget = $state();
 </script>
@@ -54,9 +53,15 @@
     </div>
     <!--These are the components that show the stats of the events (speakers, workshops...)-->
     <div class="ContentStatistics">
-        <StatisticsButton text="X+ WORKSHOPS" subpage="schedule"/>
-        <StatisticsButton text="Y+ SPEAKERS" subpage="speakers"/>
-        <StatisticsButton text="Z+ SPEECHES" subpage="schedule"/>
+        <div class="Workshops">
+            <StatisticsButton text="X+ WORKSHOPS" subpage="schedule"/>
+        </div>
+        <div class="SpeakerStatistic">
+            <StatisticsButton text="Y+ SPEAKERS" subpage="speakers"/>
+        </div>
+        <div class="Speeches">
+            <StatisticsButton text="Z+ SPEECHES" subpage="schedule"/>
+        </div>
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
     <div class="CategoryHeader">
@@ -90,7 +95,7 @@
         <hr/>
     </div>
     <div class="OrganizingTeam">
-        <div class="OrganizigText">
+        <div class="OrganizingText">
             <span>OUR ORGANIZING TEAM IS CONSITEED OF THE FOLLOWING STUDENT TEAMS</span>
         </div>
         <div class="BranchesCarousel">
@@ -143,6 +148,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin-bottom: 2rem;
     }
     
     .ChImage {
@@ -158,8 +164,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        gap: 5%;
-        margin: 15% 0px 10%;
+        gap: 10rem;
+        margin: 4rem 0;
     }
 
     .Countdown {
@@ -227,7 +233,13 @@
         }
         
     .HomePage {
+        justify-self: center;
         font-family: var(--font-family);
+        width: 90%;
+    }
+
+    .ITAndOutcomes {
+        margin: 4rem 0;
     }
     
     .ITImage {
@@ -241,13 +253,15 @@
     -webkit-mask-image:
         linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
         linear-gradient(to top, var(--primary-color) 60%, transparent 100%),
-        linear-gradient(to right, var(--primary-color) 60%, transparent 95%);
+        linear-gradient(to right, var(--primary-color) 60%, transparent 95%),
+        linear-gradient(to left, var(--primary-color) 60%, transparent 95%);
     -webkit-mask-composite: source-in; 
 
     mask-image:
         linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
         linear-gradient(to top, var(--primary-color) 60%, transparent 100%),
-        linear-gradient(to right, var(--primary-color) 60%, transparent 95%);
+        linear-gradient(to right, var(--primary-color) 60%, transparent 95%),
+        linear-gradient(to left, var(--primary-color) 60%, transparent 95%);
     mask-composite: intersect; 
     }
 
@@ -255,12 +269,14 @@
     -webkit-mask-image:
         linear-gradient(to bottom, var(--primary-color) 60%, transparent 100%),
         linear-gradient(to top, var(--primary-color) 65%, transparent 100%),
+        linear-gradient(to right, var(--primary-color) 60%, transparent 95%),
         linear-gradient(to left, var(--primary-color) 60%, transparent 100%);
     -webkit-mask-composite: source-in; 
 
     mask-image:
         linear-gradient(to bottom, var(--primary-color) 70%, transparent 100%),
         linear-gradient(to top, var(--primary-color) 65%, transparent 100%),
+        linear-gradient(to right, var(--primary-color) 60%, transparent 95%),
         linear-gradient(to left, var(--primary-color) 60%, transparent 100%);
     mask-composite: intersect; 
     }
@@ -285,8 +301,12 @@
         justify-self: center;
         justify-content: center;
         align-items: center;
-        gap: clamp(1rem,2.5rem,4rem);
+        gap: clamp(0.5rem,1rem,1.5rem);
         width: 100%;
+    }
+
+    .OrganizingText {
+        font-size: 2vw;
     }
 
     .PhysicsAndParticipants {
@@ -294,6 +314,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin: 5rem 0;
     }
 
     .PhImage {
@@ -372,6 +393,12 @@
 
     .TextHeader text {
         font-size: clamp(15px,2vw,30px);
+    }
+
+    .Workshops,
+    .Speeches,
+    .SpeakerStatistic {
+        zoom: 0.7;
     }
 
     @media (max-width: 768px) {
