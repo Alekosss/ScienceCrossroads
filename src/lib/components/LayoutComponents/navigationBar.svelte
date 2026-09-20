@@ -1,7 +1,6 @@
 <script>
 	import { page } from '$app/state';
 	import PlainLogo from '$lib/assets/PlainLogo.png';
-	import path from 'node:path';
 	import ThemeButton from './ThemeButton.svelte';
 
 	const a = [
@@ -166,7 +165,9 @@
     .Theme {
         background-color: var(--secondary-color);
         color: var(--primary-color);
+        zoom: 0.7;
     }
+
 
     @media (max-width: 768px) {
         .burgerButton {

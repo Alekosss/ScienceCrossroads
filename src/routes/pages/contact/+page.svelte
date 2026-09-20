@@ -160,7 +160,7 @@
     .AddressSubjectName {
         display: flex;
         flex-direction: row;
-        gap: 150px;
+        gap: 7.5rem;
         justify-content: center;
         padding: 2rem;
         
@@ -175,8 +175,8 @@
         background-color: var(--primary-color);
         color: var(--physics);
         height: 35px;
-        width: 300px;
-        font-size: 20px;
+        width: auto;
+        font-size: 1.25vw;
         border-radius: 50px;
     }
     
@@ -204,12 +204,11 @@
     
     .ContactPage {
         font-family: var(--font-family);
+        width: 90%;
+        justify-self: center;
+        overflow: hidden;
     }
 
-    .MailingForm input {
-        padding-left: 1rem;
-    }
-    
     .Description {
         color: var(--PHYSICS, #E29B60);
         font-size: 32px;
@@ -246,6 +245,8 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+
+        font-size: clamp(1.25vw,1.5vw,1.75vw);
     }
     
     .goBack {
@@ -256,22 +257,28 @@
     }
 
     .MailingForm {
+        justify-self: center;
+        align-self: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 90%;
+        width: max-content;
         height: auto;
 
         background-color: var(--secondary-color);
 
-        margin: 2rem auto 5rem;
+        margin: 2rem 0 5rem;
         padding: 0.25rem;
-        border-radius: 50px;
-        zoom: 0.8;
+        border-radius: 4rem;
     }
 
+    .MailingForm input {
+        padding-left: 1rem;
+    }
+    
+
     .Media {
-        zoom: 0.8;
+        zoom: 0.7;
     }
 
     .Message {
@@ -279,7 +286,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 26px;
+        font-size: clamp(1.25vw,1.5vw,1.75vw);
         gap: 10px;
 
         color: var(--primary-color);
@@ -288,7 +295,7 @@
     .Message textarea {
         background-color: var(--primary-color);
         color: var(--physics);
-        height: 250px;
+        height: 10rem;
         width: 90%;
         padding: 2rem;
         font-size: 20px;
