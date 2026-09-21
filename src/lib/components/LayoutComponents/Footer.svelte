@@ -4,6 +4,7 @@
     import TikTok from "$lib/assets/Icons/TikTok.svelte";
     import Mail from "$lib/assets/Icons/Mail.svelte";
     import LinkedIn from "$lib/assets/Icons/LinkedIn.svelte";
+	import { t } from "$lib/i18n.svelte";
 
     const GmailURL = "https://mail.google.com";
     const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
@@ -35,7 +36,7 @@
 <div class="Footer">
     <div class="Top">
         <hr/>
-        <span>CONTACT</span>
+        <span>{t('nav_contact')}</span>
         <hr/>
     </div>
     <div class="SocialMedia">

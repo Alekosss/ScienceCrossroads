@@ -1,4 +1,6 @@
 <script>
+	import { t } from "$lib/i18n.svelte";
+
     let {onFilter, activeFilter}= $props();
 </script>
 
@@ -6,7 +8,7 @@
     <div class="schedule-title">
         <div class="line"></div>
         
-        <h1>EVENT SCHEDULE</h1>
+        <h1>{t('schedule')}</h1>
 
         <div class="line"></div>
     </div>

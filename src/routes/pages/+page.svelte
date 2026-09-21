@@ -92,12 +92,12 @@
     </div>
     <div class="CategoryHeader">
         <hr/>
-        <text>ORGANIZING COMITEE</text>
+        <text>{t('comitee')}</text>
         <hr/>
     </div>
     <div class="OrganizingTeam">
         <div class="OrganizingText">
-            <span>OUR ORGANIZING TEAM IS CONSITEED OF THE FOLLOWING STUDENT TEAMS</span>
+            <span>{t('comitee_teams')}</span>
         </div>
         <div class="BranchesCarousel">
             <BranchesCarousel/>          

@@ -3,6 +3,7 @@
     import MapLocation from "$lib/components/Shared/MapLocation.svelte";
     import Qna from "$lib/components/Register&FAQ/Qna.svelte";
     import RegisterButton from "$lib/components/Shared/RegisterButton.svelte";
+	import { t } from "$lib/i18n.svelte";
 
 
     let showing = $state(true);
@@ -21,7 +22,7 @@
     <!--Header Text-->
     <div class="CategoryHeader">
         <hr/>
-        <text>EVENT DATE</text>
+        <text>{t('DATE')}</text>
         <hr/>
     </div>
     <!--Register and more...-->
@@ -34,7 +35,7 @@
                 <MapLocation textColor="var(--chemistry)"/>
             </div>
             <div class="Register">
-                <span>LIMITED SEATS, BOOK YOURS NOW!</span>
+                <span>{t('seats')}</span>
                 <RegisterButton textColor=var(--chemistry)/>
             </div>
         </div>
@@ -43,11 +44,11 @@
 
     <div class="CategoryHeader LastHeader">
         <hr/>
-        <text>FREQUENTLY ASKED QUESTIONS</text>
+        <text>{t('FAQ')}</text>
         <hr/>
     </div>
     <div class="FAQ">
-        <Qna/>
+        <Qna q={"question 1"} a={"answer1"}/>
         <Qna/>
         <Qna/>
     </div>

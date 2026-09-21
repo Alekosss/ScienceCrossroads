@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$lib/i18n.svelte';
     import ScheduleHeader from '$lib/second-page/ScheduleHeader.svelte';
 
     let activeFilter = $state(null);
@@ -27,30 +28,30 @@
     <div class="day-content">
         <div class="date-line">
     
-            <span class="date">06 MARCH</span>
+            <span class="date">06 {t('event_date')}</span>
     
             <a href="/pages/schedule/day7" class="date-arrow">&gt;</a>
         </div>
     
         <div class="where-line">
             <div class="where-item">
-                <span class="amphitheater1">AMPHITHEATER 1</span>
+                <span class="amphitheater1">{t('AMPH')} 1</span>
             </div>
     
             <div class="where-item">
-                <span class="amphitheater2">AMPHITHEATER 2</span>
+                <span class="amphitheater2">{t('AMPH')} 2</span>
             </div>
     
             <div class="where-item">
-                <span class="amphitheater3">AMPHITHEATER 3</span>
+                <span class="amphitheater3">{t('AMPH')} 3</span>
             </div>
     
             <div class="where-item">
-                <span class="foyer">FOYER</span>
+                <span class="foyer">{t('FOYER')}</span>
             </div>
     
             <div class="where-item">
-                <span class="outside-kedea">OUTSIDE KEDEA</span>
+                <span class="outside-kedea">{t('OUTSIDE_KEDEA')}</span>
             </div>
         </div>
     
@@ -59,7 +60,7 @@
                 <span class="coming-time">9:00 - 10:00</span>
     
                 <p class="coming-words">
-                ΠΡΟΣΕΛΕΥΣΗ - ΕΓΓΡΑΦΕΣ
+                {t('ARRIVAL')}
                 </p>
             </div>
         </div>
@@ -69,11 +70,11 @@
                 <div class="greetings"
                     >
                     <span class="greetings-time">10:00 - 11:15</span>
-                    <span class="xairetismoi">ΧΑΙΡΕΤΙΣΜΟΙ</span>
+                    <span class="xairetismoi">{t('GREET')}</span>
                     <p class="greetings-letter">
-                    Publish or Perish - <br>
-                    research made into a <br>
-                    profession
+                    {t('publish')} <br>
+                    {t('research')} <br>
+                    {t('profession')}
                     </p>
                 </div>
             {/if}
@@ -82,10 +83,10 @@
                 <div class="orange-1-0">
                     <span class="orange-1-0-time">11:15 - 12:15</span>
                     <p class="orange-1-0-letter">
-                    Nuclear Energy : <br>
-                    Sustainable solution <br>
-                    or Environmental <br>
-                    Threat?
+                    {t('nuclear')}<br>
+                    {t('sustain')} <br>
+                    {t('enviroment')} <br>
+                    {t('threat')}
                     </p>
                 </div>
             {/if}
@@ -94,10 +95,10 @@
                 <div class="purple-1-0">
                     <span class="purple-1-0-time">11:15 - 12:15</span>
                     <p class="purple-1-0-letter">
-                    Accountability in <br>
-                    Machine Learning : <br>
-                    Who Owns the <br>
-                    Mistakes ?
+                    {t('accountability')} <br>
+                    {t('machine')} <br>
+                    {t('who')} <br>
+                    {t('mistakes')}
                     </p>
                 </div>
             {/if}
@@ -107,15 +108,15 @@
                     <div class="green-1-0">
                         <span class="green-1-0-time">11:15 - 11:45</span>
                         <p class="green-1-0-letter">
-                        Editing life
+                        {t('editing')}
                         </p>
                     </div>
     
                     <div class="green-2-0">
                         <span class="green-2-0-time">11:45 - 12:15</span>
                         <p class="green-2-0-letter">
-                        Pharmaceutical <br>
-                        Ethics
+                        {t('pharm')} <br>
+                        {t('eth')}
                         </p>
                     </div>
                 </div>
@@ -127,7 +128,7 @@
         <div class="coffee-break-1-line">
             <span class="coffee-break-1-time">12:15 - 12:45</span>
             <p class="coffee-break-1-letter">
-            COFFEE BREAK 1
+            {t('coffee1')}
             </p>
         </div>
         
@@ -139,24 +140,24 @@
                     <div class="orange-1-1">
                         <span class="orange-1-1-time">12:45 - 13:30</span>
                         <p class="orange-1-1-letter">
-                        Radiation Exposure <br>
-                        and Public Health
+                        {t('radiation')} <br>
+                        {t('public_health')}
                         </p>
                     </div>
     
                     <div class="orange-2-1">
                         <span class="orange-2-1-time">13:30 - 14:15</span>
                         <p class="orange-2-1-letter">
-                        Toxic and Radioactive <br>
-                        Waste in Research
+                        {t('toxic')} <br>
+                        {t('waste')}
                         </p>
                     </div>
     
                     <div class="orange-3-1">
                         <span class="orange-3-1-time">14:15 - 14:45</span>
                         <p class="orange-3-1-letter">
-                        Nuclear accidents and <br>
-                        Risk Management (R)
+                        {t('nucAcc')} <br>
+                        {t('Risk')}
                         </p>
                     </div>
                 </div>
@@ -167,18 +168,18 @@
                     <div class="purple-1-1">
                         <span class="purple-1-1-time">12:45 - 13:45</span>
                         <p class="purple-1-1-letter">
-                        Fake-news / unethical <br>
-                        image & mass text <br>
-                        generation by bots
+                        {t('fake')} <br>
+                        {t('image')} <br>
+                        {t('gen')}
                         </p>
                     </div>
     
                     <div class="purple-2-1">
                         <span class="purple-2-1-time">13:45 - 14:45</span>
                         <p class="purple-2-1-letter">
-                        Debugging Bias in <br>
-                        Machine Learning <br>
-                        Pipelines (W)
+                        {t('debug')} <br>
+                        {t('machineL')} <br>
+                        {t('pipeline')}
                         </p>
                     </div>
                 </div>
@@ -189,15 +190,15 @@
                     <div class="green-1-1">
                         <span class="green-1-1-time">12:45 - 13:30</span>
                         <p class="green-1-1-letter">
-                        Lab - Grown Future
+                        {t('lab')}
                         </p>
                     </div>
     
                     <div class="green-2-1">
                         <span class="green-2-1-time">13:30 - 14:45</span>
                         <p class="green-2-1-letter">
-                        Clinical Trial <br>
-                        simulation (W)
+                        {t('clinical')} <br>
+                        {t('sim')}
                         </p>
                     </div>
                 </div>
@@ -210,14 +211,14 @@
             <div class="coffee-break-2-line">
                 <span class="coffee-break-2-line-time">14:45 - 15:45</span>
                 <p class="coffee-break-2-line-letter">
-                LUNCH BREAK 2
+                {t('coffee2')}
                 </p>
             </div>
     
             <div class="physics-experiment-break">
                 <span class="physics-experiment-break-time">14:45 - 15:45</span>
                 <p class="physics-emperiment-break-letter">
-                Physics Experiments (W)
+                {t('PhysicExp')}
                 </p>
             </div>
     
@@ -231,18 +232,18 @@
                     <div class="orange-1-2">
                         <span class="orange-1-2-time">15:45 - 16:45</span>
                         <p class="orange-1-2-letter">
-                        Space Debris and the <br>
-                        Ethics of Satellite <br>
-                        Proliferation
+                        {t('space')}<br>
+                        {t('ethSat')} <br>
+                        {t('prof')}
                         </p>
                     </div>
     
                     <div class="orange-2-2">
                         <span class="orange-2-2-time">16:45 - 17:45</span>
                         <p class="orange-2-2-letter">
-                        Should we look up or <br>
-                        down? The ethics of <br>
-                        space spending
+                        {t('look')} <br>
+                        {t('down')} <br>
+                        {t('spaceSpend')}
                         </p>
                     </div>
                 </div>
@@ -253,23 +254,21 @@
                     <div class="pink-1-2">
                         <span class="pink-1-2-time">15:45 - 16:30</span>
                         <p class="pink-1-2-letter">
-                        When to say no
+                        {t('when')}
                         </p>
                     </div>
     
                     <div class="pink-2-2">
                         <span class="pink-2-2-time">16:30 - 17:15</span>
                         <p class="pink-2-2-letter">
-                        Invisible Bias in<br>
-                        Science
+                        {t('inv')}
                         </p>
                     </div>
     
                     <div class="pink-3-2">
                         <span class="pink-3-2-time">17:15 - 17:45</span>
                         <p class="pink-3-2-letter">
-                        Who owns the <br>
-                        consequences? (R)
+                        {t('cons')}
                         </p>
                     </div>
                 </div>
@@ -280,24 +279,22 @@
                     <div class="purple-1-2">
                         <span class="purple-1-2-time">15:45 - 16:30</span>
                         <p class="purple-1-2-letter">
-                        Image Recognition (W)
+                        {t('rec')}
                         </p>
                     </div>
     
                     <div class="purple-2-2">
                         <span class="purple-2-2-time">16:30 - 17:15</span>
                         <p class="purple-2-2-letter">
-                        Data Hunger vs. <br>
-                        Privacy: How much <br>
-                        Is too Much
+                        {t('data')} <br/>
+                        {t('hunger')}
                         </p>
                     </div>
     
                     <div class="purple-3-2">
                         <span class="purple-3-2-time">17:15 - 17:45</span>
                         <p class="purple-3-2-letter">
-                        Ethical red lines in <br>
-                        AI products (R)
+                        {t('red')}
                         </p>
                     </div>
                 </div>
@@ -308,7 +305,7 @@
                     <div class="pink-end-line">
                         <span class="pink-end-time">15:45 - 17:45</span>
                         <p class="pink-end-letter">
-                        Treasurehunt
+                        {t('treasure')}
                         </p>
                     </div>
                 </div>
@@ -622,7 +619,7 @@
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:15px;
+        gap: 7.5px;
 
         background-color:#B66DEA;
         border-radius:25px;
@@ -648,21 +645,25 @@
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:15px;
+        gap:4px;
 
         background-color:#B66DEA;
         border-radius:25px;
-        padding:15px;
+        padding:4px;
 
-        height:54px;
+        height:84px;
+        box-sizing:border-box;
+        flex-shrink:0;
         justify-content:center;
     }
 
     .purple-2-2-letter{
         font-size:15px;
+        line-height:1.1;
         font-weight:400;
         margin:0;
         text-align:center;
+        overflow-wrap:anywhere;
     }
 
     .purple-2-2-time{
@@ -707,7 +708,7 @@
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:15px;
+        gap: 7.5px;
 
         background-color:#EF8FBD;
         border-radius:25px;
@@ -1187,7 +1188,7 @@
         display:flex;
         flex-direction:column;
         gap:5px;
-        height:150px;
+        height:auto;
     }
 
     .green-2-0{
@@ -1200,13 +1201,17 @@
 
         background-color:#1BC69B;
         border-radius:25px;
-        padding:15px;
+        padding:10px;
         justify-content:center;
-        height:63px;
+        gap:8px;
+        height:80px;
+        flex-shrink:0;
+        box-sizing:border-box;
     }
 
     .green-2-0-letter{
         font-size:15px;
+        line-height:1.1;
         font-weight:400;
         margin:0;
         text-align:center;
@@ -1229,6 +1234,7 @@
         border-radius:25px;
         padding:15px;
         height: 65px;
+        flex-shrink:0;
         justify-content:center;
     }
 
@@ -1598,7 +1604,8 @@
 
         .pink-2-2,
         .purple-2-2 {
-            height: 90px;
+            min-height: 90px;
+            height: auto;
         }
 
         .pink-3-2,

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { t } from "$lib/i18n.svelte";
+
 
     const url = "https://maps.app.goo.gl/J1vp3KJMsgWzM6628";
 
@@ -13,7 +15,7 @@
 </script>
 
 <button class="GetDirectionButton" style="color: {textColor}" onclick={OpenLink}>
-    <span>GET DIRECTIONS</span>
+    <span>{t('get_directions')}</span>
 </button>
 
 <style>

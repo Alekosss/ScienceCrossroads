@@ -1,4 +1,5 @@
 <script>
+	import { t } from "$lib/i18n.svelte";
   import { onDestroy, onMount } from "svelte";
 
     let {
@@ -42,10 +43,10 @@
         <span>{Seconds}</span>
     </div>
     <div class="TimeFormat">
-        <span>DAYS</span>
-        <span>HOURS</span>
-        <span>MINUTES</span>
-        <span>SECONDS</span>
+        <span>{t('days')}</span>
+        <span>{t('hours')}</span>
+        <span>{t('hours')}</span>
+        <span>{t('seconds')}</span>
     </div>
 </div>
 

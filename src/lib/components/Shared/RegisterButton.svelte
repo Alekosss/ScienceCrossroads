@@ -1,4 +1,5 @@
 <script>
+	import { t } from "$lib/i18n.svelte";
   import { quadInOut } from "svelte/easing";
   import { fly, slide } from "svelte/transition";
 
@@ -167,7 +168,7 @@
 </script>
 
 <button class="RegisterButton" onclick={Register} style="color:{textColor}">
-    <span>REGISTER</span>
+    <span>{t('register_button')}</span>
 </button>
 
 {#if showOverlay}
