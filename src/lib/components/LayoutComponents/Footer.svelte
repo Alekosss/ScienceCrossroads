@@ -179,7 +179,8 @@
     }
 
     .Top span{
-        width: 150px;
+        width: auto;
+        text-align: center;
     }
 
     @media (max-width: 768px) {

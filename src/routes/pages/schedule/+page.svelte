@@ -315,7 +315,7 @@
         <div class="coffee-break-3">
             <span class="coffee-break-3-time">17:45 - 18:15</span>
             <p class="coffee-break-3-letter">
-                COFFEE BREAK 2
+                {t('coffee2')}
             </p>
         </div>
     
@@ -326,16 +326,16 @@
                     <div class="green-1-3">
                         <span class="green-1-3-time">18:15 - 19:00</span>
                         <p class="green-1-3-letter">
-                        Pesticides & Power
+                        {t('pesticides')}
                         </p>
                     </div>
     
                     <div class="green-2-3">
                         <span class="green-2-3-time">19:00 - 20:15</span>
                         <p class="green-2-3-letter">
-                        Design an Ethical <br>
-                        Product vs. design an <br>
-                        addictive product (W)
+                        {t('design')} <br>
+                        {t('product')} <br>
+                        {t('addictive')}
                         </p>
                     </div>
                 </div>
@@ -346,9 +346,8 @@
                     <div class="orange-1-4">
                         <span class="orange-1-4-time">18:15 - 20:15</span>
                         <p class="orange-1-4-letter">
-                        Stargazing <br>
-                        Night- <br>
-                        Observatory (W)
+                        {t('star')} <br>
+                        {t('night')}
                         </p>
                     </div>
                 </div> 
@@ -358,15 +357,15 @@
         <div class="wine-party">
             <span class="wine-party-time">20:15 - 21:00</span>
             <p class="wine-party-letter">
-            WINE PARTY / ΠΑΡΟΥΣΙΑΣΗ ΕΡΓΑΣΙΩΝ
+            {t('wine')}
             </p>
         </div>
     
         <div class="explain-line">
             <p class="explain-line-letter">
-            (R) = ROUNDTABLE (SPECIALISTS + AUDIENCE FORUM) <br>
-            (W) = WORKSHOP <br>
-            NEITHER = TALK
+            {t('roundtable')} <br>
+            {t('workshop')} <br>
+            {t('neither')}
             </p>
         </div>
     </div>
