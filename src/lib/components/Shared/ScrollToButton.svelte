@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import ArrowDown from "$lib/assets/Icons/ArrowDown.svelte";
     import ArrowUp from "$lib/assets/Icons/ArrowUp.svelte";
+    import { t } from '$lib/i18n.svelte';
 
     let {
         ArrowDirectionUp = true,
@@ -32,11 +33,11 @@
 
 {#if showButton}
     <div class="Scroll">
-        <span>SCROLL 
+        <span>{t('SCROLL')} 
             {#if ArrowDirectionUp}
-                UP
+                {t('UP')}
             {:else}
-                DOWN
+                {t('DOWN')}
             {/if}
         </span>
         <button class="ScrollButton" onclick={scrollToButton}>

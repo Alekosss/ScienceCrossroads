@@ -5,12 +5,24 @@
     import Globe from '$lib/assets/SVGs/Globe.svg';
     import {slide} from 'svelte/transition';
     import { quadInOut } from "svelte/easing";
+    import { onMount } from 'svelte';
 
     let showOptions = $state(false);
 
     function toggleShowOptions() {
         showOptions = !showOptions;
     }
+
+    onMount ( () => {
+        function handleKey(event: KeyboardEvent) {
+            if (event.key === 'Escape') {
+                showOptions = false;
+            }
+        }
+
+        window.addEventListener('keydown', handleKey);
+        return () => window.removeEventListener('keydown', handleKey);
+    } )
 </script>
 
 <div class="languageButtonContainer">
@@ -40,6 +52,7 @@
     .languageButtonContainer {
         position: sticky;
         top: 6.5rem;
+        z-index: 2000;
     }
 
     .languageButton {
@@ -76,6 +89,10 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 2000;
     }
 
     .Option {
@@ -88,6 +105,7 @@
         border-radius: 0.5rem;
         border: none;
         gap: 0.5rem;
+        cursor: pointer;
     }
 
     .Option:hover {
@@ -99,5 +117,29 @@
     .Option img {
         width: 5vh;
         height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .languageButtonContainer {
+            width: 20vw;
+            top: 9rem;
+        }
+
+        .languageButton {
+            width: 20vw;
+            height: auto;
+        }
+
+        .languageOptions {
+            width: 17.5vw;
+            height: 10vh;
+        }
+
+       .Option img {
+            width: 7.5vw;
+            height: auto;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
     }
 </style>

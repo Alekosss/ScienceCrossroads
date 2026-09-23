@@ -64,7 +64,7 @@
         </div>
     
         <div class="squares-1">
-            {#if !shouldHide('chemistry')}
+            {#if !shouldHide(t('CHEMISTRY'))}
                 <div class="green-1">
                     <div class="green-1-1">
                         <span class="green-1-1-time">10:00 - 11:15</span>
@@ -82,7 +82,7 @@
                 </div>
             {/if}
     
-            {#if !shouldHide('general')}
+            {#if !shouldHide(t('general'))}
                 <div class="pink-1">
                     <div class="pink-1-1">
                         <span class="pink-1-1-time">10:00 - 10:45</span>
@@ -107,7 +107,7 @@
                 </div>
             {/if}
     
-            {#if !shouldHide('physics')}
+            {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-1">
                     <div class="orange-1-1">
                         <span class="orange-1-1-time">10:30 - 11:30</span>
@@ -135,7 +135,7 @@
     
         <div class="squares-2">
     
-            {#if !shouldHide('computer science')}
+            {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-2">
                     <div class="purple-1-2">
                         <span class="purple-1-2-time">12:45 - 13:30</span>
@@ -160,7 +160,7 @@
                 </div>
             {/if}
     
-            {#if !shouldHide('physics')}
+            {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-2">
                     <div class="orange-1-2">
                         <span class="orange-1-2-time">12:45 - 13:30</span>
@@ -185,7 +185,7 @@
                 </div>
             {/if}
     
-            {#if !shouldHide('chemistry')}
+            {#if !shouldHide(t('CHEMISTRY'))}
                 <div class="green-2">
                     <div class="green-1-2">
                         <span class="green-1-2-time">12:45 - 14:45</span>
@@ -205,19 +205,21 @@
                     </p>
                 </div>
     
-                <div class="physics-experiment-break">
-                    <span class="physics-experiment-break-time">14:45 - 15:45</span>
-                    <p class="physics-emperiment-break-letter">
-                    {t('PhysicExp')}
-                    </p>
-                </div>
+                {#if !shouldHide(t('PHYSICS'))}
+                    <div class="physics-experiment-break">
+                        <span class="physics-experiment-break-time">14:45 - 15:45</span>
+                        <p class="physics-emperiment-break-letter">
+                            {t('PhysicExp')}
+                        </p>
+                    </div>
+                {/if}
     
                 <div class="empty-box"></div>
             </div>
     
         <div class="squares-3">
     
-            {#if !shouldHide('computer science')}
+            {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-3">
                     <div class="purple-1-3">
                         <span class="purple-1-3-time">15:45 - 16:15</span>
@@ -242,7 +244,7 @@
                 </div>
             {/if}
     
-            {#if !shouldHide('chemistry')}
+            {#if !shouldHide(t('CHEMISTRY'))}
                 <div class="green-3">
                     <div class="green-1-3">
                         <span class="green-1-3-time">15:45 - 16:30</span>
@@ -267,7 +269,7 @@
                 </div>
             {/if}
     
-            {#if !shouldHide('physics')}
+            {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-3">
                     <div class="orange-1-3">
                         <span class="orange-1-3-time">15:45 - 16:45</span>
@@ -295,7 +297,7 @@
     
         <div class="squares-4">
     
-            {#if !shouldHide('computer science')}
+            {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-4">
                     <div class="purple-1-4">
                         <span class="purple-1-4-time">18:15 - 19:15</span>
@@ -308,7 +310,7 @@
     
             <div class="green-pink-4">
     
-                {#if !shouldHide('chemistry')}
+                {#if !shouldHide(t('CHEMISTRY'))}
                     <div class="green-1-4">
                         <span class="green-1-4-time">18:15 - 19:15</span>
                         <p class="green-1-4-letter">
@@ -324,7 +326,7 @@
                     </div>
                 {/if}
     
-                {#if !shouldHide('general')}
+                {#if !shouldHide(t('general'))}
                     <div class="green-pink-1-4">
                         <span class="green-pink-1-4-time">19:45 - 20:15</span>
                         <p class="green-pink-1-4-letter">
@@ -336,7 +338,7 @@
     
             <div class="pink-4">
     
-                {#if !shouldHide('general')}
+                {#if !shouldHide(t('general'))}
                     <div class="pink-1-4">
                         <span class="pink-1-4-time">18:15 - 19:00</span>
                         <p class="pink-1-4-letter">

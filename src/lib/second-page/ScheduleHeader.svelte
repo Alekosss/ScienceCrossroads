@@ -18,55 +18,55 @@
     <div class="filter-all">
 
         <div class="filters-item">
-            <span class="general">General</span>
+            <span class="general">{t('general')}</span>
             <div class="color-box general-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('general')}>{activeFilter === 'general' ? 'Show all' : 'Show only'}</button>
+        <button class="show-hide" onclick={() => onFilter(t('general'))}>{activeFilter === t('general') ? t('show_all') : t('show_only')}</button>
 
     </div>
     
     <div class="filter-all">
 
         <div class="filters-item">
-            <span class="physics">Physics</span>
+            <span class="physics">{t('PHYSICS')}</span>
             <div class="color-box physics-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('physics')}>{activeFilter === 'physics' ? 'Show all' : 'Show only'}</button>
+        <button class="show-hide" onclick={() => onFilter(t('PHYSICS'))}>{activeFilter === t('PHYSICS') ? t('show_all') : t('show_only')}</button>
 
     </div>
     
     <div class="filter-all">
 
         <div class="filters-item">
-            <span class="computer-science">Computer Science</span>
+            <span class="computer-science">{t('COMPUTER_SCIENCE')}</span>
             <div class="color-box computer-science-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('computer science')}>{activeFilter === 'computer science' ? 'Show all' : 'Show only'}</button>
+        <button class="show-hide" onclick={() => onFilter(t('COMPUTER_SCIENCE'))}>{activeFilter === t('COMPUTER_SCIENCE') ? t('show_all') : t('show_only')}</button>
 
     </div>
     
     <div class="filter-all">
 
         <div class="filters-item">
-            <span class="chemistry">Chemistry</span>
+            <span class="chemistry">{t('CHEMISTRY')}</span>
             <div class="color-box chemistry-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('chemistry')}>{activeFilter === 'chemistry' ? 'Show all' : 'Show only'}</button>
+        <button class="show-hide" onclick={() => onFilter(t('CHEMISTRY'))}>{activeFilter === t('CHEMISTRY') ? t('show_all') : t('show_only')}</button>
 
     </div>
     
     <div class="filter-all">
 
         <div class="filters-item">
-            <span class="break">Break</span>
+            <span class="break">{t('BREAK')}</span>
             <div class="color-box break-color"></div>
         </div>
 
-        <button class="show-hide" onclick={() => onFilter('break')}>{activeFilter === 'break' ? 'Show all' : 'Show only'}</button>
+        <button class="show-hide" onclick={() => onFilter(t('BREAK'))}>{activeFilter === t('BREAK') ? t('show_all') : t('show_only')}</button>
         
     </div>
 </div>
@@ -154,7 +154,7 @@
         color: white;
         border: none;
         border-radius: 25px;
-        padding: 5px 5px;
+        padding: 0.5rem;
         
         cursor:pointer;
     }

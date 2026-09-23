@@ -1,7 +1,8 @@
-<script>
-	import { t } from "$lib/i18n.svelte";
-  import { quadInOut } from "svelte/easing";
-  import { fly, slide } from "svelte/transition";
+<script lang="ts">
+    import { t } from "$lib/i18n.svelte";
+    import { quadInOut } from "svelte/easing";
+    import { fly, slide } from "svelte/transition";
+    import { onMount} from 'svelte';
 
     let {
         textColor = "red"
@@ -69,9 +70,9 @@
             stepIndex = 0;
             mail = ''; fullName = ''; phoneNumber = '';
         } else if (data.error === 'already_registered') {
-            submitError = 'This email is already registered.';
+            submitError = t('mail_registered') ;
         } else {
-            submitError = 'Something went wrong. Please try again.';
+            submitError = t('something_wrong');
         }
 
         submitting = false;
@@ -165,6 +166,19 @@
     function printmail() {
         console.log("the mail is: " + mail);
     }
+
+    onMount( () => {
+        function handleKey(event : KeyboardEvent) {
+            if (event.key === 'Escape' && showOverlay) {
+                goBack();
+            }
+            else if (event.key === 'Enter') {
+                nextClick();
+            }
+        }
+        window.addEventListener('keydown', handleKey);
+        return () => window.removeEventListener('keydown', handleKey);
+    } )
 </script>
 
 <button class="RegisterButton" onclick={Register} style="color:{textColor}">
@@ -176,19 +190,19 @@
         <div transition:slide={{ duration: 150, easing: quadInOut }} class="overlayContent">
             <div class="Header">
                 <hr/>
-                <span>REGISTER!</span>
+                <span>{t('register_button')}!</span>
                 <hr/>
             </div>
             <div class="RegistrationSteps">
                 {#if stepIndex === 0}
                     <div class="MailConfirmation LabelInput" out:fly={{ x: -300*flyDirection, duration:150, easing: quadInOut}} in:fly={{x: 300*flyDirection,delay:150, duration:150, easing: quadInOut }}>
-                        <label for="email">Email Address</label>
+                        <label for="email">{t('email')}</label>
                         <input required type="email" autocomplete="email" id="email" placeholder="mail@example.com" bind:value={mail} onblur={printmail}>
                     </div>
                     {#if emptyMailWarning}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Please fill out your email address.</span>
+                                <span>{t('fill_mail')}</span>
                                 <button class="WarningButton" onclick={()=>emptyMailWarning=false}>
                                     <span>OK</span>
                                 </button>
@@ -197,7 +211,7 @@
                     {:else if formatMailWarning}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Email format is wrong. Please try again.</span>
+                                <span>{t('mail_wrong')}</span>
                                 <button class="WarningButton" onclick={()=>formatMailWarning=false}>
                                     <span>OK</span>
                                 </button>
@@ -206,7 +220,7 @@
                     {:else if alreadyRegistered}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>This email is already registered.</span>
+                                <span>{t('mail_registered')}</span>
                                 <button class="WarningButton" onclick={() => alreadyRegistered = false}>
                                     <span>OK</span>
                                 </button>
@@ -215,13 +229,13 @@
                     {/if}
                 {:else if stepIndex === 1}
                         <div class="code LabelInput" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
-                            <label for="confirmationCode">Confirmation Code <br/>(sent to your email!)</label>
+                            <label for="confirmationCode">{t('code')} <br/>{t('sent')}</label>
                             <input required id="confirmationCode" type="text" placeholder="000000" bind:value={userCode}/>
                         </div>
                         {#if wrongCodeWarning}
                             <div class="Warning">
                                 <div class="WarningContent">
-                                    <span>Wrong confirmation code. Please try again.</span>
+                                    <span>{t('wrong_code')}</span>
                                     <button class="WarningButton" onclick={()=>wrongCodeWarning=false}>
                                         <span>OK</span>
                                     </button>
@@ -230,13 +244,13 @@
                         {/if}
                 {:else if stepIndex === 2}
                     <div class="Info LabelInput" in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
-                        <label for="fullName">Full Name</label>
+                        <label for="fullName">{t('full')}</label>
                         <input required id="fullName" type="text" placeholder="John Doe" autocomplete="name" bind:value={fullName}/>
                     </div>
                     {#if emptyNameWarning}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Please enter your full name.</span>
+                                <span>{t('enter_name')}</span>
                                 <button class="WarningButton" onclick={()=>emptyNameWarning=false}>
                                     <span>OK</span>
                                 </button>
@@ -245,7 +259,7 @@
                     {:else if numberInName} 
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Name cannot contain number(s). Please try again.</span>
+                                <span>{t('no_numbers')}</span>
                                 <button class="WarningButton" onclick={()=>numberInName=false} >
                                     <span>OK</span>
                                 </button>
@@ -254,13 +268,13 @@
                     {/if}
                 {:else if stepIndex === 3}
                     <div class="phoneInfo LabelInput"  in:fly={{x: 300*flyDirection, delay:150, duration: 150, easing: quadInOut}} out:fly={{x:-300*flyDirection, duration: 150, easing: quadInOut}}>
-                        <label for="phoneNumber">Phone Number</label>
+                        <label for="phoneNumber">{t('phone')}</label>
                         <input required id="phoneNumber" type="text" placeholder="+3069012345" autocomplete="tel" bind:value={phoneNumber}/>
                     </div>
                     {#if emptyPhoneNumber}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Please enter your phone number.</span>
+                                <span>{t('enter_phone')}</span>
                                 <button class="WarningButton" onclick={()=>emptyPhoneNumber=false}>
                                     <span>OK</span>
                                 </button>
@@ -269,7 +283,7 @@
                     {:else if lettersInNumber}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Phone number cannot include letters. Please try again.</span>
+                                <span>{t('wrong_phone')}</span>
                                 <button class="WarningButton" onclick={()=>lettersInNumber=false}>
                                     <span>OK</span>
                                 </button>
@@ -278,7 +292,7 @@
                     {:else if formatPhoneNumber}
                         <div class="Warning">
                             <div class="WarningContent">
-                                <span>Please enter a valid phone number. 10 digits (or 13 including +30)</span>
+                                <span>{t('wrong_digits')}</span>
                                 <button class="WarningButton" onclick={()=>formatPhoneNumber=false}>
                                     <span>OK</span>
                                 </button>
@@ -321,18 +335,18 @@
                 <button onclick={goBack} class="ProgressButton Previous">
                     <!--TEXT CHOICE-->
                     {#if stepIndex}
-                        <span>BACK</span>
+                        <span>{t('back')}</span>
                     {:else}
-                        <span>EXIT</span>
+                        <span>{t('exit')}</span>
                     {/if}
                 </button>
                 <button onclick={nextClick} class="ProgressButton Next" disabled={submitting}>
                     {#if stepIndex === 4}
-                        <span>{submitting ? 'SUBMITTING...' : 'SUBMIT'}</span>
+                        <span>{submitting ? t('submitting') : t('submit')}</span>
                     {:else if wait} 
-                        <span>{wait ? 'WAIT...' : 'NEXT'}</span>
+                        <span>{wait ? t('wait') : t('next')}</span>
                     {:else}
-                        <span>NEXT</span>
+                        <span>{t('next')}</span>
                     {/if}
                 </button>
                 <hr/>

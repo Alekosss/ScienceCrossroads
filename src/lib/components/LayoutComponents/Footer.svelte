@@ -78,7 +78,7 @@
 
 <style>
     .Bottom hr{
-        width: 30%;
+        width: 0;
         height: 5px;
         background-color: var(--primary-color);
         border-radius: 10px;
@@ -170,7 +170,7 @@
     }
 
     .Top hr {
-        width: 37.5%;
+        width: 30vw;
         height: 5px;
         background-color: var(--primary-color);
         border: none;
