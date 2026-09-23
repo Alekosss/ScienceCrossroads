@@ -9,7 +9,7 @@
             activeFilter = null;
         }
         else {
-            activeFilter = category
+            activeFilter = category;
         }
     }
 
@@ -66,7 +66,7 @@
         </div>
     
         <div class="squares">
-            {#if !shouldHide('general')}
+            {#if !shouldHide(t('general'))}
                 <div class="greetings"
                     >
                     <span class="greetings-time">10:00 - 11:15</span>

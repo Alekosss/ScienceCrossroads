@@ -3,6 +3,8 @@
     import GR from '$lib/assets/SVGs/GR.svg';
     import UK from '$lib/assets/SVGs/UK.svg';
     import Globe from '$lib/assets/SVGs/Globe.svg';
+    import {slide} from 'svelte/transition';
+    import { quadInOut } from "svelte/easing";
 
     let showOptions = $state(false);
 
@@ -16,15 +18,20 @@
         <img src={Globe} alt="globe"/>
     </button>
     {#if showOptions}
-        <div class="overlay">
-            <div class="languageOptions">
-                <button class="Option" onclick={()=>i18n.lang = 'el'}>
-                    <img src={GR} alt="GR"/> ΕΛ
-                </button>
-                <button class="Option" onclick={()=>i18n.lang = 'en'} >
-                    <img src={UK} alt="UK"/> EN
-                </button>
-            </div>
+        <div transition:slide={{duration:150, easing: quadInOut  }} class="languageOptions">
+            <button class="Option" onclick={()=> {
+                i18n.lang = 'el';
+                toggleShowOptions();
+            }}>
+                <img src={GR} alt="GR"/> ΕΛ
+            </button>
+            <button class="Option" onclick={()=>
+            {
+                i18n.lang = 'en';
+                toggleShowOptions();
+            }}>
+                <img src={UK} alt="UK"/> EN
+            </button>
         </div>
     {/if}
 </div>
@@ -64,6 +71,11 @@
     .languageOptions {
         background-color: var(--secondary-color);
         border-radius: 0.5rem;
+        width: 5.5vw;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
 
     .Option {
@@ -87,11 +99,5 @@
     .Option img {
         width: 5vh;
         height: auto;
-    }
-
-    .overlay {
-        z-index: 2000;
-        position: absolute;
-        background-color: rgba(0,0,0,0.8);
     }
 </style>
