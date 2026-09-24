@@ -12,13 +12,14 @@ export async function GET() {
 	});
 }
 
+//register
 export const POST: RequestHandler = async ({ request }) => {
-        const {name, mail, number} = await request.json();
+    const {fullName, mail, phoneNumber} = await request.json();
 
-	await addRegistration(name,mail,number);
+	await addRegistration(fullName,mail,phoneNumber);
 
 	return json({
 		success: true,
-		message: 'Test registration added'
+		message: 'registration added'
 	});
 }

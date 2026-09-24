@@ -22,17 +22,26 @@ export async function getRegistrations() {
 }
 
 export async function addRegistration(name: String, mail: String, number: String) {
-	await sheets.spreadsheets.values.append({
-		spreadsheetId: GOOGLE_SHEET_ID,
-		range: 'Registrations!A:C',
-		valueInputOption: 'USER_ENTERED',
-		requestBody: {
-			values: [[name,mail,number]]
-		}
-	});
+    const result = await sheets.spreadsheets.values.get({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: 'Registrations!A:C'
+    });
+
+    const rows = result.data.values ?? [];
+    const nextRow = rows.length + 1; 
+
+    // Then write directly to that row
+    await sheets.spreadsheets.values.update({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: `Registrations!A${nextRow}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: {
+            values: [[name, mail, number]]
+        }
+    });
 }
 
-export async function emailExists(mail: string) {
+export async function mailExists(mail: String) {
 	const result = await sheets.spreadsheets.values.get({
 		spreadsheetId: GOOGLE_SHEET_ID,
 		range: 'Registrations!B:B'
@@ -46,18 +55,26 @@ export async function emailExists(mail: string) {
 }
 
 export async function storeOTP(email: string,code: string) {
-	await sheets.spreadsheets.values.append({
-		spreadsheetId: GOOGLE_SHEET_ID,
-		range: 'OTPs!A:B',
-		valueInputOption: 'USER_ENTERED',
-		requestBody: {
-			values: [[email, code]]
-		}
-	});
+ 	const result = await sheets.spreadsheets.values.get({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: 'Codes!A:B'
+    });
+
+    const rows = result.data.values ?? [];
+    const nextRow = rows.length + 1;
+
+    // Then write directly to that row
+    await sheets.spreadsheets.values.update({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: `Codes!A${nextRow}`,
+        valueInputOption: 'USER_ENTERED',
+        requestBody: {
+            values: [[email, code]]
+        }
+    });
 }
 
-
-export async function codeMatches(mail: String, code: String) {
+export async function CodeByMail(mail: String) {
 	const result = await sheets.spreadsheets.values.get({
 		spreadsheetId: GOOGLE_SHEET_ID,
 		range: 'Codes!A:B'
@@ -65,8 +82,22 @@ export async function codeMatches(mail: String, code: String) {
 
 	const rows = result.data.values ?? [];
 
-	return rows.some(row =>
-		row[0]?.trim().toLowerCase() === mail.trim().toLowerCase() &&
-		row[1]?.trim() === code.trim()
+	const row = rows.find(
+		row => row[0]?.trim().toLowerCase() === mail.trim().toLowerCase()
+	);
+
+	return row?.[1] ?? null;	
+}
+
+export async function codeExists(mail: String) {
+	const result = await sheets.spreadsheets.values.get({
+		spreadsheetId: GOOGLE_SHEET_ID,
+		range: 'Codes!A:A'
+	});
+
+	const mails = result.data.values ?? [];
+
+	return mails.some(row => 
+		row[0]?.trim().toLowerCase() === mail.trim().toLowerCase()
 	);
 }
