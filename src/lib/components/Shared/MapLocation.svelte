@@ -1,6 +1,7 @@
 <script>
     import GetDirectionsButton from "$lib/components/Shared/GetDirectionsButton.svelte"
     import Location from "$lib/assets/ComponentAssets/Location.png"
+	import { t } from "$lib/i18n.svelte";
 
     let {
         textColor = "blue"
@@ -10,7 +11,7 @@
 <div class="MapLocation">
     <div class="TitleAndDirections">
         <div class="KedeaText">
-            <text>Aristotle University's Research Administration Center (KEDEA)</text>
+            <text>{t('kedea')}</text>
         </div>
         <div class="Directions">
             <GetDirectionsButton textColor={textColor}/>

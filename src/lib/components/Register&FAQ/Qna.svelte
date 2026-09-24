@@ -5,9 +5,14 @@
     import { fade,slide } from "svelte/transition";
 
 
-    let { 
-        qna = new QuestionAnswer("Question 1","Answer 1",false)
-    } = $props();
+    let { q='question',a='answer' } = $props();
+
+    let qna = $derived(new QuestionAnswer(q, a, false));
+
+    $effect(() => {
+        qna.question = q;
+        qna.answer = a;
+    });
 
     let ShowArrowUp = $state(false);
 

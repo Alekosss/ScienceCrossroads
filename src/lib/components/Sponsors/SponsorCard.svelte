@@ -2,10 +2,19 @@
     let {
         sponsorName = 'Diamond Sponsor 1',
         imageURL = '/sponsors-images/diamond1.png',
-        description = 'Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας.'
+        description = 'Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας.Η αλυσίδα εξαγόραζε μαγαζιά και παράλληλα αναπτυσσόταν. Έτσι μέχρι την εποχή εκείνη ο Μασούτης είχε προχωρήσει στην εξαγορά των σούπερ μάρκετ Μέγας Αλέξανδρος, Αφοί Μουμτζίδη τον Οκτώβριο του 1983, Ραμφόπουλος τον Απρίλιο του 1984, Σούπερ Μάρκετ Διεθνές τον Ιούνιο του 1985, Κρόνος-Αφοί Καραγιαννίδη τον Μάιο του 1993, Συν Ένα τον Απρίλιο του 1993 όλες στη Θεσσαλονίκη, Φθηνή Αγορά στην Καβάλα τον Ιούλιο του 1992, Καράογλου στη Λάρισα τον Ιούνιο του 1999 καθώς και στις Γκαγκούτης τον Ιούνιο του 1995 και Κόντρα τον Οκτώβριο του 1995 που είχαν αναπτυχθεί σε αρκετούς νομούς της Μακεδονίας.'
     } = $props();
 
     let Detailed = $state(false);
+
+    $effect(() => {
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = Detailed ? 'hidden' : previousOverflow;
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
+    });
 
     function Click() {
         Detailed = !Detailed;
@@ -24,17 +33,14 @@
     <div class="overlay">
         <div class="sponsor-dialog">
             <div class="sponsor-content">
-
                 <div class="sponsor-image">
                     <img src={imageURL} alt={sponsorName} />
                 </div>
-
                 <div class="sponsor-text">
-                    <h2>{sponsorName}</h2>
-
-                    <p>
-                        {description}
-                    </p>
+                    <div class="sponsor-name">
+                        {sponsorName}
+                    </div>
+                    <p>{description}</p>
                 </div>
             </div>
 
@@ -51,107 +57,111 @@
 
 <style>
     .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    padding: 0px 300px;
-}
+        padding: 0px 300px;
+        z-index: 3000;
+        font-family: var(--font-family);
+        cursor: default;
+    }
 
-.sponsor-dialog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .sponsor-dialog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-    gap: 50px;
-    padding: 50px 75px 25px;
-    border-radius: 25px;
+        gap: 2rem;
+        padding: 2rem 3rem 1rem;
+        border-radius: 1rem;
 
-    background: var(--secondary-color);
-    color: var(--primary-color);
-}
+        width: 100%;
+        height: 80%;
 
-.sponsor-content {
-    display: grid;
-    grid-template-columns: 33% 67%;
-    justify-content: center;
-    align-items: center;
-    max-height: 500px;
-}
+        background: var(--secondary-color);
+        color: var(--primary-color);
 
-.sponsor-image img {
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-}
+        overflow: hidden;
+    }
 
-.sponsor-text {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+    .sponsor-content {
+        display: grid;
+        grid-template-columns: 33% 67%;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        max-height: 500px;
+    }
 
-.sponsor-text h2 {
-    font-size: 36px;
-    font-weight: 400;
-    margin: 0;
-}
+    .sponsor-image img {
+        width: 100%;
+        object-fit: contain;
+    }
 
-.sponsor-text p {
-    font-size: 20px;
-    margin: 0;
+    .sponsor-text {
+        display: flex;
+        flex-direction: column;
+            align-items: center;
+        gap: 20px;
+        
+    }
 
-    max-height: 450px;
-    overflow-y: auto;
-}
+    .sponsor-text p {
+        font-size: 1.25vw;
+        margin: 0;
 
-.OK {
-    width: 125px;
-    height: 50px;
+        max-height: 450px;
+        overflow-y: auto;
+    }
 
-    border-radius: 50px;
-    border: 2px solid var(--primary-color);
+    .OK {
+        width: 125px;
+        height: 50px;
 
-    cursor: pointer;
-}
+        border-radius: 50px;
+        border: 2px solid var(--primary-color);
 
-.OK:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
+        cursor: pointer;
+    }
 
-.sponsor-card {
-    width: 100%;
-    height: 100%;
+    .OK:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
 
-    border: none;
-    background: none;
-    padding: 0;
+    .sponsor-card {
+        width: 100%;
+        height: 100%;
 
-    cursor: pointer;
+        border: none;
+        background: none;
+        padding: 0;
 
-    transition: transform 0.3s ease;
-}
+        cursor: pointer;
 
-.sponsor-card:hover {
-    transform: scale(1.05);
-}
+        transition: transform 0.3s ease;
+    }
 
-.sponsor-card img {
-    width: 94%;
-    height: 94%;
-    object-fit: contain;
+    .sponsor-card:hover {
+        transform: scale(1.05);
+    }
 
-    border-radius:15px;
-}
+    .sponsor-card img {
+        width: 94%;
+        height: 94%;
+        object-fit: contain;
+
+        border-radius:15px;
+    }
 
     @media (max-width: 768px) {
     .sponsor-card img {
@@ -192,10 +202,6 @@
         gap: 10px;
         width: 100%;
         text-align: center;
-    }
-
-    .sponsor-text h2 {
-        font-size: 22px;
     }
 
     .sponsor-text p {

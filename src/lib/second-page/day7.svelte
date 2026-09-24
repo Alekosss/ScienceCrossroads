@@ -1,6 +1,10 @@
+<script>
+	import { t } from "$lib/i18n.svelte";
+
+</script>
 <div class="date-line">
     <button class="date-arrow">&lt;</button>
-    <span class="date">07 MARCH</span>
+    <span class="date">07 {t('event_date')}</span>
 
 </div>
 

@@ -1,42 +1,22 @@
-<script>
-    import {onMount} from 'svelte';
-    import PlainLogo from '$lib/assets/PlainLogo.png'
-    import Moon from '$lib/assets/Icons/Moon.svelte'
-    import Sun from '$lib/assets/Icons/Sun.svelte'
+<script lang="ts">
+	import { page } from '$app/state';
+	import PlainLogo from '$lib/assets/PlainLogo.png';
+	import ThemeButton from './ThemeButton.svelte';
+    import { t } from '$lib/i18n.svelte';
 
-    /*variable that stores 0 or 1 (true/false). If true, it means that the user wants dark theme
-    otherwise the user wants light theme.In any case, when the variable changes, it rerenders 
-    the colors since it is reactive*/    
-    let isDark = $state(false);
+    const a = $derived([
+		{ page: t('nav_home'), href: '/pages' },
+		{ page: t('nav_register'), href: '/pages/register&faq' },
+		{ page: t('nav_schedule'), href: '/pages/schedule' },
+		{ page: t('nav_sponsors'), href: '/pages/sponsors' },
+		{ page: t('nav_speakers'), href: '/pages/speakers' },
+		{ page: t('nav_contact'), href: '/pages/contact' }
+    ]);
 
-    onMount(() => {
-        /*check saved preference. If this is the first time visiting it saves the prefered value.
-        Otherwise is saved the last saved theme based on the button*/
-        const saved = localStorage.getItem('theme'); 
-        //checks the theme color of the system and decides on the webpage theme.
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        //
-        if (saved) {
-            isDark = (saved === 'dark');
-        } else {
-            isDark = prefersDark;
-        }
-        /*removes or adds the ".dark" class on the page. If it's added the colors switch
-        to the dark theme choices. Otherwise it falls back on to the "root" defaults.*/
-        document.documentElement.classList.toggle('dark', isDark);
-    });
-
-    function ChangeTheme() {
-        isDark = !isDark;
-        document.documentElement.classList.toggle('dark', isDark);
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-
-    //Menu Button functionality:
-    let menuShowing = $state(false);
-    function toggleMenu() {
-        menuShowing = !menuShowing;
-    }
+	let menuShowing = $state(false);
+	function toggleMenu() {
+		menuShowing = !menuShowing;
+	}
 </script>
 
 <nav class="NavigationBar">
@@ -48,21 +28,17 @@
             <span>SCIENCE CROSSROADS</span>
         </div>
     </div>
-    <button class="ThemeButton" onclick={ChangeTheme}>
-        {#if isDark}
-            <Moon/>
-        {:else}
-            <Sun/>
-        {/if}
-    </button>
+    <div class="Theme">
+        <ThemeButton/>
+    </div>
     <div class="navLinks navText">
-        <a href="/">HOME</a>
-        <a href="/pages/register&faq">REGISTER & FAQ</a>
-        <a href="/pages/schedule">SCHEDULE</a>
-        <a href="/pages/sponsors">SPONSORS</a>
-        <a href="/pages/speakers">SPEAKERS</a>
-        <a href="/pages/contact">CONTACT</a>
-    </div>  
+        <a class="home" class:homeSelected={page.url.pathname===a[0].href} href={a[0].href}>{a[0].page}</a>
+        <a class="register" class:registerSelected={page.url.pathname===a[1].href} href={a[1].href}>{a[1].page}</a>
+        <a class:selected={page.url.pathname===a[2].href} href={a[2].href}>{a[2].page}</a>
+        <a class:selected={page.url.pathname===a[3].href} href={a[3].href}>{a[3].page}</a>
+        <a class:selected={page.url.pathname===a[4].href} href={a[4].href}>{a[4].page}</a>
+        <a class="contact" class:contactSelected={page.url.pathname===a[5].href} href={a[5].href}>{a[5].page}</a>
+    </div>
     <div class="menuButton">
         <button class="burgerButton" type="button" aria-label="Toggle navigation bar menu" aria-haspopup="true" aria-expanded={menuShowing} onclick={toggleMenu} >
             <hr/>
@@ -72,12 +48,9 @@
     </div>
     {#if menuShowing}
         <div class="MenuList">
-            <a onclick={() => menuShowing = !menuShowing} href="/">HOME</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/register&faq">REGISTER & FAQ</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/schedule">SCHEDULE</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/sponsors">SPONSORS</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/speakers">SPEAKERS</a>
-            <a onclick={() => menuShowing = !menuShowing} href="/pages/contact">CONTACT</a>
+            {#each a as navItem}
+                <a onclick={() => menuShowing = !menuShowing} href={navItem.href}>{navItem.page}</a>
+            {/each}
         </div> 
     {/if}
 </nav>
@@ -116,7 +89,6 @@
         font-family: var(--font-family);
     }
 
-    
     .navLinks {
         display: flex;
         flex-direction: row;
@@ -129,6 +101,7 @@
     .navText {
         color: var(--primary-color);
         font-size: var(--NavBarText);
+        text-align: center;
     }
 
     .navText a {
@@ -142,8 +115,34 @@
         transition: transform 0.2s linear;
     }
 
-    .navText a:hover{
+    .navText a:hover {
         transform: scale(1.2);
+    }
+
+    .navText a.selected {
+        text-decoration: underline;
+        text-underline-offset: 0.25rem;
+    }
+
+    .navText a.homeSelected,
+    .navText a.registerSelected,
+    .navText a.contactSelected {
+        text-decoration: underline;
+    }
+
+    .navText a.homeSelected,
+    .navText a.home:hover {
+        color: var(--it);
+    }
+
+    .navText a.registerSelected,
+    .navText a.register:hover {
+        color: var(--chemistry);
+    }
+
+    .navText a.contactSelected,
+    .navText a.contact:hover {
+        color: var(--physics);
     }
 
     .plainLogo {
@@ -162,19 +161,12 @@
         color: var(--primary-color);
     }
 
-    .ThemeButton {
-        border: none;
-        background: none;
-        cursor: pointer;
-
-        display: inline-block;
-
-        transition: transform 0.2s linear;
+    .Theme {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        zoom: 0.7;
     }
 
-    .ThemeButton:hover {
-        transform: scale(1.2);
-    }
 
     @media (max-width: 768px) {
         .burgerButton {
@@ -232,6 +224,10 @@
             gap: 7.5%;
             justify-content: center;
             align-items: center;
+        }
+
+        .Title span {
+            font-size: clamp(2.75vw,2.875vw,3vw);
         }
     }
 

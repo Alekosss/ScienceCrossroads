@@ -5,6 +5,7 @@
     import LinkedIn from "$lib/components/Social/LinkedIn.svelte";
     import Mail from "$lib/components/Social/Mail.svelte";
     import { enhance } from "$app/forms";
+	import { t } from "$lib/i18n.svelte";
 
     let mail = $state('');
     let subject = $state('');
@@ -61,11 +62,11 @@
     <!--1st way to Contact-->
     <div class="CategoryHeader">
         <hr/>
-        <text>CONTACT US</text>
+        <text>{t('contact_us')}</text>
         <hr/>
     </div>
     <div class="Description">
-        <text>Feel free to contact us in our Social if you have questions!</text>
+        <text>{t('feel_free')}</text>
     </div>
     <div class="Social">
         <div class="Media IG">
@@ -85,13 +86,13 @@
         </div>
     </div>
     <div class="Description">
-        <text>or send us an email via the following form:</text>
+        <text>{t('send')}</text>
     </div>
     <!--Mailing form-->
     <form class="MailingForm" method="POST" use:enhance bind:this={formEl}>
         <div class="AddressSubjectName">
             <div class="EmailAddress LabelInput">
-                <label for="email">Email Address:</label>
+                <label for="email">{t('email')}</label>
                 <input 
                         type="email" 
                         id="email"
@@ -99,52 +100,53 @@
                         autocomplete="email"
                         required
                         bind:value={mail} 
-                        placeholder="mail@example.com"/>
+                        placeholder={t('mail_placeholder')}/>
             </div>
             <div class="Subject LabelInput">
-                <label for="subject">Subject:</label>
-                <input required id="subject"name="subject" bind:value={subject} placeholder="Example Subject"/>
+                <label for="subject">{t('subject')}</label>
+                <input required id="subject"name="subject" bind:value={subject} placeholder="{t('subject_placeholder')}"/>
             </div>
             <div class="Name LabelInput">
-                <label for="name">Name:</label>
-                <input required id="name" name="name" bind:value={name} autocomplete="name" placeholder="John Doe"/>
+                <label for="name">{t('name')}</label>
+                <input required id="name" name="name" bind:value={name} autocomplete="name" placeholder="{t('name_placeholder')}"/>
             </div>
         </div>
         <div class="Message">
-            <label for="message">Message:</label>
+            <label for="message">{t('message')}</label>
             <textarea 
             required
             id="message"
             name="message"
             bind:value={message} 
-            placeholder="Example message...">
+            placeholder="{t('message_placeholder')}">
             </textarea>
         </div>
         <button class="SendButton" type="button" onclick={Send}>
-            <text>SEND</text>
+            <text>{t('SEND')}</text>
         </button>
         {#if show}
             <div class="overlay">
                 <div class="dialog">
                     {#if emptyField}
                         {#if !mail} 
-                            <span> please fill out your email address!</span>
+                            <span> {t('fill_mail')}</span>
                         {:else if !subject}
-                            <span> please fill out the subject!</span>
+                            <span> {t('fill_subject')}</span>
                         {:else if !message}
-                            <span> please fill out the message content!</span>
+                            <span>{t('fill_message')}</span>
                         {:else if !name} 
-                            <span> please fill out your name!</span>    
+                            <span>{t('fill_name')} </span>    
                         {/if}
                         <button class="goBack" onclick={goBack}>OK</button>
                     {:else}
                         {#if !isValidEmail(mail)}
-                            <span> Email address is wrong. Please try again.</span>
+                            <span>{t('wrong_mail')}</span>
                             <button class="goBack" onclick={goBack}>OK</button>
                         {:else}
-                            <span>Send email?</span>
+                            <span>{t('send_mail')}</span>
                             <button class="goBack" onclick={() => { 
-                                show = false; formEl.requestSubmit(); 
+                                show = false; 
+                                formEl.requestSubmit(); 
                                 }}>
                                 OK
                             </button>
@@ -160,7 +162,7 @@
     .AddressSubjectName {
         display: flex;
         flex-direction: row;
-        gap: 150px;
+        gap: 7.5rem;
         justify-content: center;
         padding: 2rem;
         
@@ -175,8 +177,8 @@
         background-color: var(--primary-color);
         color: var(--physics);
         height: 35px;
-        width: 300px;
-        font-size: 20px;
+        width: auto;
+        font-size: 1.25vw;
         border-radius: 50px;
     }
     
@@ -204,12 +206,11 @@
     
     .ContactPage {
         font-family: var(--font-family);
+        width: 90%;
+        justify-self: center;
+        overflow: hidden;
     }
 
-    .MailingForm input {
-        padding-left: 1rem;
-    }
-    
     .Description {
         color: var(--PHYSICS, #E29B60);
         font-size: 32px;
@@ -246,6 +247,8 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+
+        font-size: clamp(1.25vw,1.5vw,1.75vw);
     }
     
     .goBack {
@@ -256,22 +259,28 @@
     }
 
     .MailingForm {
+        justify-self: center;
+        align-self: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 90%;
+        width: max-content;
         height: auto;
 
         background-color: var(--secondary-color);
 
-        margin: 2rem auto 5rem;
+        margin: 2rem 0 5rem;
         padding: 0.25rem;
-        border-radius: 50px;
-        zoom: 0.8;
+        border-radius: 4rem;
     }
 
+    .MailingForm input {
+        padding-left: 1rem;
+    }
+    
+
     .Media {
-        zoom: 0.8;
+        zoom: 0.7;
     }
 
     .Message {
@@ -279,7 +288,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 26px;
+        font-size: clamp(1.25vw,1.5vw,1.75vw);
         gap: 10px;
 
         color: var(--primary-color);
@@ -288,7 +297,7 @@
     .Message textarea {
         background-color: var(--primary-color);
         color: var(--physics);
-        height: 250px;
+        height: 10rem;
         width: 90%;
         padding: 2rem;
         font-size: 20px;
@@ -313,11 +322,12 @@
         display: flex;
         margin: 2rem auto;
 
-        width: 12.5%;
+        width: auto;
         height: 70px;
         border-radius: 50px;
         background-color: var(--physics);
         border: none;
+        padding: 0.5rem 1.5rem;
 
         cursor: pointer;
     }

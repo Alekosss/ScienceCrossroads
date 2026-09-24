@@ -1,5 +1,6 @@
 <script>
   import SpeakersGrid from "$lib/components/speakers/SpeakersGrid.svelte";
+	import { t } from "$lib/i18n.svelte";
 
     let show = $state([true,true,true,true]);
 
@@ -22,70 +23,70 @@
 <div class="SpeakersPage">
     <div class="CategoryHeader">
         <hr/>   
-        <span>MEET OUR SPEAKERS</span>
+        <span>{t('meetSpeakers')}</span>
         <hr/>
     </div>
     <div class="ScrollToArea">
         <button class="ShowHide General" onclick={ShowHideGeneral} >
             <text>
                 {#if show[0]}
-                    HIDE
+                    {t('hide')}
                 {:else}
-                    SHOW
+                    {t('show')}
                 {/if}
-                GENERAL
+                {t('GENERAL')}
             </text>
         </button>
         <button class="ShowHide Chemistry" onclick={ShowHideChemistry} >
             <text>
                 {#if show[1]}
-                    HIDE
+                    {t('hide')}
                 {:else}
-                    SHOW
+                    {t('show')}
                 {/if}
-                CHEMISTRY
+                {t('CHEMISTRY')}
             </text>
         </button>
         <button class="ShowHide ComputerScience" onclick={ShowHideComputerScience} >
             <text>
                 {#if show[2]}
-                    HIDE
+                    {t('hide')}
                 {:else}
-                    SHOW
+                    {t('show')}
                 {/if}
-                COMPUTER SCIENCE
+                {t('COMPUTER_SCIENCE')}
             </text>
         </button>
         <button class="ShowHide Physics" onclick={ShowHidePhysics} >
             <text>
             {#if show[3]}
-                HIDE
+                {t('hide')}
             {:else}
-                SHOW
+                {t('show')}
             {/if}
-            PHYSICS
+            {t('PHYSICS')}
             </text>
         </button>
     </div>
     <div class="Grids">
         {#if show[0]}
             <div class="SpeakerGrid General">
-                <SpeakersGrid headerText="GENERAL" textColor="var(--general)"/>
+                <SpeakersGrid headerText={t('GENERAL')} textColor="var(--general)"/>
             </div>
         {/if}
         {#if show[1]}
             <div class="SpeakerGrid Chemistry">
-                <SpeakersGrid headerText="CHEMISTRY" textColor="var(--chemistry)"/>
+                <SpeakersGrid headerText={t('CHEMISTRY')} textColor="var(--chemistry)"/>
             </div>
         {/if}
         {#if show[2]}
             <div class="SpeakerGrid ComputerScience">
-                <SpeakersGrid headerText="COMPUTER SCIENCE" textColor="var(--it)"/>
+                <SpeakersGrid headerText={t('COMPUTER_SCIENCE')} textColor="var(--it)"/>
             </div>
         {/if}
         {#if show[3]}
             <div class="SpeakerGrid Physics">
-                <SpeakersGrid headerText="PHYSICS" textColor="var(--physics)"/>
+                <SpeakersGrid headerText={t('PHYSICS')} textColor="var(--physics)"/>
             </div>
         {/if}
     </div>
@@ -100,7 +101,7 @@
         gap: 60px;
         
         color: var(--break);
-        font-size: 35px;
+        font-size: clamp(2vw,2.25vw,2.5vw);
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -139,7 +140,7 @@
     }
 
     .Grids {
-        width: 95%;
+        width: 100%;
     }
 
     .Physics {
@@ -186,6 +187,8 @@
 
     .SpeakersPage {
         font-family: var(--font-family);
+        width: 90%;
+        justify-self: center;
 
         display: flex;
         flex-direction: column;

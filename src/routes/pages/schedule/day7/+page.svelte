@@ -1,4 +1,5 @@
 <script>
+	import { t } from '$lib/i18n.svelte';
     import ScheduleHeader from '$lib/second-page/ScheduleHeader.svelte';
 
     let activeFilter = $state(null);
@@ -16,393 +17,367 @@
     }
 </script>
 
-<ScheduleHeader
-    onFilter={filterEvents}
-    {activeFilter}
-/>
+<div class="day7Schedule">
 
-<div class="day-content">
-    <div class="date-line">
-        <a href="/pages/schedule" class="date-arrow">&lt;</a>
-        <span class="date">07 MARCH</span>
-    </div>
-
-    <div class="where-line">
-        <div class="where-item">
-            <span class="amphitheater1">AMPHITHEATER 1</span>
+    
+    <ScheduleHeader
+        onFilter={filterEvents}
+        {activeFilter}
+    />
+    
+    <div class="day-content">
+        <div class="date-line">
+            <a href="/pages/schedule" class="date-arrow">&lt;</a>
+            <span class="date">07 {t('event_date')}</span>
         </div>
-
-        <div class="where-item">
-            <span class="amphitheater2">AMPHITHEATER 2</span>
-        </div>
-
-        <div class="where-item">
-            <span class="amphitheater3">AMPHITHEATER 3</span>
-        </div>
-
-        <div class="where-item">
-            <span class="foyer">FOYER</span>
-        </div>
-
-        <div class="where-item">
-            <span class="outside-kedea">OUTSIDE KEDEA</span>
-        </div>
-    </div>
-
-    <div class="coming-line">
-        <div class="coming-info">
-            <span class="coming-time">9:00 - 10:00</span>
-
-            <p class="coming-words">
-                ΠΡΟΣΕΛΕΥΣΗ - ΕΓΓΡΑΦΕΣ
-            </p>
-        </div>
-    </div>
-
-    <div class="squares-1">
-        {#if !shouldHide('chemistry')}
-            <div class="green-1">
-                <div class="green-1-1">
-                    <span class="green-1-1-time">10:00 - 11:15</span>
-                    <p class="green-1-1-letter">
-                    Pastic Age
-                    </p>
-                </div>
-
-                <div class="green-2-1">
-                    <span class="green-2-1-time">11:15 - 11:45</span>
-                    <p class="green-2-1-letter">
-                    Toxic beuty (R)
-                    </p>
-                </div>
+    
+        <div class="where-line">
+            <div class="where-item">
+                <span class="amphitheater1">{t('AMPH')} 1</span>
             </div>
-        {/if}
-
-        {#if !shouldHide('general')}
-            <div class="pink-1">
-                <div class="pink-1-1">
-                    <span class="pink-1-1-time">10:00 - 10:45</span>
-                    <p class="pink-1-1-letter">
-                    Funding Science
-                    </p>
-                </div>
-
-                <div class="pink-2-1">
-                    <span class="pink-2-1-time">10:45 - 11:45</span>
-                    <p class="pink-2-1-letter">
-                    The hidden cost of <br>
-                    Research <br>
-                    Infrastructure
-                    </p>
-                </div>
-
-                <div class="pink-3-1">
-                    <span class="pink-3-1-time">11:45 - 12:15</span>
-                    <p class="pink-3-1-letter">
-                    Can Scientific <br>
-                    Progress be <br>
-                    environmentally <br>
-                    sustainable? (R)
-                    </p>
-                </div>
+    
+            <div class="where-item">
+                <span class="amphitheater2">{t('AMPH')} 2</span>
             </div>
-        {/if}
-
-        {#if !shouldHide('physics')}
-            <div class="orange-1">
-                <div class="orange-1-1">
-                    <span class="orange-1-1-time">10:30 - 11:30</span>
-                    <p class="orange-1-1-letter">
-                    Science <br>
-                    communication <br>
-                    sprint (W)
-                    </p>
-                </div>
-
-                <div class="orange-2-1">
-                    <span class="orange-2-1-time">11:30 - 12:15</span>
-                    <p class="orange-2-1-letter">
-                    Climate change <br>
-                    vs Climate <br>
-                    Crisis (W)
-                    </p>
-                </div>
+    
+            <div class="where-item">
+                <span class="amphitheater3">{t('AMPH')} 3</span>
             </div>
-        {/if}
-    </div>
-
-        <div class="coffee-break-1">
-            <span class="coffee-break-1-time">12:15 - 12:45</span>
-            <p class="coffee-break-1-letter">
-            COFFEE BREAK 1
-            </p>
+    
+            <div class="where-item">
+                <span class="foyer">{t('FOYER')}</span>
+            </div>
+    
+            <div class="where-item">
+                <span class="outside-kedea">{t('OUTSIDE_KEDEA')}</span>
+            </div>
         </div>
-
-    <div class="squares-2">
-
-        {#if !shouldHide('computer science')}
-            <div class="purple-2">
-                <div class="purple-1-2">
-                    <span class="purple-1-2-time">12:45 - 13:30</span>
-                    <p class="purple-1-2-letter">
-                    Platform Power: <br>
-                    Gatekeepers of Digital <br>
-                    Public Space
-                    </p>
-                </div>
-
-                <div class="purple-2-2">
-                    <span class="purple-2-2-time">13:30 - 14:00</span>
-                    <p class="purple-2-2-letter">
-                    Who is the Game <br>
-                    Master? (R)
-                    </p>
-                </div>
-
-                <div class="purple-3-2">
-                    <span class="purple-3-2-time">14:00 - 14:45</span>
-                    <p class="purple-3-2-letter">
-                    Persuasive Design, <br>
-                    Dark Patterns and <br>
-                    Manipulation
-                    </p>
-                </div>
-            </div>
-        {/if}
-
-        {#if !shouldHide('physics')}
-            <div class="orange-2">
-                <div class="orange-1-2">
-                    <span class="orange-1-2-time">12:45 - 13:30</span>
-                    <p class="orange-1-2-letter">
-                    Climate Change and <br>
-                    Human Health
-                    </p>
-                </div>
-
-                <div class="orange-2-2">
-                    <span class="orange-2-2-time">13:30 - 14:15</span>
-                    <p class="orange-2-2-letter">
-                    Climate Engineering: <br>
-                    should we "fix" the <br>
-                    planet?
-                    </p>
-                </div>
-
-                <div class="orange-3-2">
-                    <span class="orange-3-2-time">14:15 - 14:45</span>
-                    <p class="orange-3-2-letter">
-                    Activism and Science <br>
-                    in the climate crisis <br>
-                    (R)
-                    </p>
-                </div>
-            </div>
-        {/if}
-
-        {#if !shouldHide('chemistry')}
-            <div class="green-2">
-                <div class="green-1-2">
-                    <span class="green-1-2-time">12:45 - 14:45</span>
-                    <p class="green-1-2-letter">
-                    Fun Workshop <br>
-                    (chemistry)
-                    </p>
-                </div>
-            </div>
-        {/if}
-    </div>
-
-        <div class="lunch-break-2">
-            <div class="lunch-break-2-line">
-                <span class="lunch-break-2-line-time">14:45 - 15:45</span>
-                <p class="lunch-break-2-line-letter">
-                LUNCH BREAK 2
+    
+        <div class="coming-line">
+            <div class="coming-info">
+                <span class="coming-time">9:00 - 10:00</span>
+    
+                <p class="coming-words">
+                    {t('ARRIVAL')}
                 </p>
             </div>
-
-            <div class="physics-experiment-break">
-                <span class="physics-experiment-break-time">14:45 - 15:45</span>
-                <p class="physics-emperiment-break-letter">
-                Physics Experiments (W)
+        </div>
+    
+        <div class="squares-1">
+            {#if !shouldHide(t('CHEMISTRY'))}
+                <div class="green-1">
+                    <div class="green-1-1">
+                        <span class="green-1-1-time">10:00 - 11:15</span>
+                        <p class="green-1-1-letter">
+                        {t('plastic')}
+                        </p>
+                    </div>
+    
+                    <div class="green-2-1">
+                        <span class="green-2-1-time">11:15 - 11:45</span>
+                        <p class="green-2-1-letter">
+                        {t('toxicBeauty')}
+                        </p>
+                    </div>
+                </div>
+            {/if}
+    
+            {#if !shouldHide(t('general'))}
+                <div class="pink-1">
+                    <div class="pink-1-1">
+                        <span class="pink-1-1-time">10:00 - 10:45</span>
+                        <p class="pink-1-1-letter">
+                        {t('funding')}
+                        </p>
+                    </div>
+    
+                    <div class="pink-2-1">
+                        <span class="pink-2-1-time">10:45 - 11:45</span>
+                        <p class="pink-2-1-letter">
+                        {t('hiddenCost')}
+                        </p>
+                    </div>
+    
+                    <div class="pink-3-1">
+                        <span class="pink-3-1-time">11:45 - 12:15</span>
+                        <p class="pink-3-1-letter">
+                        {t('scientific')}
+                        </p>
+                    </div>
+                </div>
+            {/if}
+    
+            {#if !shouldHide(t('PHYSICS'))}
+                <div class="orange-1">
+                    <div class="orange-1-1">
+                        <span class="orange-1-1-time">10:30 - 11:30</span>
+                        <p class="orange-1-1-letter">
+                        {t('scienceComm')}
+                        </p>
+                    </div>
+    
+                    <div class="orange-2-1">
+                        <span class="orange-2-1-time">11:30 - 12:15</span>
+                        <p class="orange-2-1-letter">
+                        {t('climateChange')}
+                        </p>
+                    </div>
+                </div>
+            {/if}
+        </div>
+    
+            <div class="coffee-break-1">
+                <span class="coffee-break-1-time">12:15 - 12:45</span>
+                <p class="coffee-break-1-letter">
+                {t('coffee1')}
                 </p>
             </div>
-
-            <div class="empty-box"></div>
+    
+        <div class="squares-2">
+    
+            {#if !shouldHide(t('COMPUTER_SCIENCE'))}
+                <div class="purple-2">
+                    <div class="purple-1-2">
+                        <span class="purple-1-2-time">12:45 - 13:30</span>
+                        <p class="purple-1-2-letter">
+                        {t('platform')}
+                        </p>
+                    </div>
+    
+                    <div class="purple-2-2">
+                        <span class="purple-2-2-time">13:30 - 14:00</span>
+                        <p class="purple-2-2-letter">
+                        {t('game')}
+                        </p>
+                    </div>
+    
+                    <div class="purple-3-2">
+                        <span class="purple-3-2-time">14:00 - 14:45</span>
+                        <p class="purple-3-2-letter">
+                        {t('persuasive')}
+                        </p>
+                    </div>
+                </div>
+            {/if}
+    
+            {#if !shouldHide(t('PHYSICS'))}
+                <div class="orange-2">
+                    <div class="orange-1-2">
+                        <span class="orange-1-2-time">12:45 - 13:30</span>
+                        <p class="orange-1-2-letter">
+                        {t('humanHealth')}
+                        </p>
+                    </div>
+    
+                    <div class="orange-2-2">
+                        <span class="orange-2-2-time">13:30 - 14:15</span>
+                        <p class="orange-2-2-letter">
+                        {t('climateEng')}
+                        </p>
+                    </div>
+    
+                    <div class="orange-3-2">
+                        <span class="orange-3-2-time">14:15 - 14:45</span>
+                        <p class="orange-3-2-letter">
+                        {t('activism')}
+                        </p>
+                    </div>
+                </div>
+            {/if}
+    
+            {#if !shouldHide(t('CHEMISTRY'))}
+                <div class="green-2">
+                    <div class="green-1-2">
+                        <span class="green-1-2-time">12:45 - 14:45</span>
+                        <p class="green-1-2-letter">
+                        {t('fun')}
+                        </p>
+                    </div>
+                </div>
+            {/if}
         </div>
-
-    <div class="squares-3">
-
-        {#if !shouldHide('computer science')}
-            <div class="purple-3">
-                <div class="purple-1-3">
-                    <span class="purple-1-3-time">15:45 - 16:15</span>
-                    <p class="purple-1-3-letter">
-                    Is Anonymization a <br>
-                    Myth? (R)
+    
+            <div class="lunch-break-2">
+                <div class="lunch-break-2-line">
+                    <span class="lunch-break-2-line-time">14:45 - 15:45</span>
+                    <p class="lunch-break-2-line-letter">
+                    {t('lunch2')}
                     </p>
                 </div>
-
-                <div class="purple-2-3">
-                    <span class="purple-2-3-time">16:15 - 17:15</span>
-                    <p class="purple-2-3-letter">
-                    Privacy by Design for <br>
-                    Mobile Apps (W)
-                    </p>
-                </div>
-
-                <div class="purple-3-3">
-                    <span class="purple-3-3-time">17:15 - 17:45</span>
-                    <p class="purple-3-3-letter">
-                    Democracy in <br>
-                    Innovation (R)
-                    </p>
-                </div>
+    
+                {#if !shouldHide(t('PHYSICS'))}
+                    <div class="physics-experiment-break">
+                        <span class="physics-experiment-break-time">14:45 - 15:45</span>
+                        <p class="physics-emperiment-break-letter">
+                            {t('PhysicExp')}
+                        </p>
+                    </div>
+                {/if}
+    
+                <div class="empty-box"></div>
             </div>
-        {/if}
-
-        {#if !shouldHide('chemistry')}
-            <div class="green-3">
-                <div class="green-1-3">
-                    <span class="green-1-3-time">15:45 - 16:30</span>
-                    <p class="green-1-3-letter">
-                    Green Chemistry
-                    </p>
+    
+        <div class="squares-3">
+    
+            {#if !shouldHide(t('COMPUTER_SCIENCE'))}
+                <div class="purple-3">
+                    <div class="purple-1-3">
+                        <span class="purple-1-3-time">15:45 - 16:15</span>
+                        <p class="purple-1-3-letter">
+                        {t('myth')}
+                        </p>
+                    </div>
+    
+                    <div class="purple-2-3">
+                        <span class="purple-2-3-time">16:15 - 17:15</span>
+                        <p class="purple-2-3-letter">
+                        {t('privacy')}
+                        </p>
+                    </div>
+    
+                    <div class="purple-3-3">
+                        <span class="purple-3-3-time">17:15 - 17:45</span>
+                        <p class="purple-3-3-letter">
+                        {t('democracy')}
+                        </p>
+                    </div>
                 </div>
-
-                <div class="green-2-3">
-                    <span class="green-2-3-time">16:30 - 17:15</span>
-                    <p class="green-2-3-letter">
-                    Industrial Wste
-                    </p>
+            {/if}
+    
+            {#if !shouldHide(t('CHEMISTRY'))}
+                <div class="green-3">
+                    <div class="green-1-3">
+                        <span class="green-1-3-time">15:45 - 16:30</span>
+                        <p class="green-1-3-letter">
+                        {t('green')}
+                        </p>
+                    </div>
+    
+                    <div class="green-2-3">
+                        <span class="green-2-3-time">16:30 - 17:15</span>
+                        <p class="green-2-3-letter">
+                        {t('industrial')}
+                        </p>
+                    </div>
+    
+                    <div class="green-3-3">
+                        <span class="green-3-3-time">17:15 - 17:45</span>
+                        <p class="green-3-3-letter">
+                        {t('pollution')}
+                        </p>
+                    </div>
                 </div>
-
-                <div class="green-3-3">
-                    <span class="green-3-3-time">17:15 - 17:45</span>
-                    <p class="green-3-3-letter">
-                    Pollution Crisis <br>
-                    simulation (W)
-                    </p>
+            {/if}
+    
+            {#if !shouldHide(t('PHYSICS'))}
+                <div class="orange-3">
+                    <div class="orange-1-3">
+                        <span class="orange-1-3-time">15:45 - 16:45</span>
+                        <p class="orange-1-3-letter">
+                        {t('visualizing')}
+                        </p>
+                    </div>
+    
+                    <div class="orange-2-3">
+                        <span class="orange-2-3-time">16:45 - 17:45</span>
+                        <p class="orange-2-3-letter">
+                        {t('ethicsReview')}
+                        </p>
+                    </div>
                 </div>
+            {/if}
+        </div>
+    
+            <div class="coffee-break-2">
+                <span class="coffee-break-2-time">17:45 - 18:15</span>
+                <p class="coffee-break-2-letter">
+                    {t('coffee2')}
+                </p>
             </div>
-        {/if}
-
-        {#if !shouldHide('physics')}
-            <div class="orange-3">
-                <div class="orange-1-3">
-                    <span class="orange-1-3-time">15:45 - 16:45</span>
-                    <p class="orange-1-3-letter">
-                    Visualizing <br>
-                    Climate Data <br>
-                    (W)
-                    </p>
+    
+        <div class="squares-4">
+    
+            {#if !shouldHide(t('COMPUTER_SCIENCE'))}
+                <div class="purple-4">
+                    <div class="purple-1-4">
+                        <span class="purple-1-4-time">18:15 - 19:15</span>
+                        <p class="purple-1-4-letter">
+                        {t('graphics')}
+                        </p>
+                    </div>
                 </div>
-
-                <div class="orange-2-3">
-                    <span class="orange-2-3-time">16:45 - 17:45</span>
-                    <p class="orange-2-3-letter">
-                    Ethics review <br>
-                    board - Debate <br>
-                    (W)
-                    </p>
-                </div>
+            {/if}
+    
+            <div class="green-pink-4">
+    
+                {#if !shouldHide(t('CHEMISTRY'))}
+                    <div class="green-1-4">
+                        <span class="green-1-4-time">18:15 - 19:15</span>
+                        <p class="green-1-4-letter">
+                        {t('water')}
+                        </p>
+                    </div>
+    
+                    <div class="green-2-4">
+                        <span class="green-2-4-time">19:15 - 19:45</span>
+                        <p class="green-2-4-letter">
+                        {t('chem')}
+                        </p>
+                    </div>
+                {/if}
+    
+                {#if !shouldHide(t('general'))}
+                    <div class="green-pink-1-4">
+                        <span class="green-pink-1-4-time">19:45 - 20:15</span>
+                        <p class="green-pink-1-4-letter">
+                        {t('teams')}
+                        </p>
+                    </div>
+                {/if}
             </div>
-        {/if}
-    </div>
-
-        <div class="coffee-break-2">
-            <span class="coffee-break-2-time">17:45 - 18:15</span>
-            <p class="coffee-break-2-letter">
-                COFFEE BREAK 2
+    
+            <div class="pink-4">
+    
+                {#if !shouldHide(t('general'))}
+                    <div class="pink-1-4">
+                        <span class="pink-1-4-time">18:15 - 19:00</span>
+                        <p class="pink-1-4-letter">
+                        {t('hiddenData')}
+                        </p>
+                    </div>
+    
+                    <div class="pink-2-4">
+                        <span class="pink-2-4-time">19:00 - 19:45</span>
+                        <p class="pink-2-4-letter">
+                        {t('realistic')}
+                        </p>
+                    </div>
+                {/if}
+            </div>
+        </div>
+    
+            <div class="cocktail-party">
+                <span class="cocktail-party-time">20:15 - 21:00</span>
+                <p class="cocktail-party-letter">
+                {t('closing')}
+                </p>
+            </div>
+    
+        <div class="explain-line">
+            <p class="explain-line-letter">
+            {t('roundtable')} <br>
+            {t('workshop')}<br>
+            {t('neither')}
             </p>
         </div>
-
-    <div class="squares-4">
-
-        {#if !shouldHide('computer science')}
-            <div class="purple-4">
-                <div class="purple-1-4">
-                    <span class="purple-1-4-time">18:15 - 19:15</span>
-                    <p class="purple-1-4-letter">
-                    Graphics Design <br>
-                    tutorial: Designing <br>
-                    against dark patterns <br>
-                    (W)
-                    </p>
-                </div>
-            </div>
-        {/if}
-
-        <div class="green-pink-4">
-
-            {#if !shouldHide('chemistry')}
-                <div class="green-1-4">
-                    <span class="green-1-4-time">18:15 - 19:15</span>
-                    <p class="green-1-4-letter">
-                    Water Reuse
-                    </p>
-                </div>
-
-                <div class="green-2-4">
-                    <span class="green-2-4-time">19:15 - 19:45</span>
-                    <p class="green-2-4-letter">
-                    Chemistry & <br>
-                    marketing & fear (R)
-                    </p>
-                </div>
-            {/if}
-
-            {#if !shouldHide('general')}
-                <div class="green-pink-1-4">
-                    <span class="green-pink-1-4-time">19:45 - 20:15</span>
-                    <p class="green-pink-1-4-letter">
-                    Teams / Sponsors
-                    </p>
-                </div>
-            {/if}
-        </div>
-
-        <div class="pink-4">
-
-            {#if !shouldHide('general')}
-                <div class="pink-1-4">
-                    <span class="pink-1-4-time">18:15 - 19:00</span>
-                    <p class="pink-1-4-letter">
-                    Hidden Data
-                    </p>
-                </div>
-
-                <div class="pink-2-4">
-                    <span class="pink-2-4-time">19:00 - 19:45</span>
-                    <p class="pink-2-4-letter">
-                    Realistic <br>
-                    dilemmas on <br>
-                    codes of ethics <br>
-                    (R)
-                    </p>
-                </div>
-            {/if}
-        </div>
     </div>
-
-        <div class="cocktail-party">
-            <span class="cocktail-party-time">20:15 - 21:00</span>
-            <p class="cocktail-party-letter">
-            CLOSING / COCKTAIL PARTY
-            </p>
-        </div>
-
-    <div class="explain-line">
-        <p class="explain-line-letter">
-        (R) = ROUNDTABLE (SPECIALISTS + AUDIENCE FORUM) <br>
-        (W) = WORKSHOP <br>
-        NEITHER = TALK
-        </p>
-    </div>
-</div>
-
+</div>    
 
 <style>
+    .day7Schedule {
+        width: 90%;
+        justify-self: center;
+    }
 
     .day-content{
         animation: slideFromRight 0.5s ease;
@@ -431,7 +406,7 @@
         
        margin-top:5px;
        margin-bottom:5px;
-       margin-left:20px;
+       
        width:500px;
        height:50px;
        justify-content:conter;
@@ -455,8 +430,8 @@
         padding:15px;
 
         margin-top:5px;
-        margin-left:20px;
-        margin-right:20px;
+        
+        
         height:80px;
         justify-content:center;
     }
@@ -656,8 +631,8 @@
         row-gap: 5px;
         column-gap: 5px;
 
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         margin-top: 5px;
     }
 
@@ -685,8 +660,8 @@
         padding:15px;
 
         margin-top:5px;
-        margin-left:20px;
-        margin-right:20px;
+        
+        
         height:80px;
         justify-content:center;
     }
@@ -927,8 +902,8 @@
         row-gap: 5px;
         column-gap: 5px;
 
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         margin-top: 5px;
     }
 
@@ -993,8 +968,8 @@
         grid-template-columns: repeat(5, minmax(0, 1fr));
         column-gap: 5px;
 
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         margin-top:5px;
     }
 
@@ -1172,7 +1147,7 @@
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:15px;
+        gap:7.5px;
 
         background-color:#B66DEA;
         border-radius:25px;
@@ -1207,8 +1182,8 @@
         row-gap: 5px;
         column-gap: 5px;
 
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         margin-top: 5px;
     }
 
@@ -1224,8 +1199,8 @@
         padding: 10px;
 
         margin-top: 5px;
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         height:90px;
         justify-content:center;
     }
@@ -1452,8 +1427,8 @@
         row-gap: 5px;
         column-gap: 5px;
 
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         margin-top: 5px;
     }
 
@@ -1469,8 +1444,8 @@
         padding: 10px;
 
         margin-top: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
         height:90px;
         justify-content:center;
     }
@@ -1503,8 +1478,8 @@
         padding: 10px 10px;
 
         margin-top: 60px;
-        margin-left: 20px;
-        margin-right: 20px;
+        
+        
 
         color:black;
     }
