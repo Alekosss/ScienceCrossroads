@@ -1,35 +1,25 @@
-import { json } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
-import { registrations } from '$lib/server/schema';
-import { eq } from 'drizzle-orm';
+import { json, type RequestHandler } from '@sveltejs/kit';
+import {getRegistrations, addRegistration} from '$lib/server/googleSheets';
 
-export async function GET({ url }) {
-    const email = url.searchParams.get('email');
-    //check if email is registered
-    if (!email) {
-        return json({ error: 'no_email' }, { status: 400 });
-    }
+//RETURNS THE REGISTRATIONS TAB A:C
 
-    const existing = await db.select()
-        .from(registrations)
-        .where(eq(registrations.email, email));
+export async function GET() {
+	const registrations = await getRegistrations();
 
-    if (existing.length > 0) {
-        return json({exists: true});
-    }
-    else {
-        return json({exists: false});
-    }
+	return json({
+		success: true,
+		registrations
+	});
 }
 
-export async function POST({ request }) {
-    const { email, name, phone } = await request.json();
+//register
+export const POST: RequestHandler = async ({ request }) => {
+    const {fullName, mail, phoneNumber} = await request.json();
 
-    await db.insert(registrations).values({
-        email,
-        name,
-        phone,
-    });
+	await addRegistration(fullName,mail,phoneNumber);
 
-    return json({ success: true });
+	return json({
+		success: true,
+		message: 'registration added'
+	});
 }

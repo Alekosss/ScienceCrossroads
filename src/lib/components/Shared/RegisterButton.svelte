@@ -56,26 +56,25 @@
         submitting = true;
         submitError = '';
 
-        const res = await fetch('/api/register', {
+        const registrationData = await fetch('/api/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: mail, name: fullName, phone: phoneNumber })
+            body: JSON.stringify({fullName, mail, phoneNumber })
         });
 
-        const data = await res.json();
-
-        if (res.ok) {
-            // success — close overlay or show success message
-            showOverlay = false;
-            stepIndex = 0;
-            mail = ''; fullName = ''; phoneNumber = '';
-        } else if (data.error === 'already_registered') {
-            submitError = t('mail_registered') ;
-        } else {
-            submitError = t('something_wrong');
+        const registrationDataJSON = await registrationData.json();
+        if (registrationDataJSON.success) {
+            console.log("REGISTERED SUCCESSFULLY");
         }
 
         submitting = false;
+        showOverlay = false;
+
+        fullName ='';
+        phoneNumber='';
+        userCode='';
+        mail='';
+        stepIndex=0;
     }
 
     async function nextClick() {
@@ -88,45 +87,58 @@
                 formatMailWarning = true;
             }
             else { //email field is not empty and 
-                //check if email is already registered on the registrations table
                 wait = true;
-                const regres = await fetch(`/api/register?email=${encodeURIComponent(mail)}`);
-                const regdata = await regres.json();
 
-                if (regdata.exists) { //if registered show warning (turn relative warning variable to true)
+                //check if email is already registered on the registrations tab
+                
+                const verifyMail = await fetch('/api/checkMail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ mail })
+                });
+                
+                const verifyMailJSON = await verifyMail.json();
+                if (verifyMailJSON.registered) {
                     alreadyRegistered = true;
-                } 
-                else {  //not registered at all
+                }
+                else { //not registered
+                    //check if 6 digit code has been generated for this mail
+                    const verifyCode = await fetch('/api/checkOTP', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({mail})
+                    });
 
-                    //Check the confirmationCodes table for the mail;
-                    const otpres = await fetch(`/api/otp?email=${encodeURIComponent(mail)}`);
-                    const otpdata = await otpres.json();
-
-                    //if the mail doesn't exist in the db, generate code, send it and store it
-                    if (!otpdata.exists) {
-                        const otpregres = await fetch('/api/otp', {
+                    const verifyCodeJSON = await verifyCode.json();
+                    if (!verifyCodeJSON.generated) { //code has not been generated, mail is new.
+                        //generate,store,send code
+                        const generateCode = await fetch('/api/otp', {
                             method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ email: mail})
+                            headers: {'Content-Type' : 'application/json'},
+                            body: JSON.stringify({mail})
                         });
 
-                        const otpregdata = await otpregres.json();
-
-                        if (otpregres.ok) {
-                            console.log("generated code, sent code, stored it in confirmationCodes.");
+                        const generateCodeJSON = await generateCode.json();
+                        if (generateCodeJSON.success) {
+                            console.log("6 digit code has been generated for: ",mail);
                         }
-                    } 
-                    //if it exists there, move to step 2 and ask for the code
-                    stepIndex++;
-                }
-                wait = false;
+                    }       
+                    stepIndex++;                 
+                    }
+                    wait=false;
             }
         }
         else if (stepIndex === 1) {
-            const verifyres = await fetch(`/api/verifyotp?email=${encodeURIComponent(mail)}&code=${encodeURIComponent(userCode)}`);
-            const verifydata = await verifyres.json();
+            const verifyData = await fetch('/api/verifyOTP', {
+                method: 'POST',
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify({mail,userCode})
+            });
+            const verifyDataJSON = await verifyData.json();
             //check if verificatio code is the same
-            if (verifydata.valid) {
+            if (verifyDataJSON.matches) {
                 //code entered is same as generated!
                 stepIndex++;
             }
