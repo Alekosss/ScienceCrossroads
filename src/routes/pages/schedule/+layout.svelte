@@ -1,11 +1,11 @@
 <script>
-	import favicon from '$lib/assets/favicon.svg';
+    import PlainLogo from '$lib/assets/PlainLogo.png'
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={PlainLogo} />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">

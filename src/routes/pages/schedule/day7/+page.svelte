@@ -112,14 +112,14 @@
                     <div class="orange-1-1">
                         <span class="orange-1-1-time">10:30 - 11:30</span>
                         <p class="orange-1-1-letter">
-                        {t('scienceComm')}
+                        {t('climateChange')}
                         </p>
                     </div>
     
                     <div class="orange-2-1">
                         <span class="orange-2-1-time">11:30 - 12:15</span>
                         <p class="orange-2-1-letter">
-                        {t('climateChange')}
+                        {t('scienceComm')}
                         </p>
                     </div>
                 </div>
@@ -346,12 +346,12 @@
                         </p>
                     </div>
     
-                    <div class="pink-2-4">
+                    <!-- <div class="pink-2-4">
                         <span class="pink-2-4-time">19:00 - 19:45</span>
                         <p class="pink-2-4-letter">
                         {t('realistic')}
                         </p>
-                    </div>
+                    </div> -->
                 {/if}
             </div>
         </div>
@@ -448,7 +448,7 @@
         font-weight:600;
     }
 
-    .pink-2-4{
+    /* .pink-2-4{
         display:flex;
         flex-direction:column;
         align-items:center;
@@ -472,7 +472,7 @@
     .pink-2-4-time{
         font-size:15px;
         font-weight:600;
-    }
+    } */
 
     .pink-1-4{
         display:flex;
@@ -1586,12 +1586,12 @@
         .green-2-4,
         .green-pink-1-4,
         .pink-1-4,
-        .pink-2-4 {
+        /* .pink-2-4 {
             padding: 5px;
             gap: 5px;
             border-radius: 15px;
             box-sizing: border-box;
-        }
+        } */
 
         .lunch-break-2-line,
         .physics-experiment-break {
