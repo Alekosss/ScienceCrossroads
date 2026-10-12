@@ -1,17 +1,44 @@
-<script>
+<script lang="ts">
+    import { onMount } from 'svelte';
+    
     let {
-        text = "Statistic Button",
-        subpage = ""
+        amount = 0,
+        text = '',
+        subpage = ''
     } = $props();
 
-    function clickHandler() {
-        console.log(subpage);
-        window.location.href = '/pages/'+{subpage};
+    let count = $state(0);
+    let counterElement: HTMLAnchorElement;
+
+    async function animateCounter() {
+        while (count < amount) {
+            await sleep(0.025);
+            count++;
+        }
     }
+
+    function sleep(seconds : number) {
+        return new Promise(resolve => setTimeout(resolve, seconds * 1000));
+    }
+
+    onMount(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                observer.disconnect(); // Run only once
+                animateCounter();
+            }
+        }, { threshold: 0.1 });
+
+        if (counterElement) {
+            observer.observe(counterElement);
+        }
+
+        return () => observer.disconnect();
+    });
 </script>
 
-<a href="/pages/{subpage}" class="Statistic">
-    <span class="TextContent">{text}</span>
+<a href="/pages/{subpage}" class="Statistic" bind:this={counterElement}>
+    <span class="TextContent">{count + '+ ' + text}</span>
 </a>
 
 <style>
@@ -32,7 +59,7 @@
         align-items: center;
         background-color: var(--secondary-color);
         border-radius: 50px;
-        padding: 30px 40px;
+        padding: 35px 40px;
 
         text-decoration: none;
    }
