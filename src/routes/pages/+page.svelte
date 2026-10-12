@@ -9,6 +9,12 @@
 	import { t } from "$lib/i18n.svelte";
 
     let SloganTarget = $state();
+
+    const amountOfW = 10;
+    const amountOfSpeakers = 100;
+    const amountOfSpeeches = 80;
+    const AmountOfR = 15;
+
 </script>
 
 <div class="HomePage">
@@ -54,15 +60,19 @@
     </div>
     <!--These are the components that show the stats of the events (speakers, workshops...)-->
     <div class="ContentStatistics">
-        <div class="Workshops">
-            <StatisticsButton text={t('workshops')} subpage="schedule"/>
+        <div class="Statistic">
+            <StatisticsButton amount={amountOfW} text={t('workshops')} subpage="schedule"/>
         </div>
-        <div class="SpeakerStatistic">
-            <StatisticsButton text={t('speakers')} subpage="speakers"/>
+        <div class="Statistic">
+            <StatisticsButton amount={amountOfSpeakers} text={t('speakers')} subpage="speakers"/>
         </div>
-        <div class="Speeches">
-            <StatisticsButton text={t('speeches')} subpage="schedule"/>
+        <div class="Statistic">
+            <StatisticsButton amount={amountOfSpeeches} text={t('speeches')} subpage="schedule"/>
         </div>
+        <div class="Statistic">
+            <StatisticsButton amount={AmountOfR} text={t('roundtables')} subpage="schedule"/>
+        </div>
+
     </div>
     <!--Event Details (Date, Location, Registration, Social Media Posts...)-->
     <div class="CategoryHeader">
@@ -160,12 +170,11 @@
     }
 
     .ContentStatistics {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
         width: 100%;
-        gap: 10rem;
+        row-gap: 5rem;
         margin: 4rem 0;
     }
 
@@ -401,10 +410,11 @@
         text-align: center;
     }
 
-    .Workshops,
-    .Speeches,
-    .SpeakerStatistic {
+    .Statistic {
         zoom: 0.7;
+        width: 75%;
+        align-self: center;
+        justify-self: center;
     }
 
     @media (max-width: 768px) {
