@@ -114,6 +114,8 @@
         flex-direction: row;
         gap: 8px;
 
+
+        text-align: center;
         color:black;
     }
 
