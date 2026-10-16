@@ -3,7 +3,7 @@
 	import PlainLogo from '$lib/assets/PlainLogo.png';
 	import NavigationBar from '$lib/components/LayoutComponents/navigationBar.svelte';
 	import LanguageButton from '$lib/components/LayoutComponents/languageButton.svelte';
-	import '../../app.css';
+	import '../app.css';
 	let { children } = $props();
 </script>
 

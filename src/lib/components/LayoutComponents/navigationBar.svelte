@@ -5,7 +5,7 @@
     import { t } from '$lib/i18n.svelte';
 
     const a = $derived([
-		{ page: t('nav_home'), href: '/pages' },
+		{ page: t('nav_home'), href: '/' },
 		{ page: t('nav_register'), href: '/pages/register&faq' },
 		{ page: t('nav_schedule'), href: '/pages/schedule' },
 		{ page: t('nav_sponsors'), href: '/pages/sponsors' },
