@@ -98,7 +98,6 @@
         border-radius: 50px;
 
         width: 90%;
-        height: 20vh;
         padding: 1%;
         margin: 2rem auto 1rem;
     }
@@ -119,6 +118,7 @@
         font-weight:300;
         line-height: normal;
         padding: 0 1rem;
+        white-space: nowrap;
 
         gap: 0.2rem;
         zoom: 0.8;
