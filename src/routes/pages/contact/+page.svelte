@@ -411,6 +411,10 @@
             font-size: clamp(5vw,6vw,7vw);
         }
         
+        input {
+            zoom: 1.5;
+        }
+
         label {
             font-size: 5vw;
         }
