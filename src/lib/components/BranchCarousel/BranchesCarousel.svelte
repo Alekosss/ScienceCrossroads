@@ -75,7 +75,7 @@
     }
 
     .Arrow {
-        transform: scale(1.75);
+        zoom: 1.75;
         display: flex;
         align-items: center;
         justify-content: center;

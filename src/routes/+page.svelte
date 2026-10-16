@@ -126,7 +126,7 @@
         align-self: center;
 
         width: 100%;
-        height: 550px;
+        min-height: 550px;
     }
 
     .CategoryHeader {
@@ -313,7 +313,7 @@
         display: flex;
         flex-direction: column;
         justify-self: center;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: clamp(0.5rem,1rem,1.5rem);
         width: 100%;

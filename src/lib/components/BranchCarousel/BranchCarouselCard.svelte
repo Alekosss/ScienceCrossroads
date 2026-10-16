@@ -73,6 +73,7 @@
         padding: 20px;
         width: 60%;
         height: 60vh;
+        min-height: 60vh;
         box-sizing: border-box;
 
         background-color: var(--secondary-color);
