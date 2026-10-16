@@ -111,7 +111,7 @@
         gap: 3rem;
 
         width: 100%;
-        height: 80vh;
+        /* height: 80vh; */
     }
 
     .Inactive {
