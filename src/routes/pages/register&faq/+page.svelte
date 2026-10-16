@@ -97,6 +97,7 @@
 
         display: flex;
         flex-direction: column;
+        justify-content: center;
     }
     
     .LastHeader {
@@ -137,6 +138,7 @@
     .Registration {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin: 50px;
     }
 
