@@ -91,13 +91,14 @@
     .FAQ {
         background-color: var(--secondary-color);
         border-radius: 50px;
-        margin: 0px 10rem;
+        margin: 0px 30rem;
         gap: 20px;
         padding: 25px;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
+        zoom: 0.75;
     }
     
     .LastHeader {
@@ -144,7 +145,6 @@
 
     .RegisterAndFAQ {
         font-family: var(--font-family);
-        width: 90%;
         justify-self: center;
     }
 
