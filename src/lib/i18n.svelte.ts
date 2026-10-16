@@ -190,7 +190,10 @@ const translations = {
     COMPUTER_SCIENCE: "COMPUTER SCIENCE",
     PHYSICS: "PHYSICS",
     BREAK: "BREAK",
-    meetSpeakers: "MEET OUR SPEAKERS"
+    meetSpeakers: "MEET OUR SPEAKERS",
+    acm_desc: "The ACM AUTh Student Chapter, founded in 2008, is the official ACM student branch of the Aristotle University of Thessaloniki and is based in the Informatics Department. The group's main goals are engaging school and university students with informatics, providing updates on the latest achievements in computer science and engineering, and promoting research at the undergraduate and postgraduate levels.",
+    path_desc: "PATh was founded in 2014 and is a student volunteer group of the Physics Department at Aristotle University of Thessaloniki (AUTH), and a member of the European Physical Society (EPS). The group's main goals include organizing student conferences, such as the Undergraduate Physics Research Conference (SPEF), familiarizing people with the Physics department (guided tours of research labs, presentations of its sections and postgraduate programs), and communicating physics to the general public (creating podcasts, demonstrating experiments in schools).",
+    reaction_desc: "ReAcTiON is an undergraduate student group based in the Chemistry Department of the Aristotle University of Thessaloniki (AUTH), with a non-profit, non-governmental, and non-partisan character, founded in December 2015. The group's main goals are promoting the science of Chemistry, connecting students with the job market, informing students about current scientific issues, and building ties with other student groups."
   },
   el: {
     nav_contact: "ΕΠΙΚΟΙΝΩΝΙΑ",
@@ -381,6 +384,9 @@ const translations = {
     COMPUTER_SCIENCE: "ΠΛΗΡΟΦΟΡΙΚΗ",
     PHYSICS: "ΦΥΣΙΚΗ",
     BREAK: "ΔΙΑΛΛΕΙΜΑ",
-    meetSpeakers: "ΓΝΩΡΙΣΕ ΤΟΥΣ ΟΜΙΛΗΤΕΣ ΜΑΣ"
+    meetSpeakers: "ΓΝΩΡΙΣΕ ΤΟΥΣ ΟΜΙΛΗΤΕΣ ΜΑΣ",
+    path_desc : "Η PATh ιδρύθηκε το 2014 και είναι μια φοιτητική εθελοντική ομάδα του τμήματος Φυσικής ΑΠΘ, μέλος της Ευρωπαϊκής Κοινότητας Φυσικών (EPS). Κύριοι στόχοι της ομάδας αποτελούν η διοργάνωση συνεδρίων για φοιτητές, όπως το Συνέδριο Προπτυχιακής Έρευνας στη Φυσική (ΣΠΕΦ), η γνωριμία με το τμήμα Φυσικής (ξεναγήσεις σε ερευνητικά εργαστήρια, παρουσιάσεις των τομέων και μεταπτυχιακών), και η επικοινωνία της φυσικής προς το ευρύ κοινό (δημιουργία podcast, επίδειξη πειραμάτων σε σχολεία). ",
+    reaction_desc : "Η ReAcTiON αποτελεί μία ομάδα προπτυχιακών φοιτητών με έδρα το Τμήμα Χημείας του Α.Π.Θ., με μη κερδοσκοπικό, μη κυβερνητικό και μη συνδικαλιστικό χαρακτήρα που ξεκίνησε τον Δεκέμβριο του 2015. Κύριοι στόχοι της ομάδας αποτελούν η διάδοση της επιστήμης της Χημείας, η σύνδεση των φοιτητών με την αγορά εργασίας, την ενημέρωση φοιτητών για επίκαιρα επιστημονικά ζητήματα και η αδελφοποίηση με άλλες φοιτητικές ομάδες. ",
+    acm_desc: "Το ACM AUTh Student Chapter, με χρονία ίδρυσης το 2008, είναι το επίσημο φοιτητικό παράρτημα της ACM του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης και εδρεύει στο Τμήμα Πληροφορικής. Κύριοι στόχοι της ομάδας αποτελούν η εμπλοκή μαθητών και φοιτητών με την πληροφορική, η ενημέρωση σχετικά με τα τελευταία επιτεύγματα της επιστήμης των υπολογιστών και της μηχανικής και η προώθηση της έρευνας σε προπτυχιακό και μεταπτυχιακό επίπεδο."
   }
 };

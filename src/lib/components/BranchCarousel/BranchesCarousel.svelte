@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
     import ArrowLeft from "$lib/assets/Icons/ArrowLeft.svelte";
     import ArrowRight from "$lib/assets/Icons/ArrowRight.svelte";
     import { Branch } from "$lib/model/Branch.svelte";
     import BranchCarouselCard from "./BranchCarouselCard.svelte";
+    import { t } from "$lib/i18n.svelte";
 
     const ACMName = "ACM AUTh Student Chapter";
-    const ACM_description = "ACM Description goes here...";
+    const ACM_description = t('acm_desc');
     const ACMLogoURL = "/Logos/ACM_LOGO.png";
     const ACMSlogan = "We learn and create, together!"
     const ACM = new Branch(ACMName,ACMSlogan,ACM_description,ACMLogoURL);
@@ -13,15 +14,16 @@
     const PAThName = "PATh";
     const PAThSlogan = "Follow your own PATh!";
     const PAThLogoURL = "/Logos/PATh_LOGO.png";
-    const PAThDescription = "[PATh description]";
+    const PAThDescription = t('path_desc');
     const PATh = new Branch(PAThName,PAThSlogan,PAThDescription,PAThLogoURL);
 
     const ReactionName = "ReAcTiON";
-    const ReactionSlogan = "[ReAcTiON slogan]";
-    const ReactionDescription = "[ReAcTiON description]";
+    const ReactionSlogan = "The Chemistry Students' Association";
+    const ReactionDescription = t('reaction_desc');
     const ReactionLogoURL = "/Logos/ReAcTiON.png";
     const ReAcTiON = new Branch(ReactionName,ReactionSlogan,ReactionDescription,ReactionLogoURL);
 
+    const branchDescriptionKeys = ["acm_desc", "path_desc", "reaction_desc"] as const;
     let Branches = $state([ACM,PATh,ReAcTiON]);
     let index = $state(0);
 
@@ -46,7 +48,7 @@
 
 <div class="Carousel">
     <div class="CarouselItems">
-        <BranchCarouselCard imageURL={Branches[index].logoURL} slogan={Branches[index].slogan} name={Branches[index].name} description={Branches[index].description}/>
+        <BranchCarouselCard imageURL={Branches[index].logoURL} slogan={Branches[index].slogan} name={Branches[index].name} description={t(branchDescriptionKeys[index])}/>
     </div>
     <div class="ArrowsAndIndexing">
         <button onclick={LeftArrowClick} class="Arrow">

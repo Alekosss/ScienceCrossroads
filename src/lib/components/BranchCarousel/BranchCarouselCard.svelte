@@ -39,7 +39,7 @@
         justify-content: center;
         align-items: center;
 
-        gap: 75px;
+        gap: 1rem;
         margin: 15px;
         width: 50%;
     }
@@ -83,12 +83,14 @@
     .Description {
         color: var(--primary-color);
         width: 100%;
+        overflow-y: auto;
+        height: 30vh;
     }
 
     .Description span {
         display: block;
         width: 100%;
-        font-size: clamp(1.25vw,1.5vw,1.75vw);
+        font-size: clamp(1vw,1.25vw,1.5vw);
     }
 
     .LogoAndSlogan {
