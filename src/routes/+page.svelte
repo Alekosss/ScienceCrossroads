@@ -126,7 +126,7 @@
         align-self: center;
 
         width: 100%;
-        min-height: 550px;
+        min-height: clamp(350px, 60vh, 500px);
     }
 
     .CategoryHeader {
@@ -144,6 +144,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        text-align: center;
     }
     
     .CategoryHeader hr {
@@ -184,7 +185,6 @@
         align-items: center;
         justify-content: center;
         zoom: 0.7;
-        margin-left: 10%;
         width: 100%;
     }
     
@@ -379,6 +379,8 @@
     .SocialMediaPosts {
         zoom: 0.6;
         width: 50%;
+        justify-content: center;
+        display: flex;
     }
 
     .TextContent {
@@ -520,7 +522,7 @@
         }
 
         .RegistrationContent {
-            zoom: 1.1;
+            zoom: .9;
         }
 
         .RegButton {
@@ -529,10 +531,12 @@
 
         .SocialMediaPosts {
             zoom: 0.5;
-            align-items: center;
-            justify-content: center;
-            display: flex;
             width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .TextHeader text {
