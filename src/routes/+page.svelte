@@ -356,7 +356,7 @@
         font-weight: 400;
         line-height: normal;
 
-        zoom: 0.75;
+        zoom: 0.85;
         color: var(--it);
     }
 

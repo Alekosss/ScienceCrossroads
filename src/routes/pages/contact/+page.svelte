@@ -411,6 +411,10 @@
             font-size: clamp(5vw,6vw,7vw);
         }
         
+        label {
+            font-size: 5vw;
+        }
+
         .Media {
             zoom: 0.7;
         }
@@ -420,6 +424,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        .Message textarea {
+            width: 40vw;
+            margin: 0 2rem;
         }
 
         .SendButton {
