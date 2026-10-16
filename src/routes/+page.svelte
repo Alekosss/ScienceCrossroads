@@ -390,7 +390,6 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
-        margin-right: 25px;
     }
     
     .TextHeader {
