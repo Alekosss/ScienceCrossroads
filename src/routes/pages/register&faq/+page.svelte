@@ -91,7 +91,7 @@
     .FAQ {
         background-color: var(--secondary-color);
         border-radius: 50px;
-        margin: 0px 300px 125px;
+        margin: 0px 10rem;
         gap: 20px;
         padding: 25px;
 
