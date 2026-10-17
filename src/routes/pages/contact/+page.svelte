@@ -93,7 +93,7 @@
         <div class="AddressSubjectName">
             <div class="EmailAddress LabelInput">
                 <label for="email">{t('email')}</label>
-                <input 
+                <input
                         type="email" 
                         id="email"
                         name="email"
@@ -412,7 +412,7 @@
         }
         
         input {
-            zoom: 1.5;
+            zoom: 2;
         }
 
         label {
@@ -428,11 +428,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            width: 90vw;
         }
 
         .Message textarea {
-            width: 40vw;
+            width: auto;
             margin: 0 2rem;
+            font-size: clamp(2.5vw,3vw,3.5vw);
         }
 
         .SendButton {

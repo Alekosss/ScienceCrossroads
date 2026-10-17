@@ -47,7 +47,6 @@
 <style>
     .answer {
         border-radius: 25px;
-        width: 1000px;
         height: 150px;
     
         color: var(--secondary-color);

@@ -10,12 +10,6 @@
 
     const q = "Where will the event take place?";
     const a = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.";
-    
-    function buttonClick() {
-        console.log("Before: " + showing);
-        showing =! showing;
-        console.log("After: " + showing);
-    }
 </script>
 
 <div class="RegisterAndFAQ">
@@ -27,6 +21,7 @@
     </div>
     <!--Register and more...-->
     <div class="Registration">
+        <span class="Date">06-07 {t('event_date')}</span>
         <div class="Countdown">
             <CountdownClock color=var(--chemistry)/>
         </div>
@@ -88,6 +83,12 @@
         zoom: 0.75;
     }
 
+    .Date {
+        color:var(--chemistry);
+        zoom: 1.5;
+        text-decoration: underline;
+    }
+
     .FAQ {
         background-color: var(--secondary-color);
         border-radius: 50px;
@@ -124,7 +125,6 @@
         justify-content: center;
         align-items: center;
         gap: 25px;
-        zoom: 0.8;
     }
 
     .Register span {
@@ -134,6 +134,7 @@
         font-weight: 400;
         line-height: normal;
         text-align: center;
+        zoom: 0.85;
     }
 
     .Registration {
