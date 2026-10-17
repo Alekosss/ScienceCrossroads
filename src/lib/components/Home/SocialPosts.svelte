@@ -167,7 +167,7 @@
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 2vw;
         color: inherit;
         border-radius: 50px;
         padding: 15px;
@@ -254,7 +254,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 4rem;
+            gap: 6vw;
             width: 90%;
         }
 
@@ -269,6 +269,7 @@
         .SocialPosts {
             width: 80%;
             padding-bottom: 1.5rem;
+            height: 75vh;
         }
     }
 </style>

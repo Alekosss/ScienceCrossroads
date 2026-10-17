@@ -184,10 +184,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        zoom: 0.7;
+        align-self: center;
+        justify-self: center;
+        zoom: 0.9;
         width: 100%;
+        overflow-x: hidden;
+        margin: 0 auto;
     }
-    
+
     .Description {
         color: var(--secondary-color);
         font-size: clamp(10px,1.8vw,20px);
@@ -205,6 +209,7 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+        zoom: 1.1;
     }
 
     .Details {
@@ -300,7 +305,7 @@
         justify-content: center;
         align-items: center;
         zoom: 0.7;
-        margin-left: 10%;
+        margin-inline: auto;
     }
     
     .OrganizingTeam {
@@ -356,7 +361,6 @@
         font-weight: 400;
         line-height: normal;
 
-        zoom: 0.85;
         color: var(--it);
     }
 
@@ -368,7 +372,7 @@
     .Slogan {
         width: 100%;
         text-align: center;
-        font-size: clamp(15px,3.5vw,35px);
+        font-size: clamp(2.75vw,3vw,3.25vw);
         font-style: normal;
         font-weight: 300;
         line-height: normal;
@@ -425,7 +429,7 @@
         }
 
         .CategoryHeader text{
-            font-size:  clamp(6vw,7.5vw,9vw);
+            font-size: clamp(4vw,5vw,6vw);
             width: fit-content;
             align-items: center;
             justify-content: center;
@@ -445,7 +449,14 @@
         }
 
         .ContentStatistics {
-            zoom: 0.4;
+            zoom: 0.9;
+            width: 80vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            justify-self: center;
         }
 
         .Countdown {
@@ -463,8 +474,12 @@
         }
         
         .Description text {
-            font-size: clamp(1.5vw,1.75vw,2vw);
+            font-size: 2.75vw;
         }        
+
+        .DescRight {
+            text-align: end;
+        }
 
         .Details {
             width: 100%;
@@ -537,6 +552,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 80vh;
+            overflow-y: hidden;
+        }
+
+        .Slogan {
+            font-size: clamp(3.5vw,4vw,4.5vw);
         }
 
         .TextHeader text {

@@ -58,6 +58,7 @@
         align-items: center;
         width: 650px;
         height: 100px;
+        margin-inline: auto;
         background-color: var(--secondary-color);
         border-radius: 50px;
     }
