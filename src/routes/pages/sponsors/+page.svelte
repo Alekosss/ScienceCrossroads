@@ -1040,8 +1040,8 @@
     }
 
     .silver-square11{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1061,8 +1061,8 @@
     }
 
     .silver-square10{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1082,8 +1082,8 @@
     }
 
     .silver-square9{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1110,8 +1110,8 @@
     }
 
     .silver-square8{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1131,8 +1131,8 @@
     }
 
     .silver-square7{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1152,8 +1152,8 @@
     }
 
     .silver-square6{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1173,8 +1173,8 @@
     }
 
     .silver-square5{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1201,8 +1201,8 @@
     }
 
     .silver-square4{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1222,8 +1222,8 @@
     }
 
     .silver-square3{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1243,8 +1243,8 @@
     }
 
     .silver-square2{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
@@ -1264,8 +1264,8 @@
     }
 
     .silver-square1{
-        width:270px;
-        height:190px;
+        width:240px;
+        height:210px;
 
         background-color: #555353;
         border-radius:15px;
