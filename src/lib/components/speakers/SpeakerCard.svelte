@@ -27,7 +27,10 @@
 
 <button class="SpeakerCard" onclick={Click}>
     <div class="Image">
-        <img src={imageURL} alt="John Doe's"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+            <path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+            <path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+        </svg>
     </div>
     <div class="NamePosition">
         <div class="Name">
@@ -45,17 +48,20 @@
             <div class="Card">
                 <div class="cardContent">
                     <div class="ImageAndTitle">
-                    <div class="cardImage">
-                        <img src={imageURL} alt="Speaker goes here"/>
-                    </div>
-                    <div class="Title">
-                        <div class="cardName">
-                            <span>{fullName}</span>
+                        <div class="CardImage">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
+                                <path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+                                <path d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+                            </svg>
                         </div>
-                        <div class="cardPosition">
-                            <span>{position}</span>
+                        <div class="Title">
+                            <div class="cardName">
+                                <span>{fullName}</span>
+                            </div>
+                            <div class="cardPosition">
+                                <span>{position}</span>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <div class="Description">
                         <span>{description}</span>
@@ -91,8 +97,10 @@
         gap: 2rem;
     }
 
-    .cardImage img {
-        width: 100%;
+    .CardImage svg {
+        align-self: center;
+        justify-self: center;
+        width: stretch;
         aspect-ratio: 1;
     }
 
@@ -141,13 +149,11 @@
         justify-self: center;
         align-self: center;
     }
-
-    .Image img {
-        width:140px;
-        height: 140px;
+    
+    .Image svg {
+        width: 10vh;
         aspect-ratio: 1;
     }
-
     
     .NamePosition {
         display: flex;
@@ -245,12 +251,6 @@
             width: 90%;
             height: 70%;
             pointer-events: auto;
-        }
-
-        .cardImage img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
         }
         
         .Description {
