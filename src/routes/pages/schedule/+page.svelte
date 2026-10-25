@@ -1,57 +1,67 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import { t } from '$lib/i18n.svelte';
-    import ScheduleHeader from '$lib/second-page/ScheduleHeader.svelte';
+    import type { ScheduleFilter } from '$lib/model/ScheduleFilter';
+	import ArrowLeft from '$lib/assets/Icons/ArrowLeft.svelte';
+	import ArrowRight from '$lib/assets/Icons/ArrowRight.svelte';
 
-    let activeFilter = $state(null);
+    const scheduleFilter = getContext<ScheduleFilter>('schedule-filter');
 
-    function filterEvents(category){
-        if (activeFilter == category){
-            activeFilter = null;
-        }
-        else {
-            activeFilter = category;
-        }
-    }
-
-    function shouldHide(category){
-        return activeFilter !== null && activeFilter !== category;
+    function shouldHide(category: string) {
+        return scheduleFilter.activeFilter !== null && scheduleFilter.activeFilter !== category;
     }
 </script>
 
 <div class="schedulePage">
 
-    
-    <ScheduleHeader onFilter={filterEvents} 
-        {activeFilter} />
-    
-    
     <div class="day-content">
         <div class="date-line">
-    
-            <span class="date">06 {t('event_date')}</span>
-    
-            <a href="/pages/schedule/day7" class="date-arrow">&gt;</a>
+            <button class="date-arrow" aria-label="Previous day" disabled>
+                <ArrowLeft />
+            </button>
+            <span class="date">6 {t('event_date')}</span>
+            <a href="/pages/schedule/day7" class="date-arrow" aria-label="Next day">
+                <ArrowRight />
+            </a>
         </div>
-    
-        <div class="where-line">
-            <div class="where-item">
-                <span class="amphitheater1">{t('AMPH')} 1</span>
-            </div>
-    
-            <div class="where-item">
-                <span class="amphitheater2">{t('AMPH')} 2</span>
-            </div>
-    
-            <div class="where-item">
-                <span class="amphitheater3">{t('AMPH')} 3</span>
-            </div>
-    
-            <div class="where-item">
-                <span class="foyer">{t('FOYER')}</span>
-            </div>
-    
-            <div class="where-item">
-                <span class="outside-kedea">{t('OUTSIDE_KEDEA')}</span>
+                <div class="session-legend" aria-label="Schedule event types">
+            <span class="legend-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
+                </svg>
+                <span>{t('roundtable')}</span>
+            </span>
+            <span class="legend-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                </svg>
+                <span>{t('workshop')}</span>
+            </span>
+            <span class="legend-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 5.5h16v11H9l-5 3v-14ZM8 9h8M8 13h5" />
+                </svg>
+                <span>{t('neither')}</span>
+            </span>
+        </div>
+
+        <div class="schedule-day-header">
+            <div class="where-line">
+                <div class="where-item">
+                    <span class="amphitheater1">{t('AMPH')} 1</span>
+                </div>
+                <div class="where-item">
+                    <span class="amphitheater2">{t('AMPH')} 2</span>
+                </div>
+                <div class="where-item">
+                    <span class="amphitheater3">{t('AMPH')} 3</span>
+                </div>
+                <div class="where-item">
+                    <span class="foyer">{t('FOYER')}</span>
+                </div>
+                <div class="where-item">
+                    <span class="outside-kedea">{t('OUTSIDE_KEDEA')}</span>
+                </div>
             </div>
         </div>
     
@@ -71,6 +81,10 @@
                     >
                     <span class="greetings-time">10:00 - 11:15</span>
                     <span class="xairetismoi">{t('GREET')}</span>
+                    <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                        <path d="M8 9h8M8 13h5" />
+                    </svg>
                     <p class="greetings-letter">
                     {t('publish')} <br>
                     {t('research')} <br>
@@ -82,6 +96,10 @@
             {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-1-0">
                     <span class="orange-1-0-time">11:15 - 12:15</span>
+                    <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                        <path d="M8 9h8M8 13h5" />
+                    </svg>
                     <p class="orange-1-0-letter">
                     {t('nuclear')}<br>
                     {t('sustain')} <br>
@@ -94,6 +112,10 @@
             {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-1-0">
                     <span class="purple-1-0-time">11:15 - 12:15</span>
+                    <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                        <path d="M8 9h8M8 13h5" />
+                    </svg>
                     <p class="purple-1-0-letter">
                     {t('accountability')} <br>
                     {t('machine')} <br>
@@ -107,6 +129,10 @@
                 <div class="green-0">
                     <div class="green-1-0">
                         <span class="green-1-0-time">11:15 - 11:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="green-1-0-letter">
                         {t('editing')}
                         </p>
@@ -114,6 +140,10 @@
     
                     <div class="green-2-0">
                         <span class="green-2-0-time">11:45 - 12:15</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="green-2-0-letter">
                         {t('pharm')} <br>
                         {t('eth')}
@@ -139,6 +169,10 @@
                 <div class="orange-1">
                     <div class="orange-1-1">
                         <span class="orange-1-1-time">12:45 - 13:30</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="orange-1-1-letter">
                         {t('radiation')} <br>
                         {t('public_health')}
@@ -147,6 +181,10 @@
     
                     <div class="orange-2-1">
                         <span class="orange-2-1-time">13:30 - 14:15</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="orange-2-1-letter">
                         {t('toxic')} <br>
                         {t('waste')}
@@ -155,6 +193,9 @@
     
                     <div class="orange-3-1">
                         <span class="orange-3-1-time">14:15 - 14:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
+                        </svg>
                         <p class="orange-3-1-letter">
                         {t('nucAcc')} <br>
                         {t('Risk')}
@@ -167,6 +208,10 @@
                 <div class="purple-1">
                     <div class="purple-1-1">
                         <span class="purple-1-1-time">12:45 - 13:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="purple-1-1-letter">
                         {t('fake')} <br>
                         {t('image')} <br>
@@ -176,6 +221,9 @@
     
                     <div class="purple-2-1">
                         <span class="purple-2-1-time">13:45 - 14:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                        </svg>
                         <p class="purple-2-1-letter">
                         {t('debug')} <br>
                         {t('machineL')} <br>
@@ -189,6 +237,10 @@
                 <div class="green-1">
                     <div class="green-1-1">
                         <span class="green-1-1-time">12:45 - 13:30</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="green-1-1-letter">
                         {t('lab')}
                         </p>
@@ -196,6 +248,9 @@
     
                     <div class="green-2-1">
                         <span class="green-2-1-time">13:30 - 14:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                        </svg>
                         <p class="green-2-1-letter">
                         {t('clinical')} <br>
                         {t('sim')}
@@ -218,6 +273,9 @@
             {#if !shouldHide(t('PHYSICS'))}
                 <div class="physics-experiment-break">
                     <span class="physics-experiment-break-time">14:45 - 15:45</span>
+                    <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                    </svg>
                     <p class="physics-emperiment-break-letter">
                         {t('PhysicExp')}
                     </p>
@@ -233,6 +291,10 @@
                 <div class="orange-2">
                     <div class="orange-1-2">
                         <span class="orange-1-2-time">15:45 - 16:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="orange-1-2-letter">
                         {t('space')}<br>
                         {t('ethSat')} <br>
@@ -242,6 +304,10 @@
     
                     <div class="orange-2-2">
                         <span class="orange-2-2-time">16:45 - 17:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="orange-2-2-letter">
                         {t('look')} <br>
                         {t('down')} <br>
@@ -255,6 +321,10 @@
                 <div class="pink-2">
                     <div class="pink-1-2">
                         <span class="pink-1-2-time">15:45 - 16:30</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="pink-1-2-letter">
                         {t('when')}
                         </p>
@@ -262,6 +332,10 @@
     
                     <div class="pink-2-2">
                         <span class="pink-2-2-time">16:30 - 17:15</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="pink-2-2-letter">
                         {t('inv')}
                         </p>
@@ -269,6 +343,9 @@
     
                     <div class="pink-3-2">
                         <span class="pink-3-2-time">17:15 - 17:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
+                        </svg>
                         <p class="pink-3-2-letter">
                         {t('cons')}
                         </p>
@@ -280,6 +357,9 @@
                 <div class="purple-2">
                     <div class="purple-1-2">
                         <span class="purple-1-2-time">15:45 - 16:30</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                        </svg>
                         <p class="purple-1-2-letter">
                         {t('rec')}
                         </p>
@@ -287,6 +367,10 @@
     
                     <div class="purple-2-2">
                         <span class="purple-2-2-time">16:30 - 17:15</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="purple-2-2-letter">
                         {t('data')} <br/>
                         {t('hunger')}
@@ -295,6 +379,9 @@
     
                     <div class="purple-3-2">
                         <span class="purple-3-2-time">17:15 - 17:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
+                        </svg>
                         <p class="purple-3-2-letter">
                         {t('red')}
                         </p>
@@ -306,6 +393,10 @@
                 <div class="pink-end">
                     <div class="pink-end-line">
                         <span class="pink-end-time">15:45 - 17:45</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="pink-end-letter">
                         {t('treasure')}
                         </p>
@@ -327,6 +418,10 @@
                 <div class="green-3">
                     <div class="green-1-3">
                         <span class="green-1-3-time">18:15 - 19:00</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 5.5h16v11H9l-5 3v-14Z" />
+                            <path d="M8 9h8M8 13h5" />
+                        </svg>
                         <p class="green-1-3-letter">
                         {t('pesticides')}
                         </p>
@@ -334,6 +429,9 @@
     
                     <div class="green-2-3">
                         <span class="green-2-3-time">19:00 - 20:15</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                        </svg>
                         <p class="green-2-3-letter">
                         {t('design')} <br>
                         {t('product')} <br>
@@ -347,6 +445,9 @@
                 <div class="orange-4">
                     <div class="orange-1-4">
                         <span class="orange-1-4-time">18:15 - 20:15</span>
+                        <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
+                        </svg>
                         <p class="orange-1-4-letter">
                         {t('star')} <br>
                         {t('night')}
@@ -363,21 +464,74 @@
             </p>
         </div>
     
-        <div class="explain-line">
-            <p class="explain-line-letter">
-            {t('roundtable')} <br>
-            {t('workshop')} <br>
-            {t('neither')}
-            </p>
-        </div>
     </div>
 </div>
 
 
 <style>
-    .day-content{
+    .day-content {
+        min-width: 0;
+    }
 
-        animation: slideFromLeft 0.5s ease;
+    .day-content > :not(.schedule-day-header):not(.date-line) {
+        animation: slideFromLeft 0.3s ease-out;
+    }
+
+    .day-content div:has(> [class$="-time"]) {
+        box-sizing: border-box;
+        min-width: 0;
+        height: auto;
+        min-height: 3.5rem;
+        padding: clamp(0.5rem, 1vw, 0.9rem);
+        gap: clamp(0.25rem, 0.7vw, 0.65rem);
+    }
+
+    .day-content [class$="-time"] {
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    .day-content [class$="-letter"] {
+        max-width: 100%;
+        margin: 0;
+        font-size: clamp(0.75rem, 1vw, 0.9rem);
+        font-weight: 400;
+        line-height: 1.35;
+        text-align: center;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    :global(.session-type-icon) {
+        position: absolute;
+        top: 0.4rem;
+        right: 0.45rem;
+        display: block;
+        width: 1.1rem;
+        height: 1.1rem;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+    }
+
+    .day-content div:has(> .session-type-icon) {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        min-height: 3.5rem;
+        padding: clamp(0.85rem, 1.5vw, 1.1rem);
+        padding-top: 1.6rem;
+        gap: clamp(0.4rem, 0.8vw, 0.7rem);
+        overflow: visible;
+    }
+
+    .day-content div:has(> .session-type-icon) > [class$="-letter"] {
+        padding-inline: 0.15rem;
     }
 
     .schedulePage {
@@ -388,39 +542,19 @@
 
     @keyframes slideFromLeft{
         from{
-            transform: translateX(-100%);
+            transform: translateX(-1rem);
             opacity:0;
         }
         to{
-            transform: translateX(0%);
+            transform: translateX(0);
             opacity:1;
         }
     }
 
-    .explain-line{
-       display:flex;
-       flex-direction:column;
-       gap:15px;
-
-       background-color:#ADF8F6;
-       border-radius:25px;
-       padding:15px;
-        
-       margin-top:5px;
-       margin-bottom:5px;
-       
-       width:500px;
-       height:50px;
-       justify-content:conter;
-    }
-
-    .explain-line-letter{
-        font-size:15px;
-        font-weight:400;
-        margin:0;
-        text-align:left;
-
-        color:black;
+    @media (prefers-reduced-motion: reduce) {
+        .day-content > :not(.schedule-day-header):not(.date-line) {
+            animation: none;
+        }
     }
 
     .wine-party{
@@ -1389,52 +1523,110 @@
         text-align: center;
     }
 
+    .schedule-day-header {
+        position: sticky;
+        top: 0.5rem;
+        z-index: 10;
+        margin-top: 2.5rem;
+        padding: 0.75rem 1rem 1rem;
+        border-radius: 1.25rem;
+        background: #D9D9D9;
+        color: #111;
+        box-shadow: 0 0.4rem 1rem rgb(0 0 0 / 10%);
+    }
+
     .where-line{
-
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         align-items:center;
-
         font-size:15px;
-        font-weight: 15px;
-
-        background-color: #D9D9D9;
-        border-radius: 25px;
-        padding: 10px 10px;
-
-        margin-top: 60px;
-        
-        
-
-        color:black;
+        font-weight: 500;
+        padding: 0.75rem 0 0;
+        color: inherit;
     }
 
     .date-line{
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        margin-top: 55px;
+        gap: 0.75rem;
+        width: 100%;
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
     }
 
     .date-arrow{
-        border: none;
-        background: none;
-        font-size: 20px;
-        font-weight: 20px;
+        display: grid;
+        width: 3rem;
+        height: 3rem;
+        place-items: center;
+        border: 0;
+        padding: 0;
+        background: transparent;
         color: var(--secondary-color);
-        text-decoration:none;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .date-arrow:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+
+    .date-arrow:not(:disabled):hover {
+        color: var(--break);
+    }
+
+    .date-arrow :global(svg) {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .date{
-        font-size: 20px;
-        font-weight: 100px;
-        color: var(--secondary-color);
-        text-decoration: underline;
-        text-decoration-thickness: 1,5px;
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        /* background: var(--break); */
+        color: #fff;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        font-weight: 700;
+        letter-spacing: 0.04em;
     }
 
     @media (max-width:768px){
+        .schedulePage {
+            width: calc(100% - 2rem);
+            min-width: 0;
+        }
+
+        .day-content {
+            min-width: 0;
+        }
+
+        .schedule-day-header {
+            top: 0;
+            margin-top: 0;
+            padding: 0.5rem;
+            border-radius: 1rem;
+        }
+
+        .date-line {
+            margin-top: 1.5rem;
+        }
+
+        .date-arrow {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .where-line {
+            padding-top: 0.5rem;
+        }
+
+        .where-item {
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
         .squares,
         .squares-1,
         .squares-2,
@@ -1445,7 +1637,6 @@
             column-gap: 3px;
         }
 
-        .where-line,
         .coming-line,
         .coffee-break-1-line,
         .coffee-break-3,
@@ -1455,9 +1646,7 @@
         }
 
         .where-line {
-        font-size: 8px;
-        padding: 8px 2px;
-        border-radius: 15px;
+            font-size: 8px;
         }
 
         .squares span,
@@ -1542,15 +1731,19 @@
             font-size: 11px;
         }
 
-        .explain-line {
-        width: auto;
-        height: auto;
-        margin-left: 5px;
-        margin-right: 5px;
+        .day-content div:has(> [class$="-time"]) {
+            min-height: 2.75rem;
+            padding: 0.5rem;
+            gap: 0.3rem;
         }
 
-        .explain-line-letter {
-        font-size: 10px;
+        .day-content [class$="-time"] {
+            font-size: 0.65rem;
+        }
+
+        .day-content [class$="-letter"] {
+            font-size: 0.7rem;
+            line-height: 1.3;
         }
 
         .squares p,
@@ -1634,5 +1827,68 @@
             height: 100px;
         }
 
+    }
+
+    .date-arrow:focus-visible {
+        outline: 3px solid var(--secondary-color);
+        outline-offset: 3px;
+    }
+
+    .coming-line {
+        height: auto;
+        min-height: 5rem;
+    }
+
+    @media (max-width: 768px) {
+        .coming-line {
+            min-height: 4rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .day-content div:has(> .session-type-icon) {
+            min-height: 2.75rem;
+            padding: 0.7rem;
+            padding-top: 1.35rem;
+            gap: 0.4rem;
+        }
+
+        :global(.session-type-icon) {
+            top: 0.25rem;
+            right: 0.3rem;
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+    }
+
+    .session-legend {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem 1.25rem;
+        width: 90%;
+        margin: 0.75rem auto 0;
+        color: var(--secondary-color);
+        font-size: 0.8rem;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    .legend-item svg {
+        width: 1.1rem;
+        height: 1.1rem;
+        flex: 0 0 auto;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
     }
 </style>

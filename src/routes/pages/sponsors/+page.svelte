@@ -1639,14 +1639,15 @@
         display:flex;
         justify-content:center;
         align-items:center;
-        margin-top:10px;
+        margin: clamp(2rem, 4vw, 3.5rem) 0;
     }
 
     .sponsors-title h1{
-        font-weight:400;
-        text-decoration:underline;
-        text-decoration-thickness:2px;
-        text-underline-offset:6px;
+        margin: 0;
+        color: var(--break);
+        font-size: var(--section-heading-size);
+        font-weight: 500;
+        line-height: 1.25;
     }
 
     .bronze8-circle img{
@@ -2579,21 +2580,46 @@
     
 
     @media (max-width: 768px) {
+        .SponsorsPage {
+            width: calc(100% - 2rem);
+        }
+
+        .sponsors-title {
+            margin: clamp(1.5rem, 6vw, 2.5rem) 0;
+        }
+
+        .sponsors-title h1 {
+            font-size: var(--section-heading-size-mobile);
+        }
+
         .sponsors-map {
             display: none;
         }
 
         .diamond-square {
-            width: 280px;
-            height: 190px;
+            width: min(100%, 22.5rem);
+            height: auto;
+            aspect-ratio: 1.47;
             padding: 5px;
         }
 
-       .platinum-info {
+        .diamond-line {
+            width: 100%;
+        }
+
+        .platinum-info,
+        .gold-info,
+        .silver-info,
+        .bronze-info {
+            width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(0.5rem, 3vw, 1rem);
             justify-items: center;
+        }
+
+       .platinum-info {
+            gap: clamp(0.75rem, 4vw, 1.5rem);
         }
 
         .platinum-line1,
@@ -2605,18 +2631,17 @@
         .platinum-square2,
         .platinum-square3,
         .platinum-square4 {
-            width: 180px;
-            height: 170px;
+            width: 100%;
+            max-width: 12rem;
+            height: auto;
+            aspect-ratio: 1.05;
             padding: 3px;
             margin: 0;
             box-sizing: border-box;
         }
 
         .gold-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            justify-items: center;
+            gap: clamp(0.5rem, 3vw, 1rem);
         }
 
         .gold-line1,
@@ -2632,18 +2657,17 @@
         .gold-square6,
         .gold-square7,
         .gold-square8 {
-            width: 110px;
-            height: 105px;
+            width: 100%;
+            max-width: 12rem;
+            height: auto;
+            aspect-ratio: 1.05;
             padding: 3px;
             margin: 0;
             box-sizing: border-box;
         }
 
         .silver-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            justify-items: center;
+            gap: clamp(0.5rem, 3vw, 1rem);
         }
 
         .silver-line1,
@@ -2663,18 +2687,17 @@
         .silver-square9,
         .silver-square10,
         .silver-square11 {
-            width: 110px;
-            height: 100px;
+            width: 100%;
+            max-width: 12rem;
+            height: auto;
+            aspect-ratio: 1.05;
             padding: 3px;
             margin: 0;
             box-sizing: border-box;
         }
 
         .bronze-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            justify-items: center;
+            gap: clamp(0.5rem, 3vw, 1rem);
         }
 
         .bronze-line1,
@@ -2690,8 +2713,10 @@
         .bronze-square6,
         .bronze-square7,
         .bronze-square8 {
-            width: 110px;
-            height: 105px;
+            width: 100%;
+            max-width: 12rem;
+            height: auto;
+            aspect-ratio: 1.05;
             padding: 3px;
             margin: 0;
             box-sizing: border-box;

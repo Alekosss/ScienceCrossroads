@@ -59,16 +59,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 160px 0;
-        gap: 3rem;
+        padding: clamp(2rem, 4vw, 3.5rem) 0;
+        gap: clamp(1rem, 3vw, 2rem);
     }
 
     .CategoryHeader text {
         color: var(--break);
-        font-size: 35px;
+        font-size: var(--section-heading-size);
         font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        font-weight: 500;
+        line-height: 1.25;
         text-align: center;
     }
 
@@ -148,7 +148,8 @@
 
     @media (max-width: 768px) {
         .CategoryHeader text{
-            font-size:  clamp(6vw,7.5vw,9vw);
+            font-size: var(--section-heading-size-mobile);
+            line-height: 1.25;
             width: fit-content;
             align-items: center;
             justify-content: center;
@@ -158,9 +159,9 @@
         .CategoryHeader {
             display: flex;
             flex-direction: row;
-            gap: 5%;
-            padding: 0;
-            margin: 25% 0;
+            gap: 0.75rem;
+            padding: clamp(1.5rem, 6vw, 2.5rem) 0 0.75rem;
+            margin: 0;
         }
 
         .CategoryHeader hr {
@@ -169,26 +170,30 @@
 
         .Countdown {
             width: 100%;
-            zoom: 0.5;
+            zoom: 1;
         }
 
         .FAQ {
-            width: 80%;
-            margin: auto;
-            zoom: 0.65;
+            width: 100%;
+            margin: 0 auto 1.5rem;
+            padding: clamp(0.875rem, 4vw, 1.25rem);
+            border-radius: 1.5rem;
         }
 
         .LastHeader {
-            zoom: 0.7;
+            text-align: center;
         }
 
         .LocationAndRegister {
             display: flex;
             flex-direction: column;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .Location {
-            zoom: 0.4;
+            width: 100%;
+            zoom: 1;
             margin: auto;
             align-items: center;
             justify-content: center;
@@ -204,7 +209,22 @@
         }
 
         .Register {
-            zoom: 0.7;
+            zoom: 1;
+            max-width: 100%;
+        }
+
+        .Register :global(.RegisterButton) {
+            padding: 0.75rem 1.25rem;
+            border-radius: 1.5rem;
+        }
+
+        .Register :global(.RegisterButton span) {
+            font-size: 1.125rem;
+        }
+
+        .Register span {
+            font-size: 1.25rem;
+            line-height: 1.4;
         }
     }
 </style>

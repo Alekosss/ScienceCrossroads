@@ -47,8 +47,9 @@
 <style>
     .answer {
         border-radius: 25px;
-        width: 1000px;
-        height: 150px;
+        width: 100%;
+        min-height: 100px;
+        padding: 1rem;
     
         color: var(--secondary-color);
     
@@ -59,29 +60,34 @@
     }
 
     .answer span {
-        font-size: 20px;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
     .Question {
         border-radius: 50px;
-        height: 100px;
+        min-height: 56px;
+        width: 100%;
+        padding: 0.75rem 1rem;
 
         
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 25px;
+        gap: 1rem;
     }
 
     .Question span {
-        font-size: 28px;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        text-align: left;
     }
 
     .QuestionAnswer {
         display: flex;
         flex-direction: column;
-        gap: 150px;
+        gap: 0.5rem;
    }
 
     .QuestionButton {
@@ -91,9 +97,46 @@
         border: none;
         cursor: pointer;
         display: flex;
+        width: 100%;
+        padding: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .Question :global(svg) {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+    }
+
+    @media (max-width: 768px) {
+        .QuestionAnswer {
+            width: 100%;
+            gap: 0.5rem;
+        }
+
+        .Question {
+            min-height: 56px;
+            border-radius: 1rem;
+            padding: 0.75rem;
+        }
+
+        .Question span {
+            flex: 1;
+            font-size: 0.9375rem;
+            line-height: 1.4;
+        }
+
+        .answer {
+            min-height: 0;
+            padding: 0.75rem;
+        }
+
+        .answer span {
+            font-size: 0.9375rem;
+            line-height: 1.5;
+        }
     }
 
 </style>

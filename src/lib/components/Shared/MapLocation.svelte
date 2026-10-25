@@ -30,8 +30,10 @@
         display: flex;
         flex-direction: row;
         gap: 20px;
-        width: 800px;        
-        height: 400px;
+        width: min(800px, 100%);
+        min-height: 400px;
+        padding: 1.5rem;
+        box-sizing: border-box;
         align-items: center;
         align-content: center;
         justify-content: center;
@@ -46,8 +48,7 @@
         line-height: normal;
 
         display: flex;
-        width: 400px;
-        height: 100px;
+        width: 100%;
     }
 
     .MapLocationImage {
@@ -56,8 +57,8 @@
     }
 
     .MapLocationImage img{
-        width: 330px;
-        height: 330px;
+        width: min(330px, 100%);
+        height: auto;
     }
 
     .TitleAndDirections {
@@ -66,5 +67,37 @@
         justify-content: center;
         align-items: center;
         gap: 80px;
+        min-width: 0;
+    }
+
+    @media (max-width: 768px) {
+        .MapLocation {
+            flex-direction: column;
+            min-height: 0;
+            gap: 1rem;
+            padding: 1.25rem;
+            border-radius: 1.5rem;
+        }
+
+        .MapLocation text {
+            height: auto;
+            justify-content: center;
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+        }
+
+        .MapLocationImage {
+            width: 100%;
+            text-align: center;
+        }
+
+        .MapLocationImage img {
+            max-height: 16rem;
+            object-fit: contain;
+        }
+
+        .TitleAndDirections {
+            width: 100%;
+            gap: 1rem;
+        }
     }
 </style>

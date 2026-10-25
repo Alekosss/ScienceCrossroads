@@ -13,6 +13,8 @@
     --it: #B66DEA;
     --physics: #E29B60;
     --general: #EF8FBD;
+    --section-heading-size: clamp(1.5rem, 2.5vw, 2rem);
+    --section-heading-size-mobile: clamp(1.25rem, 5vw, 1.75rem);
 }
 
 html.dark {
@@ -22,8 +24,33 @@ html.dark {
 }
 
 html, body {
+  width: 100%;
+  min-width: 320px;
   margin: 0;
   background: var(--primary-color);
   color: var(--secondary-color);
   transition: background-color 0.35s linear, color 0.35s linear;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+.HomePage,
+.RegisterAndFAQ,
+.ContactPage,
+.SpeakersPage,
+.SponsorsPage,
+.schedulePage,
+.day7Schedule {
+  margin-inline: auto;
 }

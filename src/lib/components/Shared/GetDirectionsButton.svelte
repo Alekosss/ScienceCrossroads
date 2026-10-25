@@ -20,8 +20,9 @@
 
 <style>
     .GetDirectionButton {
-        width: 300px;
-        height: 100px;
+        width: min(300px, 100%);
+        min-height: 64px;
+        padding: 0.75rem 1rem;
         border-radius: 50px;
         background-color: var(--primary-color);
         border: none;
@@ -40,6 +41,16 @@
         text-decoration: none;
         display: inline-block;
         transition: transform 0.2s linear;
+    }
+
+    @media (max-width: 768px) {
+        .GetDirectionButton {
+            min-height: 52px;
+        }
+
+        .GetDirectionButton span {
+            font-size: clamp(1rem, 4vw, 1.25rem);
+        }
     }
 
     .GetDirectionButton:hover span {

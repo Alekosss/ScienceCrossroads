@@ -50,9 +50,19 @@
         color: inherit;
         cursor: pointer;
 
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
 
         transition: transform 0.2s linear;
+    }
+
+    .ThemeButton :global(svg) {
+        width: 24px;
+        height: 24px;
     }
 
     .ThemeButton:hover {

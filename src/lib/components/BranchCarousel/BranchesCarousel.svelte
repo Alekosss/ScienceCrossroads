@@ -49,7 +49,7 @@
         <BranchCarouselCard imageURL={Branches[index].logoURL} slogan={Branches[index].slogan} name={Branches[index].name} description={Branches[index].description}/>
     </div>
     <div class="ArrowsAndIndexing">
-        <button onclick={LeftArrowClick} class="Arrow">
+        <button type="button" aria-label="Previous branch" onclick={LeftArrowClick} class="Arrow">
             <ArrowLeft/>
         </button>
         <div class="Index">
@@ -61,7 +61,7 @@
                 {/if}
             {/each}
         </div>
-        <button onclick={RightArrowClick} class="Arrow">
+        <button type="button" aria-label="Next branch" onclick={RightArrowClick} class="Arrow">
             <ArrowRight/>
         </button>
     </div>
@@ -73,7 +73,6 @@
     }
 
     .Arrow {
-        transform: scale(1.75);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -81,9 +80,17 @@
         background-color: transparent;
         color: var(--secondary-color);
         cursor: pointer;
-        width: 50px;
-        height: 50px;
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        padding: 0;
         border-radius: 50%;
+        touch-action: manipulation;
+    }
+
+    .Arrow :global(svg) {
+        width: 20px;
+        height: 20px;
     }
 
     .Arrow:hover {
@@ -97,8 +104,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 15rem;
-        zoom: 0.6;
+        gap: clamp(2rem, 15vw, 15rem);
     }
 
     .Carousel {
@@ -122,12 +128,12 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 0.1rem;
-        gap: 5rem;
+        gap: 1.5rem;
     }
     
     .roundIndex {
-        width: 25px;
-        height: 25px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         margin: 10px;
     }
@@ -135,6 +141,25 @@
     @media (max-width: 768px) {
         .Carousel {
             height: auto;
+            gap: 1.5rem;
+        }
+
+        .ArrowsAndIndexing {
+            gap: clamp(1rem, 6vw, 2rem);
+        }
+
+        .Index {
+            gap: 0.5rem;
+        }
+
+        .roundIndex {
+            width: 12px;
+            height: 12px;
+            margin: 0.375rem;
+        }
+
+        .Active {
+            border-width: 3px;
         }
     }
 

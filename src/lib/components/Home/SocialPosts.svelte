@@ -245,30 +245,70 @@
     }
 
     @media (max-width: 768px) {
+        .SocialPosts {
+            width: 100%;
+            height: auto;
+            min-width: 0;
+            border-radius: 1.5rem;
+            padding: 0 0.75rem 1rem;
+        }
+
+        .Header {
+            width: 100%;
+        }
+
+        .HeaderText {
+            margin: 1.25rem 0 0.5rem;
+            padding: 0 0.5rem;
+            font-size: clamp(1rem, 4.5vw, 1.375rem);
+        }
+
+        .lineSeperator {
+            width: min(100%, 20rem);
+        }
+
+        .HeaderButton {
+            gap: 0.75rem;
+            margin: 0.75rem 0;
+            padding: 0.625rem 1rem;
+        }
+
+        .SocialTag {
+            font-size: 1rem;
+        }
+
         .Carousel {
-            width: 80%;
+            width: 100%;
+            height: clamp(15rem, 65vw, 24rem);
         }
 
         .Media {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 4rem;
-            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem 0 0;
         }
 
         .Social span {
             display: none;
         }
 
-        .SocialMedia {
-            width: 90%;
+        .Social {
+            min-width: 0;
+            min-height: 44px;
+            padding: 0.625rem;
+            gap: 0.5rem;
         }
 
-        .SocialPosts {
-            width: 80%;
-            padding-bottom: 1.5rem;
+        .SocialMedia {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .SocialMedia :global(svg) {
+            width: 24px;
+            height: 24px;
         }
     }
 </style>

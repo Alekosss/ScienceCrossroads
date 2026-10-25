@@ -187,35 +187,61 @@
 
         .Footer {
             height: auto;
-            padding: 1rem 1rem 0rem;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+            border-radius: 1.5rem;
         }
 
         .Media {
-            zoom: 0.55;
+            zoom: 1;
+            display: flex;
+            flex: 0 0 44px;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
         }
 
         .Media span {
             display: none;
         }
 
+        .SVG {
+            width: 24px;
+            height: 24px;
+            transform: none;
+        }
+
+        .SVG :global(svg) {
+            width: 24px;
+            height: 24px;
+        }
+
         .SocialMedia {
-            gap: 5%;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0;
         }
 
         .Top {
-            gap: 1%;
-            margin: 0 0 2%;
+            gap: 0.5rem;
+            margin: 0 0 0.5rem;
         }
 
         .Top hr {
-            width: 22.5%;
+            width: auto;
+            flex: 1;
+            height: 2px;
         }
 
         .Top span{
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: clamp(4vw,5vw,6vw);
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+            white-space: nowrap;
         }
     }
 </style>

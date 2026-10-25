@@ -53,6 +53,9 @@
         position: sticky;
         top: 6.5rem;
         z-index: 2000;
+        width: fit-content;
+        pointer-events: none;
+        margin-left: 2rem;
     }
 
     .languageButton {
@@ -69,11 +72,13 @@
         width: 7vw;
         height: auto;
         padding: 0.4rem;
-        transform: translateX(-40%);
+        transform: none;
+        pointer-events: auto;
     }
 
     .languageButton img {
-        zoom: 0.7;
+        width: 32px;
+        height: 32px;
         transition: transform 0.2s ease-in-out;
     }
 
@@ -93,6 +98,7 @@
         top: 100%;
         left: 0;
         z-index: 2000;
+        pointer-events: auto;
     }
 
     .Option {
@@ -121,25 +127,37 @@
 
     @media (max-width: 768px) {
         .languageButtonContainer {
-            width: 20vw;
-            top: 9rem;
+            width: calc(100% - 2rem);
+            margin: 0 auto;
+            top: 6rem;
+            z-index: 900;
+            pointer-events: none;
         }
 
         .languageButton {
-            width: 20vw;
-            height: auto;
+            width: 48px;
+            height: 48px;
+            padding: 0.5rem;
+            transform: none;
+            pointer-events: auto;
         }
 
         .languageOptions {
-            width: 17.5vw;
-            height: 10vh;
+            width: 88px;
+            height: auto;
+            pointer-events: auto;
         }
 
        .Option img {
-            width: 7.5vw;
-            height: auto;
+            width: 24px;
+            height: 24px;
             object-fit: contain;
             flex-shrink: 0;
+        }
+
+        .Option {
+            width: 88px;
+            min-height: 44px;
         }
     }
 </style>

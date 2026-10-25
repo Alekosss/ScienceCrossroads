@@ -62,6 +62,7 @@
         justify-content: center;
         gap: 0.3rem;
         width: 25%;
+        min-width: 0;
     }
 
     .MenuList {
@@ -164,7 +165,6 @@
     .Theme {
         background-color: var(--secondary-color);
         color: var(--primary-color);
-        zoom: 0.7;
     }
 
 
@@ -174,8 +174,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 90%;
-            height: 90%;
+            width: 44px;
+            height: 44px;
+            padding: 0.5rem;
+            border: 0;
             border-radius: 15px;
             gap: 2%;
             background-color: var(--secondary-color);
@@ -183,7 +185,8 @@
 
         .burgerButton hr {
             width: 90%;
-            height: 5%;
+            height: 2px;
+            margin: 0;
             color: var(--primary-color);
             background-color: var(--primary-color);
             border: none;
@@ -191,8 +194,9 @@
         }
 
         .menuButton {
-            width: 20%;
-            height: 100%;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -204,16 +208,21 @@
             justify-content: center;
 
             position: absolute;
-            top: 100%;   /* add this */
+            top: 100%;
             right: 0;
+            z-index: 1;
             padding: 2%;
             border-radius: 5%;
             background-color: var(--secondary-color);
         }
 
         .MenuList a {
+            display: block;
+            min-height: 44px;
+            padding: 0.75rem 1rem;
             text-decoration: none;
             color: var(--primary-color);
+            touch-action: manipulation;
         }
         
         .navText {
@@ -221,13 +230,36 @@
         }
 
         .NavigationBar {
-            gap: 7.5%;
-            justify-content: center;
+            width: calc(100% - 2rem);
+            min-height: 64px;
+            height: auto;
+            padding: 0.5rem 0.75rem;
+            gap: 0.5rem;
+            justify-content: space-between;
             align-items: center;
+            margin-top: 1rem;
+            z-index: 2100;
+        }
+
+        .logoAndTitle {
+            width: auto;
+            flex: 1;
+            justify-content: flex-start;
+        }
+
+        .plainLogo {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
         }
 
         .Title span {
-            font-size: clamp(2.75vw,2.875vw,3vw);
+            font-size: clamp(12px, 3.4vw, 16px);
+            white-space: nowrap;
+        }
+
+        .Theme {
+            flex: 0 0 auto;
         }
     }
 
