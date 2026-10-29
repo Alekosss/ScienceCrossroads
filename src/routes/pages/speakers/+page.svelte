@@ -97,14 +97,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 100px 0;
+        padding: clamp(2rem, 4vw, 3rem) 0;
         gap: 60px;
         
         color: var(--break);
-        font-size: clamp(2vw,2.25vw,2.5vw);
+        font-size: var(--section-heading-size);
         font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        font-weight: 500;
+        line-height: 1.25;
     }
     
     .CategoryHeader hr {
@@ -198,7 +198,8 @@
 
     @media (max-width: 768px) {
         .CategoryHeader span{
-            font-size:  clamp(6vw,7.5vw,9vw);
+            font-size: var(--section-heading-size-mobile);
+            line-height: 1.25;
             width: fit-content;
             align-items: center;
             justify-content: center;
@@ -208,9 +209,9 @@
         .CategoryHeader {
             display: flex;
             flex-direction: row;
-            gap: 5%;
-            padding: 0;
-            margin: 25% 0;
+            gap: 0.75rem;
+            padding: clamp(1.5rem, 6vw, 2.5rem) 0 0.75rem;
+            margin: 0;
         }
 
         .CategoryHeader hr {
@@ -218,12 +219,30 @@
         }
 
         .ScrollToArea {
-            width: 90%;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 0.5rem;
+            width: 100%;
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.625rem;
+            padding: 0.75rem;
+            border-radius: 1.25rem;
+        }
+
+        .ShowHide {
+            min-width: 0;
+            min-height: 44px;
+            padding: 0.625rem 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.3;
+        }
+
+        .SpeakersPage :global(.SpeakerGrid) {
+            width: 100%;
+        }
+
+        .SpeakersPage :global(.GridHeader) {
+            font-size: 1.25rem;
+            line-height: 1.3;
         }
     }
 </style>

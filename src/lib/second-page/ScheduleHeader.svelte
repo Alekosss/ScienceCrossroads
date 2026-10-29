@@ -15,6 +15,7 @@
 </div>
 
 <div class="filters">
+
     <div class="filter-all">
 
         <div class="filters-item">
@@ -25,7 +26,8 @@
         <button class="show-hide" onclick={() => onFilter(t('general'))}>{activeFilter === t('general') ? t('show_all') : t('show_only')}</button>
 
     </div>
-    
+
+
     <div class="filter-all">
 
         <div class="filters-item">
@@ -67,45 +69,51 @@
         </div>
 
         <button class="show-hide" onclick={() => onFilter(t('BREAK'))}>{activeFilter === t('BREAK') ? t('show_all') : t('show_only')}</button>
-        
+
     </div>
+
 </div>
+
+
 
 <style>
     .schedule-title {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        margin-top:30px;
+        gap: clamp(1rem, 3vw, 2rem);
+        margin-top: 1.5rem;
     }
 
     .line{
         width: 250px;
         height: 2px;
-        background-color: #DD5E5E;
+        background-color: var(--break);
     }
 
     .schedule-title h1{
-        font-size: 30px;
-        font-weight: 500px;
-        color: #DD5E5E;
+        margin: 0;
+        font-size: var(--section-heading-size);
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--break);
     }
 
     .filters{
         display:flex;
+        flex-wrap: wrap;
         align-items: center;
         flex-direction: row;
-        gap: 100px;
+        column-gap: clamp(1rem, 5vw, 6.25rem);
+        row-gap: 1.25rem;
         justify-content: center;
 
         background-color: #D9D9D9;
         border-radius: 25px;
-        padding: 30px 30px;
+        padding: 1.5rem;
 
-        margin-top:50px;
-        margin-left: 20px;
-        margin-right: 20px;
+        width: 90%;
+        margin: 3rem auto 0;
     }
 
     .filters-item{
@@ -117,7 +125,10 @@
 
         text-align: center;
         color:black;
+        max-width: 100%;
     }
+
+    
 
     .color-box{
         width: 15px;
@@ -149,6 +160,7 @@
         display: flex;
         align-items:center;
         gap: 20px;
+        min-width: 0;
     }
 
     .show-hide{
@@ -163,31 +175,39 @@
 
     @media (max-width: 768px) {
         .schedule-title {
-        gap: 10px;
-        margin-top: 20px;
+        gap: 0.75rem;
+        margin: 1.5rem 0 0;
         }
 
         .schedule-title h1 {
-        font-size: 22px;
+        font-size: var(--section-heading-size-mobile);
         text-align: center;
         }
 
         .line {
-        width: 70px;
+        width: auto;
+        flex: 1;
+        max-width: 5rem;
         }
 
         .filters {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px 15px;
+        gap: 0.75rem;
 
-        padding: 20px 15px;
+        padding: 1rem;
 
-        margin-top: 30px;
-        margin-left: 10px;
-        margin-right: 10px;
+        width: calc(100% - 2rem);
+        margin: 1.5rem auto;
 
         border-radius: 20px;
+        }
+
+        .session-legend {
+        gap: 0.375rem 0.75rem;
+        width: calc(100% - 2rem);
+        margin-top: 0;
+        font-size: 0.7rem;
         }
 
         .filter-all {
@@ -196,9 +216,10 @@
         }
 
         .filters-item {
-        gap: 5px;
+        gap: 0.375rem;
         justify-content: center;
-        font-size: 13px;
+        font-size: 0.75rem;
+        line-height: 1.3;
         }
 
         .color-box {
@@ -208,8 +229,9 @@
         }
 
         .show-hide {
-        font-size: 12px;
-        padding: 4px 8px;
+        min-height: 44px;
+        font-size: 0.75rem;
+        padding: 0.5rem;
         }
     }
 </style>

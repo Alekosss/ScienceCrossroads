@@ -236,6 +236,36 @@
     }
 
     @media (max-width: 768px) {
+        .SpeakerCard {
+            width: min(100%, 24rem);
+            height: auto;
+            min-height: 0;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
+
+        .Image img {
+            width: 7rem;
+            height: 7rem;
+            object-fit: cover;
+        }
+
+        .NamePosition {
+            align-items: center;
+            text-align: center;
+            gap: 0.25rem;
+        }
+
+        .Name {
+            width: auto;
+            justify-content: center;
+            font-size: 1.125rem;
+        }
+
+        .Position {
+            font-size: 0.9375rem;
+        }
+
         .cardContent {
             display: flex;
             flex-direction: column;

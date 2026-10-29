@@ -186,14 +186,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 160px 0;
-        gap: 60px;
+        padding: clamp(2rem, 4vw, 3.5rem) 0;
+        gap: clamp(1rem, 3vw, 2rem);
         
         color: var(--break);
-        font-size: 35px;
+        font-size: var(--section-heading-size);
         font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        font-weight: 500;
+        line-height: 1.25;
     }
     
     .CategoryHeader hr {
@@ -369,13 +369,26 @@
 
     @media (max-width: 768px) {
         .AddressSubjectName {
-            width: 90%;
+            width: 100%;
+            padding: 0;
             flex-direction: column;
-            gap: 5vh;
+            gap: 1rem;
+        }
+
+        .AddressSubjectName input {
+            width: 100%;
+            max-width: 24rem;
+            min-height: 44px;
+            font-size: 16px;
+        }
+
+        .LabelInput {
+            width: 100%;
+            font-size: 1rem;
         }
 
          .CategoryHeader text{
-            font-size:  clamp(8vw,10vw,12vw);
+            font-size: var(--section-heading-size-mobile);
             width: fit-content;
             align-items: center;
             justify-content: center;
@@ -385,9 +398,9 @@
         .CategoryHeader {
             display: flex;
             flex-direction: row;
-            gap: 5%;
-            padding: 0;
-            margin: 25% 0;
+            gap: 0.75rem;
+            padding: clamp(1.5rem, 6vw, 2.5rem) 0 0.75rem;
+            margin: 0;
         }
 
         .CategoryHeader hr {
@@ -403,24 +416,21 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin: 0 auto;
+            margin: 0 auto 0.75rem;
             padding: 0;
         }
 
         .Description text{
-            font-size: clamp(5vw,6vw,7vw);
+            font-size: clamp(1rem, 4vw, 1.25rem);
         }
         
-        input {
-            zoom: 2;
-        }
-
-        label {
-            font-size: 5vw;
-        }
-
         .Media {
-            zoom: 0.7;
+            zoom: 1;
+            max-width: 100%;
+        }
+
+        .ContactPage {
+            overflow: visible;
         }
 
         .MailingForm {
@@ -428,22 +438,66 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 90vw;
+            width: 100%;
+            max-width: 100%;
+            padding: 1rem;
+            margin: 1rem 0 2rem;
+            border-radius: 1.5rem;
+        }
+
+        .MailingForm input,
+        .MailingForm textarea {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .dialog {
+            width: calc(100% - 2rem);
+            max-width: 30rem;
+            gap: 1.5rem;
+            padding: 1.5rem 1rem;
+            border-radius: 1.25rem;
+            text-align: center;
+        }
+
+        .dialog span {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .goBack {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+        }
+
+        .Message {
+            width: 100%;
+            font-size: 1rem;
         }
 
         .Message textarea {
-            width: auto;
-            margin: 0 2rem;
-            font-size: clamp(2.5vw,3vw,3.5vw);
+            width: 100%;
+            padding: 1rem;
+            font-size: 16px;
+            border-radius: 1rem;
         }
 
         .SendButton {
-            width: 40%;
+            max-width: 100%;
+            min-height: 48px;
+            height: auto;
+            margin: 1.25rem auto;
+        }
+
+        .SendButton text {
+            font-size: 1rem;
         }
 
         .Social {
-            gap: 5vw;
-            zoom: 0.9;
+            gap: clamp(0.75rem, 4vw, 1.25rem);
+            flex-wrap: wrap;
+            padding: 1rem 0 1.5rem;
         }
     }
 </style>

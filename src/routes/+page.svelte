@@ -133,18 +133,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 160px 0;
+        padding: clamp(2rem, 4vw, 3.5rem) 0;
         width: 100%;
-        gap: 3rem;
+        gap: clamp(1rem, 3vw, 2rem);
     }
     
     .CategoryHeader text {
         color: var(--break);
-        font-size: 35px;
+        font-size: var(--section-heading-size);
         font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-align: center;
+        font-weight: 500;
+        line-height: 1.25;
     }
     
     .CategoryHeader hr {
@@ -424,12 +423,16 @@
 
     @media (max-width: 768px) {
         .BranchesCarousel {
-            zoom: 0.3;
             height: auto;
         }
 
+        .HomePage {
+            width: calc(100% - 2rem);
+        }
+
         .CategoryHeader text{
-            font-size: clamp(4vw,5vw,6vw);
+            font-size: var(--section-heading-size-mobile);
+            line-height: 1.25;
             width: fit-content;
             align-items: center;
             justify-content: center;
@@ -439,9 +442,9 @@
         .CategoryHeader {
             display: flex;
             flex-direction: row;
-            gap: 5%;
-            padding: 0;
-            margin: 25% 0;
+            gap: 0.75rem;
+            padding: clamp(1.5rem, 6vw, 2.5rem) 0;
+            margin: 0;
         }
 
         .CategoryHeader hr {
@@ -449,18 +452,14 @@
         }
 
         .ContentStatistics {
-            zoom: 0.9;
-            width: 80vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            align-self: center;
-            justify-self: center;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            row-gap: 1rem;
+            margin: 1.5rem 0;
         }
 
         .Countdown {
-            zoom: 0.75;
+            zoom: 1;
             margin: 0;
         }
 
@@ -474,30 +473,44 @@
         }
         
         .Description text {
-            font-size: 2.75vw;
+            font-size: clamp(1rem, 4vw, 1.125rem);
         }        
 
-        .DescRight {
-            text-align: end;
-        }
-
         .Details {
+            zoom: 1;
             width: 100%;
+            min-width: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0px;
-            padding: 0px;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
         }
 
         .EventDetails {
-            zoom: 0.9;
-            justify-content: center;
-            align-items: center;
-            display: flex;
             flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: 1.5rem;
+            overflow: visible;
+            width: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        .EventDetails span {
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            text-align: center;
+        }
+
+        .Countdown {
+            width: 100%;
+        }
+
+        .Date {
+            padding: 0 0 0.75rem;
         }
 
         .ITAndOutcomes {
@@ -512,19 +525,36 @@
         }
 
         .MapCard {
-            zoom: 0.575;
+            zoom: 1;
+            width: 100%;
             margin: auto;
         }
 
+        .RegistrationContent {
+            width: 100%;
+            gap: 0.75rem;
+        }
+
         .OrganizingTeam {
-            font-size: clamp(3vw,4vw,5vw);
+            gap: 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.25rem);
+        }
+
+        .OrganizingText {
+            width: 100%;
+            padding: 0 0.25rem;
+            font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+            line-height: 1.3;
         }
 
         .OrganizingTeam span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
             text-align: center;
+        }
+
+        .BranchesCarousel {
+            width: 100%;
+            padding: 0 0.25rem;
         }
 
         .PhysicsAndParticipants {
@@ -537,31 +567,72 @@
         }
 
         .RegistrationContent {
-            zoom: .9;
+            zoom: 1;
+            padding: 0 1rem;
+            font-size: clamp(1rem, 4vw, 1.5rem);
         }
 
         .RegButton {
-            zoom: 0.8;
+            zoom: 1;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .RegButton :global(.RegisterButton) {
+            padding: 0.875rem 1.5rem;
+        }
+
+        .RegButton :global(.RegisterButton span) {
+            font-size: clamp(1.125rem, 5vw, 1.5rem);
         }
 
         .SocialMediaPosts {
-            zoom: 0.5;
+            zoom: 1;
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-            overflow-y: hidden;
-        }
-
-        .Slogan {
-            font-size: clamp(3.5vw,4vw,4.5vw);
+            min-width: 0;
         }
 
         .TextHeader text {
-            font-size: clamp(1.5vw,2.5vw,4vw);
+            font-size: clamp(1rem, 4vw, 1.5rem);
+        }
+
+        .ScienceContent {
+            flex-direction: column;
+            gap: 0.875rem;
+            margin: 1.5rem 0;
+        }
+
+        .ChImage,
+        .ITImage,
+        .PhImage {
+            width: 100%;
+            height: auto;
+            max-height: 18rem;
+        }
+
+        .TextContent,
+        .SocialMediaPosts,
+        .Statistic {
+            zoom: 1;
+            width: 100%;
+            margin: 0;
+        }
+
+        .TextContent {
+            gap: 0.75rem;
+        }
+
+        .Description {
+            text-align: center;
+        }
+
+        .Statistic {
+            justify-self: stretch;
+        }
+
+        .Slogan {
+            padding: clamp(2.5rem, 10vw, 3.5rem) 0;
+            font-size: clamp(1.25rem, 5vw, 2rem);
         }
     }
 </style>

@@ -39,9 +39,10 @@
         justify-content: center;
         align-items: center;
 
-        gap: 1rem;
-        margin: 15px;
+        gap: clamp(1rem, 4vw, 2rem);
+        margin: 1rem;
         width: 50%;
+        min-width: 0;
     }
 
     .BranchName {
@@ -71,9 +72,8 @@
         align-items: center;
 
         padding: 20px;
-        width: 60%;
-        height: 60vh;
-        min-height: 60vh;
+        width: min(100%, 60rem);
+        min-height: 22rem;
         box-sizing: border-box;
 
         background-color: var(--secondary-color);
@@ -101,8 +101,9 @@
         justify-content: center;
         align-items: center;
 
-        gap: 50px;
+        gap: 1.5rem;
         width: 50%;
+        min-width: 0;
     }
 
     .LogoAndSlogan img {
@@ -112,24 +113,46 @@
 
     @media (max-width: 768px) {
         .branchSlogan span {
-            font-size: clamp(8vw,9vw,10vw);
+            font-size: clamp(1rem, 4.5vw, 1.25rem);
+            line-height: 1.4;
         }
 
         .BranchNameAndDescription {
-            height: auto;
+            width: 100%;
+            gap: 0.75rem;
+            margin: 0;
         }
 
         .BranchName span {
-            font-size: clamp(9vw,10vw,11vw);
+            font-size: clamp(1.25rem, 6vw, 1.75rem);
         }
         
         .CarouselCard {
-            width: 95%;
-            height: 80vh;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            min-height: 0;
+            padding: clamp(1rem, 5vw, 1.5rem);
+            border-radius: 1.5rem;
+        }
+
+        .LogoAndSlogan {
+            width: 100%;
+            gap: 0.75rem;
+            margin: 0;
+        }
+
+        .LogoAndSlogan img {
+            width: clamp(6rem, 30vw, 9rem);
+            max-height: 9rem;
+            object-fit: contain;
         }
 
         .Description span {
-            font-size: clamp(7vw,8vw,9vw);
+            font-size: clamp(0.9375rem, 4vw, 1.125rem);
+            line-height: 1.5;
+            text-align: center;
         }
     }
 </style>

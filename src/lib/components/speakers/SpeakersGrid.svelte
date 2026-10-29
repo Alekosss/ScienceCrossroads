@@ -72,7 +72,13 @@
         }
 
         .SpeakersGrid {
-            padding: 0px;
+            gap: 0.75rem;
+            padding: 0 0 1rem;
+            border-radius: 1.5rem;
+        }
+
+        .Grid {
+            gap: 0.75rem;
         }
     }
 </style>

@@ -629,7 +629,8 @@
 
     @media (max-width: 768px) {
         .Confirmation ul {
-            zoom: 2.8;
+            padding-left: 1.25rem;
+            font-size: 0.875rem;
         }
 
         .LabelInput {
@@ -642,9 +643,12 @@
         }
 
         .overlayContent {
-            width: 110vw;
-            height: 65vh;
-            gap: 7vh;
+            width: calc(100vw - 2rem);
+            max-width: 100%;
+            height: auto;
+            max-height: calc(100vh - 2rem);
+            overflow-y: auto;
+            gap: 1.5rem;
         }
         
         .RegistrationSteps {
