@@ -87,6 +87,7 @@
         color:var(--chemistry);
         zoom: 1.5;
         text-decoration: underline;
+        text-align: center;
     }
 
     .FAQ {
