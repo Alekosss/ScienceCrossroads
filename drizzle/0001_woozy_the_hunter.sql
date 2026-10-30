@@ -1,1 +1,0 @@
-ALTER TABLE `registrations` ADD `phone` text NOT NULL;
