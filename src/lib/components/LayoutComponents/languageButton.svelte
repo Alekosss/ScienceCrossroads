@@ -55,7 +55,8 @@
         z-index: 2000;
         width: fit-content;
         pointer-events: none;
-        margin-left: 2rem;
+        margin-left: 2em;
+        transform: translateX(-60%);
     }
 
     .languageButton {
@@ -69,7 +70,7 @@
 
         cursor: pointer;
 
-        width: 7vw;
+        width: 8vw;
         height: auto;
         padding: 0.4rem;
         transform: none;
@@ -90,13 +91,11 @@
         background-color: var(--secondary-color);
         border-radius: 0.5rem;
         width: 5.5vw;
-        justify-content: center;
-        align-items: center;
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
         z-index: 2000;
         pointer-events: auto;
     }

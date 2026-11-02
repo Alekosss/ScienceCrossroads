@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="PhysicsAndParticipants ScienceContent ImageRight">
+        <div class="PhysicsAndParticipants ScienceContentMiddle ImageRight">
             <div class="TextContent">
                 <div class="TextHeader">
                     <text>{t('event_participant')}</text>
@@ -363,7 +363,7 @@
         color: var(--it);
     }
 
-    .ScienceContent {
+    .ScienceContent,.ScienceContentMiddle {
         gap: 20px;
         display: flex;
     }
@@ -420,16 +420,16 @@
         align-self: center;
         justify-self: center;
     }
-
+    
     @media (max-width: 768px) {
+        
         .BranchesCarousel {
+            width: 100%;
+            padding: 0 0.25rem;
             height: auto;
         }
 
-        .HomePage {
-            width: calc(100% - 2rem);
-        }
-
+        
         .CategoryHeader text{
             font-size: var(--section-heading-size-mobile);
             line-height: 1.25;
@@ -438,7 +438,7 @@
             justify-content: center;
             display: flex;
         }
-
+        
         .CategoryHeader {
             display: flex;
             flex-direction: row;
@@ -446,36 +446,44 @@
             padding: clamp(1.5rem, 6vw, 2.5rem) 0;
             margin: 0;
         }
-
+        
         .CategoryHeader hr {
             display: none;
         }
-
+        
         .ContentStatistics {
             grid-template-columns: 1fr;
             grid-template-rows: auto;
             row-gap: 1rem;
             margin: 1.5rem 0;
         }
-
+        
         .Countdown {
             zoom: 1;
             margin: 0;
         }
-
+        
         .ChImage {
             height: 17.5vh;
         }
-
+        
         .ChemistryAndOverview {
             height: auto;
             min-height: 15vh;
         }
         
+        .Countdown {
+            width: 100%;
+        }
+        
+        .Date {
+            padding: 0 0 0.75rem;
+        }
+
         .Description text {
             font-size: clamp(1rem, 4vw, 1.125rem);
         }        
-
+        
         .Details {
             zoom: 1;
             width: 100%;
@@ -488,7 +496,7 @@
             margin: 0;
             padding: 0;
         }
-
+        
         .EventDetails {
             flex-direction: column;
             justify-content: flex-start;
@@ -499,20 +507,16 @@
             margin: 0;
             padding: 0;
         }
-
+        
         .EventDetails span {
             font-size: clamp(1rem, 4vw, 1.25rem);
             text-align: center;
         }
-
-        .Countdown {
-            width: 100%;
+        
+        
+        .HomePage {
+            width: calc(100% - 2rem);
         }
-
-        .Date {
-            padding: 0 0 0.75rem;
-        }
-
         .ITAndOutcomes {
             display: flex;
             flex-direction: row;
@@ -530,42 +534,38 @@
             margin: auto;
         }
 
-        .RegistrationContent {
-            width: 100%;
-            gap: 0.75rem;
-        }
-
+        
         .OrganizingTeam {
             gap: 1.5rem;
             font-size: clamp(1rem, 4vw, 1.25rem);
         }
-
+        
         .OrganizingText {
             width: 100%;
             padding: 0 0.25rem;
             font-size: clamp(1.125rem, 4.5vw, 1.5rem);
             line-height: 1.3;
         }
-
+        
         .OrganizingTeam span {
             display: block;
             text-align: center;
         }
-
-        .BranchesCarousel {
-            width: 100%;
-            padding: 0 0.25rem;
-        }
-
+        
         .PhysicsAndParticipants {
             height: auto;
             min-height: 15vh;
         }
-
+        
         .PhImage{
             height: 17.5vh;
         }
-
+        
+        .RegistrationContent {
+            width: 100%;
+            gap: 0.75rem;
+        }
+        
         .RegistrationContent {
             zoom: 1;
             padding: 0 1rem;
@@ -600,6 +600,13 @@
             flex-direction: column;
             gap: 0.875rem;
             margin: 1.5rem 0;
+        }
+
+        .ScienceContentMiddle {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0.875rem;
+            margin: 1.5rem 0; 
         }
 
         .ChImage,
