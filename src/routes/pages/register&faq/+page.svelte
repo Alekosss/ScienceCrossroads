@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import CountdownClock from "$lib/components/Shared/CountdownClock.svelte";
     import MapLocation from "$lib/components/Shared/MapLocation.svelte";
     import Qna from "$lib/components/Register&FAQ/Qna.svelte";
@@ -8,8 +8,6 @@
 
     let showing = $state(true);
 
-    const q = "Where will the event take place?";
-    const a = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.";
 </script>
 
 <div class="RegisterAndFAQ">
@@ -43,9 +41,15 @@
         <hr/>
     </div>
     <div class="FAQ">
-        <Qna q={"question 1"} a={"answer1"}/>
-        <Qna/>
-        <Qna/>
+        <Qna q={t('question_who')} a={t('answer_who')}/>
+        <Qna q={t('question_exc')} a={t('answer_exc')}/>
+        <Qna q={t('question_stem')} a={t('answer_stem')}/>
+        <Qna q={t('question_knowledge')} a={t('answer_knowledge')}/>
+        <Qna q={t('question_place')} a={t('answer_place')}/>
+        <Qna q={t('question_cost')} a={t('answer_cost')}/>
+        <Qna q={t('question_organizers')} a={t('answer_organizers')}/>
+        <Qna q={t('question_register')} a={t('answer_register')}/>
+
     </div>
 </div>
 
@@ -92,8 +96,8 @@
 
     .FAQ {
         background-color: var(--secondary-color);
-        border-radius: 50px;
-        margin: 0px 30rem;
+        border-radius: 2rem;
+        margin: 0px auto;
         gap: 20px;
         padding: 25px;
 
@@ -148,6 +152,7 @@
     .RegisterAndFAQ {
         font-family: var(--font-family);
         justify-self: center;
+        width: 90vw;
     }
 
     @media (max-width: 768px) {

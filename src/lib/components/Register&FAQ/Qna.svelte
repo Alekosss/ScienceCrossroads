@@ -82,6 +82,7 @@
         font-size: 1.25rem;
         line-height: 1.4;
         text-align: left;
+    
     }
 
     .QuestionAnswer {
@@ -123,14 +124,16 @@
         }
 
         .Question span {
-            flex: 1;
             font-size: 0.9375rem;
             line-height: 1.4;
+            text-align: center;
+            width: fit-content;
+            width: 80%;
         }
 
         .answer {
             min-height: 0;
-            padding: 0.75rem;
+            padding: 1rem 2rem;
         }
 
         .answer span {

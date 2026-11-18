@@ -10,10 +10,10 @@
 
     let SloganTarget = $state();
 
-    const amountOfW = 10;
-    const amountOfSpeakers = 100;
-    const amountOfSpeeches = 80;
-    const AmountOfR = 15;
+    const amountOfW = 12;
+    const amountOfSpeakers = 20;
+    const amountOfSpeeches = 15;
+    const AmountOfR = 8;
 
 </script>
 
@@ -383,7 +383,7 @@
         zoom: 0.6;
         width: 50%;
         justify-content: center;
-        display: flex;
+        display: none;
     }
 
     .TextContent {

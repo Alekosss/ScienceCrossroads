@@ -57,9 +57,11 @@
         pointer-events: none;
         margin-left: 2em;
         transform: translateX(-60%);
+        
     }
 
     .languageButton {
+        background-color: var(--secondary-color);
         border-radius: 2rem;
         border: none;
 
@@ -111,6 +113,7 @@
         border: none;
         gap: 0.5rem;
         cursor: pointer;
+        background-color: var(--secondary-color);
     }
 
     .Option:hover {
@@ -126,19 +129,21 @@
 
     @media (max-width: 768px) {
         .languageButtonContainer {
-            width: calc(100% - 2rem);
-            margin: 0 auto;
             top: 6rem;
             z-index: 900;
             pointer-events: none;
+            width: 35vw;
+            border-radius: 2rem;
+            background-color: var(--secondary-color);
         }
 
         .languageButton {
-            width: 48px;
+            width: 10vw;
             height: 48px;
             padding: 0.5rem;
             transform: none;
             pointer-events: auto;
+            justify-self: end;
         }
 
         .languageOptions {

@@ -12,7 +12,7 @@
 
     async function animateCounter() {
         while (count < amount) {
-            await sleep(0.025);
+            await sleep(0.05);
             count++;
         }
     }

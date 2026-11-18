@@ -5,6 +5,7 @@
     import Facebook from "$lib/assets/Icons/Facebook.svelte";
     import LinkedIn from "$lib/assets/Icons/LinkedIn.svelte";
     import TikTok from "$lib/assets/Icons/TikTok.svelte";
+    import PlainLogo from "$lib/assets/PlainLogo.png"
 
     const FacebookURL = "https://www.facebook.com/profile.php?id=61592636290886&rdid=ErViNhknuDdcfzTh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DC1PWhGrR%2F";
     const InstagramURL = "https://www.instagram.com/sciencecrossroads/";
@@ -52,7 +53,9 @@
             </div>
         </button>
     </div>
-    <div class="Carousel"></div>
+    <div class="Carousel">
+        <img src={PlainLogo} alt="Instagram Post"/>
+    </div>
     <div class="SocialMedia">
         <div class="Media">
             <button onclick={OpenInstagram} class="IG Social">
@@ -88,6 +91,12 @@
         width: 50vw;
         height: 60vh;
         background-color: var(--it);
+    }
+
+    .Carousel img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
     }
 
     .Facebook span{
