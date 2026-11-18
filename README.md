@@ -29,7 +29,3 @@ To make the development server accessible from other devices on your local netwo
 ```bash
 npm run dev -- --host
 ```
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
