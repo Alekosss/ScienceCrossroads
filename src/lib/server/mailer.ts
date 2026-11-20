@@ -1,10 +1,10 @@
 import nodemailer from 'nodemailer';
-import { GMAIL_USER, GMAIL_APP_PASSWORD } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 export const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: GMAIL_USER,
-    pass: GMAIL_APP_PASSWORD,
+    user: env.GMAIL_USER,
+    pass: env.GMAIL_APP_PASSWORD,
   },
 });

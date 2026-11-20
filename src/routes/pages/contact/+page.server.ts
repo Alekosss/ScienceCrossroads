@@ -1,7 +1,7 @@
 import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
 import { transporter } from '$lib/server/mailer';
-import { GMAIL_USER, RECIPIENT_EMAIL } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 export const actions: Actions = {
   default: async ({ request }) => {
@@ -24,9 +24,9 @@ export const actions: Actions = {
 
     try {
       await transporter.sendMail({
-        from: GMAIL_USER,          // Gmail requires "from" = your authenticated address
+        from: env.GMAIL_USER,          // Gmail requires "from" = your authenticated address
         replyTo: email,            // so you can reply directly to the user
-        to: RECIPIENT_EMAIL,
+        to: env.RECIPIENT_EMAIL,
         subject: subject,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
         html: `
