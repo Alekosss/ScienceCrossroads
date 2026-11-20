@@ -1,9 +1,9 @@
 import { google } from 'googleapis';
-import {GOOGLE_SHEET_ID,GOOGLE_SERVICE_ACCOUNT_EMAIL,GOOGLE_PRIVATE_KEY} from '$env/static/private';
+import { env } from '$env/dynamic/private';
 
 const auth = new google.auth.JWT({
-	email: GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    key: GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+	email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    key: (env.GOOGLE_PRIVATE_KEY ?? '').replace(/\\n/g, '\n'),
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
 });
 
@@ -14,7 +14,7 @@ const sheets = google.sheets({
 
 export async function getRegistrations() {
 	const result = await sheets.spreadsheets.values.get({
-		spreadsheetId: GOOGLE_SHEET_ID,
+		spreadsheetId: env.GOOGLE_SHEET_ID,
 		range: 'Registrations!A:C'
 	});
 
@@ -23,7 +23,7 @@ export async function getRegistrations() {
 
 export async function addRegistration(name: String, mail: String, number: String) {
     const result = await sheets.spreadsheets.values.get({
-        spreadsheetId: GOOGLE_SHEET_ID,
+        spreadsheetId: env.GOOGLE_SHEET_ID,
         range: 'Registrations!A:C'
     });
 
@@ -32,7 +32,7 @@ export async function addRegistration(name: String, mail: String, number: String
 
     // Then write directly to that row
     await sheets.spreadsheets.values.update({
-        spreadsheetId: GOOGLE_SHEET_ID,
+        spreadsheetId: env.GOOGLE_SHEET_ID,
         range: `Registrations!A${nextRow}`,
         valueInputOption: 'USER_ENTERED',
         requestBody: {
@@ -43,7 +43,7 @@ export async function addRegistration(name: String, mail: String, number: String
 
 export async function mailExists(mail: String) {
 	const result = await sheets.spreadsheets.values.get({
-		spreadsheetId: GOOGLE_SHEET_ID,
+		spreadsheetId: env.GOOGLE_SHEET_ID,
 		range: 'Registrations!B:B'
 	});
 
@@ -56,7 +56,7 @@ export async function mailExists(mail: String) {
 
 export async function storeOTP(email: string,code: string) {
  	const result = await sheets.spreadsheets.values.get({
-        spreadsheetId: GOOGLE_SHEET_ID,
+        spreadsheetId: env.GOOGLE_SHEET_ID,
         range: 'Codes!A:B'
     });
 
@@ -65,7 +65,7 @@ export async function storeOTP(email: string,code: string) {
 
     // Then write directly to that row
     await sheets.spreadsheets.values.update({
-        spreadsheetId: GOOGLE_SHEET_ID,
+        spreadsheetId: env.GOOGLE_SHEET_ID,
         range: `Codes!A${nextRow}`,
         valueInputOption: 'USER_ENTERED',
         requestBody: {
@@ -76,7 +76,7 @@ export async function storeOTP(email: string,code: string) {
 
 export async function CodeByMail(mail: String) {
 	const result = await sheets.spreadsheets.values.get({
-		spreadsheetId: GOOGLE_SHEET_ID,
+		spreadsheetId: env.GOOGLE_SHEET_ID,
 		range: 'Codes!A:B'
 	});
 
@@ -91,7 +91,7 @@ export async function CodeByMail(mail: String) {
 
 export async function codeExists(mail: String) {
 	const result = await sheets.spreadsheets.values.get({
-		spreadsheetId: GOOGLE_SHEET_ID,
+		spreadsheetId: env.GOOGLE_SHEET_ID,
 		range: 'Codes!A:A'
 	});
 

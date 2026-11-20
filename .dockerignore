@@ -1,26 +1,18 @@
 node_modules
-
-# Output
+.git
+.svelte-kit
+build
 .output
 .vercel
 .netlify
 .wrangler
-/.svelte-kit
-/build
-
-# OS
+.vscode
 .DS_Store
 Thumbs.db
+Dockerfile
+.dockerignore
 
-# Env
+# Never copy secrets into the image
 .env
 .env.*
 !.env.example
-!.env.test
-
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
-
-# Database
-sqlite.db
