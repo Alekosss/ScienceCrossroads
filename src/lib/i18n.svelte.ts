@@ -79,7 +79,7 @@ const translations = {
     seconds: "SECONDS",
 
     comitee: "ORGANIZING COMITEE",
-    comitee_teams: "OUR ORGANIZING TEAM IS CONSITEED OF THE FOLLOWING STUDENT TEAMS",
+    comitee_teams: "OUR ORGANIZING TEAM IS CONSISTED OF THE FOLLOWING STUDENT TEAMS",
     
     FAQ: "FREQUENTLY ASKED QUESTIONS",
     question_who: "1. Who is Science Crossroads intended for?",
@@ -107,6 +107,7 @@ const translations = {
     GREET: "GREETINGS",
     general: "GENERAL",
     schedule: "EVENT SCHEDULE",
+    "schedule-tba": "TBA",
     publish: "Publish or Perish:",
     research: "Research made into a",
     profession: "profession",
@@ -315,6 +316,7 @@ const translations = {
     ARRIVAL: "ΠΡΟΣΕΛΕΥΣΗ - ΕΓΓΡΑΕΣ",
     GREET: "ΧΑΙΡΕΤΙΣΜΟΙ",
     schedule: "ΠΡΟΓΡΑΜΜΑ ΕΚΔΗΛΩΣΗΣ",
+    "schedule-tba": "ΠΡΟΣ ΑΝΑΚΟΙΝΩΣΗ",
     general: "ΓΕΝΙΚΑ",
     publish: "Δημοσίευσε ή Καταστρέψου:",
     research: "Η Έρευνα ως",
