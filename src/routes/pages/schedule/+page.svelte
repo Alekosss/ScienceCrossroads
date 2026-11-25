@@ -15,7 +15,7 @@
 
 <div class="schedulePage">
 
-    <div class="day-content">
+    <div class="day-content" style="display: none;">
         <div class="date-line">
             <button class="date-arrow" aria-label="Previous day" disabled>
                 <ArrowLeft />
