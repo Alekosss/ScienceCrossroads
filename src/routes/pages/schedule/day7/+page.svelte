@@ -4,6 +4,7 @@
     import type { ScheduleFilter } from '$lib/model/ScheduleFilter';
     import ArrowLeft from '$lib/assets/Icons/ArrowLeft.svelte';
 	import ArrowRight from '$lib/assets/Icons/ArrowRight.svelte';
+    import TimeOutline from '$lib/assets/SVGs/TimeOutline.svg';
 
     const scheduleFilter = getContext<ScheduleFilter>('schedule-filter');
 
@@ -68,7 +69,10 @@
     
         <div class="coming-line">
             <div class="coming-info">
-                <span class="coming-time">9:00 - 10:00</span>
+                <span class="coming-time">
+                    <img class="clock" src={TimeOutline} alt="time"/>
+                    {t('schedule-tba')}
+                </span>
     
                 <p class="coming-words">
                     {t('ARRIVAL')}
@@ -80,7 +84,10 @@
             {#if !shouldHide(t('CHEMISTRY'))}
                 <div class="green-1">
                     <div class="green-1-1">
-                        <span class="green-1-1-time">10:00 - 11:15</span>
+                        <span class="green-1-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -91,7 +98,10 @@
                     </div>
     
                     <div class="green-2-1">
-                        <span class="green-2-1-time">11:15 - 11:45</span>
+                        <span class="green-2-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -105,7 +115,10 @@
             {#if !shouldHide(t('general'))}
                 <div class="pink-1">
                     <div class="pink-1-1">
-                        <span class="pink-1-1-time">10:00 - 10:45</span>
+                        <span class="pink-1-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -116,7 +129,10 @@
                     </div>
     
                     <div class="pink-2-1">
-                        <span class="pink-2-1-time">10:45 - 11:45</span>
+                        <span class="pink-2-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -127,7 +143,10 @@
                     </div>
     
                     <div class="pink-3-1">
-                        <span class="pink-3-1-time">11:45 - 12:15</span>
+                        <span class="pink-3-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -141,7 +160,10 @@
             {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-1">
                     <div class="orange-1-1">
-                        <span class="orange-1-1-time">10:30 - 11:30</span>
+                        <span class="orange-1-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -152,7 +174,10 @@
                     </div>
     
                     <div class="orange-2-1">
-                        <span class="orange-2-1-time">11:30 - 12:15</span>
+                        <span class="orange-2-1-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -165,7 +190,10 @@
         </div>
     
             <div class="coffee-break-1">
-                <span class="coffee-break-1-time">12:15 - 12:45</span>
+                <span class="coffee-break-1-time">
+                    <img class="clock" src={TimeOutline} alt="time"/>
+                    {t('schedule-tba')}
+                </span>
                 <p class="coffee-break-1-letter">
                 {t('coffee1')}
                 </p>
@@ -176,7 +204,10 @@
             {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-2">
                     <div class="purple-1-2">
-                        <span class="purple-1-2-time">12:45 - 13:30</span>
+                        <span class="purple-1-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -187,7 +218,10 @@
                     </div>
     
                     <div class="purple-2-2">
-                        <span class="purple-2-2-time">13:30 - 14:00</span>
+                        <span class="purple-2-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -197,7 +231,10 @@
                     </div>
     
                     <div class="purple-3-2">
-                        <span class="purple-3-2-time">14:00 - 14:45</span>
+                        <span class="purple-3-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -212,7 +249,10 @@
             {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-2">
                     <div class="orange-1-2">
-                        <span class="orange-1-2-time">12:45 - 13:30</span>
+                        <span class="orange-1-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -223,7 +263,10 @@
                     </div>
     
                     <div class="orange-2-2">
-                        <span class="orange-2-2-time">13:30 - 14:15</span>
+                        <span class="orange-2-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -234,7 +277,10 @@
                     </div>
     
                     <div class="orange-3-2">
-                        <span class="orange-3-2-time">14:15 - 14:45</span>
+                        <span class="orange-3-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -248,7 +294,10 @@
             {#if !shouldHide(t('CHEMISTRY'))}
                 <div class="green-2">
                     <div class="green-1-2">
-                        <span class="green-1-2-time">12:45 - 14:45</span>
+                        <span class="green-1-2-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -263,7 +312,10 @@
     
             <div class="lunch-break-2">
                 <div class="lunch-break-2-line">
-                    <span class="lunch-break-2-line-time">14:45 - 15:45</span>
+                    <span class="lunch-break-2-line-time">
+                        <img class="clock" src={TimeOutline} alt="time"/>
+                        {t('schedule-tba')}
+                    </span>
                     <p class="lunch-break-2-line-letter">
                     {t('lunch2')}
                     </p>
@@ -271,7 +323,10 @@
     
                 {#if !shouldHide(t('PHYSICS'))}
                     <div class="physics-experiment-break">
-                        <span class="physics-experiment-break-time">14:45 - 15:45</span>
+                        <span class="physics-experiment-break-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -289,7 +344,10 @@
             {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-3">
                     <div class="purple-1-3">
-                        <span class="purple-1-3-time">15:45 - 16:15</span>
+                        <span class="purple-1-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -299,7 +357,10 @@
                     </div>
     
                     <div class="purple-2-3">
-                        <span class="purple-2-3-time">16:15 - 17:15</span>
+                        <span class="purple-2-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -309,7 +370,10 @@
                     </div>
     
                     <div class="purple-3-3">
-                        <span class="purple-3-3-time">17:15 - 17:45</span>
+                        <span class="purple-3-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -323,7 +387,10 @@
             {#if !shouldHide(t('CHEMISTRY'))}
                 <div class="green-3">
                     <div class="green-1-3">
-                        <span class="green-1-3-time">15:45 - 16:30</span>
+                        <span class="green-1-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -334,7 +401,10 @@
                     </div>
     
                     <div class="green-2-3">
-                        <span class="green-2-3-time">16:30 - 17:15</span>
+                        <span class="green-2-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -344,7 +414,10 @@
                     </div>
     
                     <div class="green-3-3">
-                        <span class="green-3-3-time">17:15 - 17:45</span>
+                        <span class="green-3-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -358,7 +431,10 @@
             {#if !shouldHide(t('PHYSICS'))}
                 <div class="orange-3">
                     <div class="orange-1-3">
-                        <span class="orange-1-3-time">15:45 - 16:45</span>
+                        <span class="orange-1-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -368,7 +444,10 @@
                     </div>
     
                     <div class="orange-2-3">
-                        <span class="orange-2-3-time">16:45 - 17:45</span>
+                        <span class="orange-2-3-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -381,7 +460,10 @@
         </div>
     
             <div class="coffee-break-2">
-                <span class="coffee-break-2-time">17:45 - 18:15</span>
+                <span class="coffee-break-2-time">
+                    <img class="clock" src={TimeOutline} alt="time"/>
+                    {t('schedule-tba')}
+                </span>
                 <p class="coffee-break-2-letter">
                     {t('coffee2')}
                 </p>
@@ -392,7 +474,10 @@
             {#if !shouldHide(t('COMPUTER_SCIENCE'))}
                 <div class="purple-4">
                     <div class="purple-1-4">
-                        <span class="purple-1-4-time">18:15 - 19:15</span>
+                        <span class="purple-1-4-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L3 18l3 3 6.2-6.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-3.1-3.1 2.5-2.3ZM17 4l3 3" />
                         </svg>
@@ -407,7 +492,10 @@
     
                 {#if !shouldHide(t('CHEMISTRY'))}
                     <div class="green-1-4">
-                        <span class="green-1-4-time">18:15 - 19:15</span>
+                        <span class="green-1-4-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -418,7 +506,10 @@
                     </div>
     
                     <div class="green-2-4">
-                        <span class="green-2-4-time">19:15 - 19:45</span>
+                        <span class="green-2-4-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -430,7 +521,10 @@
     
                 {#if !shouldHide(t('general'))}
                     <div class="green-pink-1-4">
-                        <span class="green-pink-1-4-time">19:45 - 20:15</span>
+                        <span class="green-pink-1-4-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -446,7 +540,10 @@
     
                 {#if !shouldHide(t('general'))}
                     <div class="pink-1-4">
-                        <span class="pink-1-4-time">18:15 - 19:00</span>
+                        <span class="pink-1-4-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M4 5.5h16v11H9l-5 3v-14Z" />
                             <path d="M8 9h8M8 13h5" />
@@ -457,7 +554,10 @@
                     </div>
     
                     <!-- <div class="pink-2-4">
-                        <span class="pink-2-4-time">19:00 - 19:45</span>
+                        <span class="pink-2-4-time">
+                            <img class="clock" src={TimeOutline} alt="time"/>
+                            {t('schedule-tba')}
+                        </span>
                         <svg class="session-type-icon" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM7 19c.3-3 2.1-4.5 5-4.5s4.7 1.5 5 4.5M2 18c.2-2.2 1.4-3.4 3.5-3.4.9 0 1.6.2 2.2.7m8.6 0c.6-.5 1.3-.7 2.2-.7 2.1 0 3.3 1.2 3.5 3.4" />
                         </svg>
@@ -470,7 +570,10 @@
         </div>
     
             <div class="cocktail-party">
-                <span class="cocktail-party-time">20:15 - 21:00</span>
+                <span class="cocktail-party-time">
+                    <img class="clock" src={TimeOutline} alt="time"/>
+                    {t('schedule-tba')}
+                </span>
                 <p class="cocktail-party-letter">
                 {t('closing')}
                 </p>
@@ -489,11 +592,17 @@
         min-width: 0;
     }
 
+    .clock {
+        height: 1.25em;
+        width: auto;
+        flex: none;
+    }
+
     .day-content > :not(.schedule-day-header):not(.date-line) {
         animation: slideFromRight 0.3s ease-out;
     }
 
-    .day-content div:has(> [class$="-time"]) {
+    .day-content div:has(> [class*="-time"]) {
         box-sizing: border-box;
         min-width: 0;
         height: auto;
@@ -502,7 +611,11 @@
         gap: clamp(0.25rem, 0.7vw, 0.65rem);
     }
 
-    .day-content [class$="-time"] {
+    .day-content [class*="-time"] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35em;
         font-size: clamp(0.7rem, 1vw, 0.9rem);
         font-weight: 700;
         line-height: 1.25;
@@ -1827,13 +1940,13 @@
             font-size: 11px;
         }
 
-        .day-content div:has(> [class$="-time"]) {
+        .day-content div:has(> [class*="-time"]) {
             min-height: 2.75rem;
             padding: 0.5rem;
             gap: 0.3rem;
         }
 
-        .day-content [class$="-time"] {
+        .day-content [class*="-time"] {
             font-size: 0.65rem;
         }
 
